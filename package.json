@@ -11,7 +11,15 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "ingest:excel": "tsx scripts/ingest/excel-priority-matrix.ts",
-    "ingest:questions": "tsx scripts/ingest/docx-questionnaire.ts"
+    "ingest:questions": "tsx scripts/ingest/docx-questionnaire.ts",
+    "sources:analyze": "tsx scripts/ingest/analyze-sources.ts",
+    "phase2:dry-run": "npm run sources:analyze",
+    "ingest:documents": "tsx scripts/ingest/source-documents.ts",
+    "phase2:db": "npm run ingest:documents && npm run ingest:excel && npm run ingest:questions",
+    "generate:question-bank": "tsx scripts/generate/question-bank.ts",
+    "phase3:dry-run": "npm run generate:question-bank",
+    "seed:question-bank": "tsx scripts/generate/seed-question-bank.ts",
+    "phase3:db": "npm run phase2:db && npm run phase3:dry-run && npm run seed:question-bank"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

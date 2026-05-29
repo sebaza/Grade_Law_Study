@@ -237,6 +237,7 @@ create index questions_subject_idx on questions(subject_id);
 create index questions_subsubject_idx on questions(subsubject_id);
 create index questions_difficulty_idx on questions(difficulty);
 create index questions_active_idx on questions(is_active) where is_active = true;
+create unique index questions_source_reference_uidx on questions(source_reference) where source_reference is not null;
 create index expected_answers_question_active_idx on expected_answers(question_id, is_active);
 create index key_points_question_idx on key_points(question_id);
 create index student_question_states_user_status_idx on student_question_states(user_id, status);

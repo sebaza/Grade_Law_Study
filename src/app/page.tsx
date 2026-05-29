@@ -1,8 +1,8 @@
 const kpis = [
   { label: "Preguntas disponibles", value: "100+", note: "base inicial generada desde fuentes", link: "Ver preguntas" },
   { label: "Practicadas", value: "0", note: "pendiente de iniciar", link: "Ir a practicar" },
-  { label: "Dominadas", value: "0", note: "según rúbrica institucional", link: "Ver dominadas" },
-  { label: "Para repaso", value: "0", note: "se actualiza con desempeño", link: "Ver repaso" },
+  { label: "Dominadas", value: "0", note: "segÃºn rÃºbrica institucional", link: "Ver dominadas" },
+  { label: "Para repaso", value: "0", note: "se actualiza con desempeÃ±o", link: "Ver repaso" },
 ];
 
 const weakSubjects = [
@@ -22,19 +22,19 @@ export default function HomePage() {
     <main className="app-shell">
       <aside className="sidebar">
         <div className="brand">
-          <div className="brand-mark">⚖</div>
+          <div className="brand-mark">âš–</div>
           <div>
             <h1>Grado<br />Derecho</h1>
-            <p>Preparate. Exponé. Aprobá.</p>
+            <p>Preparate. ExponÃ©. AprobÃ¡.</p>
           </div>
         </div>
 
-        <nav className="nav" aria-label="Navegación principal">
-          <a className="nav-item active" href="#">⌂ Inicio</a>
-          <a className="nav-item" href="#">☰ Preguntas</a>
-          <a className="nav-item" href="#">▷ Practicar</a>
-          <a className="nav-item" href="#">↺ Historial</a>
-          <a className="nav-item" href="#">▥ Estadísticas</a>
+        <nav className="nav" aria-label="NavegaciÃ³n principal">
+          <a className="nav-item active" href="#">âŒ‚ Inicio</a>
+          <a className="nav-item" href="#">â˜° Preguntas</a>
+          <a className="nav-item" href="#">â–· Practicar</a>
+          <a className="nav-item" href="#">â†º Historial</a>
+          <a className="nav-item" href="#">â–¥ EstadÃ­sticas</a>
         </nav>
 
         <div className="sidebar-footer">
@@ -48,10 +48,10 @@ export default function HomePage() {
       <section className="main">
         <header className="topbar">
           <div>
-            <h2>Buen día, futura abogada.</h2>
-            <p>Practicá con preguntas ponderadas por profesor, materia y probabilidad de aparición.</p>
+            <h2>Buen dÃ­a, futura abogada.</h2>
+            <p>PracticÃ¡ con preguntas ponderadas por profesor, materia y probabilidad de apariciÃ³n.</p>
           </div>
-          <div className="date-pill">Fase 1: base técnica</div>
+          <div className="date-pill">Fase 1: base tÃ©cnica</div>
         </header>
 
         <section className="kpi-grid" aria-label="Resumen de avance">
@@ -60,7 +60,7 @@ export default function HomePage() {
               <p className="kpi-label">{kpi.label}</p>
               <p className="kpi-value">{kpi.value}</p>
               <p className="kpi-note">{kpi.note}</p>
-              <a className="kpi-link" href="#">{kpi.link} →</a>
+              <a className="kpi-link" href="#">{kpi.link} â†’</a>
             </article>
           ))}
         </section>
@@ -70,28 +70,28 @@ export default function HomePage() {
             <article className="card practice-card">
               <div className="practice-visual">
                 <div>
-                  <div className="icon-circle" style={{ margin: "0 auto 18px" }}>🎓</div>
-                  <strong>Empezar práctica</strong>
-                  <p>Simulá el examen oral y mejorá con cada intento.</p>
+                  <div className="icon-circle" style={{ margin: "0 auto 18px" }}>ðŸŽ“</div>
+                  <strong>Empezar prÃ¡ctica</strong>
+                  <p>SimulÃ¡ el examen oral y mejorÃ¡ con cada intento.</p>
                 </div>
               </div>
               <div className="practice-controls">
-                <strong>¿Cómo querés practicar?</strong>
+                <strong>Â¿CÃ³mo querÃ©s practicar?</strong>
                 <div className="segmented">
                   <button className="active">Por materia</button>
                   <button>Por profesor</button>
                   <button>Aleatorio</button>
                 </div>
                 <label>
-                  Seleccioná una materia
-                  <span className="select-like">Derecho Procesal <span>⌄</span></span>
+                  SeleccionÃ¡ una materia
+                  <span className="select-like">Derecho Procesal <span>âŒ„</span></span>
                 </label>
                 <div className="segmented">
                   <button className="active">Todas</button>
                   <button>Media</button>
                   <button>Alta</button>
                 </div>
-                <button className="primary-button">▶ Comenzar práctica</button>
+                <button className="primary-button">â–¶ Comenzar prÃ¡ctica</button>
               </div>
             </article>
 
@@ -100,7 +100,7 @@ export default function HomePage() {
               <div className="attempt-list">
                 {recentAttempts.map((attempt) => (
                   <div className="attempt-row" key={attempt.subject}>
-                    <div className="icon-circle">📖</div>
+                    <div className="icon-circle">ðŸ“–</div>
                     <div>
                       <strong>{attempt.subject}</strong><br />
                       <span>{attempt.professor}</span>
@@ -114,11 +114,11 @@ export default function HomePage() {
 
           <div>
             <article className="card panel">
-              <h3>Materias prioritarias según Excel</h3>
+              <h3>Materias prioritarias segÃºn Excel</h3>
               <div className="weak-list">
                 {weakSubjects.map((subject) => (
                   <div className="weak-row" key={subject.name}>
-                    <div className="icon-circle">⚖</div>
+                    <div className="icon-circle">âš–</div>
                     <div>
                       <strong>{subject.name}</strong><br />
                       <span>{subject.area}</span>
@@ -131,14 +131,14 @@ export default function HomePage() {
             </article>
 
             <article className="card panel rubric-card">
-              <h3>Desglose por rúbrica</h3>
+              <h3>Desglose por rÃºbrica</h3>
               <div className="rubric-layout">
                 <div className="score-ring"><strong>0</strong></div>
                 <div className="rubric-list">
-                  <div className="rubric-item"><span>Normas jurídicas aplicables</span><strong>0 / 10</strong></div>
-                  <div className="rubric-item"><span>Conceptos técnico-jurídicos</span><strong>0 / 10</strong></div>
-                  <div className="rubric-item"><span>Aplicación práctica</span><strong>0 / 10</strong></div>
-                  <div className="rubric-item"><span>Fundamentación y orden</span><strong>0 / 10</strong></div>
+                  <div className="rubric-item"><span>Normas jurÃ­dicas aplicables</span><strong>0 / 10</strong></div>
+                  <div className="rubric-item"><span>Conceptos tÃ©cnico-jurÃ­dicos</span><strong>0 / 10</strong></div>
+                  <div className="rubric-item"><span>AplicaciÃ³n prÃ¡ctica</span><strong>0 / 10</strong></div>
+                  <div className="rubric-item"><span>FundamentaciÃ³n y orden</span><strong>0 / 10</strong></div>
                 </div>
               </div>
             </article>
@@ -148,3 +148,4 @@ export default function HomePage() {
     </main>
   );
 }
+

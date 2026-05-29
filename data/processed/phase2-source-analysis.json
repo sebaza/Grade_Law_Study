@@ -1,0 +1,417 @@
+{
+  "generatedAt": "2026-05-29T20:34:28.680Z",
+  "sources": {
+    "priority-matrix": {
+      "key": "priority-matrix",
+      "title": "Matriz de frecuencia y relevancia por profesor",
+      "relativePath": "Excel_Con preguntas\\frequency_relevance_matrix.xlsx",
+      "type": "xlsx",
+      "kind": "priority_matrix",
+      "notes": "Fuente principal de prioridad, frecuencia y probabilidad inicial.",
+      "exists": true,
+      "fileSizeBytes": 12808,
+      "analysis": {
+        "rowCount": 28,
+        "byProfessor": {
+          "Felipe Ortiz": {
+            "rows": 12,
+            "frequency": 275,
+            "priorityScore": 658
+          },
+          "Mauricio Figueroa": {
+            "rows": 5,
+            "frequency": 58,
+            "priorityScore": 158
+          },
+          "Stephanie Merlet": {
+            "rows": 11,
+            "frequency": 123,
+            "priorityScore": 334
+          }
+        },
+        "byArea": {
+          "Derecho Procesal": {
+            "rows": 12,
+            "frequency": 275,
+            "priorityScore": 658
+          },
+          "Derecho Constitucional": {
+            "rows": 5,
+            "frequency": 58,
+            "priorityScore": 158
+          },
+          "Derecho Civil": {
+            "rows": 11,
+            "frequency": 123,
+            "priorityScore": 334
+          }
+        },
+        "topPriorities": [
+          {
+            "professor": "Felipe Ortiz",
+            "area": "Derecho Procesal",
+            "subarea": "Actos procesales: actuaciones, plazos, notificaciones y emplazamiento",
+            "frequency": 55,
+            "professorPercentage": 20,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 120
+          },
+          {
+            "professor": "Felipe Ortiz",
+            "area": "Derecho Procesal",
+            "subarea": "Teoría de la acción, pretensión, partes y legitimación",
+            "frequency": 47,
+            "professorPercentage": 17.1,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 104
+          },
+          {
+            "professor": "Felipe Ortiz",
+            "area": "Derecho Procesal",
+            "subarea": "Procesal: instituciones generales",
+            "frequency": 35,
+            "professorPercentage": 12.7,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 80
+          },
+          {
+            "professor": "Stephanie Merlet",
+            "area": "Derecho Civil",
+            "subarea": "Bienes y derechos reales: dominio, posesión, tradición y prescripción adquisitiva",
+            "frequency": 31,
+            "professorPercentage": 25.2,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 72
+          },
+          {
+            "professor": "Felipe Ortiz",
+            "area": "Derecho Procesal",
+            "subarea": "Resoluciones judiciales, sentencias y cosa juzgada",
+            "frequency": 29,
+            "professorPercentage": 10.5,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 68
+          },
+          {
+            "professor": "Felipe Ortiz",
+            "area": "Derecho Procesal",
+            "subarea": "Prueba: sistemas de valoración, medios y prueba penal",
+            "frequency": 25,
+            "professorPercentage": 9.1,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 60
+          },
+          {
+            "professor": "Felipe Ortiz",
+            "area": "Derecho Procesal",
+            "subarea": "Recursos e impugnaciones civiles y penales",
+            "frequency": 23,
+            "professorPercentage": 8.4,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 56
+          },
+          {
+            "professor": "Mauricio Figueroa",
+            "area": "Derecho Constitucional",
+            "subarea": "Constitucional: instituciones generales",
+            "frequency": 22,
+            "professorPercentage": 37.9,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 54
+          },
+          {
+            "professor": "Felipe Ortiz",
+            "area": "Derecho Procesal",
+            "subarea": "Tutela ejecutiva: juicio ejecutivo, títulos, oposición y embargo",
+            "frequency": 21,
+            "professorPercentage": 7.6,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 52
+          },
+          {
+            "professor": "Stephanie Merlet",
+            "area": "Derecho Civil",
+            "subarea": "Contratos: teoría general",
+            "frequency": 21,
+            "professorPercentage": 17.1,
+            "syllabusAlignment": "Alta",
+            "relevance": "Alta",
+            "priorityScore": 52
+          }
+        ]
+      }
+    },
+    "jose-espejo-questionnaire": {
+      "key": "jose-espejo-questionnaire",
+      "title": "Cuestionario Examen de Grado - Jose Espejo",
+      "relativePath": "Preguntas\\Cuestionario Examen de Grado - José Espejo.docx",
+      "type": "docx",
+      "kind": "questionnaire",
+      "notes": "Banco de preguntas reales o recopiladas, con respuestas base mezcladas en el texto.",
+      "exists": true,
+      "fileSizeBytes": 527583,
+      "analysis": {
+        "paragraphCount": 3654,
+        "questionCandidateCount": 981,
+        "byProfessor": {
+          "Felipe Ascencio": 235,
+          "Mauricio Figueroa": 205,
+          "Felipe Ortiz": 150,
+          "Constanza Astudillo": 149,
+          "Fernando Orellana": 140,
+          "Stephanie Merlet": 88,
+          "Otras preguntas varias de Felipe Ascencio": 14
+        },
+        "byArea": {
+          "Derecho Civil": 414,
+          "Derecho Procesal": 290,
+          "Derecho Constitucional": 203,
+          "Derecho de propiedad": 31,
+          "Derecho a la privacidad": 28,
+          "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable": 15
+        },
+        "samples": [
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Qué acciones constituciones permiten resguardar la supremacía constitucional?",
+            "rawAnswer": "Se resguarda a través de la acción de inaplicabilidad por inconstitucionalidad de preceptos legales art. 93 N°6 y la acción de inconstitucionalidad de preceptos legales previamente declarados inaplicables art. 93 N°7.",
+            "orderIndex": 9
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Tiene otras competencias el TC que le permite cautelar la supremacía constitucional?",
+            "rawAnswer": "Si, el TC realiza el control constitucional para hacer efectiva la supremacía constitucional, este corresponde a un procedimiento comparativo de un proyecto de precepto legal, de un precepto legal o de la aplicación de un precepto legal, de un auto acordado o de un acto administrativo frente a la constitución, para determinar su conformidad o no, tanto en forma y como en fondo.",
+            "orderIndex": 11
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Dónde está consagrado el principio de responsabilidad?",
+            "rawAnswer": "El principio de responsabilidad se encuentra consagrado expresamente en los incisos finales de los arts. 6 y 7 CPR prescribiendo respectivamente que “la infracción de esta norma generará las responsabilidades y sanciones que determine la ley” y “todo acto en contravención a este artículo es nulo y originará las responsabilidades y sanciones que la ley señale”.",
+            "orderIndex": 14
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Hay alguna otra norma que reconozca dicho principio?",
+            "rawAnswer": "Arts. 6 y 7 CPR. El art. 93 N°10 establece que está dentro de las atribuciones del TC la de “declarar la inconstitucionalidad de las organizaciones y de los movimientos o partidos políticos, como asimismo la responsabilidad de las personas que hubieran tenido participación en los hechos que motivaron la declaración de inconstitucionalidad”.",
+            "orderIndex": 17
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "El art. 19 N°24 qué cosas regula?",
+            "rawAnswer": "Primero, regula el derecho de propiedad en sus diversas especies sobre toda clase de bienes corporales e incorporales.",
+            "orderIndex": 19
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Cómo se limita el derecho de propiedad de acuerdo a la cpr?",
+            "rawAnswer": "Se puede limitar la propiedad por dos vías, una es la expropiación por causa de utilidad pública o interés nacional, calificada por el legislador, y la segunda, es la función social de la propiedad, y esta comprende cuanto exijan los intereses generales de la nacional, la seguridad nacional, la utilidad y salubridad públicas y la conservación del patrimonio ambiental.",
+            "orderIndex": 25
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Qué se regula en el art. 19 N°23?",
+            "rawAnswer": "Se regula el derecho a la propiedad, particularmente la libertad para adquirir el dominio de toda clase de bienes, exceptuando los que la naturaleza ha hecho comunes a todos los hombres, los que pertenecen a la nación toda y los que señale la ley.",
+            "orderIndex": 28
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "Una modificación al plano regular supone casi que se me perturbe el derecho de propiedad, ¿qué acción intentaría usted frente a este plano regulador?",
+            "rawAnswer": "Si con dicha modificación del plan regulador se está privando, perturbando o amenazando de alguna forma mi derecho de propiedad se puede interponer una acción de protección.",
+            "orderIndex": 32
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "En ese recurso de protección, ¿qué garantías además de la propiedad usted invocaría?",
+            "rawAnswer": "Además de invocar el derecho de propiedad del art. 19 N°24, invocaría la de igualdad ante la ley del N°2, la de desarrollar cualquier actividad económica que no sea contraria a la moral, al orden público o a la seguridad nacional del N°21 y la de no discriminación arbitraria del estado en materia económica del N°22.",
+            "orderIndex": 34
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Quiénes son titulares de DD.FF?",
+            "rawAnswer": "Las personas naturales, las personas jurídicas, las personas jurídicas de derecho público (Art. 19 N°24) , las personas morales (art. 19 N°s 6, 12, 13 o 15), el que está por nacer (para algunos no es titular, ya que la constitución asegura a todas las personas y el nasciturus no es persona por disposición legal, y para otros si, por aplicación de tratados internacionales ratificados por Chile y que se encuentran vigente que reconocen la vida desde la concepción).",
+            "orderIndex": 37
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Se puede renunciar a los DD.FF?",
+            "rawAnswer": "Por regla general los derechos fundamentales son irrenunciables, ya que encuentran fundamento en la esencia misma del ser humano, su dignidad, sin perjuicio de ello, algunos derechos, y particularmente libertades, si pueden ser renunciados, por ejemplo, la libertad de expresión, a través de cláusulas de confidencialidad, o la libertad de trabajo, a través de contratos de exclusividad. Sin perjuicio de lo anterior, no cabría señalar que dicha persona ya no es titular de la libertad de expresión o al derecho al trabajo, solo que más limitado. Igualmente podrían constituir una renuncia o quizá más propiamente una prohibición, el funcionario público que no puede desarrollar cualquier actividad económica relacionada con el rubro en que se desempeña.",
+            "orderIndex": 41
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Qué se entiende por intimidad?",
+            "rawAnswer": "La intimidad constituye la parte más privada de la vida privada de una persona, así puede decirse que existe entre lo privado y lo íntimo una relación de género a especie, siendo lo privado el género y lo íntimo la especie. Existen dos teorías que permiten determinar aquello que se encuentra en la vida pública o privada de una personas, la teoría de los círculos concéntricos y la teoría de los mosaicos. Además, es el mismo titular del derecho quien puede determinar qué información se encuentra en la esfera de lo público o privado.",
+            "orderIndex": 43
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Cuáles son los límites en abstracto al ejercicio de los DD.FF?",
+            "rawAnswer": "El límite al ejercicio de los derechos fundamentales está constituido por la esfera de protección de derechos de un tercero, es decir, el derecho ajeno, y por la ley. Así, la libertad de emitir opinión y la de informar colisiona con el respeto y protección de la vida privada y la honra de la persona y la de su familia. La ley puede limitar el ejercicio de los derechos, sin perjuicio de ello, el art. 19 N°26 establece la seguridad de que los preceptos legales que por mandato de la constitución regulen o complementen las garantías que ésta establece o que las limiten en los casos en que ella lo autoriza, no podrán afectar a los derechos en su esencia, ni imponer condiciones, tributos o requisitos que impidan su libre ejercicio.",
+            "orderIndex": 45
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Hasta dónde puedo ejercer el derecho de propiedad?",
+            "rawAnswer": "El derecho de propiedad encuentra como limitación en su ejercicio el derecho ajeno, la expropiación por causa de utilidad pública o interés nacional calificada por el legislador, así como las limitaciones y obligaciones que deriven de su función social, y esta comprende cuanto exijan los intereses generales de la nación, la seguridad nacional, la utilidad y salubridad públicas y la conservación del patrimonio ambiental.",
+            "orderIndex": 47
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Qué es la acción antidiscriminación y quién la conoce?",
+            "rawAnswer": "Es una acción de rango legal de la ley 20.609 que establece medidas contra la discriminación, y procede frente una acción u omisión que importe discriminación arbitraria, ante el juez de letras en lo civil de su domicilio o ante el del domicilio del responsable de dicha acción u omisión. Puede ser interpuesta por cualquier persona que haya sufrido discriminación arbitraria, por su representante legal, o por quien tenga de hecho el cuidado personal o la educación del afectado.",
+            "orderIndex": 50
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Por qué se critica la ley antidiscriminación?",
+            "rawAnswer": "Se critica porque si hubiera existido discriminación arbitraria el tribunal aplicará una multa de cinco a cincuenta UTM a beneficio fiscal. Por lo demás, se critica por ser tramitado en un procedimiento ordinario de lato conocimiento. También, por el hecho de que por vía de protección la sanciones por falta de obediencia del fallo podrían ser más severas.",
+            "orderIndex": 52
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "Caso. Atropello un perro en una ciclovía, le sacan foto y me funan, ¿qué se podría hacer frente a la funa? ¿En el por tanto, qué pedimos?",
+            "rawAnswer": "Habría que atender a la información en la funa, si aparece la imagen de la persona, su rut, domicilio, etc. Se podría intentar una acción de protección, invocando la garantía del art. 19 N°4 sobre respeto y protección de la vida privada y la honra de la persona y la de su familia, así como la protección de sus datos personales.",
+            "orderIndex": 55
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Dónde está regulado el derecho a la honra y qué es?",
+            "rawAnswer": "El derecho a la honra se encuentra regulado en el art. 19 N°4 CPR, y se trata del derecho de toda persona a que sea respetada y protegida su honra y la de su familia, esto es, la reputación, prestigio, buen nombre, lo que los demás piensan de la persona y su familia. Esta protección alcanza la memoria de los fallecidos.",
+            "orderIndex": 58
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Qué es la intimidad?",
+            "rawAnswer": "La intimidad constituye la parte más privada de la vida privada de una persona, así puede decirse que existe entre lo privado y lo íntimo una relación de género a especie, siendo lo privado el género y lo íntimo la especie. Existen dos teorías que permiten determinar aquello que se encuentra en la vida pública o privada de una personas, la teoría de los círculos concéntricos y la teoría de los mosaicos. Además, es el mismo titular del derecho quien puede determinar qué información se encuentra en la esfera de lo público o privado.",
+            "orderIndex": 60
+          },
+          {
+            "areaName": "Derecho Constitucional",
+            "professorName": "Felipe Ascencio",
+            "statement": "¿Es relativa la intimidad?",
+            "rawAnswer": "Si, es el mismo titular del derecho quien puede determinar qué información se encuentra en la esfera de lo público o privado. Por ello, lo que para una persona es íntimo, para otra puede ser parte de su vida pública. Por lo demás, hay cierta información que a pesar de ser íntima, en atención al contexto o calidad de la persona podría dejar de estar en la esfero de la privado, así, aplicando la teoría de los mosaicos, se puede indicar que el matrimonio de una persona con un extranjero es privado, pero el matrimonio con un extranjero con el presidente de la república es público.",
+            "orderIndex": 62
+          }
+        ]
+      }
+    },
+    "exam-rubric": {
+      "key": "exam-rubric",
+      "title": "Rúbrica Evaluación Examen de Grado",
+      "relativePath": "Reglamiento\\RÚBRICA EVALUACIÓN EXAMEN DE GRADO.pdf",
+      "type": "pdf",
+      "kind": "rubric",
+      "notes": "Fuente normativa para los criterios de evaluación automática.",
+      "exists": true,
+      "fileSizeBytes": 401332,
+      "analysis": {
+        "pageCount": 6,
+        "characterCount": 18625,
+        "preview": "EVALUACIÓN EXAMEN DE GRADO I. ANTECEDENTES DEL CONTEXTO INSTITUCIONAL: La UCN adhiere al concepto de Formación Basada en Competencias y su implementación a través de Resultados de Aprendizaje, incorporándolo a los currículums de todas las carreras y programas. Considera como definición de Competencia al “Conjunto de atributos personales que, movilizados, permiten y explican un desempeño exitoso en un ámbito profesional de realización específico, es decir, implica la integración de un saber hacer, saber ser y saber”. A su vez distingue entre competencias específicas -aquellas que permiten resolver problemáticas relacionadas con los ámbitos de acción en una profesión- y competencias genéricas, aquellas que se aplican a cualquier situación y, por tanto, son transversales a cualquier profesión. (PEI UCN, 2017) II. COMPETENCIAS DEL PERFIL DE EGRESO:  Competencias Específicas Dominio I: Tomar"
+      }
+    },
+    "exam-regulation-2025": {
+      "key": "exam-regulation-2025",
+      "title": "Reglamento Examen de Grado 2025",
+      "relativePath": "Reglamiento\\Resolucion FCJ N21-2025 Reg lamento Examen de Grado.pdf",
+      "type": "pdf",
+      "kind": "regulation",
+      "notes": "Define modalidad oral, áreas obligatorias y reglas generales del examen.",
+      "exists": true,
+      "fileSizeBytes": 271598,
+      "analysis": {
+        "pageCount": 6,
+        "characterCount": 16208,
+        "preview": "RESOLUCIÓN F.C.J.: N°21/2025. MAT.: Oficializa texto actualizado del Reglamento de Examen de Grado de la carrera de Derecho. COQUIMBO, 4 de agosto de 2025. VISTOS: 1. Las disposiciones del reglamento de Estructura Orgánica de la Facultad de Ciencias Jurídicas de la Universidad Católica del Norte. 2. Lo dispuesto por el decreto de Rectoría N°132/2024, de 9 de diciembre de 2024. 3. El informe emitido por el Comité Curricular de la Facultad de Cs. Jurídicas sobre las propuestas de reforma al Reglamento de Examen de Grado de la carrera de Derecho. 4. La aprobación por parte del Consejo de Facultad, en sesión de 4 de agosto de 2025, de las propuestas presentadas para la reforma al Reglamento de Examen de Grado de la carrera de Derecho. RESUELVO: Oficializar el siguiente texto actualizado del Reglamento de Examen de Grado de la carrera de Derecho de la Universidad Católica del Norte, conforme "
+      }
+    },
+    "civil-syllabus": {
+      "key": "civil-syllabus",
+      "title": "Temario Derecho Civil",
+      "relativePath": "Temario\\Temario Derecho Civil. Examen de Grado.pdf",
+      "type": "pdf",
+      "kind": "syllabus",
+      "areaName": "Derecho Civil",
+      "exists": true,
+      "fileSizeBytes": 121164,
+      "analysis": {
+        "pageCount": 10,
+        "characterCount": 15812,
+        "preview": "TEMARIO DE DERECHO CIVIL Examen de Grado para la Facultad de Ciencias Jurídicas 23 DE DICIEMBRE DE 2025 UNIVERSIDAD CATÓLICA DEL NORTE FACULTAD DE CIENCIAS JURÍDICAS -- 1 of 10 -- § I. ACTO JURÍDICO 1. NOCIONES GENERALES DEL ACTO JURÍDICO: a. Concepto y estructura b. Requisitos y elementos c. Clasificación de los actos jurídicos: i. Actos unilaterales y bilaterales ii. Actos onerosos y gratuitos iii. Conmutativos y aleatorios iv. Actos principales y accesorios. Actos dependientes. v. Actos consensuales, reales y solemnes 2. REQUISITOS DE LOS ACTOS JURÍDICOS: a. La voluntad: i. Generalidades: concepto, la manifestación de voluntad, el silencio ii. Consentimiento y su formación. iii. Los vicios de la voluntad: el error, la fuerza, el dolo. iv. Desacuerdo entre voluntad y declaración. La simulación b. El objeto: i. Concepto de objeto para el Código Civil ii. El objeto ilícito: casos regulad"
+      }
+    },
+    "constitutional-syllabus": {
+      "key": "constitutional-syllabus",
+      "title": "Cedulario Derecho Constitucional",
+      "relativePath": "Temario\\Propuesta NUEVO CEDULARIO DE DERECHO CONSTITUCIONAL.pdf",
+      "type": "pdf",
+      "kind": "syllabus",
+      "areaName": "Derecho Constitucional",
+      "exists": true,
+      "fileSizeBytes": 648875,
+      "analysis": {
+        "pageCount": 6,
+        "characterCount": 10457,
+        "preview": "TEMARIO DE DERECHO CONSTITUCIONAL Nuevo Modelo de Examen de Grado ESCUELAS DE DERECHO, SEDES ANTOFAGASTA - COQUIMBO UNIVERSIDAD CATÓLICA DEL NORTE -- 1 of 6 -- 1 I. VALORES Y PRINCIPIOS SUPERIORES DEL ORDENAMIENTO CONSTITUCIONAL 1. VALORES CONSTITUCIONALES. Bases de la Institucionalidad (antecedentes del Capítulo I y concepto). Artículo 1º: Estructura Social: Fundamento de la distinción entre Sociedad y Estado en la Constitución. A) Sociedad: persona, familia y cuerpos intermedios (sentido y alcance constitucional). B) Estado: concepción instrumental y deberes (función solidaria del Estado). Valor de la primacía de la persona humana (art. 1°, inc. 1° y 4º): valor de la dignidad (garantía negativa y positiva de la persona); valor de la libertad (dimensiones y libre desarrollo de la personalidad); y valor de la igualdad (dimensiones como valor constitucional). 2. PRINCIPIOS CONSTITUCIONALE"
+      }
+    },
+    "criminal-syllabus": {
+      "key": "criminal-syllabus",
+      "title": "Temario Derecho Penal",
+      "relativePath": "Temario\\Propuesta Temario Derecho Penal. Examen de Grado.pdf",
+      "type": "pdf",
+      "kind": "syllabus",
+      "areaName": "Derecho Penal",
+      "exists": true,
+      "fileSizeBytes": 147550,
+      "analysis": {
+        "pageCount": 6,
+        "characterCount": 11904,
+        "preview": "TEMARIO DE DERECHO PENAL Examen de Grado para la Facultad de Ciencias Jurídicas 23 DE DICIEMBRE DE 2025 UNIVERSIDAD CATÓLICA DEL NORTE FACULTAD DE CIENCIAS JURÍDICAS -- 1 of 6 -- CEDULARIO DERECHO PENAL UCN I. FUNDAMENTOS Y LÍMITES DEL DERECHO PENAL 1. FUNCIONES DEL DERECHO PENAL a. Concepto dogmático de derecho penal. Derecho penal en sentido objetivo; Derecho penal en sentido subjetivo. b. Elementos del derecho penal: normas jurídico-penales; sujetos; bienes jurídicos, penas y medidas de seguridad. 2. LÍMITES AL IUS PUNIENDI a. Principio de legalidad: origen; concepto; regulación constitucional y legal; ley penal en blanco; funciones de garantía, político-criminal y sistemática; manifestaciones: principio de reserva legal; principio de irretroactividad de la ley penal; principio de taxatividad o tipicidad; principio de exclusión de analogía. b. Principio de intervención mínima: concept"
+      }
+    },
+    "procedural-syllabus": {
+      "key": "procedural-syllabus",
+      "title": "Cedulario Derecho Procesal",
+      "relativePath": "Temario\\Propuesta modificación cedulario Derecho Procesal.pdf",
+      "type": "pdf",
+      "kind": "syllabus",
+      "areaName": "Derecho Procesal",
+      "exists": true,
+      "fileSizeBytes": 161931,
+      "analysis": {
+        "pageCount": 11,
+        "characterCount": 15666,
+        "preview": "CEDULARIO DE DERECHO PROCESAL Nuevo modelo Examen de Grado para la Escuela de Derecho de Coquimbo 30 DE MARZO DE 2022 UNIVERSIDAD CATÓLICA DEL NORTE FACULTAD DE CIENCIAS JURÍDICAS -- 1 of 11 -- CEDULARIO DERECHO PROCESAL UCN I. BASES Y FUNDAMENTOS DEL DERECHO PROCESAL 1. LA FUNCIÓN JURISDICCIONAL a. Concepto, características, función y límites. b. Potestades jurisdiccionales conexas c. Organización jurisdiccional en nuestro ordenamiento. Tribunales y su clasificación. d. Principios que orientan la organización jurisdiccional chilena e. Alternativas a la jurisdicción: métodos de autocomposición del conflicto. 2. LA COMPETENCIA a. Concepto, clasificación y características. b. Reglas generales y especiales de competencia. (Criterios de atribución de competencia) d. Los conflictos y cuestiones de competencia. e. Tramitación, especialmente de la impugnación. 3. TEORÍA DE LA ACCIÓN 3.1) La acc"
+      }
+    }
+  }
+}

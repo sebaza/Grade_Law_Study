@@ -188,7 +188,7 @@ model Question {
   questionType          String?        @map("question_type")
   isActive              Boolean        @default(true) @map("is_active")
   origin                QuestionOrigin @default(generated)
-  sourceReference       String?        @map("source_reference")
+  sourceReference       String?        @unique @map("source_reference")
   createdAt             DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
   updatedAt             DateTime       @updatedAt @map("updated_at") @db.Timestamptz(6)
 

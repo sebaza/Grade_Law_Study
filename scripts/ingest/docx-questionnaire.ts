@@ -1,18 +1,20 @@
-import fs from "node:fs/promises";
-import path from "node:path";
 import mammoth from "mammoth";
 import { getPrisma } from "../../src/lib/db/prisma";
-
-const PROJECT_ROOT = process.cwd();
-const QUESTIONS_DIR = path.join(PROJECT_ROOT, "Preguntas");
+import { SOURCE_MANIFEST, resolveSourcePath } from "./source-manifest";
 
 function looksLikeArea(text: string) {
-  return /^Derecho\s+[A-ZÁÉÍÓÚÑa-záéíóúñ ]+\.?$/.test(text);
+  return /^Derecho\s+.+\.?$/u.test(text) && text.length < 90;
 }
 
 function parseProfessorHeading(text: string) {
-  const match = text.match(/^(\d+)\s+([A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚÑáéíóúñ ]{2,60})\.?$/);
-  return match?.[2]?.trim() ?? null;
+  const match = text.match(/^(\d+)\s+(.+?)\.?$/u);
+  if (!match) return null;
+
+  const possibleName = match[2].trim();
+  if (possibleName.length < 3 || possibleName.length > 60) return null;
+  if (possibleName.includes("?")) return null;
+
+  return possibleName;
 }
 
 function isQuestionLike(text: string) {
@@ -20,14 +22,13 @@ function isQuestionLike(text: string) {
 }
 
 async function main() {
-  const files = await fs.readdir(QUESTIONS_DIR);
-  const docxFile = files.find((file) => file.toLowerCase().endsWith(".docx"));
+  const source = SOURCE_MANIFEST.find((item) => item.kind === "questionnaire");
 
-  if (!docxFile) {
-    throw new Error(`No se encontró .docx en ${QUESTIONS_DIR}`);
+  if (!source) {
+    throw new Error("No se encontro fuente de tipo questionnaire en el manifiesto");
   }
 
-  const filePath = path.join(QUESTIONS_DIR, docxFile);
+  const filePath = resolveSourcePath(source);
   const result = await mammoth.extractRawText({ path: filePath });
   const paragraphs = result.value
     .split(/\r?\n/)
@@ -36,17 +37,17 @@ async function main() {
 
   const db = getPrisma();
   const sourceDocument = await db.sourceDocument.upsert({
-    where: { filePath },
+    where: { filePath: source.relativePath },
     create: {
-      title: docxFile,
-      filePath,
+      title: source.title,
+      filePath: source.relativePath,
       documentType: "docx",
-      metadata: { importedBy: "scripts/ingest/docx-questionnaire.ts" },
+      metadata: { key: source.key, kind: source.kind, importedBy: "scripts/ingest/docx-questionnaire.ts" },
       processedAt: new Date(),
     },
     update: {
       processedAt: new Date(),
-      metadata: { importedBy: "scripts/ingest/docx-questionnaire.ts" },
+      metadata: { key: source.key, kind: source.kind, importedBy: "scripts/ingest/docx-questionnaire.ts" },
     },
   });
 
@@ -92,7 +93,7 @@ async function main() {
     imported += 1;
   }
 
-  console.log(`Importadas ${imported} preguntas candidatas desde ${docxFile}.`);
+  console.log(`Importadas ${imported} preguntas candidatas desde ${source.title}.`);
 }
 
 main()
@@ -103,5 +104,3 @@ main()
   .finally(async () => {
     await getPrisma().$disconnect();
   });
-
-
