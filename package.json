@@ -1,0 +1,37 @@
+﻿{
+  "name": "grade-law-study",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "ingest:excel": "tsx scripts/ingest/excel-priority-matrix.ts",
+    "ingest:questions": "tsx scripts/ingest/docx-questionnaire.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "latest",
+    "@supabase/ssr": "latest",
+    "@supabase/supabase-js": "latest",
+    "next": "latest",
+    "openai": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "prisma": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "xlsx": "latest",
+    "mammoth": "latest",
+    "pdf-parse": "latest"
+  }
+}

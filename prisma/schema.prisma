@@ -1,0 +1,374 @@
+﻿generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum QuestionStatus {
+  pending
+  in_practice
+  answered
+  mastered
+  needs_review
+  excluded
+}
+
+enum Difficulty {
+  low
+  medium
+  high
+}
+
+enum AnswerMode {
+  text
+  voice
+}
+
+enum PracticeMode {
+  random
+  manual
+  by_subject
+  by_professor
+  by_difficulty
+  review
+  weak_questions
+  unpracticed
+}
+
+enum SourceDocumentType {
+  pdf
+  docx
+  xlsx
+  manual
+}
+
+enum QuestionOrigin {
+  real_question
+  generated
+  manual
+}
+
+model UserProfile {
+  id        String   @id @db.Uuid
+  fullName  String?  @map("full_name")
+  email     String?  @unique
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  states   StudentQuestionState[]
+  sessions PracticeSession[]
+  attempts PracticeAttempt[]
+
+  @@map("user_profiles")
+}
+
+model Professor {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String   @unique
+  notes     String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  priorities ProfessorTopicPriority[]
+  questionLinks QuestionProfessor[]
+
+  @@map("professors")
+}
+
+model LawArea {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String   @unique
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  subjects Subject[]
+  questions Question[]
+  priorities ProfessorTopicPriority[]
+  documents SourceDocument[]
+
+  @@map("law_areas")
+}
+
+model Subject {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  areaId      String   @map("area_id") @db.Uuid
+  name        String
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  area LawArea @relation(fields: [areaId], references: [id], onDelete: Cascade)
+  subsubjects Subsubject[]
+  questions Question[]
+
+  @@unique([areaId, name])
+  @@map("subjects")
+}
+
+model Subsubject {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  subjectId   String   @map("subject_id") @db.Uuid
+  name        String
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  questions Question[]
+
+  @@unique([subjectId, name])
+  @@map("subsubjects")
+}
+
+model SourceDocument {
+  id           String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title        String
+  filePath     String             @unique @map("file_path")
+  documentType SourceDocumentType @map("document_type")
+  areaId       String?            @map("area_id") @db.Uuid
+  metadata     Json               @default("{}")
+  processedAt  DateTime?          @map("processed_at") @db.Timestamptz(6)
+  createdAt    DateTime           @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  area LawArea? @relation(fields: [areaId], references: [id])
+  rawQuestions RawQuestion[]
+
+  @@map("source_documents")
+}
+
+model ProfessorTopicPriority {
+  id                  String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  professorId          String   @map("professor_id") @db.Uuid
+  areaId               String   @map("area_id") @db.Uuid
+  subarea              String
+  frequency            Int      @map("frecuencia")
+  professorPercentage  Decimal  @map("professor_percentage") @db.Decimal(5, 2)
+  syllabusAlignment    String   @map("syllabus_alignment")
+  relevance            String
+  priorityScore        Decimal  @map("priority_score") @db.Decimal(8, 2)
+  createdAt            DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  professor Professor @relation(fields: [professorId], references: [id], onDelete: Cascade)
+  area      LawArea   @relation(fields: [areaId], references: [id], onDelete: Cascade)
+
+  @@unique([professorId, areaId, subarea])
+  @@index([areaId, priorityScore])
+  @@index([professorId, priorityScore])
+  @@map("professor_topic_priorities")
+}
+
+model RawQuestion {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sourceDocumentId String   @map("source_document_id") @db.Uuid
+  areaName         String?  @map("area_name")
+  professorName    String?  @map("professor_name")
+  statement        String
+  rawAnswer        String?  @map("raw_answer")
+  orderIndex       Int      @map("order_index")
+  metadata         Json     @default("{}")
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  sourceDocument SourceDocument @relation(fields: [sourceDocumentId], references: [id], onDelete: Cascade)
+
+  @@index([professorName])
+  @@index([areaName])
+  @@map("raw_questions")
+}
+
+model Question {
+  id                   String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  statement             String
+  areaId                String         @map("area_id") @db.Uuid
+  subjectId             String?        @map("subject_id") @db.Uuid
+  subsubjectId          String?        @map("subsubject_id") @db.Uuid
+  difficulty            Difficulty     @default(medium)
+  estimatedProbability  Decimal        @default(0) @map("estimated_probability") @db.Decimal(6, 2)
+  priorityScore         Decimal        @default(0) @map("priority_score") @db.Decimal(8, 2)
+  questionType          String?        @map("question_type")
+  isActive              Boolean        @default(true) @map("is_active")
+  origin                QuestionOrigin @default(generated)
+  sourceReference       String?        @map("source_reference")
+  createdAt             DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt             DateTime       @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  area LawArea @relation(fields: [areaId], references: [id])
+  subject Subject? @relation(fields: [subjectId], references: [id])
+  subsubject Subsubject? @relation(fields: [subsubjectId], references: [id])
+
+  expectedAnswers ExpectedAnswer[]
+  keyPoints KeyPoint[]
+  commonErrors CommonError[]
+  professors QuestionProfessor[]
+  states StudentQuestionState[]
+  attempts PracticeAttempt[]
+  relatedFrom RelatedQuestion[] @relation("question_related_from")
+  relatedTo RelatedQuestion[] @relation("question_related_to")
+
+  @@index([areaId, priorityScore])
+  @@index([subjectId])
+  @@index([difficulty])
+  @@map("questions")
+}
+
+model QuestionProfessor {
+  questionId  String @map("question_id") @db.Uuid
+  professorId String @map("professor_id") @db.Uuid
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  professor Professor @relation(fields: [professorId], references: [id], onDelete: Cascade)
+
+  @@id([questionId, professorId])
+  @@map("question_professors")
+}
+
+model ExpectedAnswer {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  questionId  String   @map("question_id") @db.Uuid
+  modelAnswer String   @map("model_answer")
+  rubricNotes String?  @map("rubric_notes")
+  version     Int      @default(1)
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@index([questionId, isActive])
+  @@map("expected_answers")
+}
+
+model KeyPoint {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  questionId  String   @map("question_id") @db.Uuid
+  label       String
+  description String
+  weight      Decimal  @default(1) @db.Decimal(5, 2)
+  isRequired  Boolean  @default(true) @map("is_required")
+  orderIndex  Int      @default(0) @map("order_index")
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  attemptMatches AttemptKeyPoint[]
+
+  @@index([questionId])
+  @@map("key_points")
+}
+
+model CommonError {
+  id          String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  questionId  String @map("question_id") @db.Uuid
+  description String
+  severity    String @default("medium")
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@map("common_errors")
+}
+
+model RelatedQuestion {
+  questionId        String @map("question_id") @db.Uuid
+  relatedQuestionId String @map("related_question_id") @db.Uuid
+  relationType      String @default("related") @map("relation_type")
+
+  question Question @relation("question_related_from", fields: [questionId], references: [id], onDelete: Cascade)
+  relatedQuestion Question @relation("question_related_to", fields: [relatedQuestionId], references: [id], onDelete: Cascade)
+
+  @@id([questionId, relatedQuestionId])
+  @@map("related_questions")
+}
+
+model StudentQuestionState {
+  id            String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId         String         @map("user_id") @db.Uuid
+  questionId     String         @map("question_id") @db.Uuid
+  status         QuestionStatus @default(pending)
+  isExcluded     Boolean        @default(false) @map("is_excluded")
+  isFavorite     Boolean        @default(false) @map("is_favorite")
+  confidenceLevel Int?          @map("confidence_level")
+  lastAttemptAt  DateTime?      @map("last_attempt_at") @db.Timestamptz(6)
+  bestScore      Decimal        @default(0) @map("best_score") @db.Decimal(6, 2)
+  averageScore   Decimal        @default(0) @map("average_score") @db.Decimal(6, 2)
+  attemptCount   Int            @default(0) @map("attempt_count")
+  updatedAt      DateTime       @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  user UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@index([userId, status])
+  @@map("student_question_states")
+}
+
+model PracticeSession {
+  id               String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId            String       @map("user_id") @db.Uuid
+  mode              PracticeMode
+  filters           Json         @default("{}")
+  startedAt         DateTime     @default(now()) @map("started_at") @db.Timestamptz(6)
+  finishedAt        DateTime?    @map("finished_at") @db.Timestamptz(6)
+  totalQuestions    Int          @default(0) @map("total_questions")
+  averageScore      Decimal      @default(0) @map("average_score") @db.Decimal(6, 2)
+  totalTimeSeconds  Int          @default(0) @map("total_time_seconds")
+
+  user UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attempts PracticeAttempt[]
+
+  @@index([userId, startedAt])
+  @@map("practice_sessions")
+}
+
+model PracticeAttempt {
+  id              String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  sessionId        String?        @map("session_id") @db.Uuid
+  userId           String         @map("user_id") @db.Uuid
+  questionId       String         @map("question_id") @db.Uuid
+  answerMode       AnswerMode     @map("answer_mode")
+  rawAnswer        String?        @map("raw_answer")
+  transcription    String?
+  audioPath        String?        @map("audio_path")
+  score            Decimal        @default(0) @db.Decimal(6, 2)
+  rubricScore      Json           @default("{}") @map("rubric_score")
+  timeSeconds      Int?           @map("time_seconds")
+  postStatus       QuestionStatus @default(answered) @map("post_status")
+  createdAt        DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  session PracticeSession? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  user UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  feedback AttemptFeedback?
+  keyPointMatches AttemptKeyPoint[]
+
+  @@index([userId, createdAt])
+  @@index([questionId, createdAt])
+  @@map("practice_attempts")
+}
+
+model AttemptFeedback {
+  id                     String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  attemptId              String   @unique @map("attempt_id") @db.Uuid
+  summary                String
+  correctPoints          Json     @default("[]") @map("correct_points")
+  missingPoints          Json     @default("[]") @map("missing_points")
+  conceptualErrors       Json     @default("[]") @map("conceptual_errors")
+  improvementSuggestions String?  @map("improvement_suggestions")
+  modelAnswerSuggested   String?  @map("model_answer_suggested")
+  createdAt              DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  attempt PracticeAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+
+  @@map("attempt_feedback")
+}
+
+model AttemptKeyPoint {
+  attemptId  String  @map("attempt_id") @db.Uuid
+  keyPointId String  @map("key_point_id") @db.Uuid
+  matched    Boolean @default(false)
+  confidence Decimal @default(0) @db.Decimal(5, 2)
+  comment    String?
+
+  attempt PracticeAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  keyPoint KeyPoint @relation(fields: [keyPointId], references: [id], onDelete: Cascade)
+
+  @@id([attemptId, keyPointId])
+  @@map("attempt_key_points")
+}
+
