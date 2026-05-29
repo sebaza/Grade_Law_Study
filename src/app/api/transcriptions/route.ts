@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { transcribeAudio } from "@/lib/ai/transcribe-audio";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 

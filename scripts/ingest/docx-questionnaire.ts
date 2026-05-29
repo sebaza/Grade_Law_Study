@@ -1,4 +1,4 @@
-﻿import fs from "node:fs/promises";
+import fs from "node:fs/promises";
 import path from "node:path";
 import mammoth from "mammoth";
 import { getPrisma } from "../../src/lib/db/prisma";

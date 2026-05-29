@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { evaluateAnswer } from "@/lib/ai/evaluate-answer";
 import { getPrisma } from "@/lib/db/prisma";
 import { evaluationRequestSchema } from "@/lib/domain/evaluation";

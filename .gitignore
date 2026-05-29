@@ -1,0 +1,45 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+build/
+
+# production
+/dist/
+
+# local env files
+.env
+.env*.local
+.env.development
+.env.production
+!.env.example
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# generated / cache
+*.tsbuildinfo
+.vercel/
+.turbo/
+coverage/
+
+# local temp outputs
+.tmp/
+tmp/
+outputs/
+output/
+
+# Prisma local generated artifacts are handled by package manager / node_modules

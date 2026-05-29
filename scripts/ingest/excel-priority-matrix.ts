@@ -1,6 +1,6 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
-import * as XLSX from "xlsx";
+import { readSheet, type CellValue } from "read-excel-file/node";
 import { getPrisma } from "../../src/lib/db/prisma";
 
 const PROJECT_ROOT = process.cwd();
@@ -11,15 +11,77 @@ type PriorityRow = {
   area: string;
   subarea: string;
   frecuencia: number;
-  "% profesor": string | number;
-  alineacion_temario: string;
+  professorPercentage: number;
+  alineacionTemario: string;
   relevancia: string;
-  score_prioridad: number;
+  scorePrioridad: number;
 };
 
-function asNumber(value: string | number) {
+const REQUIRED_HEADERS = [
+  "professor",
+  "area",
+  "subarea",
+  "frecuencia",
+  "% profesor",
+  "alineacion_temario",
+  "relevancia",
+  "score_prioridad",
+] as const;
+
+function valueAsString(value: CellValue | null) {
+  return String(value ?? "").trim();
+}
+
+function valueAsNumber(value: CellValue | null) {
   if (typeof value === "number") return value;
-  return Number(value.replace(",", "."));
+  const parsed = Number(valueAsString(value).replace(",", "."));
+  if (Number.isNaN(parsed)) {
+    throw new Error(`Valor numerico invalido: ${String(value)}`);
+  }
+  return parsed;
+}
+
+async function readRows() {
+  const rows = await readSheet(EXCEL_PATH, "frequency_relevance_matrix");
+  const [headerRow, ...dataRows] = rows;
+
+  if (!headerRow) {
+    throw new Error("El Excel no tiene encabezados");
+  }
+
+  const headerIndexes = new Map<string, number>();
+  headerRow.forEach((header, index) => headerIndexes.set(valueAsString(header), index));
+
+  for (const header of REQUIRED_HEADERS) {
+    if (!headerIndexes.has(header)) {
+      throw new Error(`No existe la columna requerida: ${header}`);
+    }
+  }
+
+  return dataRows
+    .filter((row) => row.some((cell) => cell !== null && cell !== undefined && cell !== ""))
+    .map((row, index): PriorityRow => {
+      const get = (header: (typeof REQUIRED_HEADERS)[number]) => {
+        const columnIndex = headerIndexes.get(header);
+        if (columnIndex === undefined) throw new Error(`No existe la columna requerida: ${header}`);
+        const value = row[columnIndex];
+        if (value === null || value === undefined || value === "") {
+          throw new Error(`Fila ${index + 2}: columna ${header} esta vacia`);
+        }
+        return value;
+      };
+
+      return {
+        professor: valueAsString(get("professor")),
+        area: valueAsString(get("area")),
+        subarea: valueAsString(get("subarea")),
+        frecuencia: valueAsNumber(get("frecuencia")),
+        professorPercentage: valueAsNumber(get("% profesor")),
+        alineacionTemario: valueAsString(get("alineacion_temario")),
+        relevancia: valueAsString(get("relevancia")),
+        scorePrioridad: valueAsNumber(get("score_prioridad")),
+      };
+    });
 }
 
 async function main() {
@@ -28,14 +90,7 @@ async function main() {
   }
 
   const db = getPrisma();
-  const workbook = XLSX.readFile(EXCEL_PATH);
-  const sheet = workbook.Sheets["frequency_relevance_matrix"];
-
-  if (!sheet) {
-    throw new Error("No existe la hoja frequency_relevance_matrix");
-  }
-
-  const rows = XLSX.utils.sheet_to_json<PriorityRow>(sheet, { defval: "" });
+  const rows = await readRows();
 
   for (const row of rows) {
     const professor = await db.professor.upsert({
@@ -62,18 +117,18 @@ async function main() {
         professorId: professor.id,
         areaId: area.id,
         subarea: row.subarea,
-        frequency: Number(row.frecuencia),
-        professorPercentage: asNumber(row["% profesor"]),
-        syllabusAlignment: row.alineacion_temario,
+        frequency: row.frecuencia,
+        professorPercentage: row.professorPercentage,
+        syllabusAlignment: row.alineacionTemario,
         relevance: row.relevancia,
-        priorityScore: Number(row.score_prioridad),
+        priorityScore: row.scorePrioridad,
       },
       update: {
-        frequency: Number(row.frecuencia),
-        professorPercentage: asNumber(row["% profesor"]),
-        syllabusAlignment: row.alineacion_temario,
+        frequency: row.frecuencia,
+        professorPercentage: row.professorPercentage,
+        syllabusAlignment: row.alineacionTemario,
         relevance: row.relevancia,
-        priorityScore: Number(row.score_prioridad),
+        priorityScore: row.scorePrioridad,
       },
     });
   }

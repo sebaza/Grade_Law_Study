@@ -1,4 +1,4 @@
-﻿import { getOpenAIClient } from "@/lib/ai/openai";
+import { getOpenAIClient } from "@/lib/ai/openai";
 import { evaluationResultSchema, type EvaluationResult } from "@/lib/domain/evaluation";
 import { LAW_EXAM_RUBRIC } from "@/lib/domain/rubric";
 

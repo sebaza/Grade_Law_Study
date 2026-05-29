@@ -1,4 +1,4 @@
-﻿# Decisiones de arquitectura
+# Decisiones de arquitectura
 
 ## Decisión 1 - Vercel + Supabase
 

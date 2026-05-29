@@ -1,24 +1,27 @@
-﻿{
+{
   "name": "grade-law-study",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "lint": "next lint",
+    "build": "next build",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && npm run lint",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "ingest:excel": "tsx scripts/ingest/excel-priority-matrix.ts",
     "ingest:questions": "tsx scripts/ingest/docx-questionnaire.ts"
   },
   "dependencies": {
-    "@prisma/client": "latest",
+    "@prisma/client": "^6.19.3",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
-    "next": "latest",
+    "next": "^16.2.6",
     "openai": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "read-excel-file": "^9.0.10",
     "zod": "latest"
   },
   "devDependencies": {
@@ -27,11 +30,10 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "prisma": "latest",
-    "tsx": "latest",
-    "typescript": "latest",
-    "xlsx": "latest",
     "mammoth": "latest",
-    "pdf-parse": "latest"
+    "pdf-parse": "latest",
+    "prisma": "^6.19.3",
+    "tsx": "latest",
+    "typescript": "latest"
   }
 }

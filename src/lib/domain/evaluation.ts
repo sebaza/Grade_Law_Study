@@ -1,4 +1,4 @@
-﻿import { z } from "zod";
+import { z } from "zod";
 
 export const rubricCriterionSchema = z.object({
   score: z.union([z.literal(2), z.literal(4), z.literal(6), z.literal(8), z.literal(10)]),

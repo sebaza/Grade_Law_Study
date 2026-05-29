@@ -1,4 +1,4 @@
-﻿# Fuentes inspeccionadas
+# Fuentes inspeccionadas
 
 ## Excel
 

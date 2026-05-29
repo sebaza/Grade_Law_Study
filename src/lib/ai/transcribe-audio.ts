@@ -1,4 +1,4 @@
-﻿import { getOpenAIClient } from "@/lib/ai/openai";
+import { getOpenAIClient } from "@/lib/ai/openai";
 
 export async function transcribeAudio(file: File) {
   const client = getOpenAIClient();

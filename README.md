@@ -1,4 +1,4 @@
-﻿# Grade Law Study
+# Grade Law Study
 
 Plataforma web para preparar el examen de grado de Derecho mediante preguntas reales/generadas, respuestas por texto o voz, evaluación automática guiada por rúbrica y seguimiento de progreso.
 

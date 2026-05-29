@@ -1,4 +1,4 @@
-﻿export const LAW_EXAM_RUBRIC = {
+export const LAW_EXAM_RUBRIC = {
   criteria: [
     {
       key: "legalNorms",

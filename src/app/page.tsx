@@ -1,4 +1,4 @@
-﻿const kpis = [
+const kpis = [
   { label: "Preguntas disponibles", value: "100+", note: "base inicial generada desde fuentes", link: "Ver preguntas" },
   { label: "Practicadas", value: "0", note: "pendiente de iniciar", link: "Ir a practicar" },
   { label: "Dominadas", value: "0", note: "según rúbrica institucional", link: "Ver dominadas" },

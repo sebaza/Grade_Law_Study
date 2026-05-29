@@ -1,4 +1,4 @@
-﻿-- Initial Supabase/Postgres schema for Grade Law Study.
+-- Initial Supabase/Postgres schema for Grade Law Study.
 -- Execute in Supabase SQL editor or via Supabase migrations.
 
 create extension if not exists "pgcrypto";

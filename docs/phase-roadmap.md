@@ -1,4 +1,4 @@
-﻿# Roadmap por fases
+# Roadmap por fases
 
 ## Fase 1 - Cimientos del producto
 
