@@ -8,14 +8,14 @@ Validar e importar las fuentes disponibles:
 
 - Excel de prioridad y probabilidad por profesor.
 - DOCX de preguntas reales recopiladas.
-- PDF de rubrica.
+- PDF de rúbrica.
 - PDF de reglamento.
 - PDFs de temarios/cedularios.
 
 ## Archivos nuevos de la fase
 
 - `scripts/ingest/source-manifest.ts` - manifiesto unico de fuentes.
-- `scripts/ingest/analyze-sources.ts` - analisis local sin base de datos.
+- `scripts/ingest/analyze-sources.ts` - análisis local sin base de datos.
 - `scripts/ingest/source-documents.ts` - registra documentos fuente en Supabase/Postgres.
 - `data/processed/phase2-source-analysis.json` - reporte generado por dry-run.
 
@@ -30,7 +30,7 @@ npm run phase2:dry-run
 Esperado:
 
 ```txt
-Analisis generado en ...\data\processed\phase2-source-analysis.json
+Análisis generado en ...\data\processed\phase2-source-analysis.json
 ```
 
 El reporte debe mostrar:
@@ -97,4 +97,4 @@ Esperado:
 
 ## Advertencia importante
 
-El parser de DOCX es heuristico. Detecta preguntas por signos `?`, `¿` o lineas que empiezan con `Caso.`. Esto sirve para ingesta inicial, pero antes de generar el banco final hay que revisar y normalizar preguntas ambiguas.
+El parser de DOCX es heurístico. Detecta preguntas por signos `?`, `¿` o líneas que empiezan con `Caso.`. Esto sirve para ingesta inicial, pero antes de generar el banco final hay que revisar y normalizar preguntas ambiguas.

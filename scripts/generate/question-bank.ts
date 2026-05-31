@@ -76,7 +76,7 @@ function normalizeText(value: unknown) {
 function normalizeNumber(value: unknown) {
   if (typeof value === "number") return value;
   const parsed = Number(normalizeText(value).replace(",", "."));
-  if (Number.isNaN(parsed)) throw new Error(`Valor numerico invalido: ${String(value)}`);
+  if (Number.isNaN(parsed)) throw new Error(`Valor numérico inválido: ${String(value)}`);
   return parsed;
 }
 
@@ -253,8 +253,8 @@ function buildExpectedAnswer(candidate: RawCandidate, priority: PriorityRow) {
 
   return [
     `Una respuesta suficiente debe abordar la submateria "${priority.subarea}" dentro de ${priority.area}.`,
-    "Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento.",
-    "Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
+    "Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento.",
+    "Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
   ].join(" ");
 }
 
@@ -271,8 +271,8 @@ function buildKeyPoints(expectedAnswer: string, priority: PriorityRow) {
     ? sentences
     : [
         `Ubicar la pregunta dentro de ${priority.subarea}.`,
-        "Identificar normas o instituciones juridicas pertinentes.",
-        "Explicar conceptos centrales con lenguaje tecnico.",
+        "Identificar normas o instituciones jurídicas pertinentes.",
+        "Explicar conceptos centrales con lenguaje técnico.",
         "Relacionar la respuesta con el problema o pregunta formulada.",
       ];
 
@@ -292,11 +292,11 @@ function buildCommonErrors(priority: PriorityRow) {
       severity: "medium" as const,
     },
     {
-      description: "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+      description: "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
       severity: "high" as const,
     },
     {
-      description: "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+      description: "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
       severity: "medium" as const,
     },
   ];
@@ -401,7 +401,7 @@ async function main() {
       questionType: inferQuestionType(candidate.statement),
       origin: "real_question",
       expectedAnswer,
-      rubricNotes: "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      rubricNotes: "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       keyPoints: buildKeyPoints(expectedAnswer, priority),
       commonErrors: buildCommonErrors(priority),
       metadata: {

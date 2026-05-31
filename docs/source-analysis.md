@@ -9,15 +9,15 @@ Archivo:
 Hallazgos:
 
 - 1 hoja: `frequency_relevance_matrix`.
-- 28 filas Ãºtiles.
+- 28 filas útiles.
 - 8 columnas.
-- Sin fÃ³rmulas ni comentarios.
+- Sin fórmulas ni comentarios.
 - Todos los registros tienen `alineacion_temario = Alta`.
-- DistribuciÃ³n de relevancia: Alta 13, Media 9, Baja 6.
+- Distribución de relevancia: Alta 13, Media 9, Baja 6.
 
 Profesores principales:
 
-| Profesor | Ãrea | Frecuencia total | Score total |
+| Profesor | Área | Frecuencia total | Score total |
 | --- | --- | ---: | ---: |
 | Felipe Ortiz | Derecho Procesal | 275 | 658 |
 | Stephanie Merlet | Derecho Civil | 123 | 334 |
@@ -26,12 +26,12 @@ Profesores principales:
 Top prioridades:
 
 1. Actos procesales: actuaciones, plazos, notificaciones y emplazamiento - score 120.
-2. TeorÃ­a de la acciÃ³n, pretensiÃ³n, partes y legitimaciÃ³n - score 104.
+2. Teoría de la acción, pretensión, partes y legitimación - score 104.
 3. Procesal: instituciones generales - score 80.
-4. Bienes y derechos reales: dominio, posesiÃ³n, tradiciÃ³n y prescripciÃ³n adquisitiva - score 72.
+4. Bienes y derechos reales: dominio, posesión, tradición y prescripción adquisitiva - score 72.
 5. Resoluciones judiciales, sentencias y cosa juzgada - score 68.
 
-## RÃºbrica
+## Rúbrica
 
 Archivo:
 
@@ -39,10 +39,10 @@ Archivo:
 
 Criterios:
 
-- Normas jurÃ­dicas aplicables.
-- TeorÃ­as y conceptos tÃ©cnico-jurÃ­dicos.
-- AplicaciÃ³n prÃ¡ctica.
-- FundamentaciÃ³n y orden.
+- Normas jurídicas aplicables.
+- Teorías y conceptos técnico-jurídicos.
+- Aplicación práctica.
+- Fundamentación y orden.
 
 Escala:
 
@@ -60,11 +60,11 @@ Archivo:
 
 Hallazgos iniciales:
 
-- 3654 pÃ¡rrafos.
-- Aproximadamente 982 lÃ­neas tipo pregunta por heurÃ­stica simple.
+- 3654 párrafos.
+- Aproximadamente 982 líneas tipo pregunta por heurística simple.
 - Profesores detectados: Felipe Ascencio, Mauricio Figueroa, Felipe Ortiz, Constanza Astudillo, Fernando Orellana, Stephanie Merlet.
 
 Advertencia:
 
-El DOCX requiere limpieza porque algunos tÃ­tulos temÃ¡ticos aparecen como si fueran Ã¡reas.
+El DOCX requiere limpieza porque algunos títulos temáticos aparecen como si fueran áreas.
 

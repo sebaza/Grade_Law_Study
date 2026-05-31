@@ -55,7 +55,16 @@ async function main() {
 
   let currentArea: string | null = null;
   let currentProfessor: string | null = null;
-  let imported = 0;
+  const professorNames = new Set<string>();
+  const rawQuestions: Array<{
+    sourceDocumentId: string;
+    areaName: string | null;
+    professorName: string | null;
+    statement: string;
+    rawAnswer: string | null;
+    orderIndex: number;
+    metadata: { parser: string };
+  }> = [];
 
   for (let index = 0; index < paragraphs.length; index += 1) {
     const paragraph = paragraphs[index];
@@ -68,7 +77,7 @@ async function main() {
     const professor = parseProfessorHeading(paragraph);
     if (professor) {
       currentProfessor = professor;
-      await db.professor.upsert({ where: { name: professor }, create: { name: professor }, update: {} });
+      professorNames.add(professor);
       continue;
     }
 
@@ -78,22 +87,32 @@ async function main() {
       ? paragraphs[index + 1]
       : null;
 
-    await db.rawQuestion.create({
-      data: {
-        sourceDocumentId: sourceDocument.id,
-        areaName: currentArea,
-        professorName: currentProfessor,
-        statement: paragraph,
-        rawAnswer: possibleAnswer,
-        orderIndex: index,
-        metadata: { parser: "heuristic-v1" },
-      },
+    rawQuestions.push({
+      sourceDocumentId: sourceDocument.id,
+      areaName: currentArea,
+      professorName: currentProfessor,
+      statement: paragraph,
+      rawAnswer: possibleAnswer,
+      orderIndex: index,
+      metadata: { parser: "heuristic-v1" },
     });
-
-    imported += 1;
   }
 
-  console.log(`Importadas ${imported} preguntas candidatas desde ${source.title}.`);
+  if (professorNames.size > 0) {
+    await db.professor.createMany({
+      data: Array.from(professorNames).map((name) => ({ name })),
+      skipDuplicates: true,
+    });
+  }
+
+  const batchSize = 200;
+  for (let start = 0; start < rawQuestions.length; start += batchSize) {
+    await db.rawQuestion.createMany({
+      data: rawQuestions.slice(start, start + batchSize),
+    });
+  }
+
+  console.log(`Importadas ${rawQuestions.length} preguntas candidatas desde ${source.title}.`);
 }
 
 main()

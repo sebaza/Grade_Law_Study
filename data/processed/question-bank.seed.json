@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T21:03:10.944Z",
+  "generatedAt": "2026-05-31T18:22:54.030Z",
   "generationMethod": "heuristic-v1",
   "targetQuestionCount": 120,
   "questionCount": 120,
@@ -37,7 +37,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "Si se refiere a las actuaciones judiciales, son actos jurídicos procesales más o menos solemnes, de los cuales se deja testimonio escrito en el expediente, debidamente autorizados por el ministro de fe que señale la ley. Sus requisitos son, primero, que debe ser practicada por el funcionario que señala la ley, segundo, en días y horas hábiles, y tercero, autorizadas para su validez por funcionario competente. Estas se podrán decretar con conocimiento, con citación o con audiencia de la parte contraria.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -67,11 +67,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -98,7 +98,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, la declaración de un testigo, la confesión de parte, los alegatos, la audiencia de conciliación y contestación en juicio sumario.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -114,11 +114,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -145,7 +145,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Continuos y discontinuos, fatales y no fatales, legales, convencionales y judiciales, de horas, días, meses y años, prorrogables e improrrogables, individuales y comunes.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -161,11 +161,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -192,7 +192,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "No, a los plazos de meses y años no se les aplica la suspensión por días feriados.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -208,11 +208,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -239,7 +239,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El término de emplazamiento es el del demandado en juicio ordinario de mayor cuantía para contestar la demanda, por tanto, 18 días.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -255,11 +255,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -286,7 +286,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "En fatales y no fatales, comunes e individuales, judiciales, legales y convencionales, de horas, días, meses y años, continuos y discontinuos, prorrogable e improrrogable.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -302,11 +302,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -333,7 +333,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El término de emplazamiento es el del demandado en juicio ordinario de mayor cuantía para contestar la demanda, por tanto, 18 días.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -349,11 +349,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -380,7 +380,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Los objetivos que puede perseguir un recurso procesal es enmendar o invalidar. Sin perjuicio de objetivos específicos, como ocurre en el recurso de queja.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -403,11 +403,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -434,7 +434,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Son verbales las audiencias, alegatos de las partes, la declaración de testigos, la absolución de posiciones,",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -450,11 +450,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -481,7 +481,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, por regla general, sin perjuicio de la declaración de testigos. Si, un ministro de fe es un tercero.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -504,11 +504,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -535,7 +535,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No se trata de una sanción, ya que puede destruir tanto actos irregulares como válidos. Se trata de una técnica procesal dirigida a la privación de efectos producidos por actos procesales en cuya realización se hayan cometido infracciones, así como también a los actos que a pesar de haberse llevado a cabo conforme a la ley, pierden efectos por estar concatenados a los nulos, en aplicación del principio de trascendencia.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -558,11 +558,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -589,7 +589,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se puede interponer la excepción dilatoria de incompetencia del tribunal dentro del término de emplazamiento y antes de contestar la demanda.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -605,11 +605,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -636,7 +636,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "Es la convocatoria a una de las partes, el demandado, mediante la notificación de una resolución judicial, para que dentro de determinado plazo haga valer sus derechos en juicio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -652,11 +652,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -683,7 +683,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Los elementos del emplazamiento son la notificación de la demanda y de la resolución que haya recaído en ella, esto es, el proveído de la demanda, y el transcurso del término de emplazamiento. Es decir, son dos elementos, la notificación y el plazo.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -706,11 +706,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -737,7 +737,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Cuando le ha sido notificada conforme a la ley la demanda y la resolución judicial que haya recaído en ella, y que transcurra el plazo de 18 días hábiles si ha sido notificado dentro del territorio jurisdiccional del tribunal o 18 días más tabla de emplazamiento si ha sido notificado fuera del territorio jurisdiccional del tribunal.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -753,11 +753,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -784,7 +784,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Cuando se le haya notificado de la demanda ejecutiva, se le haya requerido de pago y haya transcurrido el término de emplazamiento.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -800,11 +800,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -831,7 +831,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Dentro del término de emplazamiento y antes de contestar la demanda, puede interponer excepciones dilatorias, y además, podrá contestar la demanda.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -847,11 +847,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -878,7 +878,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "Es la consideración especial que tiene la ley dentro de cada proceso, a las personas que se hallan en una determinada relación con el objeto del litigio y, en virtud de la cual exige, para que la pretensión procesal pueda ser examinada en cuanto al fondo, que sean dichas personas las que figuren como partes en el proceso (Guasp).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -894,11 +894,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -925,7 +925,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "Es la legitimación procesal lo que hace que un sujeto sea titular de una acción, pues, este es legitimado, y por tanto tiene la calidad necesaria, para hacerla valer y produzca respecto del demandado plena eficacia.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -941,11 +941,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -972,7 +972,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Es un asunto de derecho, ya que requiere una determinada relación con el objeto del litigio y un vínculo jurídico con el otro sujeto procesal. Una falta de legitimación podrá ser alegada como excepción dilatoria para algunos y perentoria para otros.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -995,11 +995,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1026,7 +1026,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No es absoluta, el principio dispositivo tiene excepciones, por ejemplo, en la declaración de nulidad absoluta cuando el vicio aparece de manifiesta en el acto o contrato, también, declarar de oficio su incompetencia absoluta para conocer del asunto, a su vez, si le afecta alguna causal de implicancia, o en materia ejecutiva, el tribunal podrá de oficio declarar inadmisible la acción por estar prescrita.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1042,11 +1042,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1073,7 +1073,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si el abandono del procedimiento, esto es, aquella sanción a la inactividad de las partes, en virtud del cual se extingue el derecho a continuar con la prosecución del juicio y hacer valer sus efectos. Requiere inactividad de las partes, haber transcurrido seis meses contados desde la última resolución recaída en una gestión útil, y no haber dictado sentencia ejecutoriada en la causa.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1096,11 +1096,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1127,7 +1127,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "Es un incidente especial por el cual el demandante manifiesta su voluntad de no proseguir con la tramitación, solicitando que se tenga por desistida su demanda, perdiendo la pretensión hecha valer.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1143,11 +1143,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1174,7 +1174,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "Son aquellas que pueden solicitarse por el demandante en cualquier estado del juicio, aun cuando no esté contestada la demanda para asegurar el resultado de la acción deducida en juicio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1190,11 +1190,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1221,7 +1221,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Las medidas para mejor resolver se pueden decretar dentro del plazo para dictar sentencia, por lo que en juicio ordinario de mayor cuantía son dentro de 60 días contados desde la notificación de la resolución que cita a las partes a oír sentencia definitiva.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1237,11 +1237,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1268,7 +1268,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Desde la notificación de la última resolución recaída en reposición interpuesta por las partes.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1284,11 +1284,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1315,7 +1315,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Las puede solicitar el actor como medida prejudicial precautoria y en cualquier estado del juicio, aun después de citadas las partes a oír sentencia (art. 433 CPC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1331,11 +1331,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1362,7 +1362,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se nombre de acuerdo entre las partes, y en caso contrario, el tribunal lo designará pero no podrá designar como perito a ninguna de las dos primeras personas que haya sido propuesta por cada parte. En dicho caso, la designación se pondrá en conocimiento de las partes y podrá oponerse dentro de tercero día reclamando de alguna incapacidad legal del perito.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1385,11 +1385,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1416,7 +1416,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Toma conocimiento a través del reconocimiento. Para ello deberá citar a las partes para que concurran si quieren. Si son varios peritos deben proceder unidos a practicar el reconocimiento salvo que el juez los autorice a obrar separados.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1446,11 +1446,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1477,7 +1477,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si puede ejecutarse a través del título ejecutivo del art. 434 N°1 CPC, esto es, la sentencia definitiva e interlocutoria firme o ejecutoriada, ya que según el art. 267 CPC el acta de conciliación se estimará como sentencia ejecutoriada para todos los efectos legales.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1507,11 +1507,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1538,7 +1538,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se cuentan seis meses contados desde la última resolución recaída en una gestión útil.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1554,11 +1554,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1585,7 +1585,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, en donde se declare la existencia de una obligación incumplida y se condene a pagarla.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1601,11 +1601,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1632,7 +1632,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se tramitan de plano, es decir, el tribunal frente a la solicitud deberá concederla o denegarla, pero en caso de afirmativa se formará cuaderno cautelar y se notificará al demandado, el que podrá oponerse, en caso de que lo haga se tramitará incidentalmente, es decir, incidente de alzamiento.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1648,11 +1648,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1679,7 +1679,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No, solo se señala en el art. 302 que el incidente a que den lugar las medidas se tramitaran en conformidad a las reglas generales y por cuerda separada. Y que podrán llevarse a efecto antes de notificarse a la persona contra quien se dictan, siempre que existan razones graves para ello y el tribunal así lo ordene.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1702,11 +1702,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1733,7 +1733,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "Es un hecho futuro y cierto fijado para practicar una determinada actuación judicial o un acto jurídico procesal.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1749,11 +1749,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1780,7 +1780,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Una vez decretadas se deben cumplir dentro del plazo de 20 días, en caso contrario se tienen por no decretadas.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1796,11 +1796,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1826,8 +1826,8 @@
       "priorityScore": 80,
       "questionType": "general",
       "origin": "real_question",
-      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1838,14 +1838,14 @@
         },
         {
           "label": "Punto clave 2",
-          "description": "Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento.",
+          "description": "Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 1
         },
         {
           "label": "Punto clave 3",
-          "description": "Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
+          "description": "Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 2
@@ -1857,11 +1857,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1888,7 +1888,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Significa que se le dio a la parte interesada un plazo para realizar el acto, pero producto de esta rebeldía declarada, ya no podrá realizarlo. Declarará evacuado dicho trámite en su rebeldía y proveerá lo que convenga para la prosecución del juicio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1911,11 +1911,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1942,7 +1942,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No, en caso de rebeldía en juicio sumario por parte del demandado, no asistiendo al comparendo de estilo, el tribunal podrá acceder provisionalmente a lo pedido en la demanda, siempre que sea solicitado con fundamento razonable.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1958,11 +1958,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -1989,7 +1989,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Hay que distinguir si se embargó muebles, dinero, alhajas, especies preciosas o efectos públicos, el simple menaje de la casa habitación del deudor, la empresa o establecimiento mercantil o industrial e inmuebles. Además, se debe distinguir el tipo de obligación que se ejecuta, así, si es una suma de dinero o un especie o cuerpo cierto debida, se podrá proceder al giro de cheque o la entrega de la cosa, en cambio, si corresponde a otra obligación o si se embargan otros bienes se procede con la realización de los bienes.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2012,11 +2012,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2043,7 +2043,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si la subasta es solicitado por un acreedor hipotecario de grado posterior, contra el deudor personal que la posea, los acreedores hipotecarios de grado preferente pueden optar entre hacer subsistir sus hipotecas o pagarse con el producto de la subasta, mientras no estén devengados sus créditos.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2059,11 +2059,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2089,8 +2089,8 @@
       "priorityScore": 80,
       "questionType": "general",
       "origin": "real_question",
-      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2101,14 +2101,14 @@
         },
         {
           "label": "Punto clave 2",
-          "description": "Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento.",
+          "description": "Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 1
         },
         {
           "label": "Punto clave 3",
-          "description": "Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
+          "description": "Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 2
@@ -2120,11 +2120,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2151,7 +2151,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "Es aquel hecho futuro y cierto dentro del cual se lleve llegar a cabo una determina actuación judicial o acto jurídico procesal.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2167,11 +2167,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2198,7 +2198,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Es el mismo plazo para dictar sentencia definitiva, esto es, 60 días.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2214,11 +2214,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2245,7 +2245,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Es un plazo de 20 días contados desde que se decretan.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2261,11 +2261,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2291,8 +2291,8 @@
       "priorityScore": 80,
       "questionType": "general",
       "origin": "real_question",
-      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2303,14 +2303,14 @@
         },
         {
           "label": "Punto clave 2",
-          "description": "Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento.",
+          "description": "Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 1
         },
         {
           "label": "Punto clave 3",
-          "description": "Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
+          "description": "Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 2
@@ -2322,11 +2322,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2353,7 +2353,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Desde que se notifica la resolución que falla la última reposición recaída en ella",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2369,11 +2369,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2400,7 +2400,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Significa que se le dio a la parte interesada un plazo para realizar el acto, pero producto de esta rebeldía declarada, ya no podrá realizarlo. Declarará evacuado dicho trámite en su rebeldía y proveerá lo que convenga para la prosecución del juicio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2423,11 +2423,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2454,7 +2454,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No, en caso de rebeldía en juicio sumario por parte del demandado, no asistiendo al comparendo de estilo, el tribunal podrá acceder provisionalmente a lo pedido en la demanda, siempre que sea solicitado con fundamento razonable.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2470,11 +2470,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2501,7 +2501,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Hay que distinguir si se embargó muebles, dinero, alhajas, especies preciosas o efectos públicos, el simple menaje de la casa habitación del deudor, la empresa o establecimiento mercantil o industrial e inmuebles. Además, se debe distinguir el tipo de obligación que se ejecuta, así, si es una suma de dinero o un especie o cuerpo cierto debida, se podrá proceder al giro de cheque o la entrega de la cosa, en cambio, si corresponde a otra obligación o si se embargan otros bienes se procede con la realización de los bienes.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2524,11 +2524,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2555,7 +2555,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si la subasta es solicitado por un acreedor hipotecario de grado posterior, contra el deudor personal que la posea, los acreedores hipotecarios de grado preferente pueden optar entre hacer subsistir sus hipotecas o pagarse con el producto de la subasta, mientras no estén devengados sus créditos.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2571,11 +2571,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2601,8 +2601,8 @@
       "priorityScore": 80,
       "questionType": "general",
       "origin": "real_question",
-      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2613,14 +2613,14 @@
         },
         {
           "label": "Punto clave 2",
-          "description": "Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento.",
+          "description": "Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 1
         },
         {
           "label": "Punto clave 3",
-          "description": "Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
+          "description": "Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 2
@@ -2632,11 +2632,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2663,7 +2663,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El recurso de invalidación es aquel que tiene por objeto dejar sin efecto una resolución judicial, declarándose nula por prescindir de los requisitos de validez o por concurrir vicios que provoquen un perjuicio solo subsanable con la nulidad.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2679,11 +2679,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2710,7 +2710,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No necesariamente dictará una nueva resolución, pero podría ocurrir, por ejemplo, en el recurso de casación en la forma no procede por regla general una sentencia de reemplazo, salvo que se acoja la causal del art. 768 N°4, 5, 6 o 7 CPC.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2726,11 +2726,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2757,7 +2757,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El recurso de apelación tiene por objeto que el tribunal superior jerárquico enmiende conforme a derecho una resolución dictada por un tribunal inferior (art. 186 CPC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2773,11 +2773,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2804,7 +2804,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se trata de un recurso de derecho estricto, por lo que solo procede por determinadas causales, las cuales son clasificadas en genéricas y concretas.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2820,11 +2820,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2851,7 +2851,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Es necesario ser parte del juicio donde se dictó la resolución que se impugna.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2867,11 +2867,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2898,7 +2898,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, la notificación ficta y tácita del art. 55 CPC.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2914,11 +2914,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2945,7 +2945,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "La notificación tácita es supletoria y opera en caso de que no exista notificación o de existir una defectuosa por haber realizado la persona que se debía notificar cualquier gestión que importe un conocimiento de la resolución y que dicha gestión no tenga por objeto reclamar del vicio. No actúa en esta notificación un ministro de fe.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2968,11 +2968,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -2998,8 +2998,8 @@
       "priorityScore": 80,
       "questionType": "general",
       "origin": "real_question",
-      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "expectedAnswer": "Una respuesta suficiente debe abordar la submateria \"Procesal: instituciones generales\" dentro de Derecho Procesal. Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento. Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3010,14 +3010,14 @@
         },
         {
           "label": "Punto clave 2",
-          "description": "Debe identificar las normas aplicables, explicar los conceptos tecnico-juridicos relevantes y ordenar la respuesta con fundamento.",
+          "description": "Debe identificar las normas aplicables, explicar los conceptos técnico-jurídicos relevantes y ordenar la respuesta con fundamento.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 1
         },
         {
           "label": "Punto clave 3",
-          "description": "Esta respuesta base fue generada como pauta inicial y requiere revision manual antes de usarla como respuesta definitiva.",
+          "description": "Esta respuesta base fue generada como pauta inicial y requiere revisión manual antes de usarla como respuesta definitiva.",
           "weight": 1,
           "isRequired": true,
           "orderIndex": 2
@@ -3029,11 +3029,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3060,7 +3060,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si es válida, sin perjuicio de las responsabilidades que surjan.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3076,11 +3076,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3107,7 +3107,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, con la subsanación, que es la corrección del defecto, y la convalidación, que es la renuncia del afectado con el defecto a alegar la nulidad.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3123,11 +3123,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3154,7 +3154,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "En consecuencia la nulidad del remate puede tener su origen en 2 clases de vicios:",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3170,11 +3170,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3201,7 +3201,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No, solo produce que la hipoteca no se extinga respecto de dicho acreedor hipotecario.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3217,11 +3217,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3248,7 +3248,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "En contra de autos y decretos de primera instancia que alteren la substanciación normal del juicio (contravienen normas ordenatoria litis) u ordenen trámites no establecidos por el legislador (art. 188 CPC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3264,11 +3264,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3295,7 +3295,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No todas las resoluciones dictadas en primera instancia son apelables, la ley establece casos en que expresamente esta no procede, estos son:",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3311,11 +3311,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3342,7 +3342,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No define lo que es el agravio, pero la doctrina indica que el agravio estaría tratado a propósito del juicio de hacienda, en el art. 751 CPC, tratando sobre el agravio del fisco.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3365,11 +3365,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3396,7 +3396,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "La forma de interposición es, por regla general, por escrito,  dentro de plazo, debiendo contener los fundamentos de hecho y de derecho en que se apoya y las peticiones concretas (art. 189 CPC), además, debe cumplir con los requisitos comunes a todo escrito, así como con la ley 20.886 sobre tramitación electrónica y la ley 20.120 sobre comparecencia en juicio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3419,11 +3419,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3450,7 +3450,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Las peticiones concretas son las solicitudes que se someten al fallo del tribunal ad quem y tienen por finalidad fijar y determinar de manera delimitada la competencia del tribunal de segunda instancia, no pudiendo extender el fallo más allá de los puntos respecto de los cuales se ha formulado petición.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3466,11 +3466,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3497,7 +3497,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "En caso de que sea el dueño de la cosa podría intentarse la acción reivindicatoria, pero no es la más útil, porque se tramita en un procedimiento de lato conocimiento, y el estándar probatorio para el dominio es alto, de ahí que sea más útil para el dueño privado de la posesión de su cosa singular las acciones posesorias, cuya tramitación es más rápida, siempre que se trate de bienes raíces, pues tienen por objeto conservar o recuperar la posesión de bienes raíces o de derecho reales constituido en ellos.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3513,11 +3513,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3544,7 +3544,7 @@
       "questionType": "comparison",
       "origin": "real_question",
       "expectedAnswer": "La reivindicación o acción de dominio es la que tiene el dueño de una cosa singular, de que no está en posesión, para que el poseedor de ella sea condenado a restituírsela (art. 889 CC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3560,11 +3560,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3591,7 +3591,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Enajenar en sentido amplio supone transferir el dominio o constituir un derecho real sobre la cosa a favor de otro, ya sean desmembraciones del dominio o derechos de garantía. En sentido restringido solo supone la transferencia del dominio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3614,11 +3614,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3645,7 +3645,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "No, sería más útil intentar una acción posesoria, ya que siguiendo el art. 916 CC las acciones posesorias tienen por objeto conservar o recuperar la posesión de bienes raíces o de derechos reales constituido en ellos. Por lo demás, estas acciones las puede deducir tanto los poseedores como el dueño, son acciones de tramitación rápida y se trata de interdictos posesorios.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3675,11 +3675,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3706,7 +3706,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Interrumpir la prescripción significa la pérdida del tiempo que hubiera transcurrido para su adquisición, pudiendo ser de carácter natural o civil.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3722,11 +3722,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3753,7 +3753,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No, la suspensión es una institución de protección por la cual el tiempo de prescripción deja de transcurrir a favor de ciertas personas mientras dura la causa, y estas personas son los incapaces, la mujer casada en sociedad conyugal mientras dure esta y la herencia yacente. Además, la prescripción se suspende siempre entre cónyuges (art. 2509 CC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3776,11 +3776,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3807,7 +3807,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "El poseedor regular tiene la acción publiciana en caso de haberla perdido y se hallaba en el caso de poderla ganar por prescripción (art. 894 CC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3823,11 +3823,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3854,7 +3854,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "Las cosas singulares, corporales, los derechos reales que recaigan sobre dichas cosas, la cuota de una comunidad.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3870,11 +3870,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3901,7 +3901,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, es el caso del injusto detentador, esto es, contra el que poseyendo a nombre ajeno retenga indebidamente una cosa raíz o mueble, aunque lo haga sin ánimo de señor.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3917,11 +3917,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3948,7 +3948,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "La posesión es la tenencia de una cosa determinada con ánimo de señor o dueño, sea que el dueño o el que se da por tal tenga la cosa por sí mismo, o por otra persona que la tenga en lugar y a nombre de él (art. 700 CC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3964,11 +3964,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -3995,7 +3995,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Es justo título aquel hecho o acto que es apto para atribuir en abstracto el dominio. Es real, auténtico y válido. El CC no señala qué debe entenderse por justo título, pero si regula en el art. 703 que el justo título es constitutivo o traslaticio de dominio (la doctrina agrega a los títulos declarativos de dominio). Se regulan a los títulos injustos en el art. 704 CC.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4032,11 +4032,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4063,7 +4063,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Que sea traslaticio significa que por su naturaleza es apto para transferir el dominio, en el sentido de enajenación.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4079,11 +4079,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4110,7 +4110,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "En materia posesoria, se discute la incorporación por parte del código de la prescripción como título constitutivo, pues la prescripción supone posesión, por lo que es un error considerarla justo título de la misma.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4126,11 +4126,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4157,7 +4157,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El código señala que la tradición requiere un título traslaticio de dominio, pero nada señala de los demás modos de adquirir, tratándose de la ocupación, accesión y la prescripción, que son títulos constitutivos, el título se confunde con el modo, por lo que no hay técnicamente un título.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4173,11 +4173,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4204,7 +4204,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se sostiene atendido que el título se confunde con el modo.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4220,11 +4220,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4251,7 +4251,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "La prescripción es un modo de adquirir originario, ya que provoca el nacimiento del derecho sin relación con el antecesor, es decir, el derecho nace directamente en el titular.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4267,11 +4267,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4298,7 +4298,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Son derechos reales según lo expresa el art. 577 CC, y son cauciones según lo expresa el art. 46 CC.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4321,11 +4321,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4352,7 +4352,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, el art. 1801 CC establece que determinadas cosas deben venderse por escritura pública, estas son, la de bienes raíces, servidumbres, censos, y la de una sucesión hereditaria. Sin perjuicio de que las partes igualmente podría establecer solemnidades convencionales, caso en el cual las partes podrán retractarse mientras no se cumpla dicha solemnidad o no se haya principiado la entrega de la cosa vendida (art. 1802 CC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4375,11 +4375,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4406,7 +4406,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Le corresponde al vendedor de la cosa, y consiste en hacer la tradición de la misma. La obligación de dar contiene la de entregar la cosa.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4429,11 +4429,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4460,7 +4460,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si, ello ocurrirá en la venta de cosa ajena, que es válida según lo prescribe el art. 1815 CC, caso en el cual el tradente no constituirá en dueño al comprador, ya que nadie puede transferir más derechos de los que tiene. Será poseedor regular o irregular dependiendo si tiene buena fe inicial, un justo título y la tradición si es título traslaticio de dominio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4490,11 +4490,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4521,7 +4521,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El tercero tendrá que devolver la cosa, con independencia si estaba de buena o mala fe, salvo excepciones, por ejemplo, que haya adquirido por prescripción. Ello porque la declaración de nulidad da acción reivindicatoria contra terceros poseedores.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4544,11 +4544,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4575,7 +4575,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Son derechos reales lo que tenemos sobre una cosa sin respecto a determinada persona (art. 577 CC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4591,11 +4591,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4622,7 +4622,7 @@
       "questionType": "comparison",
       "origin": "real_question",
       "expectedAnswer": "Los derechos personales se diferencia de los reales en diversos criterios:",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4638,11 +4638,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4669,7 +4669,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "El dominio (que se llama también propiedad) es el derecho real sobre una cosa corporal, para gozar y disponer de ella arbitrariamente, no siendo contra la ley o contra derecho ajeno (art. 582 CC).",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4685,11 +4685,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4716,7 +4716,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El derecho de dominio se compone de facultados o atributos, estos son el uso, goce y disposición.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4732,11 +4732,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4763,7 +4763,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "La disposición es una facultad o atributo del dominio por el cual su titular puede destruir o transformar la cosa o desprenderse del derecho.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4779,11 +4779,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4810,7 +4810,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Los límites al ejercicio del dominio son la ley y el derecho ajeno. Sin perjuicio de las limitaciones que por función social pueda limitarse la disposición material, o que por cláusulas de no enajenar se limite su facultad de disposición, entre otras.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4833,11 +4833,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4864,7 +4864,7 @@
       "questionType": "comparison",
       "origin": "real_question",
       "expectedAnswer": "Renuncia supone considerar a otro sujeto, en cambio en abandono, no se considera a nadie más.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4880,11 +4880,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4911,7 +4911,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "La enajenación implica transferir a un tercero el derecho, disposición jurídica. Es decir, la transferencia del dominio a favor de otro, o la constitución de un derecho real, ello en sentido amplio, en sentido restringido es la transferencia del dominio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4934,11 +4934,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -4965,7 +4965,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "El debido proceso es un principio y derecho de rango constitucional por el cual se establecen estándares mínimos que deben cumplirse en un proceso e investigación y que satisfaga la exigencia de ser racionales y justos.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4981,11 +4981,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5012,7 +5012,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "Si, se encuentra protegida por la acción de protección, pero solo en cuanto a la garantía del juez natural, esto es, lo que señala el art. 19 N°3 inc. 5 CPR, por el cual nadie podrá ser juzgado por comisiones especiales, sino por el tribunal que señalare la ley y que se hallare establecido por ésta con anterioridad a la perpetración del hecho.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5035,11 +5035,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5066,7 +5066,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "Es también aplicable en materia administrativa.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5082,11 +5082,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5113,7 +5113,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "La sentencia favorable del TC declara al precepto legal inaplicable para la gestión pendiente y para ese caso en particular por producir efectos inconstitucionales.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5129,11 +5129,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5160,7 +5160,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Por su origen histórico, y por las declaraciones de las actas de sesiones de la comisión de estudio de la nueva constitución.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5176,11 +5176,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5207,7 +5207,7 @@
       "questionType": "definition",
       "origin": "real_question",
       "expectedAnswer": "La libertad es un valor, principio y derecho fundamental que supone la facultad de una persona para elegir entre opciones e implica la proscripción de la esclavitud. La libertad albedrío o inicial es aquella que permite a las personas decidir entre opciones. La libertad participación es aquella que permite a las personas intervenir en la toma de decisiones del estado. La libertad exultación es aquella que permite a las personas lograr su máximo desarrollo integral.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5244,11 +5244,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5275,7 +5275,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se encuentra consagrado en el art. 19 N°23 CPR.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5291,11 +5291,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5322,7 +5322,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Primero, regula el derecho de propiedad en sus diversas especies sobre toda clase de bienes corporales e incorporales.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5338,11 +5338,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5369,7 +5369,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "La función social de la propiedad comprende los intereses generales de la nación, la seguridad nacional, la utilidad y salubridad públicas y la conservación del patrimonio ambiental.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5385,11 +5385,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5416,7 +5416,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Según su materia puede ser mandato civil, comercial, judicial, según su extensión mandato general y especial, y según sus facultades en mandato definido e indefinido.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5432,11 +5432,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5463,7 +5463,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Los contratos de garantía son aquellos que tienen por objeto asegurar el cumplimiento de una obligación principal, de manera que no puede subsistir sin ella, es decir, es un contrato accesorio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5479,11 +5479,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5510,7 +5510,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Si por regla general, las obligaciones pueden estar sujetas a modalidad, salvo algunos actos o contratos que no pueden sujetarse a ciertas modalidades, como el reconocimiento de un hijo y el matrimonio.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5526,11 +5526,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5557,7 +5557,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "En sede contractual, la culpa se presume, por lo que correspondería la prueba de la diligencia o cuidado al que ha debido emplearlo, pudiendo hacerlo acreditando algún hecho eximente de imputación, como un caso fortuito o fuerza mayor.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5573,11 +5573,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5604,7 +5604,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Se consagran los valores de la libertad, igualdad y la dignidad.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5620,11 +5620,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5651,7 +5651,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "El capítulo de bases de la institucionalidad contiene la base dogmática y los valores a partir de los cuales debe ser interpretada el resto de la preceptiva constitucional, así como el resto del ordenamiento jurídico, pues a través del criterio de interpretación axiológica, se exige que la constitución sea interpretada conforme a los principios y valores en que descansa. Por tanto, incide en la determinación del sentido y alcance consultado su contenido valórico.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5674,11 +5674,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5705,7 +5705,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Las limitaciones están dadas por la función social de la propiedad, a partir de la cual se pueden justificar diverso tipo de limitaciones.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5721,11 +5721,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5752,7 +5752,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "No es lo mismo, la expropiación constituye una privación, ya sea del dominio o alguno de sus atributos, por causa de utilidad pública o de interés nacional, calificada por el legislador.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5768,11 +5768,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5799,7 +5799,7 @@
       "questionType": "case",
       "origin": "real_question",
       "expectedAnswer": "Las acciones protectoras del dominio son la acción reivindicatorio e indirectamente las acciones posesorias, ya que el poseer es reputado dueño. Primero habría que determinar la naturaleza del bien, si es mueble o inmueble, y si es dueño, poseedor o mero tenedor de la cosa que pretende recuperar.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5822,11 +5822,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5853,7 +5853,7 @@
       "questionType": "application",
       "origin": "real_question",
       "expectedAnswer": "Los sujetos pasivos de ambas acciones son el actual poseedor, el poseedor que dejó de serlo y el injusto detentador. Sin perjuicio de las limitaciones de la acción publiciana, que no se podrá ejercer en contra del dueño, ni contra el que posea la cosa con igual o mejor derecho.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5876,11 +5876,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5907,7 +5907,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Interpretación más favorable: Este subprincipio es esencial para garantizar que, ante ambigüedades o dudas legales, siempre se privilegie la opción que mejor proteja los derechos.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5923,11 +5923,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -5954,7 +5954,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Las implicancias son que dicha norma opera como elemento de interpretación constitucional, que sirve para integrar el resto de la preceptiva constitucional y que le otorga coherencia al sistema jurídico.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5970,11 +5970,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],
@@ -6001,7 +6001,7 @@
       "questionType": "general",
       "origin": "real_question",
       "expectedAnswer": "Desde una concepción romana los principios son mandatos de optimización en la aplicación de la ley, encontrándose en un estrato medio entre la ley y las normas infra legales, a diferencia de la concepción de principios para el iusnaturalismo, para quienes los principios son superiores a la ley o para el iuspositivismo, para quienes los principios emana o se extraen de la ley.",
-      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rubrica institucional. Requiere revision manual para version definitiva.",
+      "rubricNotes": "Pauta inicial generada desde pregunta real, respuesta base y rúbrica institucional. Requiere revisión manual para versión definitiva.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -6017,11 +6017,11 @@
           "severity": "medium"
         },
         {
-          "description": "Omitir normas aplicables o mencionarlas sin explicar su relacion con la pregunta.",
+          "description": "Omitir normas aplicables o mencionarlas sin explicar su relación con la pregunta.",
           "severity": "high"
         },
         {
-          "description": "Entregar una respuesta desordenada, sin estructura de definicion, desarrollo y cierre.",
+          "description": "Entregar una respuesta desordenada, sin estructura de definición, desarrollo y cierre.",
           "severity": "medium"
         }
       ],

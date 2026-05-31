@@ -28,6 +28,7 @@ export type EvaluationResult = z.infer<typeof evaluationResultSchema>;
 
 export const evaluationRequestSchema = z.object({
   questionId: z.string().uuid(),
+  sessionId: z.string().uuid().optional(),
   answer: z.string().min(1),
   answerMode: z.enum(["text", "voice"]).default("text"),
   timeSeconds: z.number().int().positive().optional(),

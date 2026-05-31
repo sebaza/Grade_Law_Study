@@ -15,17 +15,23 @@ enum QuestionStatus {
   mastered
   needs_review
   excluded
+
+  @@map("question_status")
 }
 
 enum Difficulty {
   low
   medium
   high
+
+  @@map("difficulty")
 }
 
 enum AnswerMode {
   text
   voice
+
+  @@map("answer_mode")
 }
 
 enum PracticeMode {
@@ -37,6 +43,8 @@ enum PracticeMode {
   review
   weak_questions
   unpracticed
+
+  @@map("practice_mode")
 }
 
 enum SourceDocumentType {
@@ -44,12 +52,16 @@ enum SourceDocumentType {
   docx
   xlsx
   manual
+
+  @@map("source_document_type")
 }
 
 enum QuestionOrigin {
   real_question
   generated
   manual
+
+  @@map("question_origin")
 }
 
 model UserProfile {

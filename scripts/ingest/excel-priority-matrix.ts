@@ -36,7 +36,7 @@ function valueAsNumber(value: CellValue | null) {
   if (typeof value === "number") return value;
   const parsed = Number(valueAsString(value).replace(",", "."));
   if (Number.isNaN(parsed)) {
-    throw new Error(`Valor numerico invalido: ${String(value)}`);
+    throw new Error(`Valor num?rico inv?lido: ${String(value)}`);
   }
   return parsed;
 }
@@ -66,7 +66,7 @@ async function readRows() {
         if (columnIndex === undefined) throw new Error(`No existe la columna requerida: ${header}`);
         const value = row[columnIndex];
         if (value === null || value === undefined || value === "") {
-          throw new Error(`Fila ${index + 2}: columna ${header} esta vacia`);
+          throw new Error(`Fila ${index + 2}: columna ${header} est? vac?a`);
         }
         return value;
       };
@@ -92,46 +92,87 @@ async function main() {
   const db = getPrisma();
   const rows = await readRows();
 
-  for (const row of rows) {
-    const professor = await db.professor.upsert({
-      where: { name: row.professor },
-      create: { name: row.professor },
-      update: {},
-    });
+  const professorNames = Array.from(new Set(rows.map((row) => row.professor)));
+  const areaNames = Array.from(new Set(rows.map((row) => row.area)));
 
-    const area = await db.lawArea.upsert({
-      where: { name: row.area },
-      create: { name: row.area },
-      update: {},
-    });
+  await db.professor.createMany({
+    data: professorNames.map((name) => ({ name })),
+    skipDuplicates: true,
+  });
 
-    await db.professorTopicPriority.upsert({
-      where: {
-        professorId_areaId_subarea: {
-          professorId: professor.id,
-          areaId: area.id,
-          subarea: row.subarea,
-        },
-      },
-      create: {
-        professorId: professor.id,
-        areaId: area.id,
-        subarea: row.subarea,
-        frequency: row.frecuencia,
-        professorPercentage: row.professorPercentage,
-        syllabusAlignment: row.alineacionTemario,
-        relevance: row.relevancia,
-        priorityScore: row.scorePrioridad,
-      },
-      update: {
-        frequency: row.frecuencia,
-        professorPercentage: row.professorPercentage,
-        syllabusAlignment: row.alineacionTemario,
-        relevance: row.relevancia,
-        priorityScore: row.scorePrioridad,
-      },
-    });
-  }
+  await db.lawArea.createMany({
+    data: areaNames.map((name) => ({ name })),
+    skipDuplicates: true,
+  });
+
+  const [professors, areas] = await Promise.all([
+    db.professor.findMany({ where: { name: { in: professorNames } } }),
+    db.lawArea.findMany({ where: { name: { in: areaNames } } }),
+  ]);
+
+  const professorByName = new Map(professors.map((professor) => [professor.name, professor]));
+  const areaByName = new Map(areas.map((area) => [area.name, area]));
+
+  const priorityRows = rows.map((row) => {
+    const professor = professorByName.get(row.professor);
+    const area = areaByName.get(row.area);
+
+    if (!professor) throw new Error(`Profesor no encontrado: ${row.professor}`);
+    if (!area) throw new Error(`Area no encontrada: ${row.area}`);
+
+    return {
+      professor_id: professor.id,
+      area_id: area.id,
+      subarea: row.subarea,
+      frequency: row.frecuencia,
+      professor_percentage: row.professorPercentage,
+      syllabus_alignment: row.alineacionTemario,
+      relevance: row.relevancia,
+      priority_score: row.scorePrioridad,
+    };
+  });
+
+  await db.$executeRaw`
+    with payload as (
+      select *
+      from jsonb_to_recordset(${JSON.stringify(priorityRows)}::jsonb) as item(
+        professor_id uuid,
+        area_id uuid,
+        subarea text,
+        frequency integer,
+        professor_percentage numeric,
+        syllabus_alignment text,
+        relevance text,
+        priority_score numeric
+      )
+    )
+    insert into professor_topic_priorities (
+      professor_id,
+      area_id,
+      subarea,
+      frecuencia,
+      professor_percentage,
+      syllabus_alignment,
+      relevance,
+      priority_score
+    )
+    select
+      professor_id,
+      area_id,
+      subarea,
+      frequency,
+      professor_percentage,
+      syllabus_alignment,
+      relevance,
+      priority_score
+    from payload
+    on conflict (professor_id, area_id, subarea) do update set
+      frecuencia = excluded.frecuencia,
+      professor_percentage = excluded.professor_percentage,
+      syllabus_alignment = excluded.syllabus_alignment,
+      relevance = excluded.relevance,
+      priority_score = excluded.priority_score
+  `;
 
   console.log(`Importadas ${rows.length} prioridades desde el Excel.`);
 }

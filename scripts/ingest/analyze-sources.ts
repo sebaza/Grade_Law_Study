@@ -30,21 +30,21 @@ function normalizeText(value: unknown) {
 function normalizeNumber(value: unknown) {
   if (typeof value === "number") return value;
   const parsed = Number(normalizeText(value).replace(",", "."));
-  if (Number.isNaN(parsed)) throw new Error(`Valor numerico invalido: ${String(value)}`);
+  if (Number.isNaN(parsed)) throw new Error(`Valor num?rico inv?lido: ${String(value)}`);
   return parsed;
 }
 
 function looksLikeArea(text: string) {
-  return /^Derecho\s+[A-ZÃÃ‰ÃÃ“ÃšÃ‘a-zÃ¡Ã©Ã­Ã³ÃºÃ± ]+\.?$/.test(text);
+  return /^Derecho\s+[A-ZÁÉÍÓÚÑa-záéíóúñ ]+\.?$/.test(text);
 }
 
 function parseProfessorHeading(text: string) {
-  const match = text.match(/^(\d+)\s+([A-ZÃÃ‰ÃÃ“ÃšÃ‘][A-Za-zÃÃ‰ÃÃ“ÃšÃ‘Ã¡Ã©Ã­Ã³ÃºÃ± ]{2,60})\.?$/);
+  const match = text.match(/^(\d+)\s+([A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚÑáéíóúñ ]{2,60})\.?$/);
   return match?.[2]?.trim() ?? null;
 }
 
 function isQuestionLike(text: string) {
-  return text.includes("?") || text.startsWith("Â¿") || text.toLowerCase().startsWith("caso.");
+  return text.includes("?") || text.startsWith("¿") || text.toLowerCase().startsWith("caso.");
 }
 
 async function analyzeExcel(filePath: string) {
@@ -213,7 +213,7 @@ async function main() {
   const outputPath = path.join(outputDir, "phase2-source-analysis.json");
   await fs.writeFile(outputPath, JSON.stringify(report, null, 2), "utf8");
 
-  console.log(`Analisis generado en ${outputPath}`);
+  console.log(`An?lisis generado en ${outputPath}`);
 }
 
 main().catch((error) => {

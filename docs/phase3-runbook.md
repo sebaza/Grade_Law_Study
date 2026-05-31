@@ -21,7 +21,7 @@ Generar preguntas estudiables con:
 
 ## Importante
 
-Esta fase usa generacion heuristica local, no IA. La idea es construir una base revisable y trazable antes de pedirle a un modelo que refine respuestas o genere variantes. Conceptos primero, magia despues.
+Esta fase usa generacion heurística local, no IA. La idea es construir una base revisable y trazable antes de pedirle a un modelo que refine respuestas o genere variantes. Conceptos primero, magia despues.
 
 ## Archivos nuevos
 
@@ -44,7 +44,7 @@ Preguntas generadas: 120
 Candidatas elegibles: 266/980
 ```
 
-Distribucion esperada del banco inicial:
+Distribución esperada del banco inicial:
 
 | Profesor | Area | Preguntas |
 | --- | --- | ---: |
@@ -52,7 +52,7 @@ Distribucion esperada del banco inicial:
 | Stephanie Merlet | Derecho Civil | 35 |
 | Mauricio Figueroa | Derecho Constitucional | 16 |
 
-Esta distribucion se calcula con cuotas ponderadas por `score_prioridad` del Excel, para no caer en aleatorio puro ni dejar Constitucional afuera.
+Esta distribución se calcula con cuotas ponderadas por `score_prioridad` del Excel, para no caer en aleatorio puro ni dejar Constitucional afuera.
 
 ## Modo DB con Supabase/Postgres
 
@@ -103,6 +103,6 @@ npm run build
 ## Limitaciones conocidas
 
 - Las respuestas esperadas son iniciales; si existe respuesta base en el DOCX, se usa. Si no existe, se genera una pauta minima heuristica.
-- Los puntos clave se extraen de oraciones de la respuesta base. Esto requiere revision juridica posterior.
+- Los puntos clave se extraen de oraciones de la respuesta base. Esto requiere revisión jurídica posterior.
 - La clasificacion de submateria usa coincidencia de tokens contra el Excel, no comprension semantica profunda.
 - La Fase 4 o una fase de refinamiento con IA deberia mejorar respuestas, puntos clave y errores comunes.
