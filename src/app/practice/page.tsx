@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type PracticeQuestion = {
   id?: string;
@@ -49,6 +49,13 @@ type EvaluationResponse = {
   note?: string;
 };
 
+type TranscriptionResponse = {
+  audioPath: string;
+  transcription: string;
+  editable: boolean;
+  note: string;
+};
+
 const rubricLabels: Record<string, string> = {
   legalNorms: "Normas jurídicas",
   legalConcepts: "Conceptos técnico-jurídicos",
@@ -67,19 +74,53 @@ const practiceModeLabels = {
 } as const;
 
 type PracticeMode = keyof typeof practiceModeLabels;
+type AnswerMode = "text" | "voice";
+
+function stopMediaStream(stream: MediaStream | null) {
+  stream?.getTracks().forEach((track) => track.stop());
+}
+
+function getSupportedAudioMimeType() {
+  if (typeof MediaRecorder === "undefined") return undefined;
+  const candidates = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4", "audio/ogg;codecs=opus"];
+  return candidates.find((candidate) => MediaRecorder.isTypeSupported(candidate));
+}
 
 export default function PracticePage() {
   const [data, setData] = useState<PracticeResponse | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
+  const [answerMode, setAnswerMode] = useState<AnswerMode>("text");
   const [evaluation, setEvaluation] = useState<EvaluationResponse | null>(null);
   const [isEvaluating, setIsEvaluating] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [isTranscribing, setIsTranscribing] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [voiceMessage, setVoiceMessage] = useState("");
+  const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [audioPath, setAudioPath] = useState<string | null>(null);
+  const [transcriptionDraft, setTranscriptionDraft] = useState("");
   const [practiceSource, setPracticeSource] = useState<"real" | "demo">("real");
   const [practiceMode, setPracticeMode] = useState<PracticeMode>("random");
   const [questionStartedAt, setQuestionStartedAt] = useState(() => Date.now());
   const [filters, setFilters] = useState({ area: "", professor: "", difficulty: "" });
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<BlobPart[]>([]);
+  const mediaStreamRef = useRef<MediaStream | null>(null);
+
+  function resetAnswerState() {
+    setAnswer("");
+    setEvaluation(null);
+    setVoiceMessage("");
+    setTranscriptionDraft("");
+    setAudioPath(null);
+    setAudioUrl((currentUrl) => {
+      if (currentUrl) URL.revokeObjectURL(currentUrl);
+      return null;
+    });
+    setQuestionStartedAt(Date.now());
+  }
 
   useEffect(() => {
     const controller = new AbortController();
@@ -132,6 +173,13 @@ export default function PracticePage() {
       setCurrentIndex(0);
       setAnswer("");
       setEvaluation(null);
+      setVoiceMessage("");
+      setTranscriptionDraft("");
+      setAudioPath(null);
+      setAudioUrl((currentUrl) => {
+        if (currentUrl) URL.revokeObjectURL(currentUrl);
+        return null;
+      });
       setQuestionStartedAt(Date.now());
       setIsLoading(false);
     }
@@ -145,11 +193,136 @@ export default function PracticePage() {
     return () => controller.abort();
   }, [filters, practiceMode, practiceSource]);
 
+  useEffect(() => {
+    return () => {
+      stopMediaStream(mediaStreamRef.current);
+      if (audioUrl) URL.revokeObjectURL(audioUrl);
+    };
+  }, [audioUrl]);
+
   const currentQuestion = data?.questions[currentIndex] ?? null;
   const progress = useMemo(() => {
     if (!data || data.questions.length === 0) return 0;
     return Math.round(((currentIndex + 1) / data.questions.length) * 100);
   }, [currentIndex, data]);
+
+  async function transcribeRecordedAudio(blob: Blob) {
+    setIsTranscribing(true);
+    setVoiceMessage("Transcribiendo audio en español...");
+    setErrorMessage("");
+
+    try {
+      const extension = blob.type.includes("mp4") ? "mp4" : blob.type.includes("ogg") ? "ogg" : "webm";
+      const formData = new FormData();
+      formData.append("audio", new File([blob], `respuesta-${Date.now()}.${extension}`, { type: blob.type || "audio/webm" }));
+
+      const response = await fetch("/api/transcriptions", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => null) as { error?: string } | null;
+        setIsTranscribing(false);
+        setVoiceMessage("");
+        setErrorMessage(payload?.error ?? "No se pudo transcribir el audio.");
+        return;
+      }
+
+      const payload = await response.json() as TranscriptionResponse;
+      setAudioPath(payload.audioPath);
+      setTranscriptionDraft(payload.transcription);
+      setAnswer(payload.transcription);
+      setVoiceMessage(payload.note);
+      setIsTranscribing(false);
+    } catch {
+      setIsTranscribing(false);
+      setVoiceMessage("");
+      setErrorMessage("No se pudo transcribir el audio.");
+    }
+  }
+
+  async function startRecording() {
+    if (practiceSource !== "real") {
+      setErrorMessage("La respuesta por voz requiere práctica real e inicio de sesión.");
+      return;
+    }
+
+    if (!navigator.mediaDevices?.getUserMedia) {
+      setErrorMessage("Este navegador no permite grabar audio desde la página.");
+      return;
+    }
+
+    if (typeof MediaRecorder === "undefined") {
+      setErrorMessage("Este navegador no soporta MediaRecorder para grabar respuestas.");
+      return;
+    }
+
+    setErrorMessage("");
+    setVoiceMessage("");
+    setAudioPath(null);
+    setTranscriptionDraft("");
+    setAudioUrl((currentUrl) => {
+      if (currentUrl) URL.revokeObjectURL(currentUrl);
+      return null;
+    });
+
+    let stream: MediaStream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+        },
+      });
+    } catch {
+      setErrorMessage("No se pudo acceder al micrófono. Revisá permisos del navegador.");
+      return;
+    }
+
+    const mimeType = getSupportedAudioMimeType();
+    const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
+    mediaStreamRef.current = stream;
+    mediaRecorderRef.current = recorder;
+    audioChunksRef.current = [];
+
+    recorder.ondataavailable = (event) => {
+      if (event.data.size > 0) audioChunksRef.current.push(event.data);
+    };
+
+    recorder.onstop = () => {
+      const blob = new Blob(audioChunksRef.current, { type: recorder.mimeType || "audio/webm" });
+      stopMediaStream(stream);
+      mediaStreamRef.current = null;
+      mediaRecorderRef.current = null;
+      setIsRecording(false);
+
+      if (blob.size <= 0) {
+        setErrorMessage("La grabación quedó vacía. Probá de nuevo acercándote al micrófono.");
+        return;
+      }
+
+      setAudioUrl(URL.createObjectURL(blob));
+      void transcribeRecordedAudio(blob);
+    };
+
+    recorder.start();
+    setAnswerMode("voice");
+    setIsRecording(true);
+    setVoiceMessage("Grabando... hablá claro y dejá pausas breves entre ideas.");
+  }
+
+  function stopRecording() {
+    if (mediaRecorderRef.current?.state === "recording") {
+      mediaRecorderRef.current.stop();
+    }
+  }
+
+  function clearVoiceAnswer() {
+    resetAnswerState();
+    setAnswerMode("text");
+  }
 
   async function submitAnswer() {
     if (!currentQuestion || !answer.trim()) return;
@@ -168,7 +341,9 @@ export default function PracticePage() {
           questionId: currentQuestion.id,
           sessionId: data?.sessionId,
           answer,
-          answerMode: "text",
+          answerMode,
+          transcription: answerMode === "voice" ? transcriptionDraft || answer : undefined,
+          audioPath: answerMode === "voice" ? audioPath ?? undefined : undefined,
           timeSeconds: Math.max(1, Math.round((Date.now() - questionStartedAt) / 1000)),
         };
 
@@ -193,15 +368,11 @@ export default function PracticePage() {
   function nextQuestion() {
     if (!data) return;
     setCurrentIndex((index) => Math.min(index + 1, data.questions.length - 1));
-    setAnswer("");
-    setEvaluation(null);
-    setQuestionStartedAt(Date.now());
+    resetAnswerState();
   }
 
   function repeatQuestion() {
-    setAnswer("");
-    setEvaluation(null);
-    setQuestionStartedAt(Date.now());
+    resetAnswerState();
   }
 
   async function updateQuestionState(status: "mastered" | "needs_review" | "excluded") {
@@ -321,16 +492,45 @@ export default function PracticePage() {
             </article>
 
             <article className="practice-card-large answer-panel">
+              <div className="answer-mode-tabs" aria-label="Modo de respuesta">
+                <button className={answerMode === "text" ? "active" : ""} onClick={() => setAnswerMode("text")}>Texto</button>
+                <button className={answerMode === "voice" ? "active" : ""} onClick={() => setAnswerMode("voice")}>Voz</button>
+              </div>
+
+              {answerMode === "voice" && (
+                <div className="voice-panel">
+                  <div>
+                    <strong>Respuesta oral</strong>
+                    <p>Grabá tu respuesta, esperá la transcripción y corregí el texto antes de evaluar.</p>
+                  </div>
+                  <div className="practice-actions compact">
+                    {!isRecording
+                      ? <button onClick={startRecording} disabled={isTranscribing || practiceSource !== "real"}>Grabar respuesta</button>
+                      : <button onClick={stopRecording}>Detener grabación</button>}
+                    <button className="secondary" onClick={clearVoiceAnswer} disabled={isRecording || isTranscribing}>Limpiar audio</button>
+                  </div>
+                  {audioUrl && <audio controls src={audioUrl} />}
+                  {isTranscribing && <p>Transcribiendo con OpenAI...</p>}
+                  {voiceMessage && <p>{voiceMessage}</p>}
+                  {practiceSource !== "real" && <p>La transcripción por voz requiere modo real e inicio de sesión.</p>}
+                </div>
+              )}
+
               <label>
-                Tu respuesta
+                {answerMode === "voice" ? "Transcripción editable" : "Tu respuesta"}
                 <textarea
                   value={answer}
-                  onChange={(event) => setAnswer(event.target.value)}
-                  placeholder="Respondé como si estuvieras frente a la comisión: define, desarrolla, aplica y cerrá con orden."
+                  onChange={(event) => {
+                    setAnswer(event.target.value);
+                    if (answerMode === "voice") setTranscriptionDraft(event.target.value);
+                  }}
+                  placeholder={answerMode === "voice"
+                    ? "Cuando termine la transcripción, corregí aquí errores de audio antes de evaluar."
+                    : "Respondé como si estuvieras frente a la comisión: define, desarrolla, aplica y cerrá con orden."}
                 />
               </label>
               <div className="practice-actions">
-                <button onClick={submitAnswer} disabled={isEvaluating || !answer.trim()}>
+                <button onClick={submitAnswer} disabled={isEvaluating || isRecording || isTranscribing || !answer.trim()}>
                   {isEvaluating ? "Evaluando..." : practiceSource === "real" ? "Evaluar y guardar intento" : "Enviar respuesta demo"}
                 </button>
                 <button className="secondary" onClick={repeatQuestion}>Repetir</button>

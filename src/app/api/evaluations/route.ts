@@ -67,6 +67,8 @@ export async function POST(request: Request) {
       questionId: question.id,
       answerMode: parsed.data.answerMode,
       rawAnswer: parsed.data.answer,
+      transcription: parsed.data.transcription ?? (parsed.data.answerMode === "voice" ? parsed.data.answer : undefined),
+      audioPath: parsed.data.audioPath,
       score: evaluation.percentage,
       rubricScore: evaluation.rubric,
       timeSeconds: parsed.data.timeSeconds,

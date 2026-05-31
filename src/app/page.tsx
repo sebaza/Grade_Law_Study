@@ -35,8 +35,8 @@ export default function HomePage() {
           <a className="nav-item active" href="#">⌂ Inicio</a>
           <a className="nav-item" href="#">☰ Preguntas</a>
           <Link className="nav-item" href="/practice">▷ Practicar</Link>
-          <a className="nav-item" href="#">↺ Historial</a>
-          <a className="nav-item" href="#">▥ Estadísticas</a>
+          <Link className="nav-item" href="/history">↺ Historial</Link>
+          <Link className="nav-item" href="/history">▥ Estadísticas</Link>
           <Link className="nav-item" href="/auth/login">◇ Ingresar</Link>
         </nav>
 

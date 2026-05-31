@@ -93,3 +93,31 @@ http://localhost:3000/practice
 ```
 
 Ver detalles en `docs/phase5-runbook.md`.
+
+## Fase 6 - Voz y transcripción
+
+Respuesta oral con grabación en navegador, Supabase Storage y transcripción OpenAI:
+
+```powershell
+npm run dev
+```
+
+Abrir práctica real, cambiar a modo `Voz`, grabar, revisar transcripción y evaluar.
+
+Ver detalles en `docs/phase6-runbook.md`.
+
+## Fase 7 - Historial y estadísticas
+
+Dashboard histórico con avance, promedio, materias débiles, preguntas difíciles e intentos recientes:
+
+```powershell
+npm run dev
+```
+
+Abrir:
+
+```txt
+http://localhost:3000/history
+```
+
+Ver detalles en `docs/phase7-runbook.md`.

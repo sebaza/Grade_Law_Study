@@ -31,5 +31,7 @@ export const evaluationRequestSchema = z.object({
   sessionId: z.string().uuid().optional(),
   answer: z.string().min(1),
   answerMode: z.enum(["text", "voice"]).default("text"),
+  transcription: z.string().optional(),
+  audioPath: z.string().optional(),
   timeSeconds: z.number().int().positive().optional(),
 });
