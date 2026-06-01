@@ -52,7 +52,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "El audio supera el máximo permitido de 25 MB" }, { status: 413 });
   }
 
-  if (file.type && !ALLOWED_AUDIO_TYPES.has(file.type)) {
+  const baseType = file.type ? file.type.split(";")[0].trim() : "";
+  if (baseType && !ALLOWED_AUDIO_TYPES.has(baseType)) {
     return NextResponse.json({ error: `Formato de audio no soportado: ${file.type}` }, { status: 400 });
   }
 

@@ -97,6 +97,7 @@ export default function PracticePage() {
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const [voiceMessage, setVoiceMessage] = useState("");
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [audioPath, setAudioPath] = useState<string | null>(null);
@@ -113,6 +114,7 @@ export default function PracticePage() {
     setAnswer("");
     setEvaluation(null);
     setVoiceMessage("");
+    setSuccessMessage("");
     setTranscriptionDraft("");
     setAudioPath(null);
     setAudioUrl((currentUrl) => {
@@ -396,7 +398,7 @@ export default function PracticePage() {
       return;
     }
 
-    setErrorMessage(status === "mastered"
+    setSuccessMessage(status === "mastered"
       ? "Pregunta marcada como dominada."
       : status === "needs_review"
         ? "Pregunta marcada para repaso."
@@ -414,8 +416,8 @@ export default function PracticePage() {
         </p>
 
         <div className="mode-switch" aria-label="Tipo de práctica">
-          <button className={practiceSource === "real" ? "active" : ""} onClick={() => setPracticeSource("real")}>Real</button>
-          <button className={practiceSource === "demo" ? "active" : ""} onClick={() => setPracticeSource("demo")}>Demo</button>
+          <button type="button" className={practiceSource === "real" ? "active" : ""} onClick={() => setPracticeSource("real")}>Real</button>
+          <button type="button" className={practiceSource === "demo" ? "active" : ""} onClick={() => setPracticeSource("demo")}>Demo</button>
         </div>
 
         {errorMessage && (
@@ -493,8 +495,15 @@ export default function PracticePage() {
 
             <article className="practice-card-large answer-panel">
               <div className="answer-mode-tabs" aria-label="Modo de respuesta">
-                <button className={answerMode === "text" ? "active" : ""} onClick={() => setAnswerMode("text")}>Texto</button>
-                <button className={answerMode === "voice" ? "active" : ""} onClick={() => setAnswerMode("voice")}>Voz</button>
+                <button
+                  type="button"
+                  className={answerMode === "text" ? "active" : ""}
+                  onClick={() => {
+                    if (isRecording) stopRecording();
+                    setAnswerMode("text");
+                  }}
+                >Texto</button>
+                <button type="button" className={answerMode === "voice" ? "active" : ""} onClick={() => setAnswerMode("voice")}>Voz</button>
               </div>
 
               {answerMode === "voice" && (
@@ -505,9 +514,9 @@ export default function PracticePage() {
                   </div>
                   <div className="practice-actions compact">
                     {!isRecording
-                      ? <button onClick={startRecording} disabled={isTranscribing || practiceSource !== "real"}>Grabar respuesta</button>
-                      : <button onClick={stopRecording}>Detener grabación</button>}
-                    <button className="secondary" onClick={clearVoiceAnswer} disabled={isRecording || isTranscribing}>Limpiar audio</button>
+                      ? <button type="button" onClick={startRecording} disabled={isTranscribing || practiceSource !== "real"}>Grabar respuesta</button>
+                      : <button type="button" onClick={stopRecording}>Detener grabación</button>}
+                    <button type="button" className="secondary" onClick={clearVoiceAnswer} disabled={isRecording || isTranscribing}>Limpiar audio</button>
                   </div>
                   {audioUrl && <audio controls src={audioUrl} />}
                   {isTranscribing && <p>Transcribiendo con OpenAI...</p>}
@@ -530,17 +539,20 @@ export default function PracticePage() {
                 />
               </label>
               <div className="practice-actions">
-                <button onClick={submitAnswer} disabled={isEvaluating || isRecording || isTranscribing || !answer.trim()}>
+                <button type="button" onClick={submitAnswer} disabled={isEvaluating || isRecording || isTranscribing || !answer.trim()}>
                   {isEvaluating ? "Evaluando..." : practiceSource === "real" ? "Evaluar y guardar intento" : "Enviar respuesta demo"}
                 </button>
-                <button className="secondary" onClick={repeatQuestion}>Repetir</button>
-                <button className="secondary" onClick={nextQuestion}>Siguiente</button>
+                <button type="button" className="secondary" onClick={repeatQuestion}>Repetir</button>
+                <button type="button" className="secondary" onClick={nextQuestion}>Siguiente</button>
               </div>
+              {successMessage && (
+                <div className="notice success">{successMessage}</div>
+              )}
               {practiceSource === "real" && (
                 <div className="practice-actions compact">
-                  <button className="secondary" onClick={() => updateQuestionState("mastered")}>Marcar dominada</button>
-                  <button className="secondary" onClick={() => updateQuestionState("needs_review")}>Mandar a repaso</button>
-                  <button className="secondary danger" onClick={() => updateQuestionState("excluded")}>Excluir</button>
+                  <button type="button" className="secondary" onClick={() => { setSuccessMessage(""); updateQuestionState("mastered"); }}>Marcar dominada</button>
+                  <button type="button" className="secondary" onClick={() => { setSuccessMessage(""); updateQuestionState("needs_review"); }}>Mandar a repaso</button>
+                  <button type="button" className="secondary danger" onClick={() => { setSuccessMessage(""); updateQuestionState("excluded"); }}>Excluir</button>
                 </div>
               )}
             </article>
