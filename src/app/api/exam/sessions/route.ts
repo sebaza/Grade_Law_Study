@@ -6,7 +6,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 const examSessionRequestSchema = z.object({
   limit: z.number().int().min(1).max(12).default(3),
-  perQuestionSeconds: z.number().int().min(60).max(900).default(300),
+  perQuestionSeconds: z.number().int().min(60).max(900).default(900),
   strategy: z.enum(["balanced", "priority", "weak"]).default("balanced"),
   filters: z
     .object({

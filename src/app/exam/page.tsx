@@ -126,7 +126,7 @@ export default function ExamPage() {
   const [answerMode, setAnswerMode] = useState<AnswerMode>("text");
   const [evaluations, setEvaluations] = useState<Record<string, EvaluationResponse>>({});
   const [finalResult, setFinalResult] = useState<FinishResponse | null>(null);
-  const [secondsLeft, setSecondsLeft] = useState(300);
+  const [secondsLeft, setSecondsLeft] = useState(900);
   const [questionStartedAt, setQuestionStartedAt] = useState(() => Date.now());
   const [isStarting, setIsStarting] = useState(false);
   const [isEvaluating, setIsEvaluating] = useState(false);
@@ -140,7 +140,7 @@ export default function ExamPage() {
   const [transcriptionDraft, setTranscriptionDraft] = useState("");
   const [settings, setSettings] = useState({
     limit: 3,
-    perQuestionSeconds: 300,
+    perQuestionSeconds: 900,
     strategy: "balanced" as keyof typeof strategyLabels,
     difficulty: "",
     professor: "",

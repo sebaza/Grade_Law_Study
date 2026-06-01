@@ -61,7 +61,7 @@ Flujo recomendado:
 
 1. Iniciar sesión.
 2. Entrar a `/exam`.
-3. Configurar 3 preguntas y 5 minutos por pregunta.
+3. Configurar 3 preguntas y 15 minutos por pregunta.
 4. Iniciar simulacro.
 5. Responder por texto o voz.
 6. Enviar cada respuesta.
