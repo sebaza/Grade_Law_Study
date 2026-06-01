@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { ensureUserProfile } from "@/lib/auth/user-profile";
 import { getPrisma } from "@/lib/db/prisma";
+import { getCachedBaseQuestions, getCachedFacets } from "@/lib/practice/server-cache";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 const sessionRequestSchema = z.object({
@@ -39,43 +40,44 @@ export async function POST(request: Request) {
 
   const db = getPrisma();
   const { filters, limit, mode } = parsed.data;
-  const take = mode === "random" ? Math.min(limit * 5, 80) : limit;
 
-  const questions = await db.question.findMany({
-    where: {
-      isActive: true,
-      area: filters.area ? { name: filters.area } : undefined,
-      difficulty: filters.difficulty,
-      professors: filters.professor ? { some: { professor: { name: filters.professor } } } : undefined,
-      NOT: {
-        states: {
-          some: {
-            userId: data.user.id,
-            isExcluded: true,
-          },
-        },
-      },
-      states: mode === "review"
-        ? { some: { userId: data.user.id, status: "needs_review" } }
-        : mode === "weak_questions"
-          ? { some: { userId: data.user.id, averageScore: { lt: 60 }, attemptCount: { gt: 0 } } }
-          : mode === "unpracticed"
-            ? { none: { userId: data.user.id } }
-            : undefined,
+  // Cached: base questions shared across all users (no user state, 5-min cache)
+  const [baseQuestions, facets] = await Promise.all([
+    getCachedBaseQuestions(filters.area ?? "", filters.professor ?? "", filters.difficulty ?? ""),
+    getCachedFacets(),
+  ]);
+
+  // Dynamic: lightweight user-state lookup for these question IDs only
+  const questionIds = baseQuestions.map((q) => q.id);
+  const userStates = await db.studentQuestionState.findMany({
+    where: { userId: data.user.id, questionId: { in: questionIds } },
+    select: {
+      questionId: true,
+      status: true,
+      isExcluded: true,
+      attemptCount: true,
+      bestScore: true,
+      averageScore: true,
     },
-    include: {
-      area: true,
-      subject: true,
-      subsubject: true,
-      professors: { include: { professor: true } },
-      states: { where: { userId: data.user.id }, take: 1 },
-      _count: { select: { keyPoints: true } },
-    },
-    orderBy: [{ priorityScore: "desc" }, { estimatedProbability: "desc" }],
-    take,
   });
+  const stateByQuestionId = new Map(userStates.map((s) => [s.questionId, s]));
 
-  const selected = (mode === "random" ? shuffle(questions).slice(0, limit) : questions).slice(0, limit);
+  // Filter and apply mode-specific rules in memory (no extra DB round-trip)
+  let eligible = baseQuestions.filter((q) => !stateByQuestionId.get(q.id)?.isExcluded);
+
+  if (mode === "review") {
+    eligible = eligible.filter((q) => stateByQuestionId.get(q.id)?.status === "needs_review");
+  } else if (mode === "weak_questions") {
+    eligible = eligible.filter((q) => {
+      const s = stateByQuestionId.get(q.id);
+      return s && Number(s.averageScore) < 60 && s.attemptCount > 0;
+    });
+  } else if (mode === "unpracticed") {
+    eligible = eligible.filter((q) => !stateByQuestionId.has(q.id));
+  }
+
+  const pool = mode === "random" ? shuffle(eligible) : eligible;
+  const selected = pool.slice(0, limit);
 
   const session = await db.practiceSession.create({
     data: {
@@ -87,55 +89,45 @@ export async function POST(request: Request) {
   });
 
   await Promise.all(
-    selected.map((question) =>
-      db.studentQuestionState.upsert({
-        where: {
-          userId_questionId: {
-            userId: data.user.id,
-            questionId: question.id,
-          },
-        },
-        create: {
-          userId: data.user.id,
-          questionId: question.id,
-          status: "in_practice",
-        },
-        update: question.states[0]?.status === "pending" ? { status: "in_practice" } : {},
-      }),
-    ),
+    selected.map((question) => {
+      const currentStatus = stateByQuestionId.get(question.id)?.status;
+      return db.studentQuestionState.upsert({
+        where: { userId_questionId: { userId: data.user.id, questionId: question.id } },
+        create: { userId: data.user.id, questionId: question.id, status: "in_practice" },
+        update: currentStatus === "pending" ? { status: "in_practice" } : {},
+      });
+    }),
   );
-
-  const [areas, professors] = await Promise.all([
-    db.lawArea.findMany({ orderBy: { name: "asc" }, select: { name: true } }),
-    db.professor.findMany({ orderBy: { name: "asc" }, select: { name: true } }),
-  ]);
 
   return NextResponse.json({
     mode: "real",
     sessionId: session.id,
     count: selected.length,
     facets: {
-      areas: areas.map((area) => area.name),
-      professors: professors.map((professor) => professor.name),
+      areas: facets.areas,
+      professors: facets.professors,
       difficulties: ["low", "medium", "high"],
     },
-    questions: selected.map((question) => ({
-      id: question.id,
-      sourceReference: question.sourceReference,
-      statement: question.statement,
-      areaName: question.area.name,
-      subjectName: question.subject?.name ?? "Sin materia",
-      subsubjectName: question.subsubject?.name ?? "Sin submateria",
-      professorName: question.professors.map((link) => link.professor.name).join(", ") || "Sin profesor",
-      difficulty: question.difficulty,
-      estimatedProbability: Number(question.estimatedProbability),
-      priorityScore: Number(question.priorityScore),
-      questionType: question.questionType ?? "general",
-      keyPointCount: question._count.keyPoints,
-      status: question.states[0]?.status ?? "pending",
-      isExcluded: question.states[0]?.isExcluded ?? false,
-      attemptCount: question.states[0]?.attemptCount ?? 0,
-      bestScore: Number(question.states[0]?.bestScore ?? 0),
-    })),
+    questions: selected.map((q) => {
+      const state = stateByQuestionId.get(q.id);
+      return {
+        id: q.id,
+        sourceReference: q.sourceReference,
+        statement: q.statement,
+        areaName: q.areaName,
+        subjectName: q.subjectName,
+        subsubjectName: q.subsubjectName,
+        professorName: q.professorNames.join(", ") || "Sin profesor",
+        difficulty: q.difficulty,
+        estimatedProbability: q.estimatedProbability,
+        priorityScore: q.priorityScore,
+        questionType: q.questionType,
+        keyPointCount: q.keyPointCount,
+        status: state?.status ?? "pending",
+        isExcluded: state?.isExcluded ?? false,
+        attemptCount: state?.attemptCount ?? 0,
+        bestScore: Number(state?.bestScore ?? 0),
+      };
+    }),
   });
 }
