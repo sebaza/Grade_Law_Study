@@ -72,14 +72,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: upload.error.message }, { status: 500 });
   }
 
-  const transcription = await transcribeAudio(new File([audioBytes], `answer.${extension}`, { type: contentType }))
-    .catch((error: unknown) => {
-      console.error("Audio transcription failed", error);
-      return null;
-    });
-
-  if (!transcription) {
-    return NextResponse.json({ error: "No se pudo transcribir el audio" }, { status: 502 });
+  let transcription;
+  try {
+    transcription = await transcribeAudio(new File([audioBytes], `answer.${extension}`, { type: contentType }));
+  } catch (error: unknown) {
+    const reason = error instanceof Error ? error.message : String(error);
+    console.error("Audio transcription failed", error);
+    return NextResponse.json({ error: `Falló la transcripción con OpenAI: ${reason}` }, { status: 502 });
   }
 
   return NextResponse.json({
