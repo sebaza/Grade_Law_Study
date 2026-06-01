@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "npm run typecheck && npm run lint",
+    "env:check": "tsx scripts/validate-env.ts",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "ingest:excel": "tsx scripts/ingest/excel-priority-matrix.ts",

@@ -33,8 +33,9 @@ export default function HomePage() {
 
         <nav className="nav" aria-label="Navegación principal">
           <a className="nav-item active" href="#">⌂ Inicio</a>
-          <a className="nav-item" href="#">☰ Preguntas</a>
+          <Link className="nav-item" href="/admin/questions">☰ Banco</Link>
           <Link className="nav-item" href="/practice">▷ Practicar</Link>
+          <Link className="nav-item" href="/exam">◉ Simulacro</Link>
           <Link className="nav-item" href="/history">↺ Historial</Link>
           <Link className="nav-item" href="/history">▥ Estadísticas</Link>
           <Link className="nav-item" href="/auth/login">◇ Ingresar</Link>

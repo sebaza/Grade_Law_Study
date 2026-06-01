@@ -19,6 +19,7 @@ No ejecutar `build` después de cambios salvo que el usuario lo pida expresament
 
 ```powershell
 npm run db:generate
+npm run env:check
 npm test
 npm run build
 npm run dev
@@ -121,3 +122,59 @@ http://localhost:3000/history
 ```
 
 Ver detalles en `docs/phase7-runbook.md`.
+
+## Fase 8 - Banco editable y revisión manual
+
+Panel protegido para mantener preguntas, pautas, puntos clave, errores comunes, profesores y estado activo/archivado:
+
+```powershell
+npm run dev
+```
+
+Abrir:
+
+```txt
+http://localhost:3000/admin/questions
+```
+
+Para restringir el panel en despliegue:
+
+```env
+ADMIN_EMAILS=correo1@dominio.cl,correo2@dominio.cl
+```
+
+Ver detalles en `docs/phase8-runbook.md`.
+
+## Fase 9 - Modo simulacro
+
+Simulacro de examen con temporizador, respuestas por texto o voz, evaluación por rúbrica y veredicto final:
+
+```powershell
+npm run dev
+```
+
+Abrir:
+
+```txt
+http://localhost:3000/exam
+```
+
+Ver detalles en `docs/phase9-runbook.md`.
+
+## Fase 10 - Cierre de MVP y producción
+
+Checklist final para Vercel + Supabase + OpenAI, validación de entorno y healthcheck:
+
+```powershell
+npm run env:check
+npm test
+npx prisma validate
+```
+
+Healthcheck:
+
+```txt
+http://localhost:3000/api/health
+```
+
+Ver detalles en `docs/phase10-runbook.md`.

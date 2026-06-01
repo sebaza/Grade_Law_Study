@@ -88,3 +88,45 @@ Incluye:
 - Respuesta oral.
 - Evaluación final por puntaje de rúbrica.
 - Resultado tipo competente/no competente.
+
+## Fase 8 - Banco editable y revisión manual
+
+Objetivo: mantener el banco de preguntas sin depender de scripts.
+
+Incluye:
+
+- Panel protegido para preguntas.
+- Edición de enunciados y metadata.
+- Edición de respuesta esperada.
+- Edición de puntos clave.
+- Edición de errores comunes.
+- Asociación de profesores.
+- Archivo/reactivación sin borrar historial.
+
+## Fase 9 - Modo simulacro
+
+Objetivo: entrenar una ronda tipo examen con presión de tiempo y veredicto final.
+
+Incluye:
+
+- Selección de preguntas por estrategia.
+- Temporizador por pregunta.
+- Respuesta escrita u oral.
+- Evaluación automática por rúbrica.
+- Cierre de sesión de simulacro.
+- Resultado tipo competente/no competente.
+- Recomendación de repaso según desempeño.
+
+## Fase 10 - Cierre de MVP y producción
+
+Objetivo: dejar la plataforma lista para revisión final y despliegue.
+
+Incluye:
+
+- Validación de variables de entorno.
+- Healthcheck de entorno y base de datos.
+- Checklist Vercel.
+- Checklist Supabase.
+- Checklist funcional del MVP.
+- Riesgos conocidos antes de producción.
+- Recomendaciones para la siguiente versión.
