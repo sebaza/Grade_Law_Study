@@ -60,7 +60,7 @@ export async function POST(request: Request) {
   const extension = extensionFromFile(file);
   const storagePath = `${data.user.id}/${crypto.randomUUID()}.${extension}`;
   const audioBytes = await file.arrayBuffer();
-  const contentType = file.type || "audio/webm";
+  const contentType = baseType || "audio/webm";
   const admin = getSupabaseAdminClient();
 
   const upload = await admin.storage.from("answer-audios").upload(storagePath, audioBytes, {

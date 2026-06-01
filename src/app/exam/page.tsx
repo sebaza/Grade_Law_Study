@@ -243,8 +243,7 @@ export default function ExamPage() {
 
       if (!response.ok) {
         const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-        setVoiceMessage("");
-        setErrorMessage(payload?.error ?? "No se pudo transcribir el audio.");
+        setVoiceMessage(`Error al transcribir: ${payload?.error ?? "No se pudo transcribir el audio. Intentá de nuevo."}`);
         setIsTranscribing(false);
         return;
       }
@@ -256,8 +255,7 @@ export default function ExamPage() {
       setVoiceMessage("Transcripción lista. Revisala antes de enviar, como corresponde.");
       setIsTranscribing(false);
     } catch {
-      setVoiceMessage("");
-      setErrorMessage("No se pudo transcribir el audio.");
+      setVoiceMessage("Error al transcribir: no se pudo conectar. Intentá de nuevo.");
       setIsTranscribing(false);
     }
   }

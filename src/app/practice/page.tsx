@@ -226,8 +226,7 @@ export default function PracticePage() {
       if (!response.ok) {
         const payload = await response.json().catch(() => null) as { error?: string } | null;
         setIsTranscribing(false);
-        setVoiceMessage("");
-        setErrorMessage(payload?.error ?? "No se pudo transcribir el audio.");
+        setVoiceMessage(`Error al transcribir: ${payload?.error ?? "No se pudo transcribir el audio. Intentá de nuevo."}`);
         return;
       }
 
@@ -239,8 +238,7 @@ export default function PracticePage() {
       setIsTranscribing(false);
     } catch {
       setIsTranscribing(false);
-      setVoiceMessage("");
-      setErrorMessage("No se pudo transcribir el audio.");
+      setVoiceMessage("Error al transcribir: no se pudo conectar. Intentá de nuevo.");
     }
   }
 
