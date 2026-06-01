@@ -86,22 +86,24 @@ export async function POST(request: Request) {
     },
   });
 
-  for (const question of selected) {
-    await db.studentQuestionState.upsert({
-      where: {
-        userId_questionId: {
+  await Promise.all(
+    selected.map((question) =>
+      db.studentQuestionState.upsert({
+        where: {
+          userId_questionId: {
+            userId: data.user.id,
+            questionId: question.id,
+          },
+        },
+        create: {
           userId: data.user.id,
           questionId: question.id,
+          status: "in_practice",
         },
-      },
-      create: {
-        userId: data.user.id,
-        questionId: question.id,
-        status: "in_practice",
-      },
-      update: question.states[0]?.status === "pending" ? { status: "in_practice" } : {},
-    });
-  }
+        update: question.states[0]?.status === "pending" ? { status: "in_practice" } : {},
+      }),
+    ),
+  );
 
   const [areas, professors] = await Promise.all([
     db.lawArea.findMany({ orderBy: { name: "asc" }, select: { name: true } }),

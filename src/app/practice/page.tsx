@@ -465,7 +465,9 @@ export default function PracticePage() {
 
         {!isLoading && !currentQuestion && (
           <div className="practice-card-large">
-            No hay preguntas para estos filtros. Probá con otro modo o sacá algún filtro.
+            {errorMessage
+              ? errorMessage
+              : "No hay preguntas para estos filtros. Probá con otro modo o sacá algún filtro."}
           </div>
         )}
 
