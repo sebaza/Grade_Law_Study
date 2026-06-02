@@ -16,7 +16,7 @@ function isThemeId(value: string | null): value is ThemeId {
   return themes.some((theme) => theme.id === value);
 }
 
-export function ThemeToggle() {
+export function ThemeToggle({ inline = false }: { inline?: boolean }) {
   const [theme, setTheme] = useState<ThemeId>(() => {
     if (typeof window === "undefined") return "classic";
 
@@ -34,7 +34,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="theme-toggle" aria-label="Selector de tema">
+    <div className={inline ? "theme-toggle-inline" : "theme-toggle"} aria-label="Selector de tema">
       <span>Tema</span>
       <div>
         {themes.map((item) => (

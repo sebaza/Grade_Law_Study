@@ -1,46 +1,84 @@
+/* ── Clásico: crema cálida + tinta marina + vino burdeos ────
+   Teoría: análoga (rojo-violeta ↔ azul-violeta), contraste
+   de temperatura deliberado (crema cálida vs. tinta fría).
+   Fix: --muted pasa a violeta-gris cálido para "puente" entre
+   tinta marina y acento vino; --blue-soft → lavanda suave. */
 :root {
-  --background: #f7f5f2;
+  --background: #f7f4f0;
   --surface: #ffffff;
-  --surface-soft: #fbf8f7;
+  --surface-soft: #faf6f3;
   --ink: #111b3f;
-  --muted: #64708a;
-  --border: #e7e1dc;
-  --accent: #8a1538;
-  --accent-dark: #6f0f2c;
-  --green: #668b79;
-  --amber: #d49b43;
-  --blue-soft: #e9eff8;
-  --shadow: 0 18px 45px rgba(17, 27, 63, 0.08);
+  --muted: #7a6b7e;
+  --border: #ece3da;
+  --accent: #8c1a3c;
+  --accent-dark: #6e0f2c;
+  --green: #5a8c6e;
+  --amber: #c88c28;
+  --blue-soft: #ede8f2;
+  --shadow: 0 18px 45px rgba(17, 27, 63, 0.09);
 }
 
+/* ── Bosque: verdes análogos + complemento tierra/ámbar ─────
+   Teoría: análoga (verde-amarillo ↔ verde-azul) + toque
+   complementario (ámbar terroso). Fix: surface levemente
+   tintado para coherencia; accent más saturado; muted oliva-
+   gris (diferenciado del accent); border más definido. */
 :root[data-theme="forest"] {
-  --background: #f3f7f0;
-  --surface: #ffffff;
-  --surface-soft: #f8fbf5;
-  --ink: #10251d;
-  --muted: #5c7266;
-  --border: #dce8d8;
-  --accent: #2f6f50;
-  --accent-dark: #1e5339;
-  --green: #668b79;
-  --amber: #b8872e;
-  --blue-soft: #e5f0ea;
-  --shadow: 0 18px 45px rgba(16, 37, 29, 0.08);
+  --background: #edf4e7;
+  --surface: #f7fcf2;
+  --surface-soft: #f0f8e9;
+  --ink: #0d1e14;
+  --muted: #6c7b62;
+  --border: #cce3c2;
+  --accent: #226642;
+  --accent-dark: #175232;
+  --green: #4a8a66;
+  --amber: #a87825;
+  --blue-soft: #d2ecc5;
+  --shadow: 0 18px 45px rgba(13, 30, 20, 0.10);
 }
 
+/* ── Noche: azul marino profundo + oro cálido ───────────────
+   Teoría: complementaria (azul vs. naranja-dorado en la rueda).
+   Fix: accent rosa→oro (mayor contraste en oscuro); accent-dark
+   más claro que accent (correcto en dark mode: énfasis = más
+   luminoso); muted y ink con mismo subtono cálido (pergamino
+   cálido); surfaces con más diferencia de luminosidad. */
 :root[data-theme="night"] {
-  --background: #0f1424;
-  --surface: #171e31;
-  --surface-soft: #1d263c;
-  --ink: #f5f1ea;
-  --muted: #aeb7c8;
-  --border: #2d374f;
-  --accent: #e3a6b8;
-  --accent-dark: #f0bdca;
-  --green: #94c9ad;
-  --amber: #f2c36b;
-  --blue-soft: #26334f;
-  --shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
+  --background: #0d1117;
+  --surface: #141c28;
+  --surface-soft: #1b2538;
+  --ink: #e8dcc8;
+  --muted: #9b8e7a;
+  --border: #283347;
+  --accent: #c9a020;
+  --accent-dark: #e5ba30;
+  --green: #5dc48a;
+  --amber: #e08c1a;
+  --blue-soft: #1e2d3e;
+  --shadow: 0 22px 55px rgba(0, 0, 0, 0.44);
+}
+
+/* ── Animations ─────────────────────────────────── */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
 }
 
 * {
@@ -71,7 +109,13 @@ body {
   backdrop-filter: blur(14px);
 }
 
-.theme-toggle span {
+/* Hide global floating toggle when app-shell (home page) is present — sidebar has its own */
+body:has(.app-shell) > .theme-toggle {
+  display: none;
+}
+
+.theme-toggle span,
+.theme-toggle-inline span {
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
@@ -79,13 +123,15 @@ body {
   text-transform: uppercase;
 }
 
-.theme-toggle div {
+.theme-toggle div,
+.theme-toggle-inline div {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
-.theme-toggle button {
+.theme-toggle button,
+.theme-toggle-inline button {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--surface-soft);
@@ -94,12 +140,29 @@ body {
   font-size: 12px;
   font-weight: 900;
   padding: 9px 10px;
+  transition: transform 0.1s ease;
 }
 
-.theme-toggle button.active {
+.theme-toggle button:active,
+.theme-toggle-inline button:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle button.active,
+.theme-toggle-inline button.active {
   border-color: var(--accent);
   background: var(--accent);
   color: var(--surface);
+}
+
+/* Inline variant used inside the sidebar */
+.theme-toggle-inline {
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding: 16px 0;
+  margin-top: auto;
+  font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (max-width: 700px) {
@@ -130,19 +193,88 @@ a {
   min-height: 100vh;
 }
 
+/* ── Hamburger button (mobile only) ─────────────── */
+
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 60;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+  transition: transform 0.1s ease;
+}
+
+.hamburger-btn:active {
+  transform: scale(0.93);
+}
+
+/* ── Sidebar overlay (mobile drawer backdrop) ───── */
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  z-index: 49;
+  backdrop-filter: blur(2px);
+  animation: fade-up 0.15s ease;
+}
+
+/* ── Sidebar close button (mobile only) ─────────── */
+
+.sidebar-close-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.1s ease;
+}
+
+.sidebar-close-btn:active {
+  transform: scale(0.93);
+}
+
+/* ── Sidebar top row (brand + close btn) ─────────── */
+
+.sidebar-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 42px;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.68);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
   padding: 32px 24px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .brand {
   display: flex;
   gap: 14px;
   align-items: center;
-  margin-bottom: 42px;
 }
 
 .brand-mark {
@@ -154,7 +286,7 @@ a {
   background: var(--accent);
   color: white;
   font-weight: 800;
-  box-shadow: 0 14px 24px rgba(138, 21, 56, 0.22);
+  box-shadow: 0 14px 24px color-mix(in srgb, var(--accent) 36%, transparent);
 }
 
 .brand h1 {
@@ -181,9 +313,19 @@ a {
   align-items: center;
   border-radius: 14px;
   padding: 14px 16px;
-  color: #2d3857;
+  color: var(--ink);
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-weight: 600;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.nav-item:hover:not(.active) {
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  color: var(--ink);
+}
+
+.nav-item:active {
+  transform: scale(0.97);
 }
 
 .nav-item.active {
@@ -265,6 +407,31 @@ a {
   padding: 24px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .kpi {
+    animation: fade-up 0.4s ease both;
+  }
+
+  .kpi:nth-child(1) { animation-delay: 0.04s; }
+  .kpi:nth-child(2) { animation-delay: 0.10s; }
+  .kpi:nth-child(3) { animation-delay: 0.16s; }
+  .kpi:nth-child(4) { animation-delay: 0.22s; }
+}
+
+/* ── Skeleton loader ─────────────────────────────── */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--border) 25%,
+    color-mix(in srgb, var(--border) 40%, var(--surface)) 50%,
+    var(--border) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: shimmer 1.6s infinite;
+}
+
 .kpi-label {
   margin: 0 0 12px;
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -310,7 +477,11 @@ a {
 .practice-visual {
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #f6e9eb, #fffaf9);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 9%, var(--surface)),
+    var(--surface)
+  );
   padding: 28px;
   text-align: center;
 }
@@ -346,6 +517,15 @@ a {
 
 .segmented button {
   cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.segmented button:hover:not(.active) {
+  background: color-mix(in srgb, var(--ink) 5%, white);
+}
+
+.segmented button:active {
+  transform: scale(0.95);
 }
 
 .segmented button.active {
@@ -376,7 +556,20 @@ a {
   border-color: transparent;
   background: var(--accent);
   color: white;
-  box-shadow: 0 14px 24px rgba(138, 21, 56, 0.22);
+  box-shadow: 0 14px 24px color-mix(in srgb, var(--accent) 32%, transparent);
+  display: block;
+  text-align: center;
+  transition: opacity 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.primary-button:hover {
+  opacity: 0.9;
+  box-shadow: 0 18px 28px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.primary-button:active {
+  transform: scale(0.97);
+  box-shadow: 0 8px 16px color-mix(in srgb, var(--accent) 24%, transparent);
 }
 
 .panel {
@@ -461,7 +654,7 @@ a {
   height: 150px;
   place-items: center;
   border-radius: 999px;
-  background: conic-gradient(var(--accent) 0 34%, #10214f 34% 58%, var(--green) 58% 78%, var(--amber) 78% 100%);
+  background: conic-gradient(var(--accent) 0 34%, var(--ink) 34% 58%, var(--green) 58% 78%, var(--amber) 78% 100%);
   position: relative;
   margin: auto;
 }
@@ -497,8 +690,37 @@ a {
     grid-template-columns: 1fr;
   }
 
+  /* Sidebar becomes a fixed drawer on mobile */
   .sidebar {
-    display: none;
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(300px, 85vw);
+    z-index: 50;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 40px rgba(0, 0, 0, 0.14);
+    overflow-y: auto;
+    background: var(--surface);
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .sidebar-close-btn {
+    display: flex;
+  }
+
+  /* Push main content down to account for the fixed hamburger button */
+  .main {
+    padding-top: 72px;
   }
 
   .kpi-grid,
@@ -601,9 +823,9 @@ a {
 }
 
 .notice-card {
-  border: 1px solid #ecd0d8;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
   border-radius: 18px;
-  background: #fff7f8;
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface));
   margin-top: 18px;
   padding: 16px;
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -756,6 +978,15 @@ a {
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-weight: 900;
   cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.practice-actions button:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.practice-actions button:active:not(:disabled) {
+  transform: scale(0.96);
 }
 
 .practice-actions button:disabled {
@@ -968,7 +1199,11 @@ summary {
   width: 100%;
   max-width: 34px;
   border-radius: 999px 999px 0 0;
-  background: linear-gradient(180deg, var(--accent), #d8a4b4);
+  background: linear-gradient(
+    180deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 45%, var(--surface))
+  );
 }
 
 .ranking-list,
@@ -1015,7 +1250,7 @@ summary {
   min-height: 100vh;
   padding: 32px;
   background:
-    radial-gradient(circle at top left, rgba(139, 92, 246, 0.18), transparent 34%),
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
     var(--background);
 }
 
@@ -1049,7 +1284,7 @@ summary {
   border: 1px solid var(--border);
   border-radius: 28px;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.78);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
   box-shadow: var(--shadow);
 }
 
@@ -1128,8 +1363,8 @@ summary {
 .keypoint-editor-row input {
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.86);
-  color: var(--foreground);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  color: var(--ink);
   font: inherit;
   font-weight: 600;
   outline: none;
@@ -1163,7 +1398,7 @@ summary {
 
 .admin-question-row {
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.68);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
   border: 1px solid transparent;
   border-radius: 18px;
   color: inherit;
@@ -1280,8 +1515,8 @@ summary {
   min-height: 100vh;
   padding: 32px;
   background:
-    radial-gradient(circle at 12% 8%, rgba(138, 21, 56, 0.16), transparent 32%),
-    radial-gradient(circle at 88% 20%, rgba(102, 139, 121, 0.16), transparent 28%),
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 32%),
+    radial-gradient(circle at 88% 20%, color-mix(in srgb, var(--green) 14%, transparent), transparent 28%),
     var(--background);
 }
 
@@ -1365,7 +1600,7 @@ summary {
 .exam-settings-grid input,
 .exam-settings-grid select,
 .exam-answer textarea {
-  background: rgba(255, 255, 255, 0.88);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
   border: 1px solid var(--border);
   border-radius: 16px;
   color: var(--ink);
@@ -1407,7 +1642,7 @@ summary {
 
 .exam-step {
   align-items: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
   border: 1px solid var(--border);
   border-radius: 18px;
   color: inherit;
@@ -1430,8 +1665,8 @@ summary {
 }
 
 .exam-step.active {
-  border-color: rgba(138, 21, 56, 0.38);
-  box-shadow: 0 14px 30px rgba(17, 27, 63, 0.08);
+  border-color: color-mix(in srgb, var(--accent) 38%, transparent);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--ink) 8%, transparent);
 }
 
 .exam-step.done span {
@@ -1486,7 +1721,7 @@ summary {
 }
 
 .exam-result-grid div {
-  background: rgba(255, 255, 255, 0.72);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 20px;
@@ -1525,4 +1760,48 @@ summary {
   .history-hero {
     display: grid;
   }
+}
+
+/* ── Overrides de modo Noche ─────────────────────────────────
+   Los score-pills, exam-step y otras superficies usan fondos
+   claros hardcodeados que resultan en bajo contraste en dark. */
+
+:root[data-theme="night"] .score-pill {
+  background: color-mix(in srgb, var(--green) 18%, transparent);
+  color: var(--green);
+}
+
+:root[data-theme="night"] .score-pill.warn {
+  background: color-mix(in srgb, var(--amber) 18%, transparent);
+  color: var(--amber);
+}
+
+:root[data-theme="night"] .score-pill.danger {
+  background: rgba(240, 100, 100, 0.18);
+  color: #f09090;
+}
+
+:root[data-theme="night"] .score-pill.strong {
+  background: color-mix(in srgb, var(--green) 18%, transparent);
+  color: var(--green);
+}
+
+:root[data-theme="night"] .exam-step {
+  background: color-mix(in srgb, var(--surface-soft) 80%, transparent);
+}
+
+:root[data-theme="night"] .exam-result-grid div {
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+}
+
+:root[data-theme="night"] .admin-hero-card {
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+:root[data-theme="night"] .admin-question-row {
+  background: color-mix(in srgb, var(--surface) 68%, transparent);
+}
+
+:root[data-theme="night"] .exam-step span {
+  background: var(--surface-soft);
 }

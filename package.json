@@ -27,6 +27,7 @@
     "@prisma/client": "^6.19.3",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
+    "lucide-react": "^1.17.0",
     "next": "^16.2.6",
     "openai": "latest",
     "react": "^19.2.6",
