@@ -76,6 +76,31 @@ const practiceModeLabels = {
 type PracticeMode = keyof typeof practiceModeLabels;
 type AnswerMode = "text" | "voice";
 
+function getPracticeConfigFromUrl() {
+  if (typeof window === "undefined") {
+    return {
+      source: "real" as const,
+      mode: "random" as PracticeMode,
+      filters: { area: "", professor: "", difficulty: "" },
+    };
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get("source");
+  const mode = params.get("mode");
+  const difficulty = params.get("difficulty") ?? "";
+
+  return {
+    source: source === "demo" ? "demo" as const : "real" as const,
+    mode: mode && mode in practiceModeLabels ? mode as PracticeMode : "random" as PracticeMode,
+    filters: {
+      area: params.get("area") ?? "",
+      professor: params.get("professor") ?? "",
+      difficulty: ["low", "medium", "high"].includes(difficulty) ? difficulty : "",
+    },
+  };
+}
+
 function stopMediaStream(stream: MediaStream | null) {
   stream?.getTracks().forEach((track) => track.stop());
 }
@@ -87,6 +112,7 @@ function getSupportedAudioMimeType() {
 }
 
 export default function PracticePage() {
+  const [queryBootstrapped, setQueryBootstrapped] = useState(false);
   const [data, setData] = useState<PracticeResponse | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
@@ -110,6 +136,17 @@ export default function PracticePage() {
   const audioChunksRef = useRef<BlobPart[]>([]);
   const mediaStreamRef = useRef<MediaStream | null>(null);
 
+  useEffect(() => {
+    const config = getPracticeConfigFromUrl();
+
+    queueMicrotask(() => {
+      setPracticeSource(config.source);
+      setPracticeMode(config.mode);
+      setFilters(config.filters);
+      setQueryBootstrapped(true);
+    });
+  }, []);
+
   function resetAnswerState() {
     setAnswer("");
     setEvaluation(null);
@@ -125,6 +162,8 @@ export default function PracticePage() {
   }
 
   useEffect(() => {
+    if (!queryBootstrapped) return;
+
     const controller = new AbortController();
 
     async function loadPractice() {
@@ -193,7 +232,7 @@ export default function PracticePage() {
     });
 
     return () => controller.abort();
-  }, [filters, practiceMode, practiceSource]);
+  }, [filters, practiceMode, practiceSource, queryBootstrapped]);
 
   useEffect(() => {
     return () => {
@@ -409,8 +448,8 @@ export default function PracticePage() {
         <Link className="back-link" href="/">← Volver al inicio</Link>
         <h1>Práctica por texto</h1>
         <p>
-          Fase 5 conecta la práctica real con Supabase: sesiones, intentos y progreso.
-          El modo demo queda disponible para probar sin iniciar sesión.
+          Entrená con práctica real para guardar sesiones, intentos y progreso.
+          El modo demo sigue disponible para probar sin iniciar sesión.
         </p>
 
         <div className="mode-switch" aria-label="Tipo de práctica">

@@ -1,11 +1,28 @@
+"use client";
+
 import Link from "next/link";
+import { useMemo, useState } from "react";
 
 const kpis = [
-  { label: "Preguntas disponibles", value: "100+", note: "base inicial generada desde fuentes", link: "Ver preguntas" },
-  { label: "Practicadas", value: "0", note: "pendiente de iniciar", link: "Ir a practicar" },
-  { label: "Dominadas", value: "0", note: "según rúbrica institucional", link: "Ver dominadas" },
-  { label: "Para repaso", value: "0", note: "se actualiza con desempeño", link: "Ver repaso" },
+  { label: "Preguntas disponibles", value: "100+", note: "base inicial generada desde fuentes", link: "Ver banco", href: "/admin/questions" },
+  { label: "Practicadas", value: "0", note: "pendiente de iniciar", link: "Ir a practicar", href: "/practice" },
+  { label: "Dominadas", value: "0", note: "según rúbrica institucional", link: "Ver estadísticas", href: "/history#estadisticas" },
+  { label: "Para repaso", value: "0", note: "se actualiza con desempeño", link: "Practicar repaso", href: "/practice?mode=review" },
 ];
+
+const quickPracticeModes = [
+  { label: "Por materia", value: "by_subject" },
+  { label: "Por profesor", value: "by_professor" },
+  { label: "Aleatorio", value: "random" },
+] as const;
+
+const quickDifficulties = [
+  { label: "Todas", value: "" },
+  { label: "Media", value: "medium" },
+  { label: "Alta", value: "high" },
+] as const;
+
+const quickAreas = ["Derecho Procesal", "Derecho Civil", "Derecho Constitucional"];
 
 const weakSubjects = [
   { name: "Actos procesales", area: "Derecho Procesal", progress: 42 },
@@ -20,6 +37,19 @@ const recentAttempts = [
 ];
 
 export default function HomePage() {
+  const [quickMode, setQuickMode] = useState<(typeof quickPracticeModes)[number]["value"]>("by_subject");
+  const [quickArea, setQuickArea] = useState(quickAreas[0]);
+  const [quickDifficulty, setQuickDifficulty] = useState<(typeof quickDifficulties)[number]["value"]>("");
+
+  const quickStartHref = useMemo(() => {
+    const params = new URLSearchParams({ source: "real", mode: quickMode });
+
+    if (quickMode === "by_subject") params.set("area", quickArea);
+    if (quickDifficulty) params.set("difficulty", quickDifficulty);
+
+    return `/practice?${params.toString()}`;
+  }, [quickArea, quickDifficulty, quickMode]);
+
   return (
     <main className="app-shell">
       <aside className="sidebar">
@@ -32,12 +62,12 @@ export default function HomePage() {
         </div>
 
         <nav className="nav" aria-label="Navegación principal">
-          <a className="nav-item active" href="#">⌂ Inicio</a>
+          <Link className="nav-item active" href="/">⌂ Inicio</Link>
           <Link className="nav-item" href="/admin/questions">☰ Banco</Link>
           <Link className="nav-item" href="/practice">▷ Practicar</Link>
           <Link className="nav-item" href="/exam">◉ Simulacro</Link>
-          <Link className="nav-item" href="/history">↺ Historial</Link>
-          <Link className="nav-item" href="/history">▥ Estadísticas</Link>
+          <Link className="nav-item" href="/history#historial">↺ Historial</Link>
+          <Link className="nav-item" href="/history#estadisticas">▥ Estadísticas</Link>
           <Link className="nav-item" href="/auth/login">◇ Ingresar</Link>
         </nav>
 
@@ -55,7 +85,7 @@ export default function HomePage() {
             <h2>Buen día, futura abogada.</h2>
             <p>Practicá con preguntas ponderadas por profesor, materia y probabilidad de aparición.</p>
           </div>
-          <div className="date-pill">Fase 1: base técnica</div>
+          <div className="date-pill">Entrenamiento activo</div>
         </header>
 
         <section className="kpi-grid" aria-label="Resumen de avance">
@@ -64,7 +94,7 @@ export default function HomePage() {
               <p className="kpi-label">{kpi.label}</p>
               <p className="kpi-value">{kpi.value}</p>
               <p className="kpi-note">{kpi.note}</p>
-              <a className="kpi-link" href="#">{kpi.link} →</a>
+              <Link className="kpi-link" href={kpi.href}>{kpi.link} →</Link>
             </article>
           ))}
         </section>
@@ -74,28 +104,49 @@ export default function HomePage() {
             <article className="card practice-card">
               <div className="practice-visual">
                 <div>
-                  <div className="icon-circle" style={{ margin: "0 auto 18px" }}>ðŸŽ“</div>
+                  <div className="icon-circle" style={{ margin: "0 auto 18px" }}>🎓</div>
                   <strong>Empezar práctica</strong>
                   <p>Simulá el examen oral y mejorá con cada intento.</p>
                 </div>
               </div>
               <div className="practice-controls">
                 <strong>¿Cómo querés practicar?</strong>
-                <div className="segmented">
-                  <button className="active">Por materia</button>
-                  <button>Por profesor</button>
-                  <button>Aleatorio</button>
+                <div className="segmented" role="group" aria-label="Modo de práctica rápida">
+                  {quickPracticeModes.map((mode) => (
+                    <button
+                      key={mode.value}
+                      type="button"
+                      className={quickMode === mode.value ? "active" : ""}
+                      onClick={() => setQuickMode(mode.value)}
+                    >
+                      {mode.label}
+                    </button>
+                  ))}
                 </div>
                 <label>
                   Seleccioná una materia
-                  <span className="select-like">Derecho Procesal <span>⌄</span></span>
+                  <select
+                    className="select-like native-select"
+                    value={quickArea}
+                    onChange={(event) => setQuickArea(event.target.value)}
+                    disabled={quickMode !== "by_subject"}
+                  >
+                    {quickAreas.map((area) => <option key={area}>{area}</option>)}
+                  </select>
                 </label>
-                <div className="segmented">
-                  <button className="active">Todas</button>
-                  <button>Media</button>
-                  <button>Alta</button>
+                <div className="segmented" role="group" aria-label="Dificultad de práctica rápida">
+                  {quickDifficulties.map((difficulty) => (
+                    <button
+                      key={difficulty.label}
+                      type="button"
+                      className={quickDifficulty === difficulty.value ? "active" : ""}
+                      onClick={() => setQuickDifficulty(difficulty.value)}
+                    >
+                      {difficulty.label}
+                    </button>
+                  ))}
                 </div>
-                <Link className="primary-button" href="/practice">▶ Comenzar práctica</Link>
+                <Link className="primary-button" href={quickStartHref}>▶ Comenzar práctica</Link>
               </div>
             </article>
 
@@ -104,7 +155,7 @@ export default function HomePage() {
               <div className="attempt-list">
                 {recentAttempts.map((attempt) => (
                   <div className="attempt-row" key={attempt.subject}>
-                    <div className="icon-circle">ðŸ“–</div>
+                    <div className="icon-circle">📖</div>
                     <div>
                       <strong>{attempt.subject}</strong><br />
                       <span>{attempt.professor}</span>

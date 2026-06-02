@@ -13,6 +13,36 @@
   --shadow: 0 18px 45px rgba(17, 27, 63, 0.08);
 }
 
+:root[data-theme="forest"] {
+  --background: #f3f7f0;
+  --surface: #ffffff;
+  --surface-soft: #f8fbf5;
+  --ink: #10251d;
+  --muted: #5c7266;
+  --border: #dce8d8;
+  --accent: #2f6f50;
+  --accent-dark: #1e5339;
+  --green: #668b79;
+  --amber: #b8872e;
+  --blue-soft: #e5f0ea;
+  --shadow: 0 18px 45px rgba(16, 37, 29, 0.08);
+}
+
+:root[data-theme="night"] {
+  --background: #0f1424;
+  --surface: #171e31;
+  --surface-soft: #1d263c;
+  --ink: #f5f1ea;
+  --muted: #aeb7c8;
+  --border: #2d374f;
+  --accent: #e3a6b8;
+  --accent-dark: #f0bdca;
+  --green: #94c9ad;
+  --amber: #f2c36b;
+  --blue-soft: #26334f;
+  --shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -22,6 +52,64 @@ body {
   background: var(--background);
   color: var(--ink);
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 30;
+  display: grid;
+  gap: 8px;
+  width: min(310px, calc(100vw - 36px));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: var(--shadow);
+  padding: 12px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  backdrop-filter: blur(14px);
+}
+
+.theme-toggle span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.theme-toggle div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.theme-toggle button {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 9px 10px;
+}
+
+.theme-toggle button.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--surface);
+}
+
+@media (max-width: 700px) {
+  .theme-toggle {
+    position: sticky;
+    top: 10px;
+    right: auto;
+    bottom: auto;
+    margin: 10px auto 0;
+  }
 }
 
 button,
@@ -99,7 +187,7 @@ a {
 }
 
 .nav-item.active {
-  background: #f1e5e8;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
   color: var(--accent);
 }
 
@@ -256,10 +344,24 @@ a {
   font-weight: 700;
 }
 
+.segmented button {
+  cursor: pointer;
+}
+
 .segmented button.active {
   border-color: var(--accent);
   color: var(--accent);
-  background: #fff7f8;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+}
+
+.native-select {
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.native-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
 }
 
 .select-like {
@@ -369,7 +471,7 @@ a {
   position: absolute;
   inset: 22px;
   border-radius: inherit;
-  background: white;
+  background: var(--surface);
 }
 
 .score-ring strong {
@@ -410,14 +512,16 @@ a {
 .practice-shell {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 330px 1fr;
+  grid-template-columns: minmax(270px, 330px) minmax(0, 1fr);
   background: var(--background);
 }
 
 .practice-sidebar {
   border-right: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.72);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
   padding: 34px 26px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .back-link {
@@ -462,8 +566,12 @@ a {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 12px 14px;
-  background: white;
+  background: var(--surface);
   color: var(--ink);
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  text-overflow: ellipsis;
 }
 
 .mode-switch {
@@ -488,7 +596,7 @@ a {
 
 .mode-switch button.active {
   border-color: var(--accent);
-  background: #f1e5e8;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
   color: var(--accent);
 }
 
@@ -524,7 +632,7 @@ a {
   height: 8px;
   overflow: hidden;
   border-radius: 999px;
-  background: #e4ded8;
+  background: color-mix(in srgb, var(--border) 72%, var(--surface));
 }
 
 .practice-progress span {
@@ -552,7 +660,7 @@ a {
 
 .question-meta span {
   border-radius: 999px;
-  background: #f2e8eb;
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
   color: var(--accent);
   padding: 8px 11px;
   font-size: 13px;
@@ -594,7 +702,7 @@ a {
 .answer-mode-tabs button {
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: white;
+  background: var(--surface);
   color: var(--ink);
   padding: 10px 14px;
   font-weight: 900;
@@ -603,7 +711,7 @@ a {
 
 .answer-mode-tabs button.active {
   border-color: var(--accent);
-  background: #f1e5e8;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
   color: var(--accent);
 }
 
@@ -657,7 +765,7 @@ a {
 
 .practice-actions button.secondary {
   border: 1px solid var(--border);
-  background: white;
+  background: var(--surface);
   color: var(--ink);
 }
 

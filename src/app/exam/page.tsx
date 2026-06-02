@@ -389,7 +389,7 @@ export default function ExamPage() {
       <header className="exam-hero">
         <div>
           <Link className="back-link" href="/">← Volver al inicio</Link>
-          <p className="eyebrow">Fase 9 · Modo simulacro</p>
+          <p className="eyebrow">Modo simulacro</p>
           <h1>Simulacro de examen oral</h1>
           <p>
             Acá no venimos a jugar con botoncitos. Venimos a entrenar presión: tiempo limitado,

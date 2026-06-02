@@ -151,7 +151,7 @@ export default function HistoryPage() {
 
       {!isLoading && stats && history && (
         <>
-          <section className="history-kpi-grid">
+          <section className="history-kpi-grid" id="estadisticas">
             <article className="card kpi">
               <p className="kpi-label">Avance general</p>
               <p className="kpi-value">{stats.summary.progressPercentage}%</p>
@@ -229,7 +229,7 @@ export default function HistoryPage() {
             </article>
           </section>
 
-          <section className="practice-card-large">
+          <section className="practice-card-large" id="historial">
             <h2>Preguntas con más errores</h2>
             <div className="question-risk-list">
               {stats.difficultQuestions.length > 0 ? stats.difficultQuestions.map((question) => (
