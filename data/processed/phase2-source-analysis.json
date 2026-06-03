@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T20:34:28.680Z",
+  "generatedAt": "2026-06-03T02:35:39.740Z",
   "sources": {
     "priority-matrix": {
       "key": "priority-matrix",
@@ -161,164 +161,162 @@
       "fileSizeBytes": 527583,
       "analysis": {
         "paragraphCount": 3654,
-        "questionCandidateCount": 981,
+        "questionCandidateCount": 732,
         "byProfessor": {
-          "Felipe Ascencio": 235,
-          "Mauricio Figueroa": 205,
+          "Aníbal Chacama": 177,
           "Felipe Ortiz": 150,
           "Constanza Astudillo": 149,
-          "Fernando Orellana": 140,
+          "Carlos Alarcón": 111,
           "Stephanie Merlet": 88,
-          "Otras preguntas varias de Felipe Ascencio": 14
+          "Fernando Orellana": 29,
+          "Mauricio Figueroa": 28
         },
         "byArea": {
           "Derecho Civil": 414,
           "Derecho Procesal": 290,
-          "Derecho Constitucional": 203,
-          "Derecho de propiedad": 31,
-          "Derecho a la privacidad": 28,
-          "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable": 15
+          "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable": 15,
+          "Derecho fundamental con connotación colectiva": 13
         },
         "samples": [
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Qué acciones constituciones permiten resguardar la supremacía constitucional?",
-            "rawAnswer": "Se resguarda a través de la acción de inaplicabilidad por inconstitucionalidad de preceptos legales art. 93 N°6 y la acción de inconstitucionalidad de preceptos legales previamente declarados inaplicables art. 93 N°7.",
-            "orderIndex": 9
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Qué dice el art. 1 inc. 1 CPR?",
+            "rawAnswer": "Las personas nacen libres e iguales en dignidad y derechos.",
+            "orderIndex": 945
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Tiene otras competencias el TC que le permite cautelar la supremacía constitucional?",
-            "rawAnswer": "Si, el TC realiza el control constitucional para hacer efectiva la supremacía constitucional, este corresponde a un procedimiento comparativo de un proyecto de precepto legal, de un precepto legal o de la aplicación de un precepto legal, de un auto acordado o de un acto administrativo frente a la constitución, para determinar su conformidad o no, tanto en forma y como en fondo.",
-            "orderIndex": 11
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Qué valor o principio consagra el art. 1 CPR?",
+            "rawAnswer": "Se consagran los valores de la libertad, igualdad y la dignidad.",
+            "orderIndex": 947
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Dónde está consagrado el principio de responsabilidad?",
-            "rawAnswer": "El principio de responsabilidad se encuentra consagrado expresamente en los incisos finales de los arts. 6 y 7 CPR prescribiendo respectivamente que “la infracción de esta norma generará las responsabilidades y sanciones que determine la ley” y “todo acto en contravención a este artículo es nulo y originará las responsabilidades y sanciones que la ley señale”.",
-            "orderIndex": 14
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Qué subprincipios se desprenden de dicho principio?",
+            "rawAnswer": "Interpretación más favorable: Este subprincipio es esencial para garantizar que, ante ambigüedades o dudas legales, siempre se privilegie la opción que mejor proteja los derechos.",
+            "orderIndex": 953
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Hay alguna otra norma que reconozca dicho principio?",
-            "rawAnswer": "Arts. 6 y 7 CPR. El art. 93 N°10 establece que está dentro de las atribuciones del TC la de “declarar la inconstitucionalidad de las organizaciones y de los movimientos o partidos políticos, como asimismo la responsabilidad de las personas que hubieran tenido participación en los hechos que motivaron la declaración de inconstitucionalidad”.",
-            "orderIndex": 17
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Cuáles son las implicancias de que la norma sea un principio?",
+            "rawAnswer": "Las implicancias son que dicha norma opera como elemento de interpretación constitucional, que sirve para integrar el resto de la preceptiva constitucional y que le otorga coherencia al sistema jurídico.",
+            "orderIndex": 957
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "El art. 19 N°24 qué cosas regula?",
-            "rawAnswer": "Primero, regula el derecho de propiedad en sus diversas especies sobre toda clase de bienes corporales e incorporales.",
-            "orderIndex": 19
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Por qué los principios son mandatos de optimización?",
+            "rawAnswer": "Desde una concepción romana los principios son mandatos de optimización en la aplicación de la ley, encontrándose en un estrato medio entre la ley y las normas infra legales, a diferencia de la concepción de principios para el iusnaturalismo, para quienes los principios son superiores a la ley o para el iuspositivismo, para quienes los principios emana o se extraen de la ley.",
+            "orderIndex": 961
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Cómo se limita el derecho de propiedad de acuerdo a la cpr?",
-            "rawAnswer": "Se puede limitar la propiedad por dos vías, una es la expropiación por causa de utilidad pública o interés nacional, calificada por el legislador, y la segunda, es la función social de la propiedad, y esta comprende cuanto exijan los intereses generales de la nacional, la seguridad nacional, la utilidad y salubridad públicas y la conservación del patrimonio ambiental.",
-            "orderIndex": 25
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Cómo el principio in dubio pro homine es un mandato, cómo opera como tal?",
+            "rawAnswer": "No basta con una interpretación literal o formal de la norma; se requiere una lectura que optimice el resultado, de modo que se garantice el mayor grado de protección para el individuo. El principio in dubio pro homine se configura como un mandato de optimización porque impone expresamente que, ante cualquier duda en la interpretación o aplicación de la norma, se debe optar por aquella solución que maximice la protección de los derechos humanos.",
+            "orderIndex": 965
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Qué se regula en el art. 19 N°23?",
-            "rawAnswer": "Se regula el derecho a la propiedad, particularmente la libertad para adquirir el dominio de toda clase de bienes, exceptuando los que la naturaleza ha hecho comunes a todos los hombres, los que pertenecen a la nación toda y los que señale la ley.",
-            "orderIndex": 28
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Cómo se podría aplicar en forma extensiva o restringida el principio?",
+            "rawAnswer": "Se aplica en forma extensiva ampliando el alcance del principio para hacerlo efectivo frente a situaciones no previstas expresamente, siendo la lectura extensiva del principio una forma de protección de los derechos. Por el contrario, una aplicación restringida acota su enfoque interpretativo, ofreciendo seguridad jurídica y evitando la extensión a supuestos no comprendidos en el rango de protección.",
+            "orderIndex": 967
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "Una modificación al plano regular supone casi que se me perturbe el derecho de propiedad, ¿qué acción intentaría usted frente a este plano regulador?",
-            "rawAnswer": "Si con dicha modificación del plan regulador se está privando, perturbando o amenazando de alguna forma mi derecho de propiedad se puede interponer una acción de protección.",
-            "orderIndex": 32
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Qué es la dignidad?",
+            "rawAnswer": "La dignidad es aquella condición que tiene todo individuo por el hecho de ser tal y lo hace merecedor de un trato de respeto y consideración por parte del estado y otros individuos. De dicha dignidad emana los derechos fundamentales.",
+            "orderIndex": 969
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "En ese recurso de protección, ¿qué garantías además de la propiedad usted invocaría?",
-            "rawAnswer": "Además de invocar el derecho de propiedad del art. 19 N°24, invocaría la de igualdad ante la ley del N°2, la de desarrollar cualquier actividad económica que no sea contraria a la moral, al orden público o a la seguridad nacional del N°21 y la de no discriminación arbitraria del estado en materia económica del N°22.",
-            "orderIndex": 34
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "Normativamente, ¿cómo usted vincula la dignidad con la normativa constitucional?",
+            "rawAnswer": "La dignidad encuentra mención expresa en las bases de la institucionalidad en el art. 1, y encuentra vinculación con la soberanía, pues los derechos esenciales que emanan de la naturaleza humana operan como límites a la soberanía, además, en el capítulo de los derechos y deberes constitucionales se reconocen los derechos fundamentales consagrados en nuestra constitución, que derivan de la dignidad de la persona.",
+            "orderIndex": 971
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Quiénes son titulares de DD.FF?",
-            "rawAnswer": "Las personas naturales, las personas jurídicas, las personas jurídicas de derecho público (Art. 19 N°24) , las personas morales (art. 19 N°s 6, 12, 13 o 15), el que está por nacer (para algunos no es titular, ya que la constitución asegura a todas las personas y el nasciturus no es persona por disposición legal, y para otros si, por aplicación de tratados internacionales ratificados por Chile y que se encuentran vigente que reconocen la vida desde la concepción).",
-            "orderIndex": 37
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Con cuáles derechos fundamentales se relaciona la dignidad?",
+            "rawAnswer": "Los de relación más clara son los de carácter esencial o inviolabilidades, como ocurre con el derecho a la vida y a la integridad física y psíquica de la persona, con el derecho a la protección de la salud, con la libertad de expresión, la libertad personal y seguridad individual y con el derecho a vivir en un medioambiente libre de contaminación.",
+            "orderIndex": 973
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Se puede renunciar a los DD.FF?",
-            "rawAnswer": "Por regla general los derechos fundamentales son irrenunciables, ya que encuentran fundamento en la esencia misma del ser humano, su dignidad, sin perjuicio de ello, algunos derechos, y particularmente libertades, si pueden ser renunciados, por ejemplo, la libertad de expresión, a través de cláusulas de confidencialidad, o la libertad de trabajo, a través de contratos de exclusividad. Sin perjuicio de lo anterior, no cabría señalar que dicha persona ya no es titular de la libertad de expresión o al derecho al trabajo, solo que más limitado. Igualmente podrían constituir una renuncia o quizá más propiamente una prohibición, el funcionario público que no puede desarrollar cualquier actividad económica relacionada con el rubro en que se desempeña.",
-            "orderIndex": 41
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿De qué norma o derecho se desprende el derecho a una vivienda digna?",
+            "rawAnswer": "A pesar de su falta de consagración expresa la dogmática constitucional ha desarrollado una interpretación amplia del art. 1 inc. 4 a propósito del bien común, pues el estado está al servicio de la persona humana y su finalidad es promover el bien común, para lo cual debe contribuir a crear las condiciones sociales que permitan a todos y a cada uno de los integrantes de la comunidad nacional su mayor realización espiritual y material posible, con pleno respeto a los derechos y garantías que esta constitución establece, y dicha mayor realización posible no puede lograrse sin una vivienda digna.",
+            "orderIndex": 975
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Qué se entiende por intimidad?",
-            "rawAnswer": "La intimidad constituye la parte más privada de la vida privada de una persona, así puede decirse que existe entre lo privado y lo íntimo una relación de género a especie, siendo lo privado el género y lo íntimo la especie. Existen dos teorías que permiten determinar aquello que se encuentra en la vida pública o privada de una personas, la teoría de los círculos concéntricos y la teoría de los mosaicos. Además, es el mismo titular del derecho quien puede determinar qué información se encuentra en la esfera de lo público o privado.",
-            "orderIndex": 43
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Qué regula el art. 19 N°3 CPR?",
+            "rawAnswer": "El art. 19 N°3 establece la igual protección de la ley en el ejercicio de los derechos, consagrando de esta forma el debido proceso y la tutela judicial efectiva.",
+            "orderIndex": 977
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Cuáles son los límites en abstracto al ejercicio de los DD.FF?",
-            "rawAnswer": "El límite al ejercicio de los derechos fundamentales está constituido por la esfera de protección de derechos de un tercero, es decir, el derecho ajeno, y por la ley. Así, la libertad de emitir opinión y la de informar colisiona con el respeto y protección de la vida privada y la honra de la persona y la de su familia. La ley puede limitar el ejercicio de los derechos, sin perjuicio de ello, el art. 19 N°26 establece la seguridad de que los preceptos legales que por mandato de la constitución regulen o complementen las garantías que ésta establece o que las limiten en los casos en que ella lo autoriza, no podrán afectar a los derechos en su esencia, ni imponer condiciones, tributos o requisitos que impidan su libre ejercicio.",
-            "orderIndex": 45
+            "areaName": "Derecho fundamental con connotación colectiva",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Qué es el debido proceso?",
+            "rawAnswer": "El debido proceso es un principio y derecho de rango constitucional por el cual se establecen estándares mínimos que deben cumplirse en un proceso e investigación y que satisfaga la exigencia de ser racionales y justos.",
+            "orderIndex": 979
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Hasta dónde puedo ejercer el derecho de propiedad?",
-            "rawAnswer": "El derecho de propiedad encuentra como limitación en su ejercicio el derecho ajeno, la expropiación por causa de utilidad pública o interés nacional calificada por el legislador, así como las limitaciones y obligaciones que deriven de su función social, y esta comprende cuanto exijan los intereses generales de la nación, la seguridad nacional, la utilidad y salubridad públicas y la conservación del patrimonio ambiental.",
-            "orderIndex": 47
+            "areaName": "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿La igualdad del art. 19 N°3 CPR se encuentra protegida por alguna acción?",
+            "rawAnswer": "Si, se encuentra protegida por la acción de protección, pero solo en cuanto a la garantía del juez natural, esto es, lo que señala el art. 19 N°3 inc. 5 CPR, por el cual nadie podrá ser juzgado por comisiones especiales, sino por el tribunal que señalare la ley y que se hallare establecido por ésta con anterioridad a la perpetración del hecho.",
+            "orderIndex": 1000
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Qué es la acción antidiscriminación y quién la conoce?",
-            "rawAnswer": "Es una acción de rango legal de la ley 20.609 que establece medidas contra la discriminación, y procede frente una acción u omisión que importe discriminación arbitraria, ante el juez de letras en lo civil de su domicilio o ante el del domicilio del responsable de dicha acción u omisión. Puede ser interpuesta por cualquier persona que haya sufrido discriminación arbitraria, por su representante legal, o por quien tenga de hecho el cuidado personal o la educación del afectado.",
-            "orderIndex": 50
+            "areaName": "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿La garantía del juez natural se refiere sólo al tercero imparcial que ejerce jurisdicción o también es aplicable a procesos administrativos?",
+            "rawAnswer": "Es también aplicable en materia administrativa.",
+            "orderIndex": 1002
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Por qué se critica la ley antidiscriminación?",
-            "rawAnswer": "Se critica porque si hubiera existido discriminación arbitraria el tribunal aplicará una multa de cinco a cincuenta UTM a beneficio fiscal. Por lo demás, se critica por ser tramitado en un procedimiento ordinario de lato conocimiento. También, por el hecho de que por vía de protección la sanciones por falta de obediencia del fallo podrían ser más severas.",
-            "orderIndex": 52
+            "areaName": "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Qué es el TC y dónde se encuentra ubicado?",
+            "rawAnswer": "El tribunal constitucional es un órgano autónomo y de consagración constitucional, cuya función principal es realizar un control de constitucionalidad de los preceptos legales, y las demás funciones de carácter conservadoras e institucionales que la constitución le encomienda.",
+            "orderIndex": 1004
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "Caso. Atropello un perro en una ciclovía, le sacan foto y me funan, ¿qué se podría hacer frente a la funa? ¿En el por tanto, qué pedimos?",
-            "rawAnswer": "Habría que atender a la información en la funa, si aparece la imagen de la persona, su rut, domicilio, etc. Se podría intentar una acción de protección, invocando la garantía del art. 19 N°4 sobre respeto y protección de la vida privada y la honra de la persona y la de su familia, así como la protección de sus datos personales.",
-            "orderIndex": 55
+            "areaName": "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Cuál es la principal función del TC y cuáles son sus otras funciones?",
+            "rawAnswer": "La principal función del TC es realizar un control de constitucionalidad de preceptos legal, de autos acordados y de actos administrativos, así como de otras normas infraconstitucionales.",
+            "orderIndex": 1007
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Dónde está regulado el derecho a la honra y qué es?",
-            "rawAnswer": "El derecho a la honra se encuentra regulado en el art. 19 N°4 CPR, y se trata del derecho de toda persona a que sea respetada y protegida su honra y la de su familia, esto es, la reputación, prestigio, buen nombre, lo que los demás piensan de la persona y su familia. Esta protección alcanza la memoria de los fallecidos.",
-            "orderIndex": 58
+            "areaName": "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Cuáles son los efectos de la inaplicabilidad?",
+            "rawAnswer": "La sentencia favorable del TC declara al precepto legal inaplicable para la gestión pendiente y para ese caso en particular por producir efectos inconstitucionales.",
+            "orderIndex": 1034
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Qué es la intimidad?",
-            "rawAnswer": "La intimidad constituye la parte más privada de la vida privada de una persona, así puede decirse que existe entre lo privado y lo íntimo una relación de género a especie, siendo lo privado el género y lo íntimo la especie. Existen dos teorías que permiten determinar aquello que se encuentra en la vida pública o privada de una personas, la teoría de los círculos concéntricos y la teoría de los mosaicos. Además, es el mismo titular del derecho quien puede determinar qué información se encuentra en la esfera de lo público o privado.",
-            "orderIndex": 60
+            "areaName": "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable",
+            "professorName": "Mauricio Figueroa",
+            "statement": "A propósito de la filosofía detrás de las normas, ¿cuál es la base dogmática o ideológica que están detrás de la constitución?",
+            "rawAnswer": "La base dogmática o ideológica de la constitución del 80 es primero, su inspiración iusnaturalista, por la cual los derechos fundamentales son propios de la naturaleza o de la dignidad consustancial a todo ser humano, que son anteriores al estado y que éste los reconoce, no los crea, sirviendo de limitación al poder, y segundo, es de corte individualista-liberal, pues pone énfasis en el individuo, por ejemplo, al señalar que el Estado está al servicio de la persona humana, se le reconoce y ampara a los grupos intermedios y se les garantiza su adecuada autonomía.",
+            "orderIndex": 1042
           },
           {
-            "areaName": "Derecho Constitucional",
-            "professorName": "Felipe Ascencio",
-            "statement": "¿Es relativa la intimidad?",
-            "rawAnswer": "Si, es el mismo titular del derecho quien puede determinar qué información se encuentra en la esfera de lo público o privado. Por ello, lo que para una persona es íntimo, para otra puede ser parte de su vida pública. Por lo demás, hay cierta información que a pesar de ser íntima, en atención al contexto o calidad de la persona podría dejar de estar en la esfero de la privado, así, aplicando la teoría de los mosaicos, se puede indicar que el matrimonio de una persona con un extranjero es privado, pero el matrimonio con un extranjero con el presidente de la república es público.",
-            "orderIndex": 62
+            "areaName": "Derecho a un proceso sin dilaciones y a una sentencia en plazo razonable",
+            "professorName": "Mauricio Figueroa",
+            "statement": "¿Cuál es su argumento para señalar que la constitución tiene una base dogmática liberal?",
+            "rawAnswer": "Por su origen histórico, y por las declaraciones de las actas de sesiones de la comisión de estudio de la nueva constitución.",
+            "orderIndex": 1045
           }
         ]
       }

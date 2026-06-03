@@ -23,13 +23,26 @@ export type CachedQuestion = {
 export const getCachedFacets = unstable_cache(
   async () => {
     const db = getPrisma();
-    const [areas, professors] = await Promise.all([
+    const [areas, professors, subjects, subsubjects, questionTypes] = await Promise.all([
       db.lawArea.findMany({ orderBy: { name: "asc" }, select: { name: true } }),
       db.professor.findMany({ orderBy: { name: "asc" }, select: { name: true } }),
+      db.subject.findMany({ orderBy: { name: "asc" }, select: { name: true } }),
+      db.subsubject.findMany({ orderBy: { name: "asc" }, select: { name: true } }),
+      db.question.findMany({
+        where: { isActive: true, questionType: { not: null } },
+        distinct: ["questionType"],
+        orderBy: { questionType: "asc" },
+        select: { questionType: true },
+      }),
     ]);
     return {
       areas: areas.map((a) => a.name),
       professors: professors.map((p) => p.name),
+      subjects: subjects.map((subject) => subject.name),
+      subsubjects: subsubjects.map((subsubject) => subsubject.name),
+      questionTypes: questionTypes
+        .map((question) => question.questionType)
+        .filter((questionType): questionType is string => Boolean(questionType)),
     };
   },
   ["practice-facets"],
@@ -42,13 +55,23 @@ export const getCachedFacets = unstable_cache(
  * Decimals converted to numbers so they survive JSON serialization.
  */
 export const getCachedBaseQuestions = unstable_cache(
-  async (area: string, professor: string, difficulty: string): Promise<CachedQuestion[]> => {
+  async (
+    area: string,
+    professor: string,
+    difficulty: string,
+    subject: string,
+    subsubject: string,
+    questionType: string,
+  ): Promise<CachedQuestion[]> => {
     const db = getPrisma();
     const questions = await db.question.findMany({
       where: {
         isActive: true,
         area: area ? { name: area } : undefined,
+        subject: subject ? { name: subject } : undefined,
+        subsubject: subsubject ? { name: subsubject } : undefined,
         difficulty: difficulty ? (difficulty as "low" | "medium" | "high") : undefined,
+        questionType: questionType || undefined,
         professors: professor ? { some: { professor: { name: professor } } } : undefined,
       },
       include: {

@@ -19,6 +19,7 @@ import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { href: "/", label: "Inicio", Icon: Home },
+  { href: "/admin", label: "Admin", Icon: BarChart2 },
   { href: "/admin/questions", label: "Banco", Icon: BookOpen },
   { href: "/practice", label: "Practicar", Icon: Dumbbell },
   { href: "/exam", label: "Simulacro", Icon: GraduationCap },
@@ -79,7 +80,9 @@ export function AppSidebar() {
           {navItems.map(({ href, label, Icon }) => {
             const basePath = href.split("#")[0];
             const isActive =
-              basePath === "/" ? pathname === "/" : pathname.startsWith(basePath);
+              basePath === "/" || basePath === "/admin"
+                ? pathname === basePath
+                : pathname.startsWith(basePath);
             return (
               <Link
                 key={href}

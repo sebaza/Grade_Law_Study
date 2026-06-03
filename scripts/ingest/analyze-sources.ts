@@ -23,6 +23,12 @@ type QuestionCandidate = {
   orderIndex: number;
 };
 
+const EXCLUDED_PROFESSOR_PATTERNS = [/ascencio/iu];
+
+function isExcludedProfessor(name: string | null) {
+  return Boolean(name && EXCLUDED_PROFESSOR_PATTERNS.some((pattern) => pattern.test(name)));
+}
+
 function normalizeText(value: unknown) {
   return String(value ?? "").trim();
 }
@@ -129,6 +135,7 @@ async function analyzeDocx(filePath: string) {
     }
 
     if (!isQuestionLike(paragraph)) continue;
+    if (isExcludedProfessor(currentProfessor)) continue;
 
     const rawAnswer = paragraphs[index + 1] && !isQuestionLike(paragraphs[index + 1])
       ? paragraphs[index + 1]
@@ -220,4 +227,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-

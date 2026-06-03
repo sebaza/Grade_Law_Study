@@ -10,8 +10,11 @@ const sessionRequestSchema = z.object({
   limit: z.number().int().min(1).max(30).default(10),
   filters: z.object({
     area: z.string().optional(),
+    subject: z.string().optional(),
+    subsubject: z.string().optional(),
     professor: z.string().optional(),
     difficulty: z.enum(["low", "medium", "high"]).optional(),
+    questionType: z.string().optional(),
   }).default({}),
 });
 
@@ -43,7 +46,14 @@ export async function POST(request: Request) {
 
   // Cached: base questions shared across all users (no user state, 5-min cache)
   const [baseQuestions, facets] = await Promise.all([
-    getCachedBaseQuestions(filters.area ?? "", filters.professor ?? "", filters.difficulty ?? ""),
+    getCachedBaseQuestions(
+      filters.area ?? "",
+      filters.professor ?? "",
+      filters.difficulty ?? "",
+      filters.subject ?? "",
+      filters.subsubject ?? "",
+      filters.questionType ?? "",
+    ),
     getCachedFacets(),
   ]);
 
@@ -105,8 +115,11 @@ export async function POST(request: Request) {
     count: selected.length,
     facets: {
       areas: facets.areas,
+      subjects: facets.subjects,
+      subsubjects: facets.subsubjects,
       professors: facets.professors,
       difficulties: ["low", "medium", "high"],
+      questionTypes: facets.questionTypes,
     },
     questions: selected.map((q) => {
       const state = stateByQuestionId.get(q.id);

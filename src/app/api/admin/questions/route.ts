@@ -130,6 +130,7 @@ export async function GET(request: Request) {
   const q = searchParams.get("q")?.trim() || undefined;
   const areaId = searchParams.get("areaId") || undefined;
   const subjectId = searchParams.get("subjectId") || undefined;
+  const subsubjectId = searchParams.get("subsubjectId") || undefined;
   const professorId = searchParams.get("professorId") || undefined;
   const difficulty = difficultySchema.safeParse(searchParams.get("difficulty")).success
     ? (searchParams.get("difficulty") as "low" | "medium" | "high")
@@ -142,6 +143,7 @@ export async function GET(request: Request) {
       statement: q ? { contains: q, mode: "insensitive" } : undefined,
       areaId,
       subjectId,
+      subsubjectId,
       difficulty,
       isActive: active === "active" ? true : active === "inactive" ? false : undefined,
       professors: professorId ? { some: { professorId } } : undefined,

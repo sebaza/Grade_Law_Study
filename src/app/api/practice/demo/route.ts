@@ -5,8 +5,11 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const questions = await getDemoQuestions({
     area: searchParams.get("area") ?? undefined,
+    subject: searchParams.get("subject") ?? undefined,
+    subsubject: searchParams.get("subsubject") ?? undefined,
     professor: searchParams.get("professor") ?? undefined,
     difficulty: searchParams.get("difficulty") ?? undefined,
+    questionType: searchParams.get("questionType") ?? undefined,
     mode: (searchParams.get("mode") as "priority" | "random" | "review" | null) ?? "priority",
   });
 

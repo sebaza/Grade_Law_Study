@@ -572,6 +572,24 @@ a {
   box-shadow: 0 8px 16px color-mix(in srgb, var(--accent) 24%, transparent);
 }
 
+.secondary-button,
+.ghost-button {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-block;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.ghost-button {
+  background: transparent;
+}
+
 .panel {
   padding: 26px;
 }
@@ -1130,6 +1148,40 @@ summary {
   min-height: 100vh;
   padding: 34px;
   background: var(--background);
+}
+
+.admin-dashboard-shell {
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34%),
+    var(--background);
+}
+
+.admin-hero-actions {
+  align-content: start;
+  display: grid;
+  gap: 12px;
+  min-width: 240px;
+}
+
+.admin-chart-card h2 {
+  margin-top: 0;
+}
+
+.admin-chart-row {
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface-soft);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  padding: 16px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.admin-chart-row small {
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .history-hero {

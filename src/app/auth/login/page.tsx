@@ -36,10 +36,11 @@ export default function LoginPage() {
     }
 
     setIsLoggedIn(true);
-    setMessage(mode === "login" ? "Sesión iniciada. Redirigiendo a práctica..." : "Usuario creado. Si Supabase exige confirmación, revisá tu correo.");
+    setMessage(mode === "login" ? "Sesión iniciada. Detectando panel de entrada..." : "Usuario creado. Si Supabase exige confirmación, revisá tu correo.");
 
     if (mode === "login") {
-      router.push("/practice");
+      const adminResponse = await fetch("/api/admin/stats").catch(() => null);
+      router.push(adminResponse?.ok ? "/admin" : "/practice");
       router.refresh();
     }
   }

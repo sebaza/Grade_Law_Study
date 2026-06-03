@@ -2,6 +2,12 @@ import mammoth from "mammoth";
 import { getPrisma } from "../../src/lib/db/prisma";
 import { SOURCE_MANIFEST, resolveSourcePath } from "./source-manifest";
 
+const EXCLUDED_PROFESSOR_PATTERNS = [/ascencio/iu];
+
+function isExcludedProfessor(name: string | null) {
+  return Boolean(name && EXCLUDED_PROFESSOR_PATTERNS.some((pattern) => pattern.test(name)));
+}
+
 function looksLikeArea(text: string) {
   return /^Derecho\s+.+\.?$/u.test(text) && text.length < 90;
 }
@@ -77,11 +83,14 @@ async function main() {
     const professor = parseProfessorHeading(paragraph);
     if (professor) {
       currentProfessor = professor;
-      professorNames.add(professor);
+      if (!isExcludedProfessor(professor)) {
+        professorNames.add(professor);
+      }
       continue;
     }
 
     if (!isQuestionLike(paragraph)) continue;
+    if (isExcludedProfessor(currentProfessor)) continue;
 
     const possibleAnswer = paragraphs[index + 1] && !isQuestionLike(paragraphs[index + 1])
       ? paragraphs[index + 1]

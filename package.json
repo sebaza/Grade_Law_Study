@@ -19,8 +19,10 @@
     "ingest:documents": "tsx scripts/ingest/source-documents.ts",
     "phase2:db": "npm run ingest:documents && npm run ingest:excel && npm run ingest:questions",
     "generate:question-bank": "tsx scripts/generate/question-bank.ts",
+    "generate:syllabus-questions": "tsx scripts/generate/syllabus-possible-questions.ts",
     "phase3:dry-run": "npm run generate:question-bank",
     "seed:question-bank": "tsx scripts/generate/seed-question-bank.ts",
+    "seed:syllabus-questions": "tsx scripts/generate/syllabus-possible-questions.ts --seed",
     "phase3:db": "npm run phase2:db && npm run phase3:dry-run && npm run seed:question-bank"
   },
   "dependencies": {

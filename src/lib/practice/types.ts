@@ -37,7 +37,10 @@ export type DemoQuestionBank = {
 
 export type PracticeFilters = {
   area?: string;
+  subject?: string;
+  subsubject?: string;
   professor?: string;
   difficulty?: string;
+  questionType?: string;
   mode?: "priority" | "random" | "review";
 };

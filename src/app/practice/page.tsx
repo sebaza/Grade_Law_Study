@@ -28,8 +28,11 @@ type PracticeResponse = {
   questions: PracticeQuestion[];
   facets: {
     areas: string[];
+    subjects: string[];
+    subsubjects: string[];
     professors: string[];
     difficulties: string[];
+    questionTypes: string[];
   };
 };
 
@@ -73,6 +76,15 @@ const practiceModeLabels = {
   unpracticed: "No practicadas",
 } as const;
 
+const questionTypeLabels: Record<string, string> = {
+  application: "Aplicación",
+  case: "Caso práctico",
+  comparison: "Comparación",
+  definition: "Definición",
+  general: "General",
+  oral: "Oral",
+};
+
 type PracticeMode = keyof typeof practiceModeLabels;
 type AnswerMode = "text" | "voice";
 
@@ -81,7 +93,7 @@ function getPracticeConfigFromUrl() {
     return {
       source: "real" as const,
       mode: "random" as PracticeMode,
-      filters: { area: "", professor: "", difficulty: "" },
+      filters: { area: "", subject: "", subsubject: "", professor: "", difficulty: "", questionType: "" },
     };
   }
 
@@ -95,8 +107,11 @@ function getPracticeConfigFromUrl() {
     mode: mode && mode in practiceModeLabels ? mode as PracticeMode : "random" as PracticeMode,
     filters: {
       area: params.get("area") ?? "",
+      subject: params.get("subject") ?? "",
+      subsubject: params.get("subsubject") ?? "",
       professor: params.get("professor") ?? "",
       difficulty: ["low", "medium", "high"].includes(difficulty) ? difficulty : "",
+      questionType: params.get("questionType") ?? "",
     },
   };
 }
@@ -131,7 +146,14 @@ export default function PracticePage() {
   const [practiceSource, setPracticeSource] = useState<"real" | "demo">("real");
   const [practiceMode, setPracticeMode] = useState<PracticeMode>("random");
   const [questionStartedAt, setQuestionStartedAt] = useState(() => Date.now());
-  const [filters, setFilters] = useState({ area: "", professor: "", difficulty: "" });
+  const [filters, setFilters] = useState({
+    area: "",
+    subject: "",
+    subsubject: "",
+    professor: "",
+    difficulty: "",
+    questionType: "",
+  });
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<BlobPart[]>([]);
   const mediaStreamRef = useRef<MediaStream | null>(null);
@@ -172,8 +194,11 @@ export default function PracticePage() {
 
       const params = new URLSearchParams();
       if (filters.area) params.set("area", filters.area);
+      if (filters.subject) params.set("subject", filters.subject);
+      if (filters.subsubject) params.set("subsubject", filters.subsubject);
       if (filters.professor) params.set("professor", filters.professor);
       if (filters.difficulty) params.set("difficulty", filters.difficulty);
+      if (filters.questionType) params.set("questionType", filters.questionType);
 
       const response = practiceSource === "demo"
         ? await fetch(`/api/practice/demo?${params.toString()}`, { signal: controller.signal })
@@ -186,8 +211,11 @@ export default function PracticePage() {
               limit: 10,
               filters: {
                 area: filters.area || undefined,
+                subject: filters.subject || undefined,
+                subsubject: filters.subsubject || undefined,
                 professor: filters.professor || undefined,
                 difficulty: filters.difficulty || undefined,
+                questionType: filters.questionType || undefined,
               },
             }),
           });
@@ -475,11 +503,26 @@ export default function PracticePage() {
           </label>
           <label>
             Área
-            <select value={filters.area} onChange={(event) => setFilters((state) => ({ ...state, area: event.target.value }))}>
+            <select value={filters.area} onChange={(event) => setFilters((state) => ({ ...state, area: event.target.value, subject: "", subsubject: "" }))}>
               <option value="">Todas</option>
               {data?.facets.areas.map((area) => <option key={area}>{area}</option>)}
             </select>
           </label>
+          <label>
+            Materia
+            <select value={filters.subject} onChange={(event) => setFilters((state) => ({ ...state, subject: event.target.value, subsubject: "" }))}>
+              <option value="">Todas</option>
+              {data?.facets.subjects.map((subject) => <option key={subject}>{subject}</option>)}
+            </select>
+          </label>
+          <label>
+            Submateria / temario
+            <select value={filters.subsubject} onChange={(event) => setFilters((state) => ({ ...state, subsubject: event.target.value }))}>
+              <option value="">Todas</option>
+              {data?.facets.subsubjects.map((subsubject) => <option key={subsubject}>{subsubject}</option>)}
+            </select>
+          </label>
+
           <label>
             Profesor
             <select value={filters.professor} onChange={(event) => setFilters((state) => ({ ...state, professor: event.target.value }))}>
@@ -494,6 +537,15 @@ export default function PracticePage() {
               <option value="medium">Media</option>
               <option value="high">Alta</option>
               <option value="low">Baja</option>
+            </select>
+          </label>
+          <label>
+            Tipo de pregunta
+            <select value={filters.questionType} onChange={(event) => setFilters((state) => ({ ...state, questionType: event.target.value }))}>
+              <option value="">Todos</option>
+              {data?.facets.questionTypes.map((questionType) => (
+                <option key={questionType} value={questionType}>{questionTypeLabels[questionType] ?? questionType}</option>
+              ))}
             </select>
           </label>
         </div>
@@ -523,8 +575,10 @@ export default function PracticePage() {
             <article className="practice-card-large question-panel">
               <div className="question-meta">
                 <span>{currentQuestion.areaName}</span>
+                <span>{currentQuestion.subjectName}</span>
                 <span>{currentQuestion.professorName}</span>
                 <span>{currentQuestion.difficulty === "high" ? "Alta" : currentQuestion.difficulty === "medium" ? "Media" : "Baja"}</span>
+                <span>{questionTypeLabels[currentQuestion.questionType] ?? currentQuestion.questionType}</span>
                 <span>{currentQuestion.estimatedProbability}% prob.</span>
                 {practiceSource === "real" && <span>{currentQuestion.attemptCount ?? 0} intentos</span>}
               </div>

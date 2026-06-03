@@ -216,7 +216,15 @@ export default function AdminQuestionsPage() {
   const [questions, setQuestions] = useState<AdminQuestion[]>([]);
   const [form, setForm] = useState<QuestionFormState>(() => createEmptyForm());
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [filters, setFilters] = useState({ q: "", areaId: "", difficulty: "", active: "active" });
+  const [filters, setFilters] = useState({
+    q: "",
+    areaId: "",
+    subjectId: "",
+    subsubjectId: "",
+    professorId: "",
+    difficulty: "",
+    active: "active",
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [message, setMessage] = useState("");
@@ -232,6 +240,16 @@ export default function AdminQuestionsPage() {
     if (!options) return [];
     return options.subsubjects.filter((subsubject) => !form.subjectId || subsubject.subjectId === form.subjectId);
   }, [form.subjectId, options]);
+
+  const filterSubjectsForArea = useMemo(() => {
+    if (!options) return [];
+    return options.subjects.filter((subject) => !filters.areaId || subject.areaId === filters.areaId);
+  }, [filters.areaId, options]);
+
+  const filterSubsubjectsForSubject = useMemo(() => {
+    if (!options) return [];
+    return options.subsubjects.filter((subsubject) => !filters.subjectId || subsubject.subjectId === filters.subjectId);
+  }, [filters.subjectId, options]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -277,6 +295,9 @@ export default function AdminQuestionsPage() {
       const params = new URLSearchParams();
       if (filters.q.trim()) params.set("q", filters.q.trim());
       if (filters.areaId) params.set("areaId", filters.areaId);
+      if (filters.subjectId) params.set("subjectId", filters.subjectId);
+      if (filters.subsubjectId) params.set("subsubjectId", filters.subsubjectId);
+      if (filters.professorId) params.set("professorId", filters.professorId);
       if (filters.difficulty) params.set("difficulty", filters.difficulty);
       if (filters.active) params.set("active", filters.active);
       params.set("limit", "80");
@@ -454,13 +475,41 @@ export default function AdminQuestionsPage() {
             </label>
             <label>
               Área
-              <select value={filters.areaId} onChange={(event) => setFilters((current) => ({ ...current, areaId: event.target.value }))}>
+              <select value={filters.areaId} onChange={(event) => setFilters((current) => ({ ...current, areaId: event.target.value, subjectId: "", subsubjectId: "" }))}>
                 <option value="">Todas</option>
                 {options?.areas.map((area) => (
                   <option key={area.id} value={area.id}>{area.name}</option>
                 ))}
               </select>
             </label>
+            <label>
+              Materia
+              <select value={filters.subjectId} onChange={(event) => setFilters((current) => ({ ...current, subjectId: event.target.value, subsubjectId: "" }))}>
+                <option value="">Todas</option>
+                {filterSubjectsForArea.map((subject) => (
+                  <option key={subject.id} value={subject.id}>{subject.name}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Submateria
+              <select value={filters.subsubjectId} onChange={(event) => setFilters((current) => ({ ...current, subsubjectId: event.target.value }))}>
+                <option value="">Todas</option>
+                {filterSubsubjectsForSubject.map((subsubject) => (
+                  <option key={subsubject.id} value={subsubject.id}>{subsubject.name}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Profesor
+              <select value={filters.professorId} onChange={(event) => setFilters((current) => ({ ...current, professorId: event.target.value }))}>
+                <option value="">Todos</option>
+                {options?.professors.map((professor) => (
+                  <option key={professor.id} value={professor.id}>{professor.name}</option>
+                ))}
+              </select>
+            </label>
+
             <label>
               Dificultad
               <select
@@ -501,7 +550,7 @@ export default function AdminQuestionsPage() {
                 <span>
                   <strong>{question.statement}</strong>
                   <small>
-                    {question.areaName} · {question.subjectName} · {difficultyLabels[question.difficulty]} · {question.estimatedProbability}%
+                    {question.areaName} · {question.subjectName} · {question.subsubjectName} · {difficultyLabels[question.difficulty]} · {question.estimatedProbability}%
                   </small>
                 </span>
               </button>

@@ -20,8 +20,11 @@ export async function getDemoQuestions(filters: PracticeFilters = {}) {
   let questions = bank.questions;
 
   if (filters.area) questions = questions.filter((question) => question.areaName === filters.area);
+  if (filters.subject) questions = questions.filter((question) => question.subjectName === filters.subject);
+  if (filters.subsubject) questions = questions.filter((question) => question.subsubjectName === filters.subsubject);
   if (filters.professor) questions = questions.filter((question) => question.professorName === filters.professor);
   if (filters.difficulty) questions = questions.filter((question) => question.difficulty === filters.difficulty);
+  if (filters.questionType) questions = questions.filter((question) => question.questionType === filters.questionType);
 
   if (filters.mode === "random") {
     questions = questions.slice().sort(() => Math.random() - 0.5);
@@ -42,7 +45,10 @@ export function getPracticeFacets(questions: DemoQuestion[]) {
 
   return {
     areas: unique(questions.map((question) => question.areaName)),
+    subjects: unique(questions.map((question) => question.subjectName)),
+    subsubjects: unique(questions.map((question) => question.subsubjectName)),
     professors: unique(questions.map((question) => question.professorName)),
     difficulties: unique(questions.map((question) => question.difficulty)),
+    questionTypes: unique(questions.map((question) => question.questionType)),
   };
 }
