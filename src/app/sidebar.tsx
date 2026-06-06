@@ -23,8 +23,7 @@ const navItems = [
   { href: "/admin/questions", label: "Banco", Icon: BookOpen },
   { href: "/practice", label: "Practicar", Icon: Dumbbell },
   { href: "/exam", label: "Simulacro", Icon: GraduationCap },
-  { href: "/history", label: "Historial", Icon: History },
-  { href: "/history#estadisticas", label: "Estadísticas", Icon: BarChart2 },
+  { href: "/history", label: "Historial y estadísticas", Icon: History },
   { href: "/auth/login", label: "Ingresar", Icon: LogIn },
 ] as const;
 

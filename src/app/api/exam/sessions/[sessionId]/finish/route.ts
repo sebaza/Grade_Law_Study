@@ -36,6 +36,38 @@ function buildVerdict(averageScore: number, answeredCount: number, totalQuestion
   };
 }
 
+type StoredExamQuestion = {
+  id: string;
+  sectionIndex?: number;
+  sectionQuestionNumber?: number;
+  sectionTitle?: string;
+  focusSubsubjectName?: string;
+};
+
+function isObject(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
+}
+
+function readStoredExamQuestions(filters: unknown): StoredExamQuestion[] {
+  if (!isObject(filters) || !Array.isArray(filters.selectedQuestions)) return [];
+
+  return filters.selectedQuestions.flatMap((item): StoredExamQuestion[] => {
+    if (!isObject(item) || typeof item.id !== "string") return [];
+
+    return [
+      {
+        id: item.id,
+        sectionIndex: typeof item.sectionIndex === "number" ? item.sectionIndex : undefined,
+        sectionQuestionNumber:
+          typeof item.sectionQuestionNumber === "number" ? item.sectionQuestionNumber : undefined,
+        sectionTitle: typeof item.sectionTitle === "string" ? item.sectionTitle : undefined,
+        focusSubsubjectName:
+          typeof item.focusSubsubjectName === "string" ? item.focusSubsubjectName : undefined,
+      },
+    ];
+  });
+}
+
 export async function POST(_request: Request, { params }: { params: Promise<{ sessionId: string }> }) {
   const { sessionId } = await params;
   const supabase = await createSupabaseServerClient();
@@ -62,6 +94,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ se
               area: true,
               subject: true,
               subsubject: true,
+              expectedAnswers: { where: { isActive: true }, take: 1 },
               professors: { include: { professor: true } },
             },
           },
@@ -81,6 +114,33 @@ export async function POST(_request: Request, { params }: { params: Promise<{ se
   const averageScore = answeredCount > 0 ? Math.round(totalScore / answeredCount) : 0;
   const lowestScore = scores.length > 0 ? Math.min(...scores) : 0;
   const totalTimeSeconds = session.attempts.reduce((sum, attempt) => sum + (attempt.timeSeconds ?? 0), 0);
+  const storedQuestions = readStoredExamQuestions(session.filters);
+  const attemptByQuestionId = new Map(session.attempts.map((attempt) => [attempt.questionId, attempt]));
+  const storedQuestionIds = storedQuestions.map((question) => question.id);
+  const plannedQuestions =
+    storedQuestionIds.length > 0
+      ? await db.question.findMany({
+          where: { id: { in: storedQuestionIds } },
+          include: {
+            area: true,
+            subject: true,
+            subsubject: true,
+            expectedAnswers: { where: { isActive: true }, take: 1 },
+            professors: { include: { professor: true } },
+          },
+        })
+      : [];
+  const plannedQuestionById = new Map(plannedQuestions.map((question) => [question.id, question]));
+  const reviewPlan =
+    storedQuestions.length > 0
+      ? storedQuestions
+      : session.attempts.map((attempt, index) => ({
+          id: attempt.questionId,
+          sectionIndex: undefined,
+          sectionQuestionNumber: index + 1,
+          sectionTitle: attempt.question.area.name,
+          focusSubsubjectName: attempt.question.subsubject?.name ?? undefined,
+        }));
 
   await db.practiceSession.updateMany({
     where: {
@@ -102,12 +162,49 @@ export async function POST(_request: Request, { params }: { params: Promise<{ se
     lowestScore,
     totalTimeSeconds,
     verdict: buildVerdict(averageScore, answeredCount, session.totalQuestions, lowestScore),
+    questions: reviewPlan.flatMap((plannedQuestion) => {
+      const attempt = attemptByQuestionId.get(plannedQuestion.id);
+      const question = plannedQuestionById.get(plannedQuestion.id) ?? attempt?.question;
+
+      if (!question) return [];
+
+      return [
+        {
+          id: question.id,
+          statement: question.statement,
+          areaName: question.area.name,
+          subjectName: question.subject?.name ?? "Sin materia",
+          subsubjectName: question.subsubject?.name ?? "Sin submateria",
+          professorName: question.professors.map((link) => link.professor.name).join(", ") || "Sin profesor",
+          sectionIndex: plannedQuestion.sectionIndex,
+          sectionQuestionNumber: plannedQuestion.sectionQuestionNumber,
+          sectionTitle: plannedQuestion.sectionTitle ?? question.area.name,
+          focusSubsubjectName: plannedQuestion.focusSubsubjectName ?? question.subsubject?.name ?? "Submateria mixta",
+          answered: Boolean(attempt),
+          score: attempt ? toNumber(attempt.score) : null,
+          answerMode: attempt?.answerMode ?? null,
+          timeSeconds: attempt?.timeSeconds ?? 0,
+          postStatus: attempt?.postStatus ?? "pending",
+          feedback: attempt?.feedback
+            ? {
+                summary: attempt.feedback.summary,
+                missingPoints: attempt.feedback.missingPoints,
+                improvementSuggestions: attempt.feedback.improvementSuggestions,
+                modelAnswerSuggested: attempt.feedback.modelAnswerSuggested,
+              }
+            : null,
+          modelAnswer:
+            attempt?.feedback?.modelAnswerSuggested ?? question.expectedAnswers[0]?.modelAnswer ?? null,
+        },
+      ];
+    }),
     attempts: session.attempts.map((attempt) => ({
       id: attempt.id,
       questionId: attempt.questionId,
       statement: attempt.question.statement,
       areaName: attempt.question.area.name,
       subjectName: attempt.question.subject?.name ?? "Sin materia",
+      subsubjectName: attempt.question.subsubject?.name ?? "Sin submateria",
       professorName: attempt.question.professors.map((link) => link.professor.name).join(", ") || "Sin profesor",
       score: toNumber(attempt.score),
       answerMode: attempt.answerMode,
@@ -121,6 +218,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ se
             modelAnswerSuggested: attempt.feedback.modelAnswerSuggested,
           }
         : null,
+      modelAnswer: attempt.feedback?.modelAnswerSuggested ?? attempt.question.expectedAnswers[0]?.modelAnswer ?? null,
     })),
   });
 }

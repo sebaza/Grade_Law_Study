@@ -436,7 +436,7 @@ export default function AdminQuestionsPage() {
       <header className="admin-hero">
         <div>
           <Link className="back-link" href="/">← Volver al inicio</Link>
-          <p className="eyebrow">Fase 8 · Banco editable</p>
+          <p className="eyebrow">Banco editable</p>
           <h1>Panel de preguntas y revisión manual</h1>
           <p>
             Ajustá preguntas, pauta esperada, puntos clave, errores comunes, profesores y probabilidad sin tocar scripts.

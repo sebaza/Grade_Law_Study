@@ -19,6 +19,10 @@ type ExamQuestion = {
   keyPointCount: number;
   attemptCount: number;
   bestScore: number;
+  sectionIndex?: number;
+  sectionQuestionNumber?: number;
+  sectionTitle?: string;
+  focusSubsubjectName?: string;
 };
 
 type ExamSessionResponse = {
@@ -29,8 +33,11 @@ type ExamSessionResponse = {
     perQuestionSeconds: number;
     totalSeconds: number;
     strategy: "balanced" | "priority" | "weak";
+    topics: string[];
+    questionsPerTopic: number | null;
   };
   facets: {
+    areas: string[];
     professors: string[];
     difficulties: Difficulty[];
   };
@@ -70,6 +77,7 @@ type FinishResponse = {
     statement: string;
     areaName: string;
     subjectName: string;
+    subsubjectName: string;
     professorName: string;
     score: number;
     answerMode: AnswerMode;
@@ -81,6 +89,31 @@ type FinishResponse = {
       improvementSuggestions: string | null;
       modelAnswerSuggested: string | null;
     } | null;
+    modelAnswer: string | null;
+  }>;
+  questions: Array<{
+    id: string;
+    statement: string;
+    areaName: string;
+    subjectName: string;
+    subsubjectName: string;
+    professorName: string;
+    sectionIndex?: number;
+    sectionQuestionNumber?: number;
+    sectionTitle: string;
+    focusSubsubjectName: string;
+    answered: boolean;
+    score: number | null;
+    answerMode: AnswerMode | null;
+    timeSeconds: number;
+    postStatus: string;
+    feedback: {
+      summary: string;
+      missingPoints: unknown;
+      improvementSuggestions: string | null;
+      modelAnswerSuggested: string | null;
+    } | null;
+    modelAnswer: string | null;
   }>;
 };
 
@@ -89,6 +122,14 @@ type TranscriptionResponse = {
   transcription: string;
   editable: boolean;
   note: string;
+};
+
+type SetupFacetsResponse = {
+  facets: {
+    areas: string[];
+    professors: string[];
+    difficulties: Difficulty[];
+  };
 };
 
 const difficultyLabels: Record<Difficulty, string> = {
@@ -102,6 +143,9 @@ const strategyLabels = {
   priority: "Alta probabilidad",
   weak: "Materias débiles",
 } as const;
+
+const requiredTopicCount = 3;
+const questionsPerTopic = 10;
 
 function formatTimer(totalSeconds: number) {
   const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, "0");
@@ -119,8 +163,32 @@ function getSupportedAudioMimeType() {
   return candidates.find((candidate) => MediaRecorder.isTypeSupported(candidate));
 }
 
+function formatReviewList(value: unknown) {
+  if (Array.isArray(value)) {
+    return value.map((item) => {
+      if (typeof item === "string") return item;
+      if (item && typeof item === "object") {
+        const record = item as Record<string, unknown>;
+        return String(record.description ?? record.label ?? record.text ?? JSON.stringify(record));
+      }
+
+      return String(item);
+    }).join("; ");
+  }
+
+  if (typeof value === "string") return value;
+  if (value == null) return "";
+
+  return JSON.stringify(value);
+}
+
 export default function ExamPage() {
   const [exam, setExam] = useState<ExamSessionResponse | null>(null);
+  const [setupFacets, setSetupFacets] = useState<SetupFacetsResponse["facets"]>({
+    areas: [],
+    professors: [],
+    difficulties: ["low", "medium", "high"],
+  });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [answerMode, setAnswerMode] = useState<AnswerMode>("text");
@@ -129,6 +197,7 @@ export default function ExamPage() {
   const [secondsLeft, setSecondsLeft] = useState(900);
   const [questionStartedAt, setQuestionStartedAt] = useState(() => Date.now());
   const [isStarting, setIsStarting] = useState(false);
+  const [isLoadingFacets, setIsLoadingFacets] = useState(true);
   const [isEvaluating, setIsEvaluating] = useState(false);
   const [isFinishing, setIsFinishing] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -139,10 +208,9 @@ export default function ExamPage() {
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [transcriptionDraft, setTranscriptionDraft] = useState("");
   const [settings, setSettings] = useState({
-    limit: 3,
+    topicOrder: Array.from({ length: requiredTopicCount }, () => ""),
     perQuestionSeconds: 900,
     strategy: "balanced" as keyof typeof strategyLabels,
-    difficulty: "",
     professor: "",
   });
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -153,6 +221,76 @@ export default function ExamPage() {
   const currentEvaluation = currentQuestion ? evaluations[currentQuestion.id] : null;
   const answeredCount = useMemo(() => Object.keys(evaluations).length, [evaluations]);
   const progress = exam ? Math.round((answeredCount / exam.questions.length) * 100) : 0;
+  const questionSections = useMemo(() => {
+    if (!exam) return [];
+
+    const sections = new Map<number, { title: string; focus: string; questions: ExamQuestion[] }>();
+
+    exam.questions.forEach((question, index) => {
+      const sectionIndex = question.sectionIndex ?? Math.floor(index / questionsPerTopic);
+      const section = sections.get(sectionIndex) ?? {
+        title: question.sectionTitle ?? question.areaName,
+        focus: question.focusSubsubjectName ?? question.subsubjectName,
+        questions: [],
+      };
+      section.questions.push(question);
+      sections.set(sectionIndex, section);
+    });
+
+    return Array.from(sections.entries())
+      .sort(([a], [b]) => a - b)
+      .map(([sectionIndex, section]) => ({ sectionIndex, ...section }));
+  }, [exam]);
+  const finalReviewQuestions = useMemo(() => {
+    if (!finalResult) return [];
+    if (finalResult.questions?.length) return finalResult.questions;
+
+    return finalResult.attempts.map((attempt, index) => ({
+      id: attempt.questionId,
+      statement: attempt.statement,
+      areaName: attempt.areaName,
+      subjectName: attempt.subjectName,
+      subsubjectName: attempt.subsubjectName,
+      professorName: attempt.professorName,
+      sectionIndex: undefined,
+      sectionQuestionNumber: index + 1,
+      sectionTitle: attempt.areaName,
+      focusSubsubjectName: attempt.subsubjectName,
+      answered: true,
+      score: attempt.score,
+      answerMode: attempt.answerMode,
+      timeSeconds: attempt.timeSeconds,
+      postStatus: attempt.postStatus,
+      feedback: attempt.feedback,
+      modelAnswer: attempt.modelAnswer,
+    }));
+  }, [finalResult]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("/api/exam/sessions")
+      .then((response) => (response.ok ? (response.json() as Promise<SetupFacetsResponse>) : null))
+      .then((payload) => {
+        if (!cancelled && payload?.facets) {
+          setSetupFacets(payload.facets);
+          setSettings((current) => ({
+            ...current,
+            topicOrder: current.topicOrder.map((topic, index) => topic || payload.facets.areas[index] || ""),
+          }));
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setErrorMessage("No pude cargar las materias disponibles para el simulacro.");
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoadingFacets(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!exam || finalResult || currentEvaluation) return;
@@ -186,7 +324,29 @@ export default function ExamPage() {
     setQuestionStartedAt(Date.now());
   }
 
+  function updateTopicOrder(index: number, value: string) {
+    setSettings((current) => ({
+      ...current,
+      topicOrder: current.topicOrder.map((topic, topicIndex) => (topicIndex === index ? value : topic)),
+    }));
+  }
+
+  function getAvailableTopicOptions(currentIndex: number) {
+    const selectedElsewhere = new Set(
+      settings.topicOrder.filter((topic, topicIndex) => topic && topicIndex !== currentIndex),
+    );
+
+    return setupFacets.areas.filter((area) => !selectedElsewhere.has(area));
+  }
+
   async function startExam() {
+    const topicOrder = settings.topicOrder.map((topic) => topic.trim()).filter(Boolean);
+
+    if (topicOrder.length !== requiredTopicCount) {
+      setErrorMessage("Elegí las 3 materias y su orden antes de iniciar. Sin estructura no hay simulacro real.");
+      return;
+    }
+
     setIsStarting(true);
     setErrorMessage("");
     setFinalResult(null);
@@ -196,11 +356,12 @@ export default function ExamPage() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        limit: settings.limit,
+        limit: requiredTopicCount * questionsPerTopic,
         perQuestionSeconds: settings.perQuestionSeconds,
         strategy: settings.strategy,
+        topicOrder,
+        questionsPerTopic,
         filters: {
-          difficulty: settings.difficulty || undefined,
           professor: settings.professor || undefined,
         },
       }),
@@ -414,20 +575,39 @@ export default function ExamPage() {
           <div>
             <h2>Configurar simulacro</h2>
             <p>
-              Para MVP usamos sesiones reales de práctica por debajo. Es arquitectura sana: una sola fuente de verdad
-              para intentos, feedback y progreso.
+              Esto ahora se parece a un examen de grado de verdad: elegís el orden de 3 materias troncales y rendís
+              10 preguntas por bloque, con dificultad incremental sobre una misma submateria o materias cercanas.
             </p>
+          </div>
+          <div className="exam-topic-order">
+            <div>
+              <strong>Orden de materias importantes</strong>
+              <p>Elegí el recorrido. La app arma 30 preguntas: 3 bloques × 10 preguntas. Es así de fácil.</p>
+            </div>
+            <div className="exam-topic-grid">
+              {settings.topicOrder.map((topic, index) => (
+                <label key={index}>
+                  Bloque {index + 1}
+                  <select
+                    disabled={isLoadingFacets}
+                    value={topic}
+                    onChange={(event) => updateTopicOrder(index, event.target.value)}
+                  >
+                    <option value="">{isLoadingFacets ? "Cargando materias..." : "Seleccionar materia"}</option>
+                    {getAvailableTopicOptions(index).map((area) => (
+                      <option key={area} value={area}>
+                        {area}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              ))}
+            </div>
           </div>
           <div className="exam-settings-grid">
             <label>
-              Cantidad de preguntas
-              <input
-                min="1"
-                max="12"
-                type="number"
-                value={settings.limit}
-                onChange={(event) => setSettings((current) => ({ ...current, limit: Number(event.target.value) }))}
-              />
+              Preguntas totales
+              <input readOnly type="number" value={requiredTopicCount * questionsPerTopic} />
             </label>
             <label>
               Minutos por pregunta
@@ -454,20 +634,8 @@ export default function ExamPage() {
                 ))}
               </select>
             </label>
-            <label>
-              Dificultad
-              <select
-                value={settings.difficulty}
-                onChange={(event) => setSettings((current) => ({ ...current, difficulty: event.target.value }))}
-              >
-                <option value="">Todas</option>
-                <option value="medium">Media</option>
-                <option value="high">Alta</option>
-                <option value="low">Baja</option>
-              </select>
-            </label>
           </div>
-          <button className="primary-button" disabled={isStarting} type="button" onClick={startExam}>
+          <button className="primary-button" disabled={isStarting || isLoadingFacets} type="button" onClick={startExam}>
             {isStarting ? "Iniciando..." : "Iniciar simulacro"}
           </button>
         </section>
@@ -477,25 +645,42 @@ export default function ExamPage() {
         <section className="exam-layout">
           <aside className="exam-question-list card">
             <h2>Ronda</h2>
-            {exam.questions.map((question, index) => (
-              <button
-                className={`exam-step ${index === currentIndex ? "active" : ""} ${evaluations[question.id] ? "done" : ""}`}
-                key={question.id}
-                type="button"
-                onClick={() => {
-                  setCurrentIndex(index);
-                  resetAnswerState();
-                }}
-              >
-                <span>{index + 1}</span>
-                <strong>{question.areaName}</strong>
-                <small>{evaluations[question.id]?.evaluation.percentage ?? "Pendiente"}%</small>
-              </button>
+            {questionSections.map((section) => (
+              <div className="exam-section-nav" key={section.sectionIndex}>
+                <div>
+                  <strong>{section.title}</strong>
+                  <small>Foco: {section.focus}</small>
+                </div>
+                {section.questions.map((question) => {
+                  const index = exam.questions.findIndex((candidate) => candidate.id === question.id);
+
+                  return (
+                    <button
+                      className={`exam-step ${index === currentIndex ? "active" : ""} ${evaluations[question.id] ? "done" : ""}`}
+                      key={question.id}
+                      type="button"
+                      onClick={() => {
+                        setCurrentIndex(index);
+                        resetAnswerState();
+                      }}
+                    >
+                      <span>{question.sectionQuestionNumber ?? index + 1}</span>
+                      <strong>{difficultyLabels[question.difficulty]}</strong>
+                      <small>{evaluations[question.id]?.evaluation.percentage ?? "Pendiente"}%</small>
+                    </button>
+                  );
+                })}
+              </div>
             ))}
           </aside>
 
           <section className="exam-panel card">
             <div className="question-meta">
+              <span>Bloque {(currentQuestion.sectionIndex ?? 0) + 1}</span>
+              <span>
+                Pregunta {currentQuestion.sectionQuestionNumber ?? currentIndex + 1}/
+                {exam.config.questionsPerTopic ?? exam.questions.length}
+              </span>
               <span>{currentQuestion.areaName}</span>
               <span>{currentQuestion.subjectName}</span>
               <span>{currentQuestion.professorName}</span>
@@ -503,7 +688,10 @@ export default function ExamPage() {
               <span>{currentQuestion.estimatedProbability}% prob.</span>
             </div>
             <h2>{currentQuestion.statement}</h2>
-            <p className="muted-copy">{currentQuestion.subsubjectName} · {currentQuestion.keyPointCount} puntos clave esperados</p>
+            <p className="muted-copy">
+              Foco del bloque: {currentQuestion.focusSubsubjectName ?? currentQuestion.subsubjectName} · Pregunta:
+              {" "}{currentQuestion.subsubjectName} · {currentQuestion.keyPointCount} puntos clave esperados
+            </p>
 
             <div className="answer-mode-tabs" aria-label="Modo de respuesta">
               <button className={answerMode === "text" ? "active" : ""} type="button" onClick={() => setAnswerMode("text")}>Texto</button>
@@ -604,15 +792,40 @@ export default function ExamPage() {
             <div><span>{Math.round(finalResult.totalTimeSeconds / 60)}m</span><strong>Tiempo usado</strong></div>
           </div>
           <p>{finalResult.verdict.recommendation}</p>
+          <div className="exam-review-heading">
+            <div>
+              <h3>Pauta final por pregunta</h3>
+              <p>Acá está el mapa completo: pregunta, desempeño y respuesta esperada. Sin pauta no hay aprendizaje, hay sensación.</p>
+            </div>
+          </div>
           <div className="attempt-history-list">
-            {finalResult.attempts.map((attempt) => (
-              <article className="attempt-history-row" key={attempt.id}>
+            {finalReviewQuestions.map((question) => (
+              <article className="attempt-history-row exam-review-row" key={question.id}>
                 <div>
-                  <strong>{attempt.statement}</strong>
-                  <p>{attempt.areaName} · {attempt.subjectName} · {attempt.professorName}</p>
-                  <small>{attempt.feedback?.summary}</small>
+                  <strong>
+                    Bloque {(question.sectionIndex ?? 0) + 1}
+                    {question.sectionQuestionNumber ? ` · Pregunta ${question.sectionQuestionNumber}` : ""}:{" "}
+                    {question.statement}
+                  </strong>
+                  <p>
+                    {question.sectionTitle} · {question.subjectName} · {question.subsubjectName} ·{" "}
+                    {question.professorName}
+                  </p>
+                  <small>{question.feedback?.summary ?? "Sin respuesta evaluada."}</small>
+                  <details className="exam-answer-key">
+                    <summary>Ver pauta y faltantes</summary>
+                    {question.feedback?.missingPoints ? (
+                      <p><strong>Faltantes:</strong> {formatReviewList(question.feedback.missingPoints)}</p>
+                    ) : null}
+                    {question.feedback?.improvementSuggestions ? (
+                      <p><strong>Cómo mejorar:</strong> {question.feedback.improvementSuggestions}</p>
+                    ) : null}
+                    <p><strong>Pauta esperada:</strong> {question.modelAnswer ?? "No hay pauta cargada para esta pregunta."}</p>
+                  </details>
                 </div>
-                <span className={`score-pill ${attempt.score >= 70 ? "strong" : "danger"}`}>{attempt.score}%</span>
+                <span className={`score-pill ${(question.score ?? 0) >= 70 ? "strong" : "danger"}`}>
+                  {question.answered ? `${question.score}%` : "Pendiente"}
+                </span>
               </article>
             ))}
           </div>

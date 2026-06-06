@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 
 const themes = [
   { id: "classic", label: "Clásico" },
@@ -11,26 +11,39 @@ const themes = [
 type ThemeId = (typeof themes)[number]["id"];
 
 const storageKey = "grade-law-study-theme";
+const themeChangeEvent = "grade-law-study-theme-change";
 
 function isThemeId(value: string | null): value is ThemeId {
   return themes.some((theme) => theme.id === value);
 }
 
-export function ThemeToggle({ inline = false }: { inline?: boolean }) {
-  const [theme, setTheme] = useState<ThemeId>(() => {
-    if (typeof window === "undefined") return "classic";
+function getStoredTheme(): ThemeId {
+  if (typeof window === "undefined") return "classic";
 
-    const savedTheme = window.localStorage.getItem(storageKey);
-    return isThemeId(savedTheme) ? savedTheme : "classic";
-  });
+  const savedTheme = window.localStorage.getItem(storageKey);
+  return isThemeId(savedTheme) ? savedTheme : "classic";
+}
+
+function subscribeToThemeChanges(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener(themeChangeEvent, onStoreChange);
+
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener(themeChangeEvent, onStoreChange);
+  };
+}
+
+export function ThemeToggle({ inline = false }: { inline?: boolean }) {
+  const theme = useSyncExternalStore(subscribeToThemeChanges, getStoredTheme, () => "classic");
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem(storageKey, theme);
   }, [theme]);
 
   function changeTheme(nextTheme: ThemeId) {
-    setTheme(nextTheme);
+    window.localStorage.setItem(storageKey, nextTheme);
+    window.dispatchEvent(new Event(themeChangeEvent));
   }
 
   return (

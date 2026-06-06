@@ -133,6 +133,7 @@ export default function PracticePage() {
   const [answer, setAnswer] = useState("");
   const [answerMode, setAnswerMode] = useState<AnswerMode>("text");
   const [evaluation, setEvaluation] = useState<EvaluationResponse | null>(null);
+  const [sectionEvaluations, setSectionEvaluations] = useState<Record<number, EvaluationResponse>>({});
   const [isEvaluating, setIsEvaluating] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [isTranscribing, setIsTranscribing] = useState(false);
@@ -242,6 +243,7 @@ export default function PracticePage() {
       setCurrentIndex(0);
       setAnswer("");
       setEvaluation(null);
+      setSectionEvaluations({});
       setVoiceMessage("");
       setTranscriptionDraft("");
       setAudioPath(null);
@@ -270,6 +272,24 @@ export default function PracticePage() {
   }, [audioUrl]);
 
   const currentQuestion = data?.questions[currentIndex] ?? null;
+  const sectionScores = useMemo(
+    () => Object.values(sectionEvaluations).map((result) => result.evaluation.percentage),
+    [sectionEvaluations],
+  );
+  const sectionSummary = useMemo(() => {
+    if (!data || data.questions.length === 0 || sectionScores.length === 0) return null;
+
+    const totalScore = sectionScores.reduce((sum, score) => sum + score, 0);
+
+    return {
+      average: Math.round(totalScore / sectionScores.length),
+      lowest: Math.min(...sectionScores),
+      highest: Math.max(...sectionScores),
+      answeredCount: sectionScores.length,
+      totalQuestions: data.questions.length,
+      isComplete: sectionScores.length === data.questions.length,
+    };
+  }, [data, sectionScores]);
   const progress = useMemo(() => {
     if (!data || data.questions.length === 0) return 0;
     return Math.round(((currentIndex + 1) / data.questions.length) * 100);
@@ -429,6 +449,7 @@ export default function PracticePage() {
 
     const payload = await response.json() as EvaluationResponse;
     setEvaluation(payload);
+    setSectionEvaluations((current) => ({ ...current, [currentIndex]: payload }));
     setIsEvaluating(false);
   }
 
@@ -440,6 +461,11 @@ export default function PracticePage() {
 
   function repeatQuestion() {
     resetAnswerState();
+    setSectionEvaluations((current) => {
+      const next = { ...current };
+      delete next[currentIndex];
+      return next;
+    });
   }
 
   async function updateQuestionState(status: "mastered" | "needs_review" | "excluded") {
@@ -571,6 +597,25 @@ export default function PracticePage() {
               </span>
               <div className="practice-progress"><span style={{ width: `${progress}%` }} /></div>
             </div>
+
+            {sectionSummary && (
+              <article className={`practice-card-large section-average-card ${sectionSummary.isComplete ? "complete" : ""}`}>
+                <div>
+                  <span>{sectionSummary.isComplete ? "Seccion completa" : "Promedio parcial"}</span>
+                  <h2>{sectionSummary.average}%</h2>
+                  <p>
+                    {sectionSummary.answeredCount}/{sectionSummary.totalQuestions} preguntas evaluadas.
+                    {sectionSummary.isComplete
+                      ? " Buenisimo: ahora mira el patron, no solo el numero."
+                      : " El promedio final aparece al completar las 10."}
+                  </p>
+                </div>
+                <div className="section-average-stats">
+                  <div><strong>{sectionSummary.highest}%</strong><small>Mejor</small></div>
+                  <div><strong>{sectionSummary.lowest}%</strong><small>Mas bajo</small></div>
+                </div>
+              </article>
+            )}
 
             <article className="practice-card-large question-panel">
               <div className="question-meta">
