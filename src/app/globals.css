@@ -1024,6 +1024,52 @@ a {
   line-height: 1.55;
 }
 
+.adaptive-follow-up {
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+  display: grid;
+  gap: 16px;
+  margin: 18px 0;
+  padding: 18px;
+}
+
+.adaptive-follow-up span,
+.adaptive-follow-up small {
+  color: var(--muted);
+  display: block;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+.adaptive-follow-up strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 6px;
+}
+
+.adaptive-follow-up p {
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+.adaptive-follow-up label {
+  color: var(--muted);
+  display: grid;
+  gap: 8px;
+  font-weight: 800;
+}
+
+.adaptive-follow-up textarea {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--ink);
+  min-height: 130px;
+  padding: 14px;
+  resize: vertical;
+}
+
 .voice-panel audio {
   width: 100%;
 }
@@ -1134,6 +1180,14 @@ details p {
 
 .rubric-box strong {
   font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.rubric-box small {
+  color: var(--muted);
+  display: block;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  margin-top: 8px;
 }
 
 .feedback-columns {

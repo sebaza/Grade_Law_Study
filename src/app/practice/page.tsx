@@ -37,17 +37,31 @@ type PracticeResponse = {
 };
 
 type EvaluationResponse = {
+  status?: "evaluated";
   attemptId?: string;
   persisted?: boolean;
   evaluation: {
     totalScore: number;
     percentage: number;
     summary: string;
-    rubric: Record<string, { score: number; level: string; feedback: string }>;
+    rubric: Record<string, { score: number; level: string; feedback: string; impact: string }>;
     correctKeyPoints: string[];
     missingKeyPoints: string[];
     improvementRecommendation: string;
     modelAnswer: string;
+  };
+  adaptive?: {
+    usedFollowUp: boolean;
+  };
+  note?: string;
+};
+
+type FollowUpResponse = {
+  status: "requires_follow_up";
+  followUp: {
+    question: string;
+    reason: string;
+    targetCriteria: string[];
   };
   note?: string;
 };
@@ -133,6 +147,8 @@ export default function PracticePage() {
   const [answer, setAnswer] = useState("");
   const [answerMode, setAnswerMode] = useState<AnswerMode>("text");
   const [evaluation, setEvaluation] = useState<EvaluationResponse | null>(null);
+  const [pendingFollowUp, setPendingFollowUp] = useState<FollowUpResponse["followUp"] | null>(null);
+  const [followUpAnswer, setFollowUpAnswer] = useState("");
   const [sectionEvaluations, setSectionEvaluations] = useState<Record<number, EvaluationResponse>>({});
   const [isEvaluating, setIsEvaluating] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
@@ -173,6 +189,8 @@ export default function PracticePage() {
   function resetAnswerState() {
     setAnswer("");
     setEvaluation(null);
+    setPendingFollowUp(null);
+    setFollowUpAnswer("");
     setVoiceMessage("");
     setSuccessMessage("");
     setTranscriptionDraft("");
@@ -243,6 +261,8 @@ export default function PracticePage() {
       setCurrentIndex(0);
       setAnswer("");
       setEvaluation(null);
+      setPendingFollowUp(null);
+      setFollowUpAnswer("");
       setSectionEvaluations({});
       setVoiceMessage("");
       setTranscriptionDraft("");
@@ -413,6 +433,7 @@ export default function PracticePage() {
 
   async function submitAnswer() {
     if (!currentQuestion || !answer.trim()) return;
+    if (pendingFollowUp && !followUpAnswer.trim()) return;
 
     setIsEvaluating(true);
     setErrorMessage("");
@@ -422,12 +443,24 @@ export default function PracticePage() {
       ? {
           sourceReference: currentQuestion.sourceReference,
           answer,
+          followUp: pendingFollowUp
+            ? {
+                question: pendingFollowUp.question,
+                answer: followUpAnswer,
+              }
+            : undefined,
           timeSeconds: Math.max(1, Math.round((Date.now() - questionStartedAt) / 1000)),
         }
       : {
           questionId: currentQuestion.id,
           sessionId: data?.sessionId,
           answer,
+          followUp: pendingFollowUp
+            ? {
+                question: pendingFollowUp.question,
+                answer: followUpAnswer,
+              }
+            : undefined,
           answerMode,
           transcription: answerMode === "voice" ? transcriptionDraft || answer : undefined,
           audioPath: answerMode === "voice" ? audioPath ?? undefined : undefined,
@@ -447,9 +480,18 @@ export default function PracticePage() {
       return;
     }
 
-    const payload = await response.json() as EvaluationResponse;
+    const payload = await response.json() as EvaluationResponse | FollowUpResponse;
+    if (payload.status === "requires_follow_up") {
+      setPendingFollowUp(payload.followUp);
+      setFollowUpAnswer("");
+      setIsEvaluating(false);
+      return;
+    }
+
     setEvaluation(payload);
     setSectionEvaluations((current) => ({ ...current, [currentIndex]: payload }));
+    setPendingFollowUp(null);
+    setFollowUpAnswer("");
     setIsEvaluating(false);
   }
 
@@ -667,6 +709,7 @@ export default function PracticePage() {
                 {answerMode === "voice" ? "Transcripción editable" : "Tu respuesta"}
                 <textarea
                   value={answer}
+                  disabled={Boolean(evaluation) || Boolean(pendingFollowUp)}
                   onChange={(event) => {
                     setAnswer(event.target.value);
                     if (answerMode === "voice") setTranscriptionDraft(event.target.value);
@@ -676,9 +719,40 @@ export default function PracticePage() {
                     : "Respondé como si estuvieras frente a la comisión: define, desarrolla, aplica y cerrá con orden."}
                 />
               </label>
+              {pendingFollowUp && (
+                <div className="adaptive-follow-up">
+                  <div>
+                    <span>Repregunta de comisión</span>
+                    <strong>{pendingFollowUp.question}</strong>
+                    <p>{pendingFollowUp.reason}</p>
+                    {pendingFollowUp.targetCriteria.length > 0 && (
+                      <small>
+                        Criterios apuntados:{" "}
+                        {pendingFollowUp.targetCriteria.map((criterion) => rubricLabels[criterion] ?? criterion).join(", ")}
+                      </small>
+                    )}
+                  </div>
+                  <label>
+                    Tu respuesta complementaria
+                    <textarea
+                      value={followUpAnswer}
+                      onChange={(event) => setFollowUpAnswer(event.target.value)}
+                      placeholder="Contestá esta repregunta de forma concreta. La nota sale después de combinar esta respuesta con la inicial."
+                    />
+                  </label>
+                </div>
+              )}
               <div className="practice-actions">
-                <button type="button" onClick={submitAnswer} disabled={isEvaluating || isRecording || isTranscribing || !answer.trim()}>
-                  {isEvaluating ? "Evaluando..." : practiceSource === "real" ? "Evaluar y guardar intento" : "Enviar respuesta demo"}
+                <button
+                  type="button"
+                  onClick={submitAnswer}
+                  disabled={isEvaluating || isRecording || isTranscribing || !answer.trim() || Boolean(pendingFollowUp && !followUpAnswer.trim())}
+                >
+                  {isEvaluating
+                    ? pendingFollowUp ? "Evaluando respuesta completa..." : "Analizando..."
+                    : pendingFollowUp
+                      ? practiceSource === "real" ? "Evaluar respuesta completa" : "Evaluar respuesta demo completa"
+                      : practiceSource === "real" ? "Enviar respuesta" : "Enviar respuesta demo"}
                 </button>
                 <button type="button" className="secondary" onClick={repeatQuestion}>Repetir</button>
                 <button type="button" className="secondary" onClick={nextQuestion}>Siguiente</button>
@@ -712,6 +786,7 @@ export default function PracticePage() {
                       <span>{rubricLabels[key]}</span>
                       <strong>{value.score}/10 · {value.level}</strong>
                       <p>{value.feedback}</p>
+                      <small>{value.impact}</small>
                     </div>
                   ))}
                 </div>

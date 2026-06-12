@@ -1,5 +1,5 @@
+import type { AdaptiveFollowUpResult, EvaluationResult } from "@/lib/domain/evaluation";
 import type { DemoQuestion } from "@/lib/practice/types";
-import type { EvaluationResult } from "@/lib/domain/evaluation";
 
 function normalize(value: string) {
   return value
@@ -10,8 +10,9 @@ function normalize(value: string) {
 
 function tokenize(value: string) {
   const stopWords = new Set([
-    "para", "como", "este", "esta", "estos", "estas", "debe", "deben", "sobre", "dentro", "derecho", "juridico", "juridica",
-    "norma", "normas", "concepto", "conceptos", "pregunta", "respuesta", "articulo", "art", "una", "uno", "los", "las", "con", "por",
+    "para", "como", "este", "esta", "estos", "estas", "debe", "deben", "sobre", "dentro", "derecho", "juridico",
+    "juridica", "norma", "normas", "concepto", "conceptos", "pregunta", "respuesta", "articulo", "art", "una", "uno",
+    "los", "las", "con", "por",
   ]);
 
   return normalize(value)
@@ -36,11 +37,12 @@ function scoreToLevel(score: number) {
   return "No cumple" as const;
 }
 
-function rubricScore(score: number, feedback: string) {
+function rubricScore(score: number, feedback: string, impact: string) {
   return {
     score: score as 2 | 4 | 6 | 8 | 10,
     level: scoreToLevel(score),
     feedback,
+    impact,
   };
 }
 
@@ -52,15 +54,56 @@ function clampRubricScore(value: number) {
   return 2;
 }
 
+function hasLegalSignals(answer: string) {
+  const normalizedAnswer = normalize(answer);
+
+  return ["articulo", "norma", "principio", "accion", "requisito", "efecto", "tribunal", "codigo", "constitucion"]
+    .some((signal) => normalizedAnswer.includes(signal));
+}
+
+export function assessDemoAnswerForFollowUp(question: DemoQuestion, answer: string): AdaptiveFollowUpResult {
+  const matchedKeyPoints = question.keyPoints.filter((point) => overlapRatio(answer, point.description) >= 0.18);
+  const expectedRatio = overlapRatio(answer, question.expectedAnswer);
+  const hasLegalLanguage = hasLegalSignals(answer);
+  const isTooShort = tokenize(answer).length < 18;
+  const weakKeyPoints = question.keyPoints.length > 0 && matchedKeyPoints.length / question.keyPoints.length < 0.35;
+  const requiresFollowUp = isTooShort || weakKeyPoints || expectedRatio < 0.25 || !hasLegalLanguage;
+
+  if (!requiresFollowUp) {
+    return {
+      requiresFollowUp: false,
+      reason: "La respuesta inicial permite evaluar razonablemente los cuatro criterios de la rúbrica.",
+      targetCriteria: [],
+      followUpQuestion: "",
+    };
+  }
+
+  const targetCriteria: AdaptiveFollowUpResult["targetCriteria"] = [];
+  if (!hasLegalLanguage) targetCriteria.push("legalNorms");
+  if (weakKeyPoints) targetCriteria.push("legalConcepts");
+  if (expectedRatio < 0.25) targetCriteria.push("practicalApplication");
+  if (isTooShort) targetCriteria.push("structureAndArgumentation");
+
+  const missingPoint = question.keyPoints.find((point) => !matchedKeyPoints.includes(point));
+
+  return {
+    requiresFollowUp: true,
+    reason: "La respuesta inicial es demasiado general para asignar una nota final con justicia.",
+    targetCriteria: targetCriteria.length > 0 ? targetCriteria : ["legalConcepts"],
+    followUpQuestion: missingPoint
+      ? `Precisá este punto para completar tu respuesta: ${missingPoint.description}`
+      : "Precisá la norma aplicable, el concepto central y cómo se aplica a la pregunta concreta.",
+  };
+}
+
 export function evaluateDemoAnswer(question: DemoQuestion, answer: string): EvaluationResult {
   const matchedKeyPoints = question.keyPoints.filter((point) => overlapRatio(answer, point.description) >= 0.18);
   const missingKeyPoints = question.keyPoints.filter((point) => !matchedKeyPoints.includes(point));
   const answerTokens = tokenize(answer);
   const expectedRatio = overlapRatio(answer, question.expectedAnswer);
-  const structureSignals = ["primero", "segundo", "ademas", "por tanto", "en consecuencia", "finalmente"];
-  const hasStructure = structureSignals.some((signal) => normalize(answer).includes(signal));
-  const hasLegalLanguage = ["articulo", "norma", "principio", "accion", "requisito", "efecto", "tribunal", "codigo", "constitucion"]
-    .some((signal) => normalize(answer).includes(signal));
+  const structureSignals = ["primero", "segundo", "ademas", "además", "por tanto", "en consecuencia", "finalmente"];
+  const hasStructure = structureSignals.some((signal) => normalize(answer).includes(normalize(signal)));
+  const hasLegalLanguage = hasLegalSignals(answer);
 
   const keyPointRatio = question.keyPoints.length > 0 ? matchedKeyPoints.length / question.keyPoints.length : expectedRatio;
   const legalNormsScore = clampRubricScore((hasLegalLanguage ? 4 : 2) + expectedRatio * 6);
@@ -75,10 +118,34 @@ export function evaluateDemoAnswer(question: DemoQuestion, answer: string): Eval
     percentage,
     isCorrect: percentage >= 70,
     rubric: {
-      legalNorms: rubricScore(legalNormsScore, hasLegalLanguage ? "Usa señales de lenguaje normativo/jurídico." : "Falta mencionar normas, artículos o instituciones con precisión."),
-      legalConcepts: rubricScore(legalConceptsScore, `${matchedKeyPoints.length}/${question.keyPoints.length} puntos clave detectados.`),
-      practicalApplication: rubricScore(practicalScore, expectedRatio >= 0.45 ? "Relaciona adecuadamente la respuesta con la pauta esperada." : "La aplicación a la pregunta todavía es parcial."),
-      structureAndArgumentation: rubricScore(structureScore, hasStructure ? "Respuesta con señales de orden argumentativo." : "Conviene ordenar la respuesta en definición, desarrollo y cierre."),
+      legalNorms: rubricScore(
+        legalNormsScore,
+        hasLegalLanguage ? "Usa señales de lenguaje normativo/jurídico." : "Falta mencionar normas, artículos o instituciones con precisión.",
+        hasLegalLanguage
+          ? "Sube porque la rúbrica premia identificar y ubicar normas aplicables."
+          : "Baja con fuerza porque la rúbrica exige identificar y relacionar normas, no solo hablar en general.",
+      ),
+      legalConcepts: rubricScore(
+        legalConceptsScore,
+        `${matchedKeyPoints.length}/${question.keyPoints.length} puntos clave detectados.`,
+        keyPointRatio >= 0.5
+          ? "Sostiene el puntaje porque aparecen conceptos centrales de la pauta."
+          : "Limita el puntaje porque no se distinguen suficientes conceptos técnico-jurídicos.",
+      ),
+      practicalApplication: rubricScore(
+        practicalScore,
+        expectedRatio >= 0.45 ? "Relaciona adecuadamente la respuesta con la pauta esperada." : "La aplicación a la pregunta todavía es parcial.",
+        expectedRatio >= 0.45
+          ? "Aporta porque conecta la teoría con la pregunta concreta."
+          : "Baja porque la rúbrica exige aplicar normas e instituciones, no solo definirlas.",
+      ),
+      structureAndArgumentation: rubricScore(
+        structureScore,
+        hasStructure ? "Respuesta con señales de orden argumentativo." : "Conviene ordenar la respuesta en definición, desarrollo y cierre.",
+        hasStructure
+          ? "Ayuda a sostener claridad y secuencia oral."
+          : "Afecta menos que el fondo si hay contenido, pero reduce claridad frente a comisión.",
+      ),
     },
     summary: percentage >= 70
       ? "Respuesta aceptable para práctica inicial, aunque debe revisarse contra la pauta completa."
@@ -86,7 +153,7 @@ export function evaluateDemoAnswer(question: DemoQuestion, answer: string): Eval
     correctKeyPoints: matchedKeyPoints.map((point) => point.description),
     missingKeyPoints: missingKeyPoints.map((point) => point.description),
     conceptualErrors: [],
-    improvementRecommendation: "Reformula la respuesta mencionando norma aplicable, concepto central, efectos y una conclusión ordenada.",
+    improvementRecommendation: "Reformulá la respuesta mencionando norma aplicable, concepto central, efectos y una conclusión ordenada.",
     modelAnswer: question.expectedAnswer,
   };
 }

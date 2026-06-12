@@ -45,17 +45,30 @@ type ExamSessionResponse = {
 };
 
 type EvaluationResponse = {
+  status?: "evaluated";
   attemptId?: string;
   evaluation: {
     totalScore: number;
     percentage: number;
     summary: string;
-    rubric: Record<string, { score: number; level: string; feedback: string }>;
+    rubric: Record<string, { score: number; level: string; feedback: string; impact: string }>;
     correctKeyPoints: string[];
     missingKeyPoints: string[];
     conceptualErrors: string[];
     improvementRecommendation: string;
     modelAnswer: string;
+  };
+  adaptive?: {
+    usedFollowUp: boolean;
+  };
+};
+
+type FollowUpResponse = {
+  status: "requires_follow_up";
+  followUp: {
+    question: string;
+    reason: string;
+    targetCriteria: string[];
   };
 };
 
@@ -144,6 +157,13 @@ const strategyLabels = {
   weak: "Materias débiles",
 } as const;
 
+const rubricLabels: Record<string, string> = {
+  legalNorms: "Normas jurídicas",
+  legalConcepts: "Conceptos técnico-jurídicos",
+  practicalApplication: "Aplicación práctica",
+  structureAndArgumentation: "Fundamentación y orden",
+};
+
 const requiredTopicCount = 3;
 const questionsPerTopic = 10;
 
@@ -191,6 +211,8 @@ export default function ExamPage() {
   });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
+  const [pendingFollowUp, setPendingFollowUp] = useState<FollowUpResponse["followUp"] | null>(null);
+  const [followUpAnswer, setFollowUpAnswer] = useState("");
   const [answerMode, setAnswerMode] = useState<AnswerMode>("text");
   const [evaluations, setEvaluations] = useState<Record<string, EvaluationResponse>>({});
   const [finalResult, setFinalResult] = useState<FinishResponse | null>(null);
@@ -312,6 +334,8 @@ export default function ExamPage() {
 
   function resetAnswerState(nextSeconds = exam?.config.perQuestionSeconds ?? settings.perQuestionSeconds) {
     setAnswer("");
+    setPendingFollowUp(null);
+    setFollowUpAnswer("");
     setAnswerMode("text");
     setVoiceMessage("");
     setAudioPath(null);
@@ -351,6 +375,8 @@ export default function ExamPage() {
     setErrorMessage("");
     setFinalResult(null);
     setEvaluations({});
+    setPendingFollowUp(null);
+    setFollowUpAnswer("");
 
     const response = await fetch("/api/exam/sessions", {
       method: "POST",
@@ -490,6 +516,7 @@ export default function ExamPage() {
 
   async function submitAnswer() {
     if (!exam || !currentQuestion || !answer.trim()) return;
+    if (pendingFollowUp && !followUpAnswer.trim()) return;
 
     setIsEvaluating(true);
     setErrorMessage("");
@@ -501,6 +528,12 @@ export default function ExamPage() {
         questionId: currentQuestion.id,
         sessionId: exam.sessionId,
         answer,
+        followUp: pendingFollowUp
+          ? {
+              question: pendingFollowUp.question,
+              answer: followUpAnswer,
+            }
+          : undefined,
         answerMode,
         transcription: answerMode === "voice" ? transcriptionDraft || answer : undefined,
         audioPath: answerMode === "voice" ? audioPath ?? undefined : undefined,
@@ -515,8 +548,17 @@ export default function ExamPage() {
       return;
     }
 
-    const payload = (await response.json()) as EvaluationResponse;
+    const payload = (await response.json()) as EvaluationResponse | FollowUpResponse;
+    if (payload.status === "requires_follow_up") {
+      setPendingFollowUp(payload.followUp);
+      setFollowUpAnswer("");
+      setIsEvaluating(false);
+      return;
+    }
+
     setEvaluations((current) => ({ ...current, [currentQuestion.id]: payload }));
+    setPendingFollowUp(null);
+    setFollowUpAnswer("");
     setIsEvaluating(false);
   }
 
@@ -719,7 +761,7 @@ export default function ExamPage() {
             <label className="exam-answer">
               {answerMode === "voice" ? "Transcripción editable" : "Respuesta"}
               <textarea
-                disabled={Boolean(currentEvaluation)}
+                disabled={Boolean(currentEvaluation) || Boolean(pendingFollowUp)}
                 rows={9}
                 value={answer}
                 onChange={(event) => {
@@ -730,6 +772,31 @@ export default function ExamPage() {
               />
             </label>
 
+            {pendingFollowUp ? (
+              <div className="adaptive-follow-up">
+                <div>
+                  <span>Repregunta de comisión</span>
+                  <strong>{pendingFollowUp.question}</strong>
+                  <p>{pendingFollowUp.reason}</p>
+                  {pendingFollowUp.targetCriteria.length > 0 ? (
+                    <small>
+                      Criterios apuntados:{" "}
+                      {pendingFollowUp.targetCriteria.map((criterion) => rubricLabels[criterion] ?? criterion).join(", ")}
+                    </small>
+                  ) : null}
+                </div>
+                <label>
+                  Respuesta complementaria
+                  <textarea
+                    rows={5}
+                    value={followUpAnswer}
+                    onChange={(event) => setFollowUpAnswer(event.target.value)}
+                    placeholder="Contestá concreto. La nota se genera recién con la respuesta inicial más este complemento."
+                  />
+                </label>
+              </div>
+            ) : null}
+
             {secondsLeft === 0 && !currentEvaluation ? (
               <div className="notice error">Tiempo agotado. Cerrá la respuesta con lo que tengas y enviá.</div>
             ) : null}
@@ -737,11 +804,13 @@ export default function ExamPage() {
             <div className="exam-actions">
               <button
                 className="primary-button"
-                disabled={isEvaluating || !answer.trim() || Boolean(currentEvaluation)}
+                disabled={isEvaluating || !answer.trim() || Boolean(currentEvaluation) || Boolean(pendingFollowUp && !followUpAnswer.trim())}
                 type="button"
                 onClick={submitAnswer}
               >
-                {isEvaluating ? "Evaluando..." : "Enviar respuesta"}
+                {isEvaluating
+                  ? pendingFollowUp ? "Evaluando respuesta completa..." : "Analizando..."
+                  : pendingFollowUp ? "Evaluar respuesta completa" : "Enviar respuesta"}
               </button>
               {currentEvaluation && currentIndex < exam.questions.length - 1 ? (
                 <button className="secondary-button" type="button" onClick={goNext}>Siguiente pregunta</button>
@@ -759,6 +828,16 @@ export default function ExamPage() {
                 <div>
                   <h3>Feedback de comisión</h3>
                   <p>{currentEvaluation.evaluation.summary}</p>
+                  <div className="rubric-grid">
+                    {Object.entries(currentEvaluation.evaluation.rubric).map(([key, value]) => (
+                      <div className="rubric-box" key={key}>
+                        <span>{rubricLabels[key]}</span>
+                        <strong>{value.score}/10 · {value.level}</strong>
+                        <p>{value.feedback}</p>
+                        <small>{value.impact}</small>
+                      </div>
+                    ))}
+                  </div>
                   <div className="feedback-columns">
                     <div>
                       <h4>Puntos correctos</h4>

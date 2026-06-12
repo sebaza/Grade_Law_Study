@@ -1,9 +1,27 @@
 import { NextResponse } from "next/server";
 import { ensureUserProfile } from "@/lib/auth/user-profile";
-import { evaluateAnswer } from "@/lib/ai/evaluate-answer";
+import { assessAnswerForFollowUp, evaluateAnswer } from "@/lib/ai/evaluate-answer";
 import { getPrisma } from "@/lib/db/prisma";
 import { evaluationRequestSchema } from "@/lib/domain/evaluation";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+
+function formatCombinedAnswer(initialAnswer: string, followUpAnswer?: string) {
+  if (!followUpAnswer?.trim()) return initialAnswer;
+
+  return [
+    "Respuesta inicial:",
+    initialAnswer.trim(),
+    "",
+    "Respuesta complementaria:",
+    followUpAnswer.trim(),
+  ].join("\n");
+}
+
+function formatStoredTranscription(answer: string, transcription?: string, followUpAnswer?: string) {
+  const initialTranscription = transcription?.trim() ? transcription : answer;
+
+  return formatCombinedAnswer(initialTranscription, followUpAnswer);
+}
 
 export async function POST(request: Request) {
   const parsed = evaluationRequestSchema.safeParse(await request.json());
@@ -50,12 +68,46 @@ export async function POST(request: Request) {
   }
 
   const expectedAnswer = question.expectedAnswers[0]?.modelAnswer ?? "";
+  const keyPoints = question.keyPoints.map((point) => `${point.label}: ${point.description}`);
+  const commonErrors = question.commonErrors.map((error) => error.description);
+
+  if (!parsed.data.followUp) {
+    const followUpDecision = await assessAnswerForFollowUp({
+      question: question.statement,
+      expectedAnswer,
+      keyPoints,
+      commonErrors,
+      studentAnswer: parsed.data.answer,
+    });
+
+    if (followUpDecision.requiresFollowUp) {
+      return NextResponse.json({
+        status: "requires_follow_up",
+        followUp: {
+          question: followUpDecision.followUpQuestion,
+          reason: followUpDecision.reason,
+          targetCriteria: followUpDecision.targetCriteria,
+        },
+      });
+    }
+  }
+
+  const answerForEvaluation = formatCombinedAnswer(parsed.data.answer, parsed.data.followUp?.answer);
+  const transcriptionForStorage = parsed.data.answerMode === "voice"
+    ? formatStoredTranscription(parsed.data.answer, parsed.data.transcription, parsed.data.followUp?.answer)
+    : undefined;
   const evaluation = await evaluateAnswer({
     question: question.statement,
     expectedAnswer,
-    keyPoints: question.keyPoints.map((point) => `${point.label}: ${point.description}`),
-    commonErrors: question.commonErrors.map((error) => error.description),
-    studentAnswer: parsed.data.answer,
+    keyPoints,
+    commonErrors,
+    studentAnswer: answerForEvaluation,
+    adaptiveContext: parsed.data.followUp
+      ? {
+          followUpQuestion: parsed.data.followUp.question,
+          followUpAnswer: parsed.data.followUp.answer,
+        }
+      : undefined,
   });
 
   const postStatus = evaluation.percentage >= 85 ? "mastered" : evaluation.percentage >= 60 ? "answered" : "needs_review";
@@ -66,8 +118,8 @@ export async function POST(request: Request) {
       userId: data.user.id,
       questionId: question.id,
       answerMode: parsed.data.answerMode,
-      rawAnswer: parsed.data.answer,
-      transcription: parsed.data.transcription ?? (parsed.data.answerMode === "voice" ? parsed.data.answer : undefined),
+      rawAnswer: answerForEvaluation,
+      transcription: transcriptionForStorage,
       audioPath: parsed.data.audioPath,
       score: evaluation.percentage,
       rubricScore: evaluation.rubric,
@@ -162,5 +214,12 @@ export async function POST(request: Request) {
     });
   }
 
-  return NextResponse.json({ attemptId: attempt.id, evaluation });
+  return NextResponse.json({
+    status: "evaluated",
+    attemptId: attempt.id,
+    evaluation,
+    adaptive: {
+      usedFollowUp: Boolean(parsed.data.followUp),
+    },
+  });
 }
