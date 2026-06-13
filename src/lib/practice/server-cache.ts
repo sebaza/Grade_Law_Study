@@ -16,6 +16,8 @@ export type CachedQuestion = {
   keyPointCount: number;
 };
 
+const PRACTICE_QUESTION_POOL_LIMIT = Number(process.env.PRACTICE_QUESTION_POOL_LIMIT ?? 2000);
+
 /**
  * Areas and professors — shared across all users, rarely change.
  * Cached for 1 hour, shared across all Vercel function instances.
@@ -82,7 +84,7 @@ export const getCachedBaseQuestions = unstable_cache(
         _count: { select: { keyPoints: true } },
       },
       orderBy: [{ priorityScore: "desc" }, { estimatedProbability: "desc" }],
-      take: 200,
+      take: PRACTICE_QUESTION_POOL_LIMIT,
     });
 
     return questions.map((q) => ({

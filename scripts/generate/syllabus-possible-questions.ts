@@ -4,22 +4,21 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { readSheet } from "read-excel-file/node";
 import { getPrisma } from "../../src/lib/db/prisma";
+import {
+  type PriorityRow,
+  augmentPrioritiesWithInferredRows,
+  countBy,
+  probabilityFor,
+  readPriorityMatrix,
+  readRawCandidatesFromQuestionnaire,
+  slugify,
+  subjectFromSubarea,
+  tokenize,
+} from "./question-generation-helpers";
 
 type Difficulty = "low" | "medium" | "high";
 type QuestionType = "definition" | "case" | "comparison" | "application" | "general";
-
-type PriorityRow = {
-  professor: string;
-  area: string;
-  subarea: string;
-  frequency: number;
-  professorPercentage: number;
-  syllabusAlignment: string;
-  relevance: string;
-  priorityScore: number;
-};
 
 type PossibleQuestion = {
   sourceReference: string;
@@ -42,14 +41,19 @@ type PossibleQuestion = {
 
 type PossibleQuestionBank = {
   generatedAt: string;
-  generationMethod: "syllabus-professor-priority-v1";
+  generationMethod: "syllabus-professor-priority-v2-all-professors";
   targetQuestionCount: number;
   questionCount: number;
   sourceSummary: {
     priorityRows: number;
+    originalPriorityRows: number;
+    inferredPriorityRows: number;
+    realQuestionsByProfessor: Record<string, number>;
+    targetByProfessor: Record<string, number>;
     syllabusTopicsByArea: Record<string, number>;
     selectedByProfessor: Record<string, number>;
     selectedByArea: Record<string, number>;
+    generatedToRealRatio: number;
   };
   questions: PossibleQuestion[];
 };
@@ -61,11 +65,16 @@ type UpsertedQuestion = {
 
 const execFileAsync = promisify(execFile);
 
-const TARGET_QUESTION_COUNT = Number(process.env.POSSIBLE_QUESTION_TARGET_COUNT ?? 99);
-const PRIORITY_PROFESSORS = ["Felipe Ortiz", "Stephanie Merlet", "Mauricio Figueroa"];
+const GENERATED_TO_REAL_RATIO = Number(process.env.POSSIBLE_QUESTION_RATIO ?? 0.5);
 const OUTPUT_PATH = path.join(process.cwd(), "data", "processed", "syllabus-possible-questions.seed.json");
-const PRIORITY_MATRIX_PATH = path.join(process.cwd(), "Excel_Con preguntas", "frequency_relevance_matrix.xlsx");
 const PDF_PARSE_CLI = path.join(process.cwd(), "node_modules", "pdf-parse", "bin", "cli.mjs");
+
+if (process.argv.includes("--seed") && process.env.DIRECT_URL) {
+  const directUrl = new URL(process.env.DIRECT_URL);
+  directUrl.searchParams.set("pgbouncer", "true");
+  directUrl.searchParams.set("connection_limit", "1");
+  process.env.DATABASE_URL = directUrl.toString();
+}
 
 const AREA_FILE_HINTS: Record<string, string[]> = {
   "Derecho Procesal": ["Procesal"],
@@ -99,100 +108,6 @@ const CURATED_FALLBACK_TOPICS: Record<string, string[]> = {
 
 function normalizeText(value: unknown) {
   return String(value ?? "").replace(/\s+/g, " ").trim();
-}
-
-function normalizeNumber(value: unknown) {
-  if (typeof value === "number") return value;
-  const parsed = Number(normalizeText(value).replace(",", "."));
-  if (Number.isNaN(parsed)) throw new Error(`Valor numérico inválido: ${String(value)}`);
-  return parsed;
-}
-
-function slugify(value: string) {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 100);
-}
-
-function tokenize(value: string) {
-  const stopWords = new Set([
-    "derecho",
-    "derechos",
-    "general",
-    "generales",
-    "teoria",
-    "concepto",
-    "conceptos",
-    "principio",
-    "principios",
-    "instituciones",
-    "reglas",
-    "efectos",
-    "requisitos",
-    "procedimiento",
-    "procesal",
-    "constitucional",
-    "civil",
-    "chile",
-    "chileno",
-    "chilena",
-    "clasificacion",
-    "caracteristicas",
-  ]);
-
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .split(/[^a-z0-9]+/u)
-    .filter((token) => token.length > 3 && !stopWords.has(token));
-}
-
-function subjectFromSubarea(subarea: string) {
-  const beforeColon = subarea.split(":")[0]?.trim();
-  if (beforeColon && beforeColon.length >= 4) return beforeColon;
-  return subarea.split(",")[0]?.trim() || subarea;
-}
-
-function countBy<T>(items: T[], getKey: (item: T) => string) {
-  return items.reduce<Record<string, number>>((acc, item) => {
-    const key = getKey(item);
-    acc[key] = (acc[key] ?? 0) + 1;
-    return acc;
-  }, {});
-}
-
-async function readPriorities() {
-  const rows = await readSheet(PRIORITY_MATRIX_PATH, "frequency_relevance_matrix");
-  const [headers, ...dataRows] = rows;
-  if (!headers) throw new Error("Excel sin encabezados");
-
-  const headerIndexes = new Map<string, number>();
-  headers.forEach((header, index) => headerIndexes.set(normalizeText(header), index));
-
-  const get = (row: unknown[], header: string) => {
-    const index = headerIndexes.get(header);
-    if (index === undefined) throw new Error(`No existe columna ${header}`);
-    return row[index];
-  };
-
-  return dataRows
-    .filter((row) => row.some((cell) => cell !== null && cell !== undefined && cell !== ""))
-    .map((row): PriorityRow => ({
-      professor: normalizeText(get(row, "professor")),
-      area: normalizeText(get(row, "area")),
-      subarea: normalizeText(get(row, "subarea")),
-      frequency: normalizeNumber(get(row, "frecuencia")),
-      professorPercentage: normalizeNumber(get(row, "% profesor")),
-      syllabusAlignment: normalizeText(get(row, "alineacion_temario")),
-      relevance: normalizeText(get(row, "relevancia")),
-      priorityScore: normalizeNumber(get(row, "score_prioridad")),
-    }))
-    .filter((row) => PRIORITY_PROFESSORS.includes(row.professor));
 }
 
 function cleanTopicLine(line: string) {
@@ -292,6 +207,8 @@ async function readSyllabusTopicsByArea(priorities: PriorityRow[]) {
 }
 
 function allocateInteger(total: number, weights: Array<{ key: string; weight: number }>) {
+  if (weights.length === 0 || total <= 0) return new Map<string, number>();
+
   const weightSum = weights.reduce((sum, item) => sum + item.weight, 0);
   const rows = weights.map((item) => {
     const exact = weightSum === 0 ? total / weights.length : (item.weight / weightSum) * total;
@@ -308,23 +225,23 @@ function allocateInteger(total: number, weights: Array<{ key: string; weight: nu
   return new Map(rows.map((row) => [row.key, row.count]));
 }
 
-function professorQuotas(priorities: PriorityRow[]) {
-  const professorWeights = PRIORITY_PROFESSORS.map((professor) => ({
-    key: professor,
-    weight: priorities.filter((row) => row.professor === professor).reduce((sum, row) => sum + row.priorityScore, 0),
-  }));
-
-  return allocateInteger(TARGET_QUESTION_COUNT, professorWeights);
+function targetQuestionsByProfessor(realQuestionsByProfessor: Record<string, number>) {
+  return Object.fromEntries(
+    Object.entries(realQuestionsByProfessor).map(([professor, count]) => [
+      professor,
+      Math.max(1, Math.round(count * GENERATED_TO_REAL_RATIO)),
+    ]),
+  );
 }
 
-function priorityQuotas(priorities: PriorityRow[]) {
-  const professorQuota = professorQuotas(priorities);
+function priorityQuotas(priorities: PriorityRow[], realQuestionsByProfessor: Record<string, number>) {
+  const professorQuota = targetQuestionsByProfessor(realQuestionsByProfessor);
   const quotas = new Map<string, number>();
 
-  for (const professor of PRIORITY_PROFESSORS) {
+  for (const professor of Object.keys(professorQuota).sort()) {
     const professorRows = priorities.filter((row) => row.professor === professor);
     const allocated = allocateInteger(
-      professorQuota.get(professor) ?? 0,
+      professorQuota[professor] ?? 0,
       professorRows.map((row, index) => ({ key: String(index), weight: row.priorityScore })),
     );
 
@@ -338,15 +255,6 @@ function priorityQuotas(priorities: PriorityRow[]) {
 
 function priorityKey(row: PriorityRow) {
   return `${row.professor}::${row.area}::${row.subarea}`;
-}
-
-function probabilityFor(row: PriorityRow, priorities: PriorityRow[]) {
-  const professorTotal = priorities
-    .filter((priority) => priority.professor === row.professor)
-    .reduce((sum, priority) => sum + priority.priorityScore, 0);
-
-  if (professorTotal === 0) return 0;
-  return Math.round((row.priorityScore / professorTotal) * 10000) / 100;
 }
 
 function matchingTopics(row: PriorityRow, areaTopics: string[]) {
@@ -373,7 +281,7 @@ function matchingTopics(row: PriorityRow, areaTopics: string[]) {
 function templateFor(row: PriorityRow, topic: string, variant: number): { statement: string; type: QuestionType } {
   const subarea = row.subarea;
 
-  if (row.professor === "Felipe Ortiz") {
+  if (row.area === "Derecho Procesal") {
     const templates = [
       { type: "definition" as const, statement: `Explique ${topic} dentro de ${subarea}. ¿Qué conceptos, requisitos y efectos procesales no puede omitir?` },
       { type: "application" as const, statement: `Si en un examen le preguntan por ${topic}, ¿cómo ordenaría la respuesta desde la institución procesal hasta sus consecuencias prácticas?` },
@@ -384,7 +292,7 @@ function templateFor(row: PriorityRow, topic: string, variant: number): { statem
     return templates[variant % templates.length];
   }
 
-  if (row.professor === "Stephanie Merlet") {
+  if (row.area === "Derecho Civil") {
     const templates = [
       { type: "definition" as const, statement: `Explique ${topic} en Derecho Civil. ¿Cuáles son sus requisitos, efectos y principales clasificaciones?` },
       { type: "application" as const, statement: `¿Cómo resolvería una pregunta oral sobre ${topic}, vinculándola con ${subarea} y sus consecuencias jurídicas?` },
@@ -485,8 +393,12 @@ function buildCommonErrors(row: PriorityRow, topic: string) {
   ];
 }
 
-function generateQuestions(priorities: PriorityRow[], syllabusTopicsByArea: Record<string, string[]>) {
-  const quotas = priorityQuotas(priorities);
+function generateQuestions(
+  priorities: PriorityRow[],
+  syllabusTopicsByArea: Record<string, string[]>,
+  realQuestionsByProfessor: Record<string, number>,
+) {
+  const quotas = priorityQuotas(priorities, realQuestionsByProfessor);
   const questions: PossibleQuestion[] = [];
 
   for (const row of priorities) {
@@ -496,7 +408,7 @@ function generateQuestions(priorities: PriorityRow[], syllabusTopicsByArea: Reco
     for (let index = 0; index < quota; index += 1) {
       const topic = topics[index % topics.length];
       const template = templateFor(row, topic, index);
-      const sourceReference = `syllabus-generated-v1:${slugify(row.professor)}:${slugify(row.area)}:${slugify(row.subarea)}:${index + 1}`;
+      const sourceReference = `syllabus-generated-v2:${slugify(row.professor)}:${slugify(row.area)}:${slugify(row.subarea)}:${index + 1}`;
 
       questions.push({
         sourceReference,
@@ -512,11 +424,11 @@ function generateQuestions(priorities: PriorityRow[], syllabusTopicsByArea: Reco
         origin: "generated",
         expectedAnswer: buildExpectedAnswer(row, topic, template.type),
         rubricNotes:
-          "Pregunta posible generada desde temario oficial, matriz de frecuencia/relevancia y estilo de preguntas reales por profesor. Validar manualmente si se quiere transformar en pauta doctrinal definitiva.",
+          "Pregunta posible generada desde temario oficial, frecuencia/relevancia inferida y estilo de preguntas reales por profesor. Validar manualmente si se quiere transformar en pauta doctrinal definitiva.",
         keyPoints: buildKeyPoints(row, topic, template.type),
         commonErrors: buildCommonErrors(row, topic),
         metadata: {
-          generationMethod: "syllabus-professor-priority-v1",
+          generationMethod: "syllabus-professor-priority-v2-all-professors",
           syllabusTopic: topic,
           prioritySubarea: row.subarea,
           professorPercentage: row.professorPercentage,
@@ -528,12 +440,7 @@ function generateQuestions(priorities: PriorityRow[], syllabusTopicsByArea: Reco
     }
   }
 
-  return questions
-    .sort((a, b) => {
-      const professorOrder = PRIORITY_PROFESSORS.indexOf(a.professorName) - PRIORITY_PROFESSORS.indexOf(b.professorName);
-      return professorOrder || b.priorityScore - a.priorityScore || b.estimatedProbability - a.estimatedProbability;
-    })
-    .slice(0, TARGET_QUESTION_COUNT);
+  return questions.sort((a, b) => a.professorName.localeCompare(b.professorName) || b.priorityScore - a.priorityScore || b.estimatedProbability - a.estimatedProbability);
 }
 
 async function writeQuestionBank(bank: PossibleQuestionBank) {
@@ -748,22 +655,34 @@ async function seedQuestionBank(bank: PossibleQuestionBank) {
 
 async function main() {
   const shouldSeed = process.argv.includes("--seed");
-  const priorities = await readPriorities();
+  const originalPriorities = await readPriorityMatrix();
+  const rawCandidates = await readRawCandidatesFromQuestionnaire();
+  const realQuestionsByProfessor = countBy(
+    rawCandidates.filter((candidate): candidate is typeof candidate & { professorName: string } => Boolean(candidate.professorName)),
+    (candidate) => candidate.professorName,
+  );
+  const targetByProfessor = targetQuestionsByProfessor(realQuestionsByProfessor);
+  const priorities = augmentPrioritiesWithInferredRows(originalPriorities, rawCandidates);
   const syllabusTopicsByArea = await readSyllabusTopicsByArea(priorities);
-  const questions = generateQuestions(priorities, syllabusTopicsByArea);
+  const questions = generateQuestions(priorities, syllabusTopicsByArea, realQuestionsByProfessor);
 
   const bank: PossibleQuestionBank = {
     generatedAt: new Date().toISOString(),
-    generationMethod: "syllabus-professor-priority-v1",
-    targetQuestionCount: TARGET_QUESTION_COUNT,
+    generationMethod: "syllabus-professor-priority-v2-all-professors",
+    targetQuestionCount: Object.values(targetByProfessor).reduce((sum, count) => sum + count, 0),
     questionCount: questions.length,
     sourceSummary: {
       priorityRows: priorities.length,
+      originalPriorityRows: originalPriorities.length,
+      inferredPriorityRows: priorities.length - originalPriorities.length,
+      realQuestionsByProfessor,
+      targetByProfessor,
       syllabusTopicsByArea: Object.fromEntries(
         Object.entries(syllabusTopicsByArea).map(([area, topics]) => [area, topics.length]),
       ),
       selectedByProfessor: countBy(questions, (question) => question.professorName),
       selectedByArea: countBy(questions, (question) => question.areaName),
+      generatedToRealRatio: GENERATED_TO_REAL_RATIO,
     },
     questions,
   };
@@ -772,6 +691,7 @@ async function main() {
   console.log(`Banco de preguntas posibles generado en ${OUTPUT_PATH}`);
   console.log(`Preguntas generadas: ${bank.questionCount}/${bank.targetQuestionCount}`);
   console.log(`Distribución por profesor: ${JSON.stringify(bank.sourceSummary.selectedByProfessor)}`);
+  console.log(`Prioridades originales/inferidas: ${bank.sourceSummary.originalPriorityRows}/${bank.sourceSummary.inferredPriorityRows}`);
 
   if (shouldSeed) {
     const imported = await seedQuestionBank(bank);

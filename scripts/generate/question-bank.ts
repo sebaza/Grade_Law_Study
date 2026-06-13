@@ -1,27 +1,19 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import mammoth from "mammoth";
-import { readSheet } from "read-excel-file/node";
-import { SOURCE_MANIFEST, resolveSourcePath } from "../ingest/source-manifest";
-
-type PriorityRow = {
-  professor: string;
-  area: string;
-  subarea: string;
-  frequency: number;
-  professorPercentage: number;
-  syllabusAlignment: string;
-  relevance: string;
-  priorityScore: number;
-};
-
-type RawCandidate = {
-  areaName: string | null;
-  professorName: string | null;
-  statement: string;
-  rawAnswer: string | null;
-  orderIndex: number;
-};
+import {
+  type PriorityRow,
+  type RawCandidate,
+  augmentPrioritiesWithInferredRows,
+  countByProfessor,
+  isExcludedProfessor,
+  normalizeProfessorName,
+  probabilityFor,
+  readPriorityMatrix,
+  readRawCandidatesFromQuestionnaire,
+  slugify,
+  subjectFromSubarea,
+  tokenize,
+} from "./question-generation-helpers";
 
 type GeneratedQuestion = {
   sourceReference: string;
@@ -46,166 +38,41 @@ type GeneratedQuestion = {
     matchedPrioritySubarea: string;
     matchedPriorityScore: number;
     matchedRelevance: string;
-    generationMethod: "heuristic-v1";
+    generationMethod: "heuristic-v2-all-professors";
   };
 };
 
 type QuestionBank = {
   generatedAt: string;
-  generationMethod: "heuristic-v1";
+  generationMethod: "heuristic-v2-all-professors";
   targetQuestionCount: number;
   questionCount: number;
   sourceSummary: {
     priorityRows: number;
+    originalPriorityRows: number;
+    inferredPriorityRows: number;
     rawCandidates: number;
     eligibleCandidates: number;
     eligibleByProfessor: Record<string, number>;
     generatedBeforeQuotaByProfessor: Record<string, number>;
     selectedByProfessor: Record<string, number>;
+    excludedProfessorRule: string;
   };
   questions: GeneratedQuestion[];
 };
 
-const TARGET_QUESTION_COUNT = Number(process.env.PHASE3_TARGET_COUNT ?? 120);
-const PRIORITY_PROFESSORS = new Set(["Felipe Ortiz", "Stephanie Merlet", "Mauricio Figueroa"]);
-
-function normalizeText(value: unknown) {
-  return String(value ?? "").trim();
-}
-
-function normalizeNumber(value: unknown) {
-  if (typeof value === "number") return value;
-  const parsed = Number(normalizeText(value).replace(",", "."));
-  if (Number.isNaN(parsed)) throw new Error(`Valor numérico inválido: ${String(value)}`);
-  return parsed;
-}
-
-function slugify(value: string) {
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 80);
-}
-
-function tokenize(value: string) {
-  const stopWords = new Set([
-    "que", "cual", "cuales", "como", "para", "por", "con", "del", "los", "las", "una", "uno", "sobre", "derecho",
-    "concepto", "conceptos", "normas", "juridicas", "juridico", "juridicos", "art", "articulo", "usted", "caso",
-  ]);
-
-  return value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .split(/[^a-z0-9]+/)
-    .filter((token) => token.length > 3 && !stopWords.has(token));
-}
-
-function looksLikeArea(text: string) {
-  return /^Derecho\s+.+\.?$/u.test(text) && text.length < 90;
-}
-
-function parseProfessorHeading(text: string) {
-  const match = text.match(/^(\d+)\s+(.+?)\.?$/u);
-  if (!match) return null;
-
-  const possibleName = match[2].trim();
-  if (possibleName.length < 3 || possibleName.length > 60) return null;
-  if (possibleName.includes("?")) return null;
-
-  return possibleName;
-}
-
-function isQuestionLike(text: string) {
-  return text.includes("?") || text.startsWith("¿") || text.toLowerCase().startsWith("caso.");
-}
-
-async function readPriorities() {
-  const source = SOURCE_MANIFEST.find((item) => item.kind === "priority_matrix");
-  if (!source) throw new Error("No priority matrix source found");
-
-  const rows = await readSheet(resolveSourcePath(source), "frequency_relevance_matrix");
-  const [headers, ...dataRows] = rows;
-  if (!headers) throw new Error("Excel sin encabezados");
-
-  const headerIndexes = new Map<string, number>();
-  headers.forEach((header, index) => headerIndexes.set(normalizeText(header), index));
-
-  const get = (row: unknown[], header: string) => {
-    const index = headerIndexes.get(header);
-    if (index === undefined) throw new Error(`No existe columna ${header}`);
-    return row[index];
-  };
-
-  return dataRows
-    .filter((row) => row.some((cell) => cell !== null && cell !== undefined && cell !== ""))
-    .map((row): PriorityRow => ({
-      professor: normalizeText(get(row, "professor")),
-      area: normalizeText(get(row, "area")),
-      subarea: normalizeText(get(row, "subarea")),
-      frequency: normalizeNumber(get(row, "frecuencia")),
-      professorPercentage: normalizeNumber(get(row, "% profesor")),
-      syllabusAlignment: normalizeText(get(row, "alineacion_temario")),
-      relevance: normalizeText(get(row, "relevancia")),
-      priorityScore: normalizeNumber(get(row, "score_prioridad")),
-    }));
-}
-
-async function readRawCandidates() {
-  const source = SOURCE_MANIFEST.find((item) => item.kind === "questionnaire");
-  if (!source) throw new Error("No questionnaire source found");
-
-  const result = await mammoth.extractRawText({ path: resolveSourcePath(source) });
-  const paragraphs = result.value
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean);
-
-  let currentArea: string | null = null;
-  let currentProfessor: string | null = null;
-  const candidates: RawCandidate[] = [];
-
-  for (let index = 0; index < paragraphs.length; index += 1) {
-    const paragraph = paragraphs[index];
-
-    if (looksLikeArea(paragraph)) {
-      currentArea = paragraph.replace(/\.$/, "");
-      continue;
-    }
-
-    const professor = parseProfessorHeading(paragraph);
-    if (professor) {
-      currentProfessor = professor;
-      continue;
-    }
-
-    if (!isQuestionLike(paragraph)) continue;
-
-    const rawAnswer = paragraphs[index + 1] && !isQuestionLike(paragraphs[index + 1])
-      ? paragraphs[index + 1]
-      : null;
-
-    candidates.push({
-      areaName: currentArea,
-      professorName: currentProfessor,
-      statement: paragraph,
-      rawAnswer,
-      orderIndex: index,
-    });
-  }
-
-  return candidates;
-}
+const TARGET_QUESTION_COUNT = Number(process.env.PHASE3_TARGET_COUNT ?? 0);
 
 function inferQuestionType(statement: string): GeneratedQuestion["questionType"] {
   const lower = statement.toLowerCase();
   if (lower.startsWith("caso.")) return "case";
   if (lower.includes("diferenc") || lower.includes("compare") || lower.includes("distinga")) return "comparison";
-  if (lower.includes("acción") || lower.includes("aplica") || lower.includes("qué se hace")) return "application";
-  if (lower.includes("qué es") || lower.includes("concepto") || lower.includes("defina")) return "definition";
+  if (lower.includes("acción") || lower.includes("accion") || lower.includes("aplica") || lower.includes("qué se hace")) {
+    return "application";
+  }
+  if (lower.includes("qué es") || lower.includes("que es") || lower.includes("concepto") || lower.includes("defina")) {
+    return "definition";
+  }
   return "general";
 }
 
@@ -217,12 +84,6 @@ function inferDifficulty(priority: PriorityRow, candidate: RawCandidate) {
   if (priority.relevance === "Baja" && priority.priorityScore <= 14 && answerLength < 350) return "low";
   if (priority.priorityScore >= 24 || answerLength > 250) return "medium";
   return "low";
-}
-
-function subjectFromSubarea(subarea: string) {
-  const beforeColon = subarea.split(":")[0]?.trim();
-  if (beforeColon && beforeColon.length >= 4) return beforeColon;
-  return subarea.split(",")[0]?.trim() || subarea;
 }
 
 function matchPriority(candidate: RawCandidate, priorities: PriorityRow[]) {
@@ -260,7 +121,7 @@ function buildExpectedAnswer(candidate: RawCandidate, priority: PriorityRow) {
 
 function splitSentences(text: string) {
   return text
-    .split(/(?<=[.!?])\s+/)
+    .split(/(?<=[.!?])\s+/u)
     .map((sentence) => sentence.trim())
     .filter((sentence) => sentence.length > 30);
 }
@@ -302,82 +163,25 @@ function buildCommonErrors(priority: PriorityRow) {
   ];
 }
 
-
-function countByProfessor<T extends { professorName: string }>(items: T[]) {
-  return items.reduce<Record<string, number>>((acc, item) => {
-    acc[item.professorName] = (acc[item.professorName] ?? 0) + 1;
-    return acc;
-  }, {});
-}
-
-function selectWithProfessorQuotas(questions: GeneratedQuestion[], priorities: PriorityRow[]) {
-  const professorScores = [...PRIORITY_PROFESSORS].map((professorName) => ({
-    professorName,
-    score: priorities
-      .filter((priority) => priority.professor === professorName)
-      .reduce((sum, priority) => sum + priority.priorityScore, 0),
-  }));
-
-  const totalScore = professorScores.reduce((sum, item) => sum + item.score, 0);
-  const quotas = new Map<string, number>();
-  let assigned = 0;
-
-  for (const item of professorScores) {
-    const quota = Math.floor((item.score / totalScore) * TARGET_QUESTION_COUNT);
-    quotas.set(item.professorName, quota);
-    assigned += quota;
+function selectWithGlobalQuota(questions: GeneratedQuestion[]) {
+  if (TARGET_QUESTION_COUNT <= 0 || TARGET_QUESTION_COUNT >= questions.length) {
+    return questions.sort((a, b) => a.professorName.localeCompare(b.professorName) || b.priorityScore - a.priorityScore);
   }
 
-  let remainingQuota = TARGET_QUESTION_COUNT - assigned;
-  for (const item of professorScores.slice().sort((a, b) => b.score - a.score)) {
-    if (remainingQuota <= 0) break;
-    quotas.set(item.professorName, (quotas.get(item.professorName) ?? 0) + 1);
-    remainingQuota -= 1;
-  }
-
-  const byProfessor = new Map<string, GeneratedQuestion[]>();
-  for (const question of questions) {
-    const group = byProfessor.get(question.professorName) ?? [];
-    group.push(question);
-    byProfessor.set(question.professorName, group);
-  }
-
-  const selected: GeneratedQuestion[] = [];
-  const leftovers: GeneratedQuestion[] = [];
-
-  for (const [professorName, group] of byProfessor) {
-    const ordered = group.sort((a, b) => b.priorityScore - a.priorityScore || b.estimatedProbability - a.estimatedProbability);
-    const quota = quotas.get(professorName) ?? 0;
-    selected.push(...ordered.slice(0, quota));
-    leftovers.push(...ordered.slice(quota));
-  }
-
-  if (selected.length < TARGET_QUESTION_COUNT) {
-    selected.push(
-      ...leftovers
-        .sort((a, b) => b.priorityScore - a.priorityScore || b.estimatedProbability - a.estimatedProbability)
-        .slice(0, TARGET_QUESTION_COUNT - selected.length),
-    );
-  }
-
-  return selected
-    .sort((a, b) => b.priorityScore - a.priorityScore || a.professorName.localeCompare(b.professorName))
-    .slice(0, TARGET_QUESTION_COUNT);
-}
-
-function probabilityFor(priority: PriorityRow, allPriorities: PriorityRow[]) {
-  const total = allPriorities
-    .filter((row) => row.professor === priority.professor)
-    .reduce((sum, row) => sum + row.priorityScore, 0);
-
-  if (total === 0) return 0;
-  return Math.round((priority.priorityScore / total) * 10000) / 100;
+  return questions
+    .sort((a, b) => b.priorityScore - a.priorityScore || b.estimatedProbability - a.estimatedProbability)
+    .slice(0, TARGET_QUESTION_COUNT)
+    .sort((a, b) => a.professorName.localeCompare(b.professorName) || b.priorityScore - a.priorityScore);
 }
 
 async function main() {
-  const priorities = await readPriorities();
-  const rawCandidates = await readRawCandidates();
-  const eligibleCandidates = rawCandidates.filter((candidate) => candidate.professorName && PRIORITY_PROFESSORS.has(candidate.professorName));
+  const originalPriorities = await readPriorityMatrix();
+  const rawCandidates = await readRawCandidatesFromQuestionnaire();
+  const eligibleCandidates = rawCandidates.filter((candidate): candidate is RawCandidate & { professorName: string } => {
+    const professor = normalizeProfessorName(candidate.professorName);
+    return Boolean(professor && !isExcludedProfessor(professor));
+  });
+  const priorities = augmentPrioritiesWithInferredRows(originalPriorities, eligibleCandidates);
 
   const generated: GeneratedQuestion[] = [];
 
@@ -386,7 +190,7 @@ async function main() {
     if (!priority) continue;
 
     const expectedAnswer = buildExpectedAnswer(candidate, priority);
-    const sourceReference = `docx:${candidate.orderIndex}:${slugify(candidate.professorName ?? "sin-profesor")}:${slugify(candidate.statement)}`;
+    const sourceReference = `docx:${candidate.orderIndex}:${slugify(candidate.professorName ?? "sin-profesor", 80)}:${slugify(candidate.statement, 80)}`;
 
     generated.push({
       sourceReference,
@@ -411,25 +215,28 @@ async function main() {
         matchedPrioritySubarea: priority.subarea,
         matchedPriorityScore: priority.priorityScore,
         matchedRelevance: priority.relevance,
-        generationMethod: "heuristic-v1",
+        generationMethod: "heuristic-v2-all-professors",
       },
     });
   }
 
-  const questions = selectWithProfessorQuotas(generated, priorities);
+  const questions = selectWithGlobalQuota(generated);
 
   const bank: QuestionBank = {
     generatedAt: new Date().toISOString(),
-    generationMethod: "heuristic-v1",
-    targetQuestionCount: TARGET_QUESTION_COUNT,
+    generationMethod: "heuristic-v2-all-professors",
+    targetQuestionCount: TARGET_QUESTION_COUNT > 0 ? TARGET_QUESTION_COUNT : questions.length,
     questionCount: questions.length,
     sourceSummary: {
       priorityRows: priorities.length,
+      originalPriorityRows: originalPriorities.length,
+      inferredPriorityRows: priorities.length - originalPriorities.length,
       rawCandidates: rawCandidates.length,
       eligibleCandidates: eligibleCandidates.length,
-      eligibleByProfessor: countByProfessor(eligibleCandidates.filter((candidate): candidate is RawCandidate & { professorName: string } => Boolean(candidate.professorName))),
+      eligibleByProfessor: countByProfessor(eligibleCandidates),
       generatedBeforeQuotaByProfessor: countByProfessor(generated),
       selectedByProfessor: countByProfessor(questions),
+      excludedProfessorRule: "Profesores cuyo nombre contiene /ascencio/i se omiten antes de generar seeds.",
     },
     questions,
   };
@@ -440,8 +247,9 @@ async function main() {
   await fs.writeFile(outputPath, JSON.stringify(bank, null, 2), "utf8");
 
   console.log(`Banco generado en ${outputPath}`);
-  console.log(`Preguntas generadas: ${bank.questionCount}`);
-  console.log(`Candidatas elegibles: ${bank.sourceSummary.eligibleCandidates}/${bank.sourceSummary.rawCandidates}`);
+  console.log(`Preguntas reales normalizadas: ${bank.questionCount}/${bank.targetQuestionCount}`);
+  console.log(`Distribución por profesor: ${JSON.stringify(bank.sourceSummary.selectedByProfessor)}`);
+  console.log(`Prioridades originales/inferidas: ${bank.sourceSummary.originalPriorityRows}/${bank.sourceSummary.inferredPriorityRows}`);
 }
 
 main().catch((error) => {
