@@ -34,11 +34,13 @@ type ExamSessionResponse = {
     totalSeconds: number;
     strategy: "balanced" | "priority" | "weak";
     topics: string[];
+    topicProfessors: string[];
     questionsPerTopic: number | null;
   };
   facets: {
     areas: string[];
     professors: string[];
+    professorsByArea: Record<string, string[]>;
     difficulties: Difficulty[];
   };
   questions: ExamQuestion[];
@@ -60,6 +62,13 @@ type EvaluationResponse = {
   };
   adaptive?: {
     usedFollowUp: boolean;
+  };
+  academicProfile?: {
+    professorName: string;
+    areaName: string;
+    source: "matrix-and-area-inferred" | "area-inferred";
+    primaryCriteria: string[];
+    guidance: string;
   };
 };
 
@@ -141,6 +150,7 @@ type SetupFacetsResponse = {
   facets: {
     areas: string[];
     professors: string[];
+    professorsByArea: Record<string, string[]>;
     difficulties: Difficulty[];
   };
 };
@@ -207,6 +217,7 @@ export default function ExamPage() {
   const [setupFacets, setSetupFacets] = useState<SetupFacetsResponse["facets"]>({
     areas: [],
     professors: [],
+    professorsByArea: {},
     difficulties: ["low", "medium", "high"],
   });
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -231,9 +242,9 @@ export default function ExamPage() {
   const [transcriptionDraft, setTranscriptionDraft] = useState("");
   const [settings, setSettings] = useState({
     topicOrder: Array.from({ length: requiredTopicCount }, () => ""),
+    topicProfessors: Array.from({ length: requiredTopicCount }, () => ""),
     perQuestionSeconds: 900,
     strategy: "balanced" as keyof typeof strategyLabels,
-    professor: "",
   });
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<BlobPart[]>([]);
@@ -296,10 +307,6 @@ export default function ExamPage() {
       .then((payload) => {
         if (!cancelled && payload?.facets) {
           setSetupFacets(payload.facets);
-          setSettings((current) => ({
-            ...current,
-            topicOrder: current.topicOrder.map((topic, index) => topic || payload.facets.areas[index] || ""),
-          }));
         }
       })
       .catch(() => {
@@ -352,6 +359,18 @@ export default function ExamPage() {
     setSettings((current) => ({
       ...current,
       topicOrder: current.topicOrder.map((topic, topicIndex) => (topicIndex === index ? value : topic)),
+      topicProfessors: current.topicProfessors.map((professor, professorIndex) =>
+        professorIndex === index ? "" : professor,
+      ),
+    }));
+  }
+
+  function updateTopicProfessor(index: number, value: string) {
+    setSettings((current) => ({
+      ...current,
+      topicProfessors: current.topicProfessors.map((professor, professorIndex) =>
+        professorIndex === index ? value : professor,
+      ),
     }));
   }
 
@@ -363,11 +382,24 @@ export default function ExamPage() {
     return setupFacets.areas.filter((area) => !selectedElsewhere.has(area));
   }
 
+  function getAvailableProfessorOptions(index: number) {
+    const topic = settings.topicOrder[index];
+    if (!topic) return [];
+
+    return setupFacets.professorsByArea[topic] ?? [];
+  }
+
   async function startExam() {
     const topicOrder = settings.topicOrder.map((topic) => topic.trim()).filter(Boolean);
+    const topicProfessors = settings.topicProfessors.map((professor) => professor.trim());
 
     if (topicOrder.length !== requiredTopicCount) {
       setErrorMessage("Elegí las 3 materias y su orden antes de iniciar. Sin estructura no hay simulacro real.");
+      return;
+    }
+
+    if (topicProfessors.filter(Boolean).length !== requiredTopicCount) {
+      setErrorMessage("Elegí un profesor para cada materia del simulacro.");
       return;
     }
 
@@ -386,10 +418,9 @@ export default function ExamPage() {
         perQuestionSeconds: settings.perQuestionSeconds,
         strategy: settings.strategy,
         topicOrder,
+        topicProfessors,
         questionsPerTopic,
-        filters: {
-          professor: settings.professor || undefined,
-        },
+        filters: {},
       }),
     });
 
@@ -408,6 +439,15 @@ export default function ExamPage() {
 
     const payload = (await response.json()) as ExamSessionResponse;
     setExam(payload);
+    window.localStorage.setItem(
+      "grade-law-study.exam.last-config",
+      JSON.stringify({
+        topicOrder,
+        topicProfessors,
+        perQuestionSeconds: settings.perQuestionSeconds,
+        strategy: settings.strategy,
+      }),
+    );
     setCurrentIndex(0);
     resetAnswerState(payload.config.perQuestionSeconds);
     setIsStarting(false);
@@ -616,33 +656,47 @@ export default function ExamPage() {
         <section className="exam-setup card">
           <div>
             <h2>Configurar simulacro</h2>
-            <p>
-              Esto ahora se parece a un examen de grado de verdad: elegís el orden de 3 materias troncales y rendís
-              10 preguntas por bloque, con dificultad incremental sobre una misma submateria o materias cercanas.
-            </p>
+            <p>Configurá materias, profesores, tiempo por pregunta y estrategia de selección.</p>
           </div>
           <div className="exam-topic-order">
             <div>
-              <strong>Orden de materias importantes</strong>
-              <p>Elegí el recorrido. La app arma 30 preguntas: 3 bloques × 10 preguntas. Es así de fácil.</p>
+              <strong>Orden de materias y profesor por bloque</strong>
+              <p>Elegí 3 materias, asigná un profesor para cada una y definí el tiempo de respuesta.</p>
             </div>
             <div className="exam-topic-grid">
               {settings.topicOrder.map((topic, index) => (
-                <label key={index}>
-                  Bloque {index + 1}
-                  <select
-                    disabled={isLoadingFacets}
-                    value={topic}
-                    onChange={(event) => updateTopicOrder(index, event.target.value)}
-                  >
-                    <option value="">{isLoadingFacets ? "Cargando materias..." : "Seleccionar materia"}</option>
-                    {getAvailableTopicOptions(index).map((area) => (
-                      <option key={area} value={area}>
-                        {area}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                <div className="exam-topic-block" key={index}>
+                  <label>
+                    Bloque {index + 1}: materia
+                    <select
+                      disabled={isLoadingFacets}
+                      value={topic}
+                      onChange={(event) => updateTopicOrder(index, event.target.value)}
+                    >
+                      <option value="">{isLoadingFacets ? "Cargando materias..." : "Seleccionar materia"}</option>
+                      {getAvailableTopicOptions(index).map((area) => (
+                        <option key={area} value={area}>
+                          {area}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    Profesor
+                    <select
+                      disabled={isLoadingFacets || !topic}
+                      value={settings.topicProfessors[index]}
+                      onChange={(event) => updateTopicProfessor(index, event.target.value)}
+                    >
+                      <option value="">{topic ? "Seleccionar profesor" : "Primero elegí materia"}</option>
+                      {getAvailableProfessorOptions(index).map((professor) => (
+                        <option key={professor} value={professor}>
+                          {professor}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
               ))}
             </div>
           </div>
@@ -743,7 +797,7 @@ export default function ExamPage() {
             {answerMode === "voice" ? (
               <div className="voice-panel">
                 <strong>Respuesta oral</strong>
-                <p>Grabá, transcribí y corregí antes de enviar. La IA evalúa texto, no intenciones.</p>
+                <p>Grabá, transcribí y corregí antes de enviar.</p>
                 <div className="practice-actions compact">
                   {!isRecording ? (
                     <button disabled={isTranscribing || Boolean(currentEvaluation)} type="button" onClick={startRecording}>
@@ -827,6 +881,14 @@ export default function ExamPage() {
                 <div className="score-ring"><strong>{currentEvaluation.evaluation.percentage}</strong></div>
                 <div>
                   <h3>Feedback de comisión</h3>
+                  {currentEvaluation.academicProfile ? (
+                    <p className="muted-copy">
+                      Perfil evaluador: {currentEvaluation.academicProfile.professorName} · énfasis en{" "}
+                      {currentEvaluation.academicProfile.primaryCriteria
+                        .map((criterion) => rubricLabels[criterion] ?? criterion)
+                        .join(", ")}
+                    </p>
+                  ) : null}
                   <p>{currentEvaluation.evaluation.summary}</p>
                   <div className="rubric-grid">
                     {Object.entries(currentEvaluation.evaluation.rubric).map(([key, value]) => (
@@ -874,7 +936,7 @@ export default function ExamPage() {
           <div className="exam-review-heading">
             <div>
               <h3>Pauta final por pregunta</h3>
-              <p>Acá está el mapa completo: pregunta, desempeño y respuesta esperada. Sin pauta no hay aprendizaje, hay sensación.</p>
+              <p>Revisión por pregunta, desempeño y respuesta esperada.</p>
             </div>
           </div>
           <div className="attempt-history-list">

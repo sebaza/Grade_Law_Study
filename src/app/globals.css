@@ -1774,6 +1774,11 @@ summary {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.exam-topic-block {
+  display: grid;
+  gap: 12px;
+}
+
 .exam-settings-grid label,
 .exam-topic-grid label,
 .exam-answer {

@@ -178,8 +178,7 @@ export default function AdminDashboardPage() {
           <p className="eyebrow">Panel admin · estadísticas globales</p>
           <h1>Uso real de la aplicación</h1>
           <p>
-            Acá no miramos “sensaciones”: vemos usuarios, intentos, desempeño por área, materia,
-            submateria del temario y preguntas que están haciendo daño.
+            Estadisticas generales de usuarios, intentos, desempeno por area, materia, submateria y preguntas.
           </p>
         </div>
         <div className="admin-hero-actions">

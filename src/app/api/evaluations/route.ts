@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { ensureUserProfile } from "@/lib/auth/user-profile";
 import { assessAnswerForFollowUp, evaluateAnswer } from "@/lib/ai/evaluate-answer";
 import { getPrisma } from "@/lib/db/prisma";
+import { buildAcademicEvaluationProfile } from "@/lib/domain/academic-profile";
 import { evaluationRequestSchema } from "@/lib/domain/evaluation";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
@@ -21,6 +22,26 @@ function formatStoredTranscription(answer: string, transcription?: string, follo
   const initialTranscription = transcription?.trim() ? transcription : answer;
 
   return formatCombinedAnswer(initialTranscription, followUpAnswer);
+}
+
+function getRecord(value: unknown): Record<string, unknown> | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+
+  return value as Record<string, unknown>;
+}
+
+function getSelectedProfessorName(filters: unknown, questionId: string) {
+  const filtersRecord = getRecord(filters);
+  const selectedQuestions = filtersRecord?.selectedQuestions;
+
+  if (!Array.isArray(selectedQuestions)) return null;
+
+  const selectedQuestion = selectedQuestions
+    .map(getRecord)
+    .find((record) => record?.id === questionId);
+  const professorName = selectedQuestion?.professorName;
+
+  return typeof professorName === "string" && professorName.trim() ? professorName.trim() : null;
 }
 
 export async function POST(request: Request) {
@@ -46,6 +67,8 @@ export async function POST(request: Request) {
       expectedAnswers: { where: { isActive: true }, orderBy: { version: "desc" }, take: 1 },
       keyPoints: { orderBy: { orderIndex: "asc" } },
       commonErrors: true,
+      area: true,
+      professors: { include: { professor: true } },
     },
   });
 
@@ -53,23 +76,46 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Pregunta no encontrada" }, { status: 404 });
   }
 
+  let selectedProfessorName: string | null = null;
+
   if (parsed.data.sessionId) {
     const session = await db.practiceSession.findFirst({
       where: {
         id: parsed.data.sessionId,
         userId: data.user.id,
       },
-      select: { id: true },
+      select: { id: true, filters: true },
     });
 
     if (!session) {
       return NextResponse.json({ error: "Sesión de práctica no encontrada" }, { status: 404 });
     }
+
+    selectedProfessorName = getSelectedProfessorName(session.filters, question.id);
   }
 
   const expectedAnswer = question.expectedAnswers[0]?.modelAnswer ?? "";
   const keyPoints = question.keyPoints.map((point) => `${point.label}: ${point.description}`);
   const commonErrors = question.commonErrors.map((error) => error.description);
+  const professorNames = Array.from(
+    new Set([
+      ...(selectedProfessorName ? [selectedProfessorName] : []),
+      ...question.professors.map((link) => link.professor.name),
+    ]),
+  );
+  const matrixPriorityCount = professorNames.length > 0
+    ? await db.professorTopicPriority.count({
+        where: {
+          areaId: question.areaId,
+          professor: { name: { in: professorNames } },
+        },
+      })
+    : 0;
+  const academicProfile = buildAcademicEvaluationProfile({
+    professorNames,
+    areaName: question.area.name,
+    hasMatrixPriorities: matrixPriorityCount > 0,
+  });
 
   if (!parsed.data.followUp) {
     const followUpDecision = await assessAnswerForFollowUp({
@@ -102,6 +148,7 @@ export async function POST(request: Request) {
     keyPoints,
     commonErrors,
     studentAnswer: answerForEvaluation,
+    academicProfile,
     adaptiveContext: parsed.data.followUp
       ? {
           followUpQuestion: parsed.data.followUp.question,
@@ -218,6 +265,7 @@ export async function POST(request: Request) {
     status: "evaluated",
     attemptId: attempt.id,
     evaluation,
+    academicProfile,
     adaptive: {
       usedFollowUp: Boolean(parsed.data.followUp),
     },

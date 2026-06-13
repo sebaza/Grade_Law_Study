@@ -9,6 +9,7 @@ const examSessionRequestSchema = z.object({
   perQuestionSeconds: z.number().int().min(60).max(900).default(900),
   strategy: z.enum(["balanced", "priority", "weak"]).default("balanced"),
   topicOrder: z.array(z.string().trim().min(1)).min(1).max(3).optional(),
+  topicProfessors: z.array(z.string().trim()).max(3).optional(),
   questionsPerTopic: z.number().int().min(10).max(10).default(10),
   filters: z
     .object({
@@ -190,11 +191,25 @@ export async function GET() {
     }),
     db.professor.findMany({ orderBy: { name: "asc" }, select: { name: true } }),
   ]);
+  const professorAreaRows = await db.$queryRaw<Array<{ area_name: string; professor_name: string }>>`
+    select distinct la.name as area_name, p.name as professor_name
+    from questions q
+    join law_areas la on la.id = q.area_id
+    join question_professors qp on qp.question_id = q.id
+    join professors p on p.id = qp.professor_id
+    where q.is_active = true
+    order by la.name asc, p.name asc
+  `;
+  const professorsByArea = professorAreaRows.reduce<Record<string, string[]>>((acc, row) => {
+    acc[row.area_name] = [...(acc[row.area_name] ?? []), row.professor_name];
+    return acc;
+  }, {});
 
   return NextResponse.json({
     facets: {
       areas: areas.map((area) => area.name),
       professors: professors.map((professor) => professor.name),
+      professorsByArea,
       difficulties: ["low", "medium", "high"],
     },
   });
@@ -219,6 +234,7 @@ export async function POST(request: Request) {
   const db = getPrisma();
   const { filters, perQuestionSeconds, questionsPerTopic, strategy } = parsed.data;
   const topicOrder = parsed.data.topicOrder?.map((topic) => topic.trim()).filter(Boolean) ?? [];
+  const topicProfessors = parsed.data.topicProfessors?.map((professor) => professor.trim()) ?? [];
   const uniqueTopicOrder = Array.from(new Set(topicOrder));
 
   if (topicOrder.length > 0 && topicOrder.length !== 3) {
@@ -235,12 +251,19 @@ export async function POST(request: Request) {
     );
   }
 
+  if (topicOrder.length > 0 && topicProfessors.filter(Boolean).length !== topicOrder.length) {
+    return NextResponse.json(
+      { error: "Elegí un profesor para cada materia del simulacro." },
+      { status: 400 },
+    );
+  }
+
   const limit = topicOrder.length > 0 ? topicOrder.length * questionsPerTopic : parsed.data.limit;
   const candidateLimit = Math.min(limit * 8, 360);
   const baseQuestionWhere = {
     isActive: true,
     difficulty: filters.difficulty,
-    professors: filters.professor ? { some: { professor: { name: filters.professor } } } : undefined,
+    professors: topicOrder.length === 0 && filters.professor ? { some: { professor: { name: filters.professor } } } : undefined,
     NOT: {
       states: {
         some: {
@@ -268,11 +291,18 @@ export async function POST(request: Request) {
     topicOrder.length > 0
       ? (
           await Promise.all(
-            topicOrder.map((topicName) =>
+            topicOrder.map((topicName, sectionIndex) =>
               db.question.findMany({
                 where: {
                   ...baseQuestionWhere,
                   area: { name: topicName },
+                  professors: {
+                    some: {
+                      professor: {
+                        name: topicProfessors[sectionIndex],
+                      },
+                    },
+                  },
                 },
                 include: questionInclude,
                 orderBy: [{ priorityScore: "desc" }, { estimatedProbability: "desc" }],
@@ -295,6 +325,7 @@ export async function POST(request: Request) {
     return {
       sectionIndex,
       topicName,
+      professorName: topicProfessors[sectionIndex] ?? null,
       focusSubsubjectName: picked.focusSubsubjectName,
       questions: picked.questions,
     };
@@ -326,6 +357,7 @@ export async function POST(request: Request) {
           sectionIndex: section.sectionIndex,
           sectionQuestionNumber: questionIndex + 1,
           sectionTitle: section.topicName,
+          professorName: section.professorName,
           focusSubsubjectName: section.focusSubsubjectName,
         },
       ]),
@@ -349,6 +381,7 @@ export async function POST(request: Request) {
         perQuestionSeconds,
         questionsPerTopic: topicOrder.length > 0 ? questionsPerTopic : null,
         topicOrder,
+        topicProfessors,
         selectedQuestions: selected.map((question) => ({
           id: question.id,
           ...(sectionByQuestionId.get(question.id) ?? {}),
@@ -390,11 +423,13 @@ export async function POST(request: Request) {
       totalSeconds: selected.length * perQuestionSeconds,
       strategy,
       topics: topicOrder,
+      topicProfessors,
       questionsPerTopic: topicOrder.length > 0 ? questionsPerTopic : null,
     },
     facets: {
       areas: topicOrder,
       professors: professors.map((professor) => professor.name),
+      professorsByArea: {},
       difficulties: ["low", "medium", "high"],
     },
     questions: selected.map((question) => ({

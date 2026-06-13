@@ -6,6 +6,7 @@ import {
   type EvaluationResult,
 } from "@/lib/domain/evaluation";
 import { LAW_EXAM_RUBRIC } from "@/lib/domain/rubric";
+import type { AcademicEvaluationProfile } from "@/lib/domain/academic-profile";
 
 export type EvaluateAnswerInput = {
   question: string;
@@ -13,6 +14,7 @@ export type EvaluateAnswerInput = {
   keyPoints: string[];
   commonErrors: string[];
   studentAnswer: string;
+  academicProfile?: AcademicEvaluationProfile;
   adaptiveContext?: {
     followUpQuestion: string;
     followUpAnswer: string;
@@ -121,7 +123,7 @@ export async function evaluateAnswer(input: EvaluateAnswerInput): Promise<Evalua
           {
             type: "input_text",
             text:
-              "Sos un evaluador experto del examen oral de grado de Derecho en Chile. Evaluás con criterio estricto pero pedagógico, usando la rúbrica institucional entregada. No inventes normas ni premies respuestas vagas. Devolvé solo JSON válido.",
+              "Sos un evaluador experto del examen oral de grado de Derecho en Chile. Evaluás con criterio estricto pero pedagógico, usando la rúbrica institucional entregada. Si recibís academicProfile, usalo como perfil inferido del académico: sé especialmente exigente en sus primaryCriteria y aplicá su guidance sin inventar ponderaciones matemáticas. No inventes normas ni premies respuestas vagas. Devolvé solo JSON válido.",
           },
         ],
       },
@@ -137,6 +139,15 @@ export async function evaluateAnswer(input: EvaluateAnswerInput): Promise<Evalua
               keyPoints: input.keyPoints,
               commonErrors: input.commonErrors,
               studentAnswer: input.studentAnswer,
+              academicProfile: input.academicProfile
+                ? {
+                    professorName: input.academicProfile.professorName,
+                    areaName: input.academicProfile.areaName,
+                    source: input.academicProfile.source,
+                    primaryCriteria: input.academicProfile.primaryCriteria,
+                    guidance: input.academicProfile.guidance,
+                  }
+                : null,
               adaptiveContext: input.adaptiveContext
                 ? {
                     note:
