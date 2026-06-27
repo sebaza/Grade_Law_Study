@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 type Difficulty = "low" | "medium" | "high";
 type AnswerMode = "text" | "voice";
+type RecordingTarget = "answer" | "followUp";
 
 type ExamQuestion = {
   id: string;
@@ -224,6 +225,8 @@ export default function ExamPage() {
   const [answer, setAnswer] = useState("");
   const [pendingFollowUp, setPendingFollowUp] = useState<FollowUpResponse["followUp"] | null>(null);
   const [followUpAnswer, setFollowUpAnswer] = useState("");
+  const [followUpVoiceMessage, setFollowUpVoiceMessage] = useState("");
+  const [followUpAudioUrl, setFollowUpAudioUrl] = useState<string | null>(null);
   const [answerMode, setAnswerMode] = useState<AnswerMode>("text");
   const [evaluations, setEvaluations] = useState<Record<string, EvaluationResponse>>({});
   const [finalResult, setFinalResult] = useState<FinishResponse | null>(null);
@@ -236,6 +239,8 @@ export default function ExamPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [voiceMessage, setVoiceMessage] = useState("");
   const [isRecording, setIsRecording] = useState(false);
+  const [recordingTarget, setRecordingTarget] = useState<RecordingTarget | null>(null);
+  const [transcribingTarget, setTranscribingTarget] = useState<RecordingTarget | null>(null);
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [audioPath, setAudioPath] = useState<string | null>(null);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
@@ -336,17 +341,25 @@ export default function ExamPage() {
     return () => {
       stopMediaStream(mediaStreamRef.current);
       if (audioUrl) URL.revokeObjectURL(audioUrl);
+      if (followUpAudioUrl) URL.revokeObjectURL(followUpAudioUrl);
     };
-  }, [audioUrl]);
+  }, [audioUrl, followUpAudioUrl]);
 
   function resetAnswerState(nextSeconds = exam?.config.perQuestionSeconds ?? settings.perQuestionSeconds) {
     setAnswer("");
     setPendingFollowUp(null);
     setFollowUpAnswer("");
+    setFollowUpVoiceMessage("");
     setAnswerMode("text");
     setVoiceMessage("");
     setAudioPath(null);
     setTranscriptionDraft("");
+    setRecordingTarget(null);
+    setTranscribingTarget(null);
+    setFollowUpAudioUrl((currentUrl) => {
+      if (currentUrl) URL.revokeObjectURL(currentUrl);
+      return null;
+    });
     setAudioUrl((currentUrl) => {
       if (currentUrl) URL.revokeObjectURL(currentUrl);
       return null;
@@ -453,15 +466,20 @@ export default function ExamPage() {
     setIsStarting(false);
   }
 
-  async function transcribeRecordedAudio(blob: Blob) {
+  async function transcribeRecordedAudio(blob: Blob, target: RecordingTarget) {
+    const isFollowUp = target === "followUp";
+    const setTargetVoiceMessage = isFollowUp ? setFollowUpVoiceMessage : setVoiceMessage;
+
     setIsTranscribing(true);
-    setVoiceMessage("Transcribiendo audio en español...");
+    setTranscribingTarget(target);
+    setTargetVoiceMessage("Transcribiendo audio en español...");
     setErrorMessage("");
 
     try {
       const extension = blob.type.includes("mp4") ? "mp4" : blob.type.includes("ogg") ? "ogg" : "webm";
       const formData = new FormData();
-      formData.append("audio", new File([blob], `simulacro-${Date.now()}.${extension}`, { type: blob.type || "audio/webm" }));
+      const prefix = isFollowUp ? "repregunta-simulacro" : "simulacro";
+      formData.append("audio", new File([blob], `${prefix}-${Date.now()}.${extension}`, { type: blob.type || "audio/webm" }));
 
       const response = await fetch("/api/transcriptions", {
         method: "POST",
@@ -470,37 +488,66 @@ export default function ExamPage() {
 
       if (!response.ok) {
         const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-        setVoiceMessage(`Error al transcribir: ${payload?.error ?? "No se pudo transcribir el audio. Intentá de nuevo."}`);
+        setTargetVoiceMessage(`Error al transcribir: ${payload?.error ?? "No se pudo transcribir el audio. Intentá de nuevo."}`);
         setIsTranscribing(false);
+        setTranscribingTarget(null);
         return;
       }
 
       const payload = (await response.json()) as TranscriptionResponse;
-      setAudioPath(payload.audioPath);
-      setTranscriptionDraft(payload.transcription);
-      setAnswer(payload.transcription);
-      setVoiceMessage("Transcripción lista. Revisala antes de enviar, como corresponde.");
+      if (isFollowUp) {
+        setFollowUpAnswer(payload.transcription);
+        setFollowUpVoiceMessage("Transcripción de repregunta lista. Revisala antes de evaluar la respuesta completa.");
+      } else {
+        setAudioPath(payload.audioPath);
+        setTranscriptionDraft(payload.transcription);
+        setAnswer(payload.transcription);
+        setVoiceMessage("Transcripción lista. Revisala antes de enviar, como corresponde.");
+      }
       setIsTranscribing(false);
+      setTranscribingTarget(null);
     } catch {
-      setVoiceMessage("Error al transcribir: no se pudo conectar. Intentá de nuevo.");
+      setTargetVoiceMessage("Error al transcribir: no se pudo conectar. Intentá de nuevo.");
       setIsTranscribing(false);
+      setTranscribingTarget(null);
     }
   }
 
-  async function startRecording() {
+  async function startRecording(target: RecordingTarget = "answer") {
+    if (target === "answer" && pendingFollowUp) {
+      setErrorMessage("La respuesta inicial ya quedó fijada para esta repregunta. Grabá el complemento en la repregunta.");
+      return;
+    }
+
+    if (target === "followUp" && !pendingFollowUp) {
+      return;
+    }
+
+    if (isRecording) {
+      return;
+    }
+
     if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
       setErrorMessage("Este navegador no permite grabar respuestas orales.");
       return;
     }
 
     setErrorMessage("");
-    setVoiceMessage("");
-    setAudioPath(null);
-    setTranscriptionDraft("");
-    setAudioUrl((currentUrl) => {
-      if (currentUrl) URL.revokeObjectURL(currentUrl);
-      return null;
-    });
+    if (target === "followUp") {
+      setFollowUpVoiceMessage("");
+      setFollowUpAudioUrl((currentUrl) => {
+        if (currentUrl) URL.revokeObjectURL(currentUrl);
+        return null;
+      });
+    } else {
+      setVoiceMessage("");
+      setAudioPath(null);
+      setTranscriptionDraft("");
+      setAudioUrl((currentUrl) => {
+        if (currentUrl) URL.revokeObjectURL(currentUrl);
+        return null;
+      });
+    }
 
     let stream: MediaStream;
     try {
@@ -532,26 +579,45 @@ export default function ExamPage() {
       mediaStreamRef.current = null;
       mediaRecorderRef.current = null;
       setIsRecording(false);
+      setRecordingTarget(null);
 
       if (blob.size <= 0) {
         setErrorMessage("La grabación quedó vacía. Probá de nuevo.");
         return;
       }
 
-      setAudioUrl(URL.createObjectURL(blob));
-      void transcribeRecordedAudio(blob);
+      if (target === "followUp") {
+        setFollowUpAudioUrl(URL.createObjectURL(blob));
+      } else {
+        setAudioUrl(URL.createObjectURL(blob));
+      }
+      void transcribeRecordedAudio(blob, target);
     };
 
     recorder.start();
-    setAnswerMode("voice");
+    if (target === "answer") setAnswerMode("voice");
     setIsRecording(true);
-    setVoiceMessage("Grabando simulacro. Hablá claro, estructurado y sin leer.");
+    setRecordingTarget(target);
+    if (target === "followUp") {
+      setFollowUpVoiceMessage("Grabando repregunta... respondé sólo el punto que te pidieron precisar.");
+    } else {
+      setVoiceMessage("Grabando simulacro. Hablá claro, estructurado y sin leer.");
+    }
   }
 
   function stopRecording() {
     if (mediaRecorderRef.current?.state === "recording") {
       mediaRecorderRef.current.stop();
     }
+  }
+
+  function clearFollowUpVoiceAnswer() {
+    setFollowUpAnswer("");
+    setFollowUpVoiceMessage("");
+    setFollowUpAudioUrl((currentUrl) => {
+      if (currentUrl) URL.revokeObjectURL(currentUrl);
+      return null;
+    });
   }
 
   async function submitAnswer() {
@@ -799,8 +865,8 @@ export default function ExamPage() {
                 <strong>Respuesta oral</strong>
                 <p>Grabá, transcribí y corregí antes de enviar.</p>
                 <div className="practice-actions compact">
-                  {!isRecording ? (
-                    <button disabled={isTranscribing || Boolean(currentEvaluation)} type="button" onClick={startRecording}>
+                  {!(isRecording && recordingTarget === "answer") ? (
+                    <button disabled={isTranscribing || isRecording || Boolean(currentEvaluation) || Boolean(pendingFollowUp)} type="button" onClick={() => startRecording("answer")}>
                       Grabar
                     </button>
                   ) : (
@@ -808,6 +874,7 @@ export default function ExamPage() {
                   )}
                 </div>
                 {audioUrl ? <audio controls src={audioUrl} /> : null}
+                {isTranscribing && transcribingTarget === "answer" ? <p>Transcribiendo con OpenAI...</p> : null}
                 {voiceMessage ? <p>{voiceMessage}</p> : null}
               </div>
             ) : null}
@@ -848,6 +915,25 @@ export default function ExamPage() {
                     placeholder="Contestá concreto. La nota se genera recién con la respuesta inicial más este complemento."
                   />
                 </label>
+                <div className="voice-panel follow-up-voice-panel">
+                  <strong>Responder repregunta por voz</strong>
+                  <p>Grabá sólo el complemento que faltó; se transcribe arriba y después se evalúa la respuesta final completa.</p>
+                  <div className="practice-actions compact">
+                    {!(isRecording && recordingTarget === "followUp") ? (
+                      <button disabled={isTranscribing || isRecording || Boolean(currentEvaluation)} type="button" onClick={() => startRecording("followUp")}>
+                        Grabar repregunta
+                      </button>
+                    ) : (
+                      <button type="button" onClick={stopRecording}>Detener repregunta</button>
+                    )}
+                    <button type="button" className="secondary" onClick={clearFollowUpVoiceAnswer} disabled={isRecording || isTranscribing}>
+                      Limpiar repregunta
+                    </button>
+                  </div>
+                  {followUpAudioUrl ? <audio controls src={followUpAudioUrl} /> : null}
+                  {isTranscribing && transcribingTarget === "followUp" ? <p>Transcribiendo repregunta con OpenAI...</p> : null}
+                  {followUpVoiceMessage ? <p>{followUpVoiceMessage}</p> : null}
+                </div>
               </div>
             ) : null}
 
@@ -858,7 +944,7 @@ export default function ExamPage() {
             <div className="exam-actions">
               <button
                 className="primary-button"
-                disabled={isEvaluating || !answer.trim() || Boolean(currentEvaluation) || Boolean(pendingFollowUp && !followUpAnswer.trim())}
+                disabled={isEvaluating || isRecording || isTranscribing || !answer.trim() || Boolean(currentEvaluation) || Boolean(pendingFollowUp && !followUpAnswer.trim())}
                 type="button"
                 onClick={submitAnswer}
               >
