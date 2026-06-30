@@ -15,7 +15,6 @@ import {
   Scale,
   X,
 } from "lucide-react";
-import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { href: "/", label: "Inicio", Icon: Home },
@@ -96,7 +95,6 @@ export function AppSidebar() {
           })}
         </nav>
 
-        <ThemeToggle inline />
 
         <div className="sidebar-footer">
           <div className="avatar">AV</div>

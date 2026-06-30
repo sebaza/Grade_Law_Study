@@ -148,7 +148,7 @@ export default function HistoryPage() {
     });
 
     if (!response.ok) {
-      setActionMessage("No se pudo devolver la pregunta al pull inicial.");
+      setActionMessage("No se pudo restaurar la pregunta.");
       setPendingQuestionId(null);
       return;
     }
@@ -170,7 +170,7 @@ export default function HistoryPage() {
             : attempt),
         }
       : current);
-    setActionMessage("Pregunta devuelta al pull inicial.");
+    setActionMessage("Pregunta restaurada.");
     setPendingQuestionId(null);
   }
 
@@ -181,10 +181,7 @@ export default function HistoryPage() {
       <header className="page-hero compact-hero">
         <div>
           <p className="eyebrow">Historial</p>
-          <h1>Preguntas, respuestas y estado de práctica</h1>
-          <p>
-            Esta pantalla queda enfocada en trazabilidad: qué pregunta hiciste, qué respondiste, qué feedback recibiste y si querés reponerla al pull inicial.
-          </p>
+          <h1>Historial de práctica</h1>
         </div>
         <Link className="primary-button" href="/practice">Practicar ahora</Link>
       </header>
@@ -252,7 +249,7 @@ export default function HistoryPage() {
                       <p>{statusLabels[attempt.question.state?.status ?? "pending"] ?? attempt.question.state?.status} · promedio {Math.round(attempt.question.state?.averageScore ?? 0)}%</p>
                     </div>
                     <button className="secondary-button" type="button" disabled={pendingQuestionId === attempt.question.id} onClick={() => returnToInitialPull(attempt.question.id)}>
-                      {pendingQuestionId === attempt.question.id ? "Moviendo..." : "Volver al pull inicial"}
+                      {pendingQuestionId === attempt.question.id ? "Moviendo..." : "Restaurar"}
                     </button>
                   </article>
                 )) : <p className="muted-copy">Todavía no hay preguntas practicadas.</p>}
@@ -288,7 +285,7 @@ export default function HistoryPage() {
                     <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
                     <Link className="secondary-button" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`}>Reintentar</Link>
                     <button className="secondary-button" type="button" disabled={pendingQuestionId === attempt.question.id} onClick={() => returnToInitialPull(attempt.question.id)}>
-                      Al pull inicial
+                      Restaurar
                     </button>
                   </div>
                 </article>

@@ -210,7 +210,7 @@ export default function AdminDashboardPage() {
           <section className="practice-card-large admin-user-filter-card">
             <div>
               <h2>Filtro por estudiante</h2>
-              <p className="muted-copy">Eleg? una persona para que las m?tricas y gr?ficos dejen de ser globales.</p>
+              <p className="muted-copy">Eleg? una persona para ver sus m?tricas.</p>
             </div>
             <select value={selectedUserId} onChange={(event) => setSelectedUserId(event.target.value)}>
               <option value="">General de la plataforma</option>

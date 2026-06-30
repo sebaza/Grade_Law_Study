@@ -23,7 +23,7 @@ export function AppTopNav() {
         <span>Grado Derecho</span>
       </Link>
 
-      <nav className="top-nav-links" aria-label="Navegaci?n principal del estudiante">
+      <nav className="top-nav-links" aria-label="Navegación principal del estudiante">
         {studentNavItems.map(({ href, label, Icon }) => {
           const isActive = href === "/" ? pathname === href : pathname.startsWith(href);
 

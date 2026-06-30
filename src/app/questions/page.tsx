@@ -145,10 +145,7 @@ export default function QuestionsPage() {
       <header className="page-hero compact-hero">
         <div>
           <p className="eyebrow">Banco de preguntas</p>
-          <h1>Registro navegable para estudiar con intención</h1>
-          <p>
-            Acá ves el banco completo, ordenado por prioridad/probabilidad, con filtros horizontales y acceso directo para practicar una pregunta puntual.
-          </p>
+          <h1>Banco de preguntas</h1>
         </div>
         <Link className="primary-button" href="/practice">Practicar aleatorio</Link>
       </header>

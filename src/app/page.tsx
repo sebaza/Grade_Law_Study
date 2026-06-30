@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { AppTopNav } from "./app-top-nav";
+import { AppSidebar } from "./sidebar";
 
 type StatsResponse = {
   summary: {
@@ -57,7 +57,7 @@ function formatDuration(seconds: number) {
   return `${hours}h ${minutes}m`;
 }
 
-function compactStatement(statement: string, limit = 130) {
+function compactStatement(statement: string, limit = 110) {
   return statement.length > limit ? `${statement.slice(0, limit)}...` : statement;
 }
 
@@ -84,11 +84,11 @@ export default function HomePage() {
 
       const [statsResponse, historyResponse] = await Promise.all([
         fetch("/api/practice/stats", { signal: controller.signal }),
-        fetch("/api/practice/history?limit=8", { signal: controller.signal }),
+        fetch("/api/practice/history?limit=6", { signal: controller.signal }),
       ]);
 
       if (statsResponse.status === 401 || historyResponse.status === 401) {
-        setErrorMessage("Iniciá sesión para ver tu inicio personalizado.");
+        setErrorMessage("Iniciá sesión para ver tu avance.");
         setIsLoading(false);
         return;
       }
@@ -124,152 +124,147 @@ export default function HomePage() {
   const maxTimelineAttempts = Math.max(...(stats?.scoreTimeline.map((point) => point.attempts) ?? [1]), 1);
 
   return (
-    <main className="menu-page-shell home-dashboard-shell">
-      <AppTopNav />
+    <main className="app-shell home-dashboard-shell">
+      <AppSidebar />
 
-      <header className="page-hero dashboard-hero">
-        <div>
-          <p className="eyebrow">Inicio</p>
-          <h1>Tu tablero de avance para estudiar mejor</h1>
-          <p>
-            El inicio deja de ser vidriera y pasa a ser tablero: promedio, ramos, uso por día, materias débiles/fuertes, profesores e intentos recientes para reintentar.
-          </p>
-        </div>
-        <div className="hero-action-stack">
-          <Link className="primary-button" href="/practice">Practicar ahora</Link>
-          <Link className="secondary-button" href="/questions">Explorar banco</Link>
-        </div>
-      </header>
-
-      {isLoading && <section className="practice-card-large">Cargando tablero...</section>}
-
-      {!isLoading && errorMessage && (
-        <section className="practice-card-large empty-state">
-          <h2>{errorMessage}</h2>
-          <p>Sin sesión no hay progreso individual que mostrar. Podés entrar o revisar el banco público.</p>
-          <div className="inline-actions">
-            <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
-            <Link className="secondary-button" href="/questions">Ver banco</Link>
+      <section className="main home-main-dashboard">
+        <header className="home-compact-header">
+          <div>
+            <p className="eyebrow">Inicio</p>
+            <h2>Resumen de estudio</h2>
           </div>
-        </section>
-      )}
+          <div className="hero-action-stack">
+            <Link className="primary-button" href="/practice">Practicar ahora</Link>
+            <Link className="secondary-button" href="/questions">Explorar banco</Link>
+          </div>
+        </header>
 
-      {!isLoading && stats && history && (
-        <>
-          <section className="history-kpi-grid">
-            <article className="card kpi">
-              <p className="kpi-label">Promedio general</p>
-              <p className="kpi-value">{stats.summary.averageScore}%</p>
-              <p className="kpi-note">{stats.summary.attemptCount} intentos registrados</p>
-            </article>
-            <article className="card kpi">
-              <p className="kpi-label">Tiempo de estudio</p>
-              <p className="kpi-value">{formatDuration(stats.summary.totalTimeSeconds)}</p>
-              <p className="kpi-note">{stats.summary.sessionCount} sesiones usadas</p>
-            </article>
-            <article className="card kpi">
-              <p className="kpi-label">Intentos</p>
-              <p className="kpi-value">{stats.summary.attemptCount}</p>
-              <p className="kpi-note">{stats.summary.practiced} preguntas practicadas</p>
-            </article>
-            <article className="card kpi">
-              <p className="kpi-label">Estado de banco</p>
-              <p className="kpi-value">{stats.summary.mastered}</p>
-              <p className="kpi-note">dominadas · {stats.summary.needsReview} para repaso</p>
-            </article>
+        {isLoading && <section className="practice-card-large">Cargando tablero...</section>}
+
+        {!isLoading && errorMessage && (
+          <section className="practice-card-large empty-state">
+            <h2>{errorMessage}</h2>
+            <div className="inline-actions">
+              <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
+              <Link className="secondary-button" href="/questions">Ver banco</Link>
+            </div>
           </section>
+        )}
 
-          <section className="dashboard-analytics-grid">
-            <article className="practice-card-large wide-panel">
-              <div className="section-heading-row">
-                <div>
-                  <h2>Uso de la plataforma por día</h2>
-                  <p className="muted-copy">Intentos diarios y promedio de acierto. Acá el estudiante ve constancia, no humo.</p>
+        {!isLoading && stats && history && (
+          <>
+            <section className="history-kpi-grid home-kpi-grid">
+              <article className="card kpi">
+                <p className="kpi-label">Promedio general</p>
+                <p className="kpi-value">{stats.summary.averageScore}%</p>
+                <p className="kpi-note">{stats.summary.attemptCount} intentos</p>
+              </article>
+              <article className="card kpi">
+                <p className="kpi-label">Tiempo de estudio</p>
+                <p className="kpi-value">{formatDuration(stats.summary.totalTimeSeconds)}</p>
+                <p className="kpi-note">{stats.summary.sessionCount} sesiones</p>
+              </article>
+              <article className="card kpi">
+                <p className="kpi-label">Preguntas practicadas</p>
+                <p className="kpi-value">{stats.summary.practiced}</p>
+                <p className="kpi-note">{stats.summary.attemptCount} respuestas</p>
+              </article>
+              <article className="card kpi">
+                <p className="kpi-label">Dominadas</p>
+                <p className="kpi-value">{stats.summary.mastered}</p>
+                <p className="kpi-note">{stats.summary.needsReview} para repaso</p>
+              </article>
+            </section>
+
+            <section className="dashboard-analytics-grid home-focus-grid">
+              <article className="practice-card-large wide-panel">
+                <div className="section-heading-row">
+                  <h2>Uso por día</h2>
+                  <Link className="secondary-button" href="/history">Ver historial</Link>
                 </div>
-                <Link className="secondary-button" href="/history">Ver historial</Link>
-              </div>
-              {stats.scoreTimeline.length > 0 ? (
-                <div className="usage-chart">
-                  {stats.scoreTimeline.map((point) => (
-                    <div className="usage-day" key={point.day}>
-                      <span className="usage-score" style={{ height: `${Math.max(point.averageScore, 6)}%` }} />
-                      <span className="usage-attempts" style={{ height: `${Math.max((point.attempts / maxTimelineAttempts) * 100, 8)}%` }} />
-                      <small>{shortDate(point.day)}</small>
+                {stats.scoreTimeline.length > 0 ? (
+                  <div className="usage-chart">
+                    {stats.scoreTimeline.map((point) => (
+                      <div className="usage-day" key={point.day}>
+                        <span className="usage-score" style={{ height: `${Math.max(point.averageScore, 6)}%` }} />
+                        <span className="usage-attempts" style={{ height: `${Math.max((point.attempts / maxTimelineAttempts) * 100, 8)}%` }} />
+                        <small>{shortDate(point.day)}</small>
+                      </div>
+                    ))}
+                  </div>
+                ) : <EmptyMetric>Todavía no hay intentos suficientes.</EmptyMetric>}
+              </article>
+
+              <article className="practice-card-large compact-panel">
+                <h2>Promedio por ramo</h2>
+                <div className="ranking-list roomy-list">
+                  {stats.byArea.length > 0 ? stats.byArea.map((area) => (
+                    <div className="ranking-row" key={area.label}>
+                      <span>{area.label}</span>
+                      <strong>{area.averageScore}%</strong>
+                      <small>{area.attempts} intentos</small>
                     </div>
-                  ))}
+                  )) : <EmptyMetric>Sin intentos por ramo.</EmptyMetric>}
                 </div>
-              ) : <EmptyMetric>Todavía no hay intentos suficientes para graficar uso.</EmptyMetric>}
-            </article>
+              </article>
 
-            <article className="practice-card-large">
-              <h2>Promedio por ramo principal</h2>
-              <div className="ranking-list roomy-list">
-                {stats.byArea.length > 0 ? stats.byArea.map((area) => (
-                  <div className="ranking-row" key={area.label}>
-                    <span>{area.label}</span>
-                    <strong>{area.averageScore}%</strong>
-                    <small>{area.attempts} intentos</small>
-                  </div>
-                )) : <EmptyMetric>Sin intentos por ramo principal todavía.</EmptyMetric>}
-              </div>
-            </article>
-
-            <article className="practice-card-large tall-panel">
-              <h2>Materias débiles</h2>
-              <div className="ranking-list roomy-list">
-                {weakSubjects.length > 0 ? weakSubjects.map((subject) => (
-                  <div className="ranking-row weakness-row" key={subject.label}>
-                    <span>{subject.label}</span>
-                    <strong>{subject.averageScore}%</strong>
-                    <small>{subject.attempts} intentos</small>
-                  </div>
-                )) : <EmptyMetric>Todavía no hay materias débiles detectadas.</EmptyMetric>}
-              </div>
-            </article>
-
-            <article className="practice-card-large tall-panel">
-              <h2>Materias fuertes</h2>
-              <div className="ranking-list roomy-list">
-                {strongSubjects.length > 0 ? strongSubjects.map((subject) => (
-                  <div className="ranking-row strength-row" key={subject.label}>
-                    <span>{subject.label}</span>
-                    <strong>{subject.averageScore}%</strong>
-                    <small>{subject.attempts} intentos</small>
-                  </div>
-                )) : <EmptyMetric>Todavía no hay materias fuertes para comparar.</EmptyMetric>}
-              </div>
-            </article>
-
-            <article className="practice-card-large">
-              <h2>Promedio por profesor</h2>
-              <div className="ranking-list roomy-list">
-                {stats.byProfessor.length > 0 ? stats.byProfessor.map((professor) => (
-                  <div className="ranking-row" key={professor.label}>
-                    <span>{professor.label}</span>
-                    <strong>{professor.averageScore}%</strong>
-                    <small>{professor.attempts} intentos</small>
-                  </div>
-                )) : <EmptyMetric>Sin intentos asociados a profesores todavía.</EmptyMetric>}
-              </div>
-            </article>
-
-            <article className="practice-card-large">
-              <h2>Preguntas hechas recientemente</h2>
-              <div className="attempt-history-list compact-attempts">
-                {history.attempts.length > 0 ? history.attempts.map((attempt) => (
-                  <Link className="attempt-history-row clickable-attempt" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`} key={attempt.id}>
-                    <div>
-                      <strong>{compactStatement(attempt.question.statement)}</strong>
-                      <p>{attempt.question.subjectName} · {attempt.question.professorName}</p>
+              <article className="practice-card-large tall-panel compact-panel">
+                <h2>Materias débiles</h2>
+                <div className="ranking-list roomy-list">
+                  {weakSubjects.length > 0 ? weakSubjects.map((subject) => (
+                    <div className="ranking-row weakness-row" key={subject.label}>
+                      <span>{subject.label}</span>
+                      <strong>{subject.averageScore}%</strong>
+                      <small>{subject.attempts} intentos</small>
                     </div>
-                    <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
-                  </Link>
-                )) : <EmptyMetric>Todavía no hay intentos recientes.</EmptyMetric>}
-              </div>
-            </article>
-          </section>
-        </>
-      )}
+                  )) : <EmptyMetric>Sin datos todavía.</EmptyMetric>}
+                </div>
+              </article>
+
+              <article className="practice-card-large tall-panel compact-panel">
+                <h2>Materias fuertes</h2>
+                <div className="ranking-list roomy-list">
+                  {strongSubjects.length > 0 ? strongSubjects.map((subject) => (
+                    <div className="ranking-row strength-row" key={subject.label}>
+                      <span>{subject.label}</span>
+                      <strong>{subject.averageScore}%</strong>
+                      <small>{subject.attempts} intentos</small>
+                    </div>
+                  )) : <EmptyMetric>Sin datos todavía.</EmptyMetric>}
+                </div>
+              </article>
+
+              <article className="practice-card-large compact-panel">
+                <h2>Promedio por profesor</h2>
+                <div className="ranking-list roomy-list">
+                  {stats.byProfessor.length > 0 ? stats.byProfessor.map((professor) => (
+                    <div className="ranking-row" key={professor.label}>
+                      <span>{professor.label}</span>
+                      <strong>{professor.averageScore}%</strong>
+                      <small>{professor.attempts} intentos</small>
+                    </div>
+                  )) : <EmptyMetric>Sin intentos por profesor.</EmptyMetric>}
+                </div>
+              </article>
+
+              <article className="practice-card-large compact-panel">
+                <h2>Preguntas recientes</h2>
+                <div className="attempt-history-list compact-attempts">
+                  {history.attempts.length > 0 ? history.attempts.map((attempt) => (
+                    <Link className="attempt-history-row clickable-attempt" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`} key={attempt.id}>
+                      <div>
+                        <strong>{compactStatement(attempt.question.statement)}</strong>
+                        <p>{attempt.question.subjectName} ? {attempt.question.professorName}</p>
+                      </div>
+                      <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
+                    </Link>
+                  )) : <EmptyMetric>Sin intentos recientes.</EmptyMetric>}
+                </div>
+              </article>
+            </section>
+          </>
+        )}
+      </section>
     </main>
   );
 }
