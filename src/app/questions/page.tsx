@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AppTopNav } from "../app-top-nav";
+import { LoadingCard } from "../loading-spinner";
+import { ProbabilityBadge, InfoHint } from "../question-badges";
 
 type FacetOption = { id: string; name: string; areaId?: string; subjectId?: string };
 
@@ -210,7 +212,7 @@ export default function QuestionsPage() {
         <span>preguntas activas encontradas · página {payload?.pagination.page ?? page} de {payload?.pagination.totalPages ?? 1}</span>
       </section>
 
-      {isLoading && <section className="practice-card-large">Cargando banco...</section>}
+      {isLoading && <LoadingCard label="Cargando banco..." />}
       {!isLoading && errorMessage && <section className="practice-card-large empty-state"><h2>{errorMessage}</h2></section>}
 
       {!isLoading && payload && (
@@ -222,9 +224,9 @@ export default function QuestionsPage() {
                   <span>{question.areaName}</span>
                   <span>{question.subjectName}</span>
                   <span>{question.professorName}</span>
-                  <span>{difficultyLabels[question.difficulty]}</span>
-                  <span>{question.estimatedProbability}% prob.</span>
-                  <span>{question.keyPointCount} puntos clave</span>
+                  <span>Dificultad: {difficultyLabels[question.difficulty]}</span>
+                  <ProbabilityBadge probability={question.estimatedProbability} />
+                  <InfoHint text={`${question.keyPointCount} puntos clave esperados en la respuesta.`} />
                 </div>
                 <div className="bank-card-body">
                   <div>
@@ -232,8 +234,11 @@ export default function QuestionsPage() {
                     <p>{question.subsubjectName} · {question.questionType}</p>
                   </div>
                   <div className="bank-card-scorebox">
-                    <span className="score-pill strong">Prioridad {Math.round(question.priorityScore)}</span>
-                    <span className={`score-pill ${scoreTone(question.bestScore)}`}>Mejor {Math.round(question.bestScore)}%</span>
+                    <span className="score-pill strong prio-pill">
+                      Prioridad {Math.round(question.priorityScore)}
+                      <InfoHint text="Prioridad de estudio: combina probabilidad de salir, dificultad y tu desempeño. Más alto = conviene estudiarla antes." />
+                    </span>
+                    <span className={`score-pill ${scoreTone(question.bestScore)}`}>Tu mejor nota {Math.round(question.bestScore)}%</span>
                     <small>{statusLabels[question.status] ?? question.status} · {question.attemptCount} intentos tuyos · {question.globalAttemptCount} globales</small>
                   </div>
                 </div>

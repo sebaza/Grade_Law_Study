@@ -81,6 +81,187 @@
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Spinner ─────────────────────────────────────── */
+
+.spinner {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 999px;
+  border: 2px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  border-top-color: var(--accent);
+  animation: spin 0.7s linear infinite;
+}
+
+.loading-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.loading-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Spinner inside a filled button reads on the accent background */
+.primary-button .spinner,
+.practice-actions button:not(.secondary) .spinner {
+  border-color: rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+}
+
+/* ── Dashboard skeleton ──────────────────────────── */
+
+.home-skeleton {
+  display: grid;
+  gap: 16px;
+}
+
+.skeleton-kpi {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.skeleton-panel {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.skel-line {
+  height: 14px;
+  width: 100%;
+}
+
+.skel-line.short { width: 45%; }
+.skel-line.tiny { width: 30%; height: 11px; }
+.skel-line.value { width: 60%; height: 34px; }
+.skel-block { height: 150px; width: 100%; border-radius: 14px; }
+
+/* ── Logged-out landing ──────────────────────────── */
+
+.landing-intro {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.landing-intro p {
+  margin: 0;
+  max-width: 720px;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.landing-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.landing-stat-row div {
+  display: grid;
+}
+
+.landing-stat-row strong {
+  font-size: 2.2rem;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.landing-stat-row span {
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.landing-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.landing-feature {
+  padding: 20px;
+}
+
+.landing-feature h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.landing-feature p {
+  margin: 0;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.55;
+}
+
+.landing-area-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.landing-area-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  padding: 13px 16px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+
+.landing-area-row:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  transform: translateY(-1px);
+}
+
+.landing-area-row strong {
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+@media (max-width: 1180px) {
+  .landing-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .landing-feature-grid,
+  .landing-area-list { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.6s;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -341,6 +522,56 @@ a {
   color: var(--muted);
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
+}
+
+.sidebar-user {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sidebar-user strong {
+  color: var(--ink);
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-user span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-signout {
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.sidebar-signout:hover {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.sidebar-signout:active {
+  transform: scale(0.93);
+}
+
+.sidebar-login {
+  width: 100%;
+  border: 1px solid var(--border);
+  justify-content: center;
 }
 
 .avatar {
@@ -950,13 +1181,108 @@ a {
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-.question-meta span {
+.question-meta > span {
   border-radius: 999px;
   background: color-mix(in srgb, var(--accent) 10%, var(--surface));
   color: var(--accent);
   padding: 8px 11px;
   font-size: 13px;
   font-weight: 800;
+}
+
+/* ── Probability badge + info hint ───────────────── */
+
+.prob-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  border-radius: 999px;
+  padding: 7px 13px !important;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.prob-badge .prob-badge-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.prob-badge strong { font-size: 13px; font-weight: 900; }
+.prob-badge small { font-size: 11px; opacity: 0.72; }
+
+.prob-high { background: #e3f1e9 !important; color: #2f6f50 !important; }
+.prob-mid { background: #fff1d8 !important; color: #8b5a13 !important; }
+.prob-low { background: color-mix(in srgb, var(--border) 55%, var(--surface)) !important; color: var(--muted) !important; }
+
+:root[data-theme="night"] .prob-high { background: color-mix(in srgb, var(--green) 18%, transparent) !important; color: var(--green) !important; }
+:root[data-theme="night"] .prob-mid { background: color-mix(in srgb, var(--amber) 18%, transparent) !important; color: var(--amber) !important; }
+
+.info-hint {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  color: var(--muted);
+  cursor: help;
+  outline: none;
+}
+
+.info-hint:hover,
+.info-hint:focus-visible {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+/* Compact info icon when it sits inside a pill */
+.prio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prio-pill .info-hint {
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.info-hint::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: 260px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--surface);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: normal;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 20;
+}
+
+.info-hint:hover::after,
+.info-hint:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .question-panel h2 {
@@ -1402,6 +1728,18 @@ summary {
 
 .empty-state {
   max-width: 720px;
+}
+
+.empty-state-inline {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  padding: 8px 0;
+}
+
+.empty-state-inline .primary-button {
+  width: auto;
+  padding: 12px 20px;
 }
 
 .admin-shell {

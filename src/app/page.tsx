@@ -27,6 +27,14 @@ type StatsResponse = {
   difficultQuestions: Array<{ questionId: string; statement: string; subject: string; averageScore: number; attempts: number }>;
 };
 
+type OverviewResponse = {
+  totalQuestions: number;
+  subjectCount: number;
+  professorCount: number;
+  areaCount: number;
+  byArea: Array<{ id: string; name: string; questionCount: number }>;
+};
+
 type HomeHistory = {
   attempts: Array<{
     id: string;
@@ -69,9 +77,97 @@ function EmptyMetric({ children }: { children: React.ReactNode }) {
   return <p className="muted-copy">{children}</p>;
 }
 
+function HomeSkeleton() {
+  return (
+    <div className="home-skeleton" aria-busy="true" aria-label="Cargando tu tablero">
+      <div className="home-kpi-grid">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <div className="card kpi skeleton-kpi" key={index}>
+            <span className="skeleton skel-line short" />
+            <span className="skeleton skel-line value" />
+            <span className="skeleton skel-line tiny" />
+          </div>
+        ))}
+      </div>
+      <div className="home-focus-grid">
+        <div className="practice-card-large wide-panel skeleton-panel">
+          <span className="skeleton skel-line short" />
+          <span className="skeleton skel-block" />
+        </div>
+        {Array.from({ length: 2 }).map((_, index) => (
+          <div className="practice-card-large skeleton-panel" key={index}>
+            <span className="skeleton skel-line short" />
+            <span className="skeleton skel-line" />
+            <span className="skeleton skel-line" />
+            <span className="skeleton skel-line" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const landingFeatures = [
+  { title: "Practica como en la comisión", body: "Responde por escrito o por voz y recibe una nota con rúbrica al instante." },
+  { title: "Simulacro cronometrado", body: "Arma una ronda de 3 materias con tiempo por pregunta y veredicto final." },
+  { title: "Repreguntas de comisión", body: "Cuando una respuesta queda corta, el evaluador repregunta como en el examen real." },
+  { title: "Sigues tu avance", body: "Promedios por ramo, materias débiles y preguntas dominadas, todo guardado." },
+];
+
+function HomeLanding({ overview }: { overview: OverviewResponse | null }) {
+  return (
+    <>
+      <section className="landing-intro">
+        <p>
+          Banco de preguntas reales del examen de grado con corrección automática.
+          Practica, mide tu nivel por ramo y llega listo a la comisión.
+        </p>
+        {overview && (
+          <div className="landing-stat-row">
+            <div><strong>{overview.totalQuestions}</strong><span>preguntas</span></div>
+            <div><strong>{overview.areaCount}</strong><span>ramos</span></div>
+            <div><strong>{overview.subjectCount}</strong><span>materias</span></div>
+            <div><strong>{overview.professorCount}</strong><span>profesores</span></div>
+          </div>
+        )}
+      </section>
+
+      <section className="landing-feature-grid">
+        {landingFeatures.map((feature) => (
+          <article className="practice-card-large landing-feature" key={feature.title}>
+            <h3>{feature.title}</h3>
+            <p>{feature.body}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="practice-card-large landing-areas">
+        <div className="section-heading-row">
+          <h2>Preguntas por ramo</h2>
+          <Link className="secondary-button" href="/questions">Ver banco completo</Link>
+        </div>
+        {overview && overview.byArea.length > 0 ? (
+          <div className="landing-area-list">
+            {overview.byArea.map((area) => (
+              <Link className="landing-area-row" href={`/questions?area=${encodeURIComponent(area.name)}`} key={area.id}>
+                <span>{area.name}</span>
+                <strong>{area.questionCount}</strong>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <EmptyMetric>Estamos cargando el banco de preguntas.</EmptyMetric>
+        )}
+      </section>
+    </>
+  );
+}
+
 export default function HomePage() {
   const [stats, setStats] = useState<StatsResponse | null>(null);
   const [history, setHistory] = useState<HomeHistory | null>(null);
+  const [overview, setOverview] = useState<OverviewResponse | null>(null);
+  const [loggedOut, setLoggedOut] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -88,7 +184,11 @@ export default function HomePage() {
       ]);
 
       if (statsResponse.status === 401 || historyResponse.status === 401) {
-        setErrorMessage("Iniciá sesión para ver tu avance.");
+        setLoggedOut(true);
+        const overviewResponse = await fetch("/api/public/overview", { signal: controller.signal });
+        if (overviewResponse.ok) {
+          setOverview(await overviewResponse.json() as OverviewResponse);
+        }
         setIsLoading(false);
         return;
       }
@@ -130,16 +230,25 @@ export default function HomePage() {
       <section className="main home-main-dashboard">
         <header className="home-compact-header">
           <div>
-            <p className="eyebrow">Inicio</p>
-            <h2>Resumen de estudio</h2>
+            <p className="eyebrow">{loggedOut ? "Examen de grado · Derecho" : "Inicio"}</p>
+            <h2>{loggedOut ? "Prepara tu examen con práctica real" : "Resumen de estudio"}</h2>
           </div>
           <div className="hero-action-stack">
-            <Link className="primary-button" href="/practice">Practicar ahora</Link>
-            <Link className="secondary-button" href="/questions">Explorar banco</Link>
+            {loggedOut ? (
+              <>
+                <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
+                <Link className="secondary-button" href="/questions">Explorar banco</Link>
+              </>
+            ) : (
+              <>
+                <Link className="primary-button" href="/practice">Practicar ahora</Link>
+                <Link className="secondary-button" href="/questions">Explorar banco</Link>
+              </>
+            )}
           </div>
         </header>
 
-        {isLoading && <section className="practice-card-large">Cargando tablero...</section>}
+        {isLoading && <HomeSkeleton />}
 
         {!isLoading && errorMessage && (
           <section className="practice-card-large empty-state">
@@ -150,6 +259,8 @@ export default function HomePage() {
             </div>
           </section>
         )}
+
+        {!isLoading && loggedOut && !errorMessage && <HomeLanding overview={overview} />}
 
         {!isLoading && stats && history && (
           <>
@@ -254,11 +365,16 @@ export default function HomePage() {
                     <Link className="attempt-history-row clickable-attempt" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`} key={attempt.id}>
                       <div>
                         <strong>{compactStatement(attempt.question.statement)}</strong>
-                        <p>{attempt.question.subjectName} ? {attempt.question.professorName}</p>
+                        <p>{attempt.question.subjectName} · {attempt.question.professorName}</p>
                       </div>
                       <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
                     </Link>
-                  )) : <EmptyMetric>Sin intentos recientes.</EmptyMetric>}
+                  )) : (
+                    <div className="empty-state-inline">
+                      <p className="muted-copy">Aún no registras intentos.</p>
+                      <Link className="primary-button" href="/practice">Practicar ahora</Link>
+                    </div>
+                  )}
                 </div>
               </article>
             </section>

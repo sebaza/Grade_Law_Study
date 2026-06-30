@@ -36,7 +36,7 @@ export default function LoginPage() {
     }
 
     setIsLoggedIn(true);
-    setMessage(mode === "login" ? "Sesión iniciada. Detectando panel de entrada..." : "Usuario creado. Si Supabase exige confirmación, revisá tu correo.");
+    setMessage(mode === "login" ? "Sesión iniciada. Entrando..." : "Usuario creado. Si se exige confirmación, revisa tu correo.");
 
     if (mode === "login") {
       const adminResponse = await fetch("/api/admin/stats").catch(() => null);
@@ -64,7 +64,7 @@ export default function LoginPage() {
         <Link className="back-link" href="/">← Volver al inicio</Link>
         <h1>Ingreso de estudiante</h1>
         <p>
-          Para la práctica real necesitamos identificar a la estudiante: así se guardan intentos,
+          La práctica real necesita identificarte: así se guardan tus intentos,
           porcentajes, preguntas dominadas y preguntas para repaso.
         </p>
 

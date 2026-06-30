@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { AppTopNav } from "../app-top-nav";
+import { Spinner } from "../loading-spinner";
+import { ProbabilityBadge, InfoHint } from "../question-badges";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Difficulty = "low" | "medium" | "high";
@@ -439,7 +441,7 @@ export default function ExamPage() {
     });
 
     if (response.status === 401) {
-      setErrorMessage("Para hacer un simulacro real tenés que iniciar sesión.");
+      setErrorMessage("Para hacer un simulacro real necesitas iniciar sesión.");
       setIsStarting(false);
       return;
     }
@@ -498,12 +500,12 @@ export default function ExamPage() {
       const payload = (await response.json()) as TranscriptionResponse;
       if (isFollowUp) {
         setFollowUpAnswer(payload.transcription);
-        setFollowUpVoiceMessage("Transcripción de repregunta lista. Revisala antes de evaluar la respuesta completa.");
+        setFollowUpVoiceMessage("Transcripción de repregunta lista. Revísala antes de evaluar la respuesta completa.");
       } else {
         setAudioPath(payload.audioPath);
         setTranscriptionDraft(payload.transcription);
         setAnswer(payload.transcription);
-        setVoiceMessage("Transcripción lista. Revisala antes de enviar, como corresponde.");
+        setVoiceMessage("Transcripción lista. Revísala antes de enviar.");
       }
       setIsTranscribing(false);
       setTranscribingTarget(null);
@@ -600,7 +602,7 @@ export default function ExamPage() {
     setIsRecording(true);
     setRecordingTarget(target);
     if (target === "followUp") {
-      setFollowUpVoiceMessage("Grabando repregunta... respondé sólo el punto que te pidieron precisar.");
+      setFollowUpVoiceMessage("Grabando repregunta... responde solo el punto que te piden precisar.");
     } else {
       setVoiceMessage("Grabando simulacro. Hablá claro, estructurado y sin leer.");
     }
@@ -703,8 +705,8 @@ export default function ExamPage() {
           <p className="eyebrow">Modo simulacro</p>
           <h1>Simulacro de examen oral</h1>
           <p>
-            Acá no venimos a jugar con botoncitos. Venimos a entrenar presión: tiempo limitado,
-            preguntas ponderadas y veredicto final tipo comisión.
+            Entrena bajo presión real: tiempo limitado, preguntas ponderadas
+            y un veredicto final como el de la comisión.
           </p>
         </div>
         <div className="exam-clock-card">
@@ -729,7 +731,7 @@ export default function ExamPage() {
           <div className="exam-topic-order">
             <div>
               <strong>Orden de materias y profesor por bloque</strong>
-              <p>Elegí 3 materias, asigná un profesor para cada una y definí el tiempo de respuesta.</p>
+              <p>Elige 3 materias, asigna un profesor a cada una y define el tiempo de respuesta.</p>
             </div>
             <div className="exam-topic-grid">
               {settings.topicOrder.map((topic, index) => (
@@ -756,7 +758,7 @@ export default function ExamPage() {
                       value={settings.topicProfessors[index]}
                       onChange={(event) => updateTopicProfessor(index, event.target.value)}
                     >
-                      <option value="">{topic ? "Seleccionar profesor" : "Primero elegí materia"}</option>
+                      <option value="">{topic ? "Seleccionar profesor" : "Primero elige materia"}</option>
                       {getAvailableProfessorOptions(index).map((professor) => (
                         <option key={professor} value={professor}>
                           {professor}
@@ -799,7 +801,8 @@ export default function ExamPage() {
               </select>
             </label>
           </div>
-          <button className="primary-button" disabled={isStarting || isLoadingFacets} type="button" onClick={startExam}>
+          <button className="primary-button loading-inline" disabled={isStarting || isLoadingFacets} type="button" onClick={startExam}>
+            {isStarting && <Spinner size={14} />}
             {isStarting ? "Iniciando..." : "Iniciar simulacro"}
           </button>
         </section>
@@ -848,8 +851,9 @@ export default function ExamPage() {
               <span>{currentQuestion.areaName}</span>
               <span>{currentQuestion.subjectName}</span>
               <span>{currentQuestion.professorName}</span>
-              <span>{difficultyLabels[currentQuestion.difficulty]}</span>
-              <span>{currentQuestion.estimatedProbability}% prob.</span>
+              <span>Dificultad: {difficultyLabels[currentQuestion.difficulty]}</span>
+              <ProbabilityBadge probability={currentQuestion.estimatedProbability} />
+              <InfoHint text={`${currentQuestion.keyPointCount} puntos clave esperados en la respuesta.`} />
             </div>
             <h2>{currentQuestion.statement}</h2>
             <p className="muted-copy">
@@ -865,7 +869,7 @@ export default function ExamPage() {
             {answerMode === "voice" ? (
               <div className="voice-panel">
                 <strong>Respuesta oral</strong>
-                <p>Grabá, transcribí y corregí antes de enviar.</p>
+                <p>Graba, transcribe y corrige antes de enviar.</p>
                 <div className="practice-actions compact">
                   {!(isRecording && recordingTarget === "answer") ? (
                     <button disabled={isTranscribing || isRecording || Boolean(currentEvaluation) || Boolean(pendingFollowUp)} type="button" onClick={() => startRecording("answer")}>
@@ -876,7 +880,7 @@ export default function ExamPage() {
                   )}
                 </div>
                 {audioUrl ? <audio controls src={audioUrl} /> : null}
-                {isTranscribing && transcribingTarget === "answer" ? <p>Transcribiendo con OpenAI...</p> : null}
+                {isTranscribing && transcribingTarget === "answer" ? <p className="loading-inline"><Spinner size={14} /> Transcribiendo tu audio...</p> : null}
                 {voiceMessage ? <p>{voiceMessage}</p> : null}
               </div>
             ) : null}
@@ -891,7 +895,7 @@ export default function ExamPage() {
                   setAnswer(event.target.value);
                   if (answerMode === "voice") setTranscriptionDraft(event.target.value);
                 }}
-                placeholder="Respondé como si estuvieras frente a la comisión: definición, requisitos, norma, aplicación y cierre."
+                placeholder="Responde como ante la comisión: definición, requisitos, norma, aplicación y cierre."
               />
             </label>
 
@@ -933,23 +937,24 @@ export default function ExamPage() {
                     </button>
                   </div>
                   {followUpAudioUrl ? <audio controls src={followUpAudioUrl} /> : null}
-                  {isTranscribing && transcribingTarget === "followUp" ? <p>Transcribiendo repregunta con OpenAI...</p> : null}
+                  {isTranscribing && transcribingTarget === "followUp" ? <p className="loading-inline"><Spinner size={14} /> Transcribiendo repregunta...</p> : null}
                   {followUpVoiceMessage ? <p>{followUpVoiceMessage}</p> : null}
                 </div>
               </div>
             ) : null}
 
             {secondsLeft === 0 && !currentEvaluation ? (
-              <div className="notice error">Tiempo agotado. Cerrá la respuesta con lo que tengas y enviá.</div>
+              <div className="notice error">Tiempo agotado. Cierra la respuesta con lo que tengas y envíala.</div>
             ) : null}
 
             <div className="exam-actions">
               <button
-                className="primary-button"
+                className="primary-button loading-inline"
                 disabled={isEvaluating || isRecording || isTranscribing || !answer.trim() || Boolean(currentEvaluation) || Boolean(pendingFollowUp && !followUpAnswer.trim())}
                 type="button"
                 onClick={submitAnswer}
               >
+                {isEvaluating && <Spinner size={14} />}
                 {isEvaluating
                   ? pendingFollowUp ? "Evaluando respuesta completa..." : "Analizando..."
                   : pendingFollowUp ? "Evaluar respuesta completa" : "Enviar respuesta"}

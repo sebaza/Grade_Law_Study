@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   BarChart2,
   BookOpen,
@@ -11,28 +11,78 @@ import {
   History,
   Home,
   LogIn,
+  LogOut,
   Menu,
   Scale,
   X,
 } from "lucide-react";
+import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
 
-const navItems = [
+const baseNavItems = [
   { href: "/", label: "Inicio", Icon: Home },
-  { href: "/admin", label: "Admin", Icon: BarChart2 },
   { href: "/questions", label: "Banco", Icon: BookOpen },
   { href: "/practice", label: "Practicar", Icon: Dumbbell },
   { href: "/exam", label: "Simulacro", Icon: GraduationCap },
   { href: "/history", label: "Historial y estadísticas", Icon: History },
-  { href: "/auth/login", label: "Ingresar", Icon: LogIn },
 ] as const;
+
+type SidebarUser = { fullName: string; email: string | null };
+
+function initialsFrom(user: SidebarUser) {
+  const source = user.fullName?.trim() || user.email || "Estudiante";
+  const parts = source.split(/\s+/).filter(Boolean);
+  const letters = parts.length >= 2 ? `${parts[0][0]}${parts[1][0]}` : source.slice(0, 2);
+  return letters.toUpperCase();
+}
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<SidebarUser | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    const supabase = createSupabaseBrowserClient();
+
+    supabase.auth.getUser().then(({ data }) => {
+      if (cancelled || !data.user) return;
+      const metaName = data.user.user_metadata?.full_name;
+      setUser({
+        fullName: typeof metaName === "string" && metaName.trim() ? metaName : data.user.email?.split("@")[0] ?? "Estudiante",
+        email: data.user.email ?? null,
+      });
+      fetch("/api/admin/stats")
+        .then((response) => {
+          if (!cancelled) setIsAdmin(response.ok);
+        })
+        .catch(() => undefined);
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   function close() {
     setIsOpen(false);
   }
+
+  async function signOut() {
+    const supabase = createSupabaseBrowserClient();
+    await supabase.auth.signOut();
+    setUser(null);
+    setIsAdmin(false);
+    close();
+    router.push("/");
+    router.refresh();
+  }
+
+  const navItems = [
+    ...baseNavItems,
+    ...(isAdmin ? [{ href: "/admin", label: "Admin", Icon: BarChart2 } as const] : []),
+  ];
 
   return (
     <>
@@ -61,7 +111,7 @@ export function AppSidebar() {
                 <br />
                 Derecho
               </h1>
-              <p>Preparate. Exponé. Aprobá.</p>
+              <p>Prepara. Expón. Aprueba.</p>
             </div>
           </div>
           <button
@@ -95,17 +145,26 @@ export function AppSidebar() {
           })}
         </nav>
 
-
         <div className="sidebar-footer">
-          <div className="avatar">AV</div>
-          <div>
-            <strong>Estudiante</strong>
-            <br />
-            Examen de grado
-          </div>
+          {user ? (
+            <>
+              <div className="avatar">{initialsFrom(user)}</div>
+              <div className="sidebar-user">
+                <strong>{user.fullName}</strong>
+                {user.email && <span>{user.email}</span>}
+              </div>
+              <button className="sidebar-signout" type="button" onClick={signOut} aria-label="Cerrar sesión" title="Cerrar sesión">
+                <LogOut size={18} strokeWidth={1.8} />
+              </button>
+            </>
+          ) : (
+            <Link className="nav-item sidebar-login" href="/auth/login" onClick={close}>
+              <LogIn size={18} strokeWidth={1.8} />
+              Iniciar sesión
+            </Link>
+          )}
         </div>
       </aside>
     </>
   );
 }
-

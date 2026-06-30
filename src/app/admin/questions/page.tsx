@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { Spinner } from "../../loading-spinner";
 
 type Difficulty = "low" | "medium" | "high";
 type QuestionOrigin = "real_question" | "generated" | "manual";
@@ -457,7 +458,7 @@ export default function AdminQuestionsPage() {
           <div className="admin-panel-header">
             <div>
               <h2>Banco de preguntas</h2>
-              <p>Buscá, filtrá y elegí una pregunta para revisar.</p>
+              <p>Busca, filtra y elige una pregunta para revisar.</p>
             </div>
             <button className="secondary-button" type="button" onClick={startNewQuestion}>
               + Nueva
@@ -537,7 +538,7 @@ export default function AdminQuestionsPage() {
           </button>
 
           <div className="admin-question-list" aria-live="polite">
-            {isLoading ? <p className="empty-state">Cargando banco...</p> : null}
+            {isLoading ? <p className="empty-state loading-inline"><Spinner size={16} /> Cargando banco...</p> : null}
             {!isLoading && questions.length === 0 ? <p className="empty-state">No hay preguntas con esos filtros.</p> : null}
             {questions.map((question) => (
               <button

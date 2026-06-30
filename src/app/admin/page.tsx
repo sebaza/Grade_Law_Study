@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { AppTopNav } from "../app-top-nav";
+import { LoadingCard } from "../loading-spinner";
 import { useEffect, useMemo, useState } from "react";
 
 type AdminStatsResponse = {
@@ -193,7 +194,7 @@ export default function AdminDashboardPage() {
         </div>
       </header>
 
-      {isLoading && <section className="practice-card-large">Cargando tablero admin...</section>}
+      {isLoading && <LoadingCard label="Cargando tablero admin..." />}
 
       {!isLoading && errorMessage && (
         <section className="practice-card-large empty-state">

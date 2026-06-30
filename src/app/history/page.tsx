@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AppTopNav } from "../app-top-nav";
+import { LoadingCard } from "../loading-spinner";
 
 type HistoryResponse = {
   attempts: Array<{
@@ -93,7 +94,7 @@ export default function HistoryPage() {
       const response = await fetch("/api/practice/history?limit=100", { signal: controller.signal });
 
       if (response.status === 401) {
-        setErrorMessage("Para ver historial tenés que iniciar sesión.");
+        setErrorMessage("Para ver tu historial necesitas iniciar sesión.");
         setIsLoading(false);
         return;
       }
@@ -186,7 +187,7 @@ export default function HistoryPage() {
         <Link className="primary-button" href="/practice">Practicar ahora</Link>
       </header>
 
-      {isLoading && <section className="practice-card-large">Cargando historial...</section>}
+      {isLoading && <LoadingCard label="Cargando historial..." />}
 
       {!isLoading && errorMessage && (
         <section className="practice-card-large empty-state">
@@ -289,7 +290,12 @@ export default function HistoryPage() {
                     </button>
                   </div>
                 </article>
-              )) : <p className="muted-copy">Todavía no hay intentos guardados.</p>}
+              )) : (
+                <div className="empty-state-inline">
+                  <p className="muted-copy">Todavía no tienes intentos guardados. Resuelve tu primera pregunta y aparecerá aquí con su nota y feedback.</p>
+                  <Link className="primary-button" href="/practice">Empezar a practicar</Link>
+                </div>
+              )}
             </div>
           </section>
         </>

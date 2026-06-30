@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AppTopNav } from "../app-top-nav";
+import { LoadingCard, Spinner } from "../loading-spinner";
+import { ProbabilityBadge, InfoHint } from "../question-badges";
 
 type PracticeQuestion = {
   id?: string;
@@ -260,7 +262,7 @@ export default function PracticePage() {
 
       if (response.status === 401) {
         setData(null);
-        setErrorMessage("Para usar práctica real tenés que iniciar sesión. Podés seguir en modo demo mientras tanto.");
+        setErrorMessage("Para la práctica real necesitas iniciar sesión. Mientras tanto puedes usar el modo demo.");
         setIsLoading(false);
         return;
       }
@@ -394,7 +396,7 @@ export default function PracticePage() {
     }
 
     if (target === "answer" && pendingFollowUp) {
-      setErrorMessage("La respuesta inicial ya quedó fijada para esta repregunta. Grabá el complemento en la repregunta.");
+      setErrorMessage("La respuesta inicial ya quedó fijada. Graba el complemento en la repregunta.");
       return;
     }
 
@@ -466,7 +468,7 @@ export default function PracticePage() {
       setRecordingTarget(null);
 
       if (blob.size <= 0) {
-        setErrorMessage("La grabación quedó vacía. Probá de nuevo acercándote al micrófono.");
+        setErrorMessage("La grabación quedó vacía. Acércate al micrófono e intenta de nuevo.");
         return;
       }
 
@@ -483,9 +485,9 @@ export default function PracticePage() {
     setIsRecording(true);
     setRecordingTarget(target);
     if (target === "followUp") {
-      setFollowUpVoiceMessage("Grabando repregunta... respondé sólo el punto que te pidieron precisar.");
+      setFollowUpVoiceMessage("Grabando repregunta... responde solo el punto que te piden precisar.");
     } else {
-      setVoiceMessage("Grabando... hablá claro y dejá pausas breves entre ideas.");
+      setVoiceMessage("Grabando... habla claro y deja pausas breves entre ideas.");
     }
   }
 
@@ -634,8 +636,8 @@ export default function PracticePage() {
         <Link className="back-link" href="/">← Volver al inicio</Link>
         <h1>Práctica por texto</h1>
         <p>
-          Entrená con práctica real para guardar sesiones, intentos y progreso.
-          El modo demo sigue disponible para probar sin iniciar sesión.
+          La práctica real guarda tus sesiones, intentos y progreso.
+          El modo demo te deja probar sin iniciar sesión.
         </p>
 
         <div className="mode-switch" aria-label="Tipo de práctica">
@@ -710,13 +712,13 @@ export default function PracticePage() {
       </aside>
 
       <section className="practice-main">
-        {isLoading && <div className="practice-card-large">Cargando preguntas...</div>}
+        {isLoading && <LoadingCard label="Cargando preguntas..." />}
 
         {!isLoading && !currentQuestion && (
           <div className="practice-card-large">
             {errorMessage
               ? errorMessage
-              : "No hay preguntas para estos filtros. Probá con otro modo o sacá algún filtro."}
+              : "No hay preguntas con estos filtros. Cambia el modo o quita algún filtro."}
           </div>
         )}
 
@@ -733,18 +735,18 @@ export default function PracticePage() {
             {sectionSummary && (
               <article className={`practice-card-large section-average-card ${sectionSummary.isComplete ? "complete" : ""}`}>
                 <div>
-                  <span>{sectionSummary.isComplete ? "Seccion completa" : "Promedio parcial"}</span>
+                  <span>{sectionSummary.isComplete ? "Sección completa" : "Promedio parcial"}</span>
                   <h2>{sectionSummary.average}%</h2>
                   <p>
                     {sectionSummary.answeredCount}/{sectionSummary.totalQuestions} preguntas evaluadas.
                     {sectionSummary.isComplete
-                      ? " Buenisimo: ahora mira el patron, no solo el numero."
+                      ? " Mira el patrón, no solo el número."
                       : " El promedio final aparece al completar las 10."}
                   </p>
                 </div>
                 <div className="section-average-stats">
                   <div><strong>{sectionSummary.highest}%</strong><small>Mejor</small></div>
-                  <div><strong>{sectionSummary.lowest}%</strong><small>Mas bajo</small></div>
+                  <div><strong>{sectionSummary.lowest}%</strong><small>Más bajo</small></div>
                 </div>
               </article>
             )}
@@ -754,10 +756,11 @@ export default function PracticePage() {
                 <span>{currentQuestion.areaName}</span>
                 <span>{currentQuestion.subjectName}</span>
                 <span>{currentQuestion.professorName}</span>
-                <span>{currentQuestion.difficulty === "high" ? "Alta" : currentQuestion.difficulty === "medium" ? "Media" : "Baja"}</span>
-                <span>{questionTypeLabels[currentQuestion.questionType] ?? currentQuestion.questionType}</span>
-                <span>{currentQuestion.estimatedProbability}% prob.</span>
-                {practiceSource === "real" && <span>{currentQuestion.attemptCount ?? 0} intentos</span>}
+                <span>Dificultad: {currentQuestion.difficulty === "high" ? "Alta" : currentQuestion.difficulty === "medium" ? "Media" : "Baja"}</span>
+                <ProbabilityBadge probability={currentQuestion.estimatedProbability} />
+                <InfoHint
+                  text={`Tipo: ${questionTypeLabels[currentQuestion.questionType] ?? currentQuestion.questionType}. ${currentQuestion.keyPointCount} puntos clave esperados en la respuesta.${practiceSource === "real" ? ` Llevas ${currentQuestion.attemptCount ?? 0} intentos en esta pregunta.` : ""}`}
+                />
               </div>
               <h2>{currentQuestion.statement}</h2>
               <p>{currentQuestion.subsubjectName}</p>
@@ -780,7 +783,7 @@ export default function PracticePage() {
                 <div className="voice-panel">
                   <div>
                     <strong>Respuesta oral</strong>
-                    <p>Grabá tu respuesta, esperá la transcripción y corregí el texto antes de evaluar.</p>
+                    <p>Graba tu respuesta y corrige la transcripción antes de evaluar.</p>
                   </div>
                   <div className="practice-actions compact">
                     {!(isRecording && recordingTarget === "answer")
@@ -789,7 +792,7 @@ export default function PracticePage() {
                     <button type="button" className="secondary" onClick={clearVoiceAnswer} disabled={isRecording || isTranscribing}>Limpiar audio</button>
                   </div>
                   {audioUrl && <audio controls src={audioUrl} />}
-                  {isTranscribing && transcribingTarget === "answer" && <p>Transcribiendo con OpenAI...</p>}
+                  {isTranscribing && transcribingTarget === "answer" && <p className="loading-inline"><Spinner size={14} /> Transcribiendo tu audio...</p>}
                   {voiceMessage && <p>{voiceMessage}</p>}
                   {practiceSource !== "real" && <p>La transcripción por voz requiere modo real e inicio de sesión.</p>}
                 </div>
@@ -805,8 +808,8 @@ export default function PracticePage() {
                     if (answerMode === "voice") setTranscriptionDraft(event.target.value);
                   }}
                   placeholder={answerMode === "voice"
-                    ? "Cuando termine la transcripción, corregí aquí errores de audio antes de evaluar."
-                    : "Respondé como si estuvieras frente a la comisión: define, desarrolla, aplica y cerrá con orden."}
+                    ? "Corrige aquí los errores de la transcripción antes de evaluar."
+                    : "Responde como ante la comisión: define, desarrolla, aplica y cierra con orden."}
                 />
               </label>
               {pendingFollowUp && (
@@ -827,13 +830,13 @@ export default function PracticePage() {
                     <textarea
                       value={followUpAnswer}
                       onChange={(event) => setFollowUpAnswer(event.target.value)}
-                      placeholder="Contestá esta repregunta de forma concreta. La nota sale después de combinar esta respuesta con la inicial."
+                      placeholder="Responde concreto. La nota sale al combinar esta respuesta con la inicial."
                     />
                   </label>
                   <div className="voice-panel follow-up-voice-panel">
                     <div>
                       <strong>Responder repregunta por voz</strong>
-                      <p>Grabá sólo el complemento que faltó; se transcribe acá arriba y después se evalúa la respuesta final completa.</p>
+                      <p>Graba solo el complemento que faltó; se transcribe arriba y luego se evalúa la respuesta completa.</p>
                     </div>
                     <div className="practice-actions compact">
                       {!(isRecording && recordingTarget === "followUp")
@@ -842,7 +845,7 @@ export default function PracticePage() {
                       <button type="button" className="secondary" onClick={clearFollowUpVoiceAnswer} disabled={isRecording || isTranscribing}>Limpiar repregunta</button>
                     </div>
                     {followUpAudioUrl && <audio controls src={followUpAudioUrl} />}
-                    {isTranscribing && transcribingTarget === "followUp" && <p>Transcribiendo repregunta con OpenAI...</p>}
+                    {isTranscribing && transcribingTarget === "followUp" && <p className="loading-inline"><Spinner size={14} /> Transcribiendo repregunta...</p>}
                     {followUpVoiceMessage && <p>{followUpVoiceMessage}</p>}
                     {practiceSource !== "real" && <p>La transcripción por voz requiere modo real e inicio de sesión.</p>}
                   </div>
@@ -854,6 +857,7 @@ export default function PracticePage() {
                   onClick={submitAnswer}
                   disabled={isEvaluating || isRecording || isTranscribing || !answer.trim() || Boolean(pendingFollowUp && !followUpAnswer.trim())}
                 >
+                  {isEvaluating && <Spinner size={14} />}
                   {isEvaluating
                     ? pendingFollowUp ? "Evaluando respuesta completa..." : "Analizando..."
                     : pendingFollowUp
