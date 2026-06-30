@@ -20,7 +20,7 @@ import { ThemeToggle } from "./theme-toggle";
 const navItems = [
   { href: "/", label: "Inicio", Icon: Home },
   { href: "/admin", label: "Admin", Icon: BarChart2 },
-  { href: "/admin/questions", label: "Banco", Icon: BookOpen },
+  { href: "/questions", label: "Banco", Icon: BookOpen },
   { href: "/practice", label: "Practicar", Icon: Dumbbell },
   { href: "/exam", label: "Simulacro", Icon: GraduationCap },
   { href: "/history", label: "Historial y estadísticas", Icon: History },
@@ -110,3 +110,4 @@ export function AppSidebar() {
     </>
   );
 }
+

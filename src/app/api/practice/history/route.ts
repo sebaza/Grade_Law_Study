@@ -28,6 +28,11 @@ export async function GET(request: Request) {
           subject: true,
           subsubject: true,
           professors: { include: { professor: true } },
+          states: {
+            where: { userId: data.user.id },
+            select: { status: true, attemptCount: true, bestScore: true, averageScore: true, isExcluded: true },
+            take: 1,
+          },
         },
       },
     },
@@ -45,6 +50,8 @@ export async function GET(request: Request) {
       timeSeconds: attempt.timeSeconds ?? 0,
       postStatus: attempt.postStatus,
       audioPath: attempt.audioPath,
+      rawAnswer: attempt.rawAnswer,
+      transcription: attempt.transcription,
       hasTranscription: Boolean(attempt.transcription),
       question: {
         id: attempt.question.id,
@@ -55,6 +62,15 @@ export async function GET(request: Request) {
         professorName: attempt.question.professors.map((link) => link.professor.name).join(", ") || "Sin profesor",
         difficulty: attempt.question.difficulty,
         estimatedProbability: Number(attempt.question.estimatedProbability),
+        state: attempt.question.states[0]
+          ? {
+              status: attempt.question.states[0].status,
+              attemptCount: attempt.question.states[0].attemptCount,
+              bestScore: Number(attempt.question.states[0].bestScore),
+              averageScore: Number(attempt.question.states[0].averageScore),
+              isExcluded: attempt.question.states[0].isExcluded,
+            }
+          : null,
       },
       feedback: attempt.feedback
         ? {

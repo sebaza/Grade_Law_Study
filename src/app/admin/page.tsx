@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AppTopNav } from "../app-top-nav";
 import { useEffect, useMemo, useState } from "react";
 
 type AdminStatsResponse = {
@@ -8,6 +9,7 @@ type AdminStatsResponse = {
     email?: string;
     restrictedByEmail: boolean;
   };
+  selectedUser: { id: string; fullName: string | null; email: string | null } | null;
   summary: {
     totalUsers: number;
     activeUsers: number;
@@ -127,6 +129,7 @@ function RankingChart({
 
 export default function AdminDashboardPage() {
   const [stats, setStats] = useState<AdminStatsResponse | null>(null);
+  const [selectedUserId, setSelectedUserId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -137,7 +140,9 @@ export default function AdminDashboardPage() {
       setIsLoading(true);
       setErrorMessage("");
 
-      const response = await fetch("/api/admin/stats", { signal: controller.signal });
+      const params = new URLSearchParams();
+      if (selectedUserId) params.set("userId", selectedUserId);
+      const response = await fetch(`/api/admin/stats${params.size ? `?${params.toString()}` : ""}`, { signal: controller.signal });
 
       if (response.status === 401 || response.status === 403) {
         const payload = await response.json().catch(() => null) as { error?: string } | null;
@@ -163,7 +168,7 @@ export default function AdminDashboardPage() {
     });
 
     return () => controller.abort();
-  }, []);
+  }, [selectedUserId]);
 
   const weakestSubsubjects = useMemo(
     () => stats?.bySubsubject.slice().sort((a, b) => a.averageScore - b.averageScore).slice(0, 8) ?? [],
@@ -171,7 +176,8 @@ export default function AdminDashboardPage() {
   );
 
   return (
-    <main className="history-shell admin-dashboard-shell">
+    <main className="history-shell admin-dashboard-shell menu-with-top-nav">
+      <AppTopNav />
       <header className="history-hero">
         <div>
           <Link className="back-link" href="/">← Volver al inicio</Link>
@@ -201,6 +207,21 @@ export default function AdminDashboardPage() {
 
       {!isLoading && stats && (
         <>
+          <section className="practice-card-large admin-user-filter-card">
+            <div>
+              <h2>Filtro por estudiante</h2>
+              <p className="muted-copy">Eleg? una persona para que las m?tricas y gr?ficos dejen de ser globales.</p>
+            </div>
+            <select value={selectedUserId} onChange={(event) => setSelectedUserId(event.target.value)}>
+              <option value="">General de la plataforma</option>
+              {stats.users.map((user) => (
+                <option key={user.id} value={user.id}>
+                  {user.fullName || user.email || `Usuario ${user.id.slice(0, 8)}`}
+                </option>
+              ))}
+            </select>
+          </section>
+
           <section className="history-kpi-grid">
             <article className="card kpi">
               <p className="kpi-label">Usuarios</p>
@@ -208,7 +229,7 @@ export default function AdminDashboardPage() {
               <p className="kpi-note">{stats.summary.activeUsers} con intentos registrados</p>
             </article>
             <article className="card kpi">
-              <p className="kpi-label">Intentos</p>
+              <p className="kpi-label">Intentos{stats.selectedUser ? ` de ${stats.selectedUser.fullName || stats.selectedUser.email || "usuario"}` : ""}</p>
               <p className="kpi-value">{stats.summary.totalAttempts}</p>
               <p className="kpi-note">{stats.summary.totalSessions} sesiones abiertas</p>
             </article>
@@ -286,7 +307,7 @@ export default function AdminDashboardPage() {
             </article>
 
             <article className="practice-card-large">
-              <h2>Usuarios con actividad</h2>
+              <h2>{selectedUserId ? "Usuarios disponibles" : "Usuarios con actividad"}</h2>
               <div className="attempt-history-list">
                 {stats.users.length > 0 ? stats.users.map((user) => (
                   <article className="attempt-history-row" key={user.id}>

@@ -2,38 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-
-type StatsResponse = {
-  summary: {
-    totalQuestions: number;
-    practiced: number;
-    pending: number;
-    mastered: number;
-    needsReview: number;
-    excluded: number;
-    answered: number;
-    inPractice: number;
-    attemptCount: number;
-    sessionCount: number;
-    averageScore: number;
-    totalTimeSeconds: number;
-    progressPercentage: number;
-  };
-  scoreTimeline: Array<{ day: string; averageScore: number; attempts: number }>;
-  bySubject: Array<{ label: string; averageScore: number; attempts: number }>;
-  byArea: Array<{ label: string; averageScore: number; attempts: number }>;
-  byProfessor: Array<{ label: string; averageScore: number; attempts: number }>;
-  difficultQuestions: Array<{ questionId: string; statement: string; subject: string; averageScore: number; attempts: number }>;
-  recentSessions: Array<{
-    id: string;
-    mode: string;
-    startedAt: string;
-    totalQuestions: number;
-    averageScore: number;
-    totalTimeSeconds: number;
-    attemptCount: number;
-  }>;
-};
+import { AppTopNav } from "../app-top-nav";
 
 type HistoryResponse = {
   attempts: Array<{
@@ -41,23 +10,44 @@ type HistoryResponse = {
     sessionId: string | null;
     createdAt: string;
     answerMode: "text" | "voice";
+    rawAnswer: string | null;
+    transcription: string | null;
     score: number;
     timeSeconds: number;
     postStatus: string;
     hasTranscription: boolean;
     question: {
+      id: string;
       statement: string;
       areaName: string;
       subjectName: string;
+      subsubjectName: string;
       professorName: string;
       difficulty: "low" | "medium" | "high";
       estimatedProbability: number;
+      state: {
+        status: string;
+        attemptCount: number;
+        bestScore: number;
+        averageScore: number;
+        isExcluded: boolean;
+      } | null;
     };
     feedback: {
       summary: string;
       improvementSuggestions: string | null;
+      modelAnswerSuggested?: string | null;
     } | null;
   }>;
+};
+
+const statusLabels: Record<string, string> = {
+  pending: "Inicial",
+  in_practice: "En práctica",
+  answered: "Practicada",
+  mastered: "Dominada",
+  needs_review: "Repaso",
+  excluded: "Excluida",
 };
 
 function formatDate(value: string) {
@@ -81,42 +71,44 @@ function scoreTone(score: number) {
   return "danger";
 }
 
+function compactAnswer(answer: string | null) {
+  if (!answer) return "Sin respuesta guardada.";
+  return answer.length > 260 ? `${answer.slice(0, 260)}...` : answer;
+}
+
 export default function HistoryPage() {
-  const [stats, setStats] = useState<StatsResponse | null>(null);
   const [history, setHistory] = useState<HistoryResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [actionMessage, setActionMessage] = useState("");
+  const [pendingQuestionId, setPendingQuestionId] = useState<string | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
 
-    async function load() {
+    async function loadHistory() {
       setIsLoading(true);
       setErrorMessage("");
 
-      const [statsResponse, historyResponse] = await Promise.all([
-        fetch("/api/practice/stats", { signal: controller.signal }),
-        fetch("/api/practice/history?limit=30", { signal: controller.signal }),
-      ]);
+      const response = await fetch("/api/practice/history?limit=100", { signal: controller.signal });
 
-      if (statsResponse.status === 401 || historyResponse.status === 401) {
-        setErrorMessage("Para ver historial y estadísticas tenés que iniciar sesión.");
+      if (response.status === 401) {
+        setErrorMessage("Para ver historial tenés que iniciar sesión.");
         setIsLoading(false);
         return;
       }
 
-      if (!statsResponse.ok || !historyResponse.ok) {
+      if (!response.ok) {
         setErrorMessage("No se pudo cargar el historial.");
         setIsLoading(false);
         return;
       }
 
-      setStats(await statsResponse.json() as StatsResponse);
-      setHistory(await historyResponse.json() as HistoryResponse);
+      setHistory(await response.json() as HistoryResponse);
       setIsLoading(false);
     }
 
-    load().catch((error: unknown) => {
+    loadHistory().catch((error: unknown) => {
       if (controller.signal.aborted) return;
       setErrorMessage(error instanceof Error ? error.message : "Error inesperado al cargar historial.");
       setIsLoading(false);
@@ -125,16 +117,74 @@ export default function HistoryPage() {
     return () => controller.abort();
   }, []);
 
-  const strongestSubjects = useMemo(() => stats?.bySubject.slice(0, 4) ?? [], [stats]);
-  const weakSubjects = useMemo(() => stats?.bySubject.slice().sort((a, b) => a.averageScore - b.averageScore).slice(0, 4) ?? [], [stats]);
+  const uniqueQuestions = useMemo(() => {
+    const byQuestion = new Map<string, HistoryResponse["attempts"][number]>();
+    history?.attempts.forEach((attempt) => {
+      const existing = byQuestion.get(attempt.question.id);
+      if (!existing || new Date(attempt.createdAt) > new Date(existing.createdAt)) {
+        byQuestion.set(attempt.question.id, attempt);
+      }
+    });
+    return Array.from(byQuestion.values());
+  }, [history]);
+
+  const masteredQuestions = useMemo(
+    () => uniqueQuestions.filter((attempt) => attempt.question.state?.status === "mastered"),
+    [uniqueQuestions],
+  );
+  const practicedQuestions = useMemo(
+    () => uniqueQuestions.filter((attempt) => (attempt.question.state?.attemptCount ?? 0) > 0),
+    [uniqueQuestions],
+  );
+
+  async function returnToInitialPull(questionId: string) {
+    setPendingQuestionId(questionId);
+    setActionMessage("");
+
+    const response = await fetch(`/api/questions/${questionId}/state`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status: "pending", isExcluded: false }),
+    });
+
+    if (!response.ok) {
+      setActionMessage("No se pudo devolver la pregunta al pull inicial.");
+      setPendingQuestionId(null);
+      return;
+    }
+
+    setHistory((current) => current
+      ? {
+          attempts: current.attempts.map((attempt) => attempt.question.id === questionId
+            ? {
+                ...attempt,
+                question: {
+                  ...attempt.question,
+                  state: {
+                    ...(attempt.question.state ?? { attemptCount: 0, bestScore: 0, averageScore: 0, isExcluded: false }),
+                    status: "pending",
+                    isExcluded: false,
+                  },
+                },
+              }
+            : attempt),
+        }
+      : current);
+    setActionMessage("Pregunta devuelta al pull inicial.");
+    setPendingQuestionId(null);
+  }
 
   return (
-    <main className="history-shell">
-      <header className="history-hero">
+    <main className="menu-page-shell history-student-shell">
+      <AppTopNav />
+
+      <header className="page-hero compact-hero">
         <div>
-          <Link className="back-link" href="/">← Volver al inicio</Link>
-          <h1>Historial y estadísticas</h1>
-          <p>Seguimiento real de sesiones, intentos, materias débiles y evolución de desempeño.</p>
+          <p className="eyebrow">Historial</p>
+          <h1>Preguntas, respuestas y estado de práctica</h1>
+          <p>
+            Esta pantalla queda enfocada en trazabilidad: qué pregunta hiciste, qué respondiste, qué feedback recibiste y si querés reponerla al pull inicial.
+          </p>
         </div>
         <Link className="primary-button" href="/practice">Practicar ahora</Link>
       </header>
@@ -149,118 +199,98 @@ export default function HistoryPage() {
         </section>
       )}
 
-      {!isLoading && stats && history && (
+      {!isLoading && history && (
         <>
-          <section className="history-kpi-grid" id="estadisticas">
+          <section className="history-kpi-grid">
             <article className="card kpi">
-              <p className="kpi-label">Avance general</p>
-              <p className="kpi-value">{stats.summary.progressPercentage}%</p>
-              <p className="kpi-note">{stats.summary.practiced} de {stats.summary.totalQuestions} preguntas practicadas</p>
+              <p className="kpi-label">Intentos registrados</p>
+              <p className="kpi-value">{history.attempts.length}</p>
+              <p className="kpi-note">respuestas guardadas</p>
             </article>
             <article className="card kpi">
-              <p className="kpi-label">Promedio</p>
-              <p className="kpi-value">{stats.summary.averageScore}%</p>
-              <p className="kpi-note">{stats.summary.attemptCount} intentos registrados</p>
+              <p className="kpi-label">Preguntas practicadas</p>
+              <p className="kpi-value">{practicedQuestions.length}</p>
+              <p className="kpi-note">preguntas únicas con intentos</p>
             </article>
             <article className="card kpi">
               <p className="kpi-label">Dominadas</p>
-              <p className="kpi-value">{stats.summary.mastered}</p>
-              <p className="kpi-note">{stats.summary.needsReview} necesitan repaso</p>
+              <p className="kpi-value">{masteredQuestions.length}</p>
+              <p className="kpi-note">según estado actual</p>
             </article>
             <article className="card kpi">
-              <p className="kpi-label">Tiempo de estudio</p>
-              <p className="kpi-value">{Math.round(stats.summary.totalTimeSeconds / 60)}</p>
-              <p className="kpi-note">minutos en {stats.summary.sessionCount} sesiones</p>
+              <p className="kpi-label">Última actividad</p>
+              <p className="kpi-value small-kpi-value">{history.attempts[0] ? formatDate(history.attempts[0].createdAt) : "—"}</p>
+              <p className="kpi-note">último intento guardado</p>
             </article>
           </section>
 
+          {actionMessage && <p className="form-message success">{actionMessage}</p>}
+
           <section className="history-grid">
             <article className="practice-card-large">
-              <h2>Evolución de acierto</h2>
-              {stats.scoreTimeline.length > 0 ? (
-                <div className="timeline-chart">
-                  {stats.scoreTimeline.map((point) => (
-                    <div className="timeline-bar" key={point.day}>
-                      <span style={{ height: `${Math.max(point.averageScore, 4)}%` }} />
-                      <small>{point.averageScore}%</small>
+              <h2>Preguntas dominadas</h2>
+              <div className="question-risk-list">
+                {masteredQuestions.length > 0 ? masteredQuestions.map((attempt) => (
+                  <article className="question-risk-row" key={attempt.question.id}>
+                    <div>
+                      <strong>{attempt.question.statement}</strong>
+                      <p>{attempt.question.subjectName} · mejor {attempt.question.state?.bestScore ?? 0}% · {attempt.question.state?.attemptCount ?? 0} intentos</p>
                     </div>
-                  ))}
-                </div>
-              ) : <p className="muted-copy">Todavía no hay intentos suficientes para graficar evolución.</p>}
-            </article>
-
-            <article className="practice-card-large">
-              <h2>Materias débiles</h2>
-              <div className="ranking-list">
-                {weakSubjects.length > 0 ? weakSubjects.map((subject) => (
-                  <div className="ranking-row" key={subject.label}>
-                    <span>{subject.label}</span>
-                    <strong>{subject.averageScore}%</strong>
-                    <small>{subject.attempts} intentos</small>
-                  </div>
-                )) : <p className="muted-copy">Aún no hay materias con intentos.</p>}
+                    <Link className="secondary-button" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`}>Reintentar</Link>
+                  </article>
+                )) : <p className="muted-copy">Todavía no marcaste preguntas como dominadas.</p>}
               </div>
             </article>
 
             <article className="practice-card-large">
-              <h2>Materias fuertes</h2>
-              <div className="ranking-list">
-                {strongestSubjects.length > 0 ? strongestSubjects.map((subject) => (
-                  <div className="ranking-row" key={subject.label}>
-                    <span>{subject.label}</span>
-                    <strong>{subject.averageScore}%</strong>
-                    <small>{subject.attempts} intentos</small>
-                  </div>
-                )) : <p className="muted-copy">Todavía no hay datos para comparar.</p>}
-              </div>
-            </article>
-
-            <article className="practice-card-large">
-              <h2>Promedio por profesor</h2>
-              <div className="ranking-list">
-                {stats.byProfessor.length > 0 ? stats.byProfessor.slice(0, 6).map((professor) => (
-                  <div className="ranking-row" key={professor.label}>
-                    <span>{professor.label}</span>
-                    <strong>{professor.averageScore}%</strong>
-                    <small>{professor.attempts} intentos</small>
-                  </div>
-                )) : <p className="muted-copy">Sin intentos asociados a profesores todavía.</p>}
+              <h2>Preguntas practicadas</h2>
+              <div className="question-risk-list">
+                {practicedQuestions.length > 0 ? practicedQuestions.slice(0, 12).map((attempt) => (
+                  <article className="question-risk-row" key={attempt.question.id}>
+                    <div>
+                      <strong>{attempt.question.statement}</strong>
+                      <p>{statusLabels[attempt.question.state?.status ?? "pending"] ?? attempt.question.state?.status} · promedio {Math.round(attempt.question.state?.averageScore ?? 0)}%</p>
+                    </div>
+                    <button className="secondary-button" type="button" disabled={pendingQuestionId === attempt.question.id} onClick={() => returnToInitialPull(attempt.question.id)}>
+                      {pendingQuestionId === attempt.question.id ? "Moviendo..." : "Volver al pull inicial"}
+                    </button>
+                  </article>
+                )) : <p className="muted-copy">Todavía no hay preguntas practicadas.</p>}
               </div>
             </article>
           </section>
 
           <section className="practice-card-large" id="historial">
-            <h2>Preguntas con más errores</h2>
-            <div className="question-risk-list">
-              {stats.difficultQuestions.length > 0 ? stats.difficultQuestions.map((question) => (
-                <article className="question-risk-row" key={question.questionId}>
-                  <div>
-                    <strong>{question.statement}</strong>
-                    <p>{question.subject} · {question.attempts} intentos</p>
-                  </div>
-                  <span className={`score-pill ${scoreTone(question.averageScore)}`}>{question.averageScore}%</span>
-                </article>
-              )) : <p className="muted-copy">Cuando existan intentos, acá aparecerán las preguntas más difíciles.</p>}
-            </div>
-          </section>
-
-          <section className="practice-card-large">
-            <h2>Intentos recientes</h2>
+            <h2>Intentos y respuestas</h2>
             <div className="attempt-history-list">
               {history.attempts.length > 0 ? history.attempts.map((attempt) => (
-                <article className="attempt-history-row" key={attempt.id}>
+                <article className="attempt-history-row rich-attempt-row" id={`question-${attempt.question.id}`} key={attempt.id}>
                   <div>
                     <div className="question-meta">
                       <span>{attempt.question.areaName}</span>
+                      <span>{attempt.question.subjectName}</span>
                       <span>{attempt.question.professorName}</span>
                       <span>{attempt.answerMode === "voice" ? "Voz" : "Texto"}</span>
                       <span>{formatDuration(attempt.timeSeconds)}</span>
                     </div>
-                    <strong>{attempt.question.statement}</strong>
+                    <Link className="history-question-link" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`}>
+                      {attempt.question.statement}
+                    </Link>
+                    <div className="answer-review-box">
+                      <strong>Tu respuesta</strong>
+                      <p>{compactAnswer(attempt.transcription ?? attempt.rawAnswer)}</p>
+                    </div>
                     <p>{attempt.feedback?.summary ?? "Sin feedback guardado."}</p>
-                    <small>{formatDate(attempt.createdAt)}</small>
+                    {attempt.feedback?.improvementSuggestions && <small>Mejora sugerida: {attempt.feedback.improvementSuggestions}</small>}
+                    <small>{formatDate(attempt.createdAt)} · {statusLabels[attempt.question.state?.status ?? attempt.postStatus] ?? attempt.postStatus}</small>
                   </div>
-                  <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
+                  <div className="attempt-actions-stack">
+                    <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
+                    <Link className="secondary-button" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`}>Reintentar</Link>
+                    <button className="secondary-button" type="button" disabled={pendingQuestionId === attempt.question.id} onClick={() => returnToInitialPull(attempt.question.id)}>
+                      Al pull inicial
+                    </button>
+                  </div>
                 </article>
               )) : <p className="muted-copy">Todavía no hay intentos guardados.</p>}
             </div>

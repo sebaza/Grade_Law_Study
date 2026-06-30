@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { AppTopNav } from "../app-top-nav";
 
 type PracticeQuestion = {
   id?: string;
@@ -108,7 +109,7 @@ function getPracticeConfigFromUrl() {
     return {
       source: "real" as const,
       mode: "random" as PracticeMode,
-      filters: { area: "", subject: "", subsubject: "", professor: "", difficulty: "", questionType: "" },
+      filters: { area: "", subject: "", subsubject: "", professor: "", difficulty: "", questionType: "", questionId: "" },
     };
   }
 
@@ -127,6 +128,7 @@ function getPracticeConfigFromUrl() {
       professor: params.get("professor") ?? "",
       difficulty: ["low", "medium", "high"].includes(difficulty) ? difficulty : "",
       questionType: params.get("questionType") ?? "",
+      questionId: params.get("questionId") ?? "",
     },
   };
 }
@@ -175,6 +177,7 @@ export default function PracticePage() {
     professor: "",
     difficulty: "",
     questionType: "",
+    questionId: "",
   });
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<BlobPart[]>([]);
@@ -230,6 +233,7 @@ export default function PracticePage() {
       if (filters.professor) params.set("professor", filters.professor);
       if (filters.difficulty) params.set("difficulty", filters.difficulty);
       if (filters.questionType) params.set("questionType", filters.questionType);
+      if (filters.questionId) params.set("questionId", filters.questionId);
 
       const response = practiceSource === "demo"
         ? await fetch(`/api/practice/demo?${params.toString()}`, { signal: controller.signal })
@@ -247,6 +251,7 @@ export default function PracticePage() {
                 professor: filters.professor || undefined,
                 difficulty: filters.difficulty || undefined,
                 questionType: filters.questionType || undefined,
+                questionId: filters.questionId || undefined,
               },
             }),
           });
@@ -623,7 +628,8 @@ export default function PracticePage() {
   }
 
   return (
-    <main className="practice-shell">
+    <main className="practice-shell menu-with-top-nav">
+      <AppTopNav />
       <aside className="practice-sidebar">
         <Link className="back-link" href="/">← Volver al inicio</Link>
         <h1>Práctica por texto</h1>

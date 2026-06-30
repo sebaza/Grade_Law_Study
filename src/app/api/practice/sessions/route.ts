@@ -15,6 +15,7 @@ const sessionRequestSchema = z.object({
     professor: z.string().optional(),
     difficulty: z.enum(["low", "medium", "high"]).optional(),
     questionType: z.string().optional(),
+    questionId: z.string().uuid().optional(),
   }).default({}),
 });
 
@@ -44,16 +45,42 @@ export async function POST(request: Request) {
   const db = getPrisma();
   const { filters, limit, mode } = parsed.data;
 
-  // Cached: base questions shared across all users (no user state, 5-min cache)
+  // Cached: base questions shared across all users (no user state, 5-min cache).
+  // A direct question retry bypasses the broad pool so old/high-priority limits never hide it.
   const [baseQuestions, facets] = await Promise.all([
-    getCachedBaseQuestions(
-      filters.area ?? "",
-      filters.professor ?? "",
-      filters.difficulty ?? "",
-      filters.subject ?? "",
-      filters.subsubject ?? "",
-      filters.questionType ?? "",
-    ),
+    filters.questionId
+      ? db.question.findMany({
+          where: { id: filters.questionId, isActive: true },
+          include: {
+            area: true,
+            subject: true,
+            subsubject: true,
+            professors: { include: { professor: true } },
+            _count: { select: { keyPoints: true } },
+          },
+          take: 1,
+        }).then((questions) => questions.map((q) => ({
+          id: q.id,
+          sourceReference: q.sourceReference,
+          statement: q.statement,
+          areaName: q.area.name,
+          subjectName: q.subject?.name ?? "Sin materia",
+          subsubjectName: q.subsubject?.name ?? "Sin submateria",
+          professorNames: q.professors.map((link) => link.professor.name),
+          difficulty: q.difficulty,
+          estimatedProbability: Number(q.estimatedProbability),
+          priorityScore: Number(q.priorityScore),
+          questionType: q.questionType ?? "general",
+          keyPointCount: q._count.keyPoints,
+        })))
+      : getCachedBaseQuestions(
+          filters.area ?? "",
+          filters.professor ?? "",
+          filters.difficulty ?? "",
+          filters.subject ?? "",
+          filters.subsubject ?? "",
+          filters.questionType ?? "",
+        ),
     getCachedFacets(),
   ]);
 
@@ -86,8 +113,8 @@ export async function POST(request: Request) {
     eligible = eligible.filter((q) => !stateByQuestionId.has(q.id));
   }
 
-  const pool = mode === "random" ? shuffle(eligible) : eligible;
-  const selected = pool.slice(0, limit);
+  const pool = filters.questionId ? eligible : mode === "random" ? shuffle(eligible) : eligible;
+  const selected = pool.slice(0, filters.questionId ? 1 : limit);
 
   const session = await db.practiceSession.create({
     data: {

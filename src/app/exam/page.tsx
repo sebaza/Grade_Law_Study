@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AppTopNav } from "../app-top-nav";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Difficulty = "low" | "medium" | "high";
@@ -694,7 +695,8 @@ export default function ExamPage() {
   }
 
   return (
-    <main className="exam-shell">
+    <main className="exam-shell menu-with-top-nav">
+      <AppTopNav />
       <header className="exam-hero">
         <div>
           <Link className="back-link" href="/">← Volver al inicio</Link>

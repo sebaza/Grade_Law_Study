@@ -2,314 +2,274 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { AppSidebar } from "./sidebar";
+import { AppTopNav } from "./app-top-nav";
 
-type HomeStats = {
+type StatsResponse = {
   summary: {
     totalQuestions: number;
     practiced: number;
+    pending: number;
     mastered: number;
     needsReview: number;
+    excluded: number;
+    answered: number;
+    inPractice: number;
+    attemptCount: number;
+    sessionCount: number;
     averageScore: number;
+    totalTimeSeconds: number;
+    progressPercentage: number;
   };
+  scoreTimeline: Array<{ day: string; averageScore: number; attempts: number }>;
   bySubject: Array<{ label: string; averageScore: number; attempts: number }>;
+  byArea: Array<{ label: string; averageScore: number; attempts: number }>;
+  byProfessor: Array<{ label: string; averageScore: number; attempts: number }>;
+  difficultQuestions: Array<{ questionId: string; statement: string; subject: string; averageScore: number; attempts: number }>;
 };
 
 type HomeHistory = {
   attempts: Array<{
     id: string;
+    createdAt: string;
     score: number;
-    postStatus: string;
     question: {
+      id: string;
       statement: string;
       areaName: string;
+      subjectName: string;
       professorName: string;
+      state: { status: string; attemptCount: number; bestScore: number; averageScore: number; isExcluded: boolean } | null;
     };
   }>;
 };
 
-const quickPracticeModes = [
-  { label: "Por materia", value: "by_subject" },
-  { label: "Por profesor", value: "by_professor" },
-  { label: "Aleatorio", value: "random" },
-] as const;
-
-const quickDifficulties = [
-  { label: "Todas", value: "" },
-  { label: "Media", value: "medium" },
-  { label: "Alta", value: "high" },
-] as const;
-
-const quickAreas = ["Derecho Procesal", "Derecho Civil", "Derecho Constitucional"];
-
-const defaultWeakSubjects = [
-  { name: "Actos procesales", area: "Derecho Procesal", progress: 42 },
-  { name: "Bienes y derechos reales", area: "Derecho Civil", progress: 48 },
-  { name: "Bases de la institucionalidad", area: "Derecho Constitucional", progress: 56 },
-];
-
-const defaultRecentAttempts = [
-  { id: "1", subject: "Derecho Procesal - Actos procesales", professor: "Felipe Ortiz", score: "Pendiente", scoreClass: "warn" },
-  { id: "2", subject: "Derecho Civil - Bienes", professor: "Stephanie Merlet", score: "Pendiente", scoreClass: "warn" },
-  { id: "3", subject: "Derecho Constitucional", professor: "Mauricio Figueroa", score: "Pendiente", scoreClass: "warn" },
-];
-
-function scorePillClass(score: number) {
+function scoreTone(score: number) {
   if (score >= 85) return "strong";
   if (score >= 60) return "warn";
   return "danger";
 }
 
-function KpiSkeleton() {
-  return (
-    <article className="card kpi">
-      <div className="skeleton" style={{ height: 14, width: "60%", marginBottom: 12 }} />
-      <div className="skeleton" style={{ height: 42, width: "40%", marginBottom: 10 }} />
-      <div className="skeleton" style={{ height: 12, width: "80%", marginBottom: 20 }} />
-      <div className="skeleton" style={{ height: 14, width: "50%", marginTop: 16, borderTop: "1px solid var(--border)", paddingTop: 16 }} />
-    </article>
-  );
+function formatDuration(seconds: number) {
+  if (!seconds) return "0 min";
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.round((seconds % 3600) / 60);
+  if (hours <= 0) return `${minutes} min`;
+  return `${hours}h ${minutes}m`;
+}
+
+function compactStatement(statement: string, limit = 130) {
+  return statement.length > limit ? `${statement.slice(0, limit)}...` : statement;
+}
+
+function shortDate(value: string) {
+  return new Intl.DateTimeFormat("es-CL", { day: "2-digit", month: "short" }).format(new Date(value));
+}
+
+function EmptyMetric({ children }: { children: React.ReactNode }) {
+  return <p className="muted-copy">{children}</p>;
 }
 
 export default function HomePage() {
-  const [quickMode, setQuickMode] = useState<(typeof quickPracticeModes)[number]["value"]>("by_subject");
-  const [quickArea, setQuickArea] = useState(quickAreas[0]);
-  const [quickDifficulty, setQuickDifficulty] = useState<(typeof quickDifficulties)[number]["value"]>("");
-  const [stats, setStats] = useState<HomeStats | null>(null);
+  const [stats, setStats] = useState<StatsResponse | null>(null);
   const [history, setHistory] = useState<HomeHistory | null>(null);
-  const [statsLoading, setStatsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    Promise.all([
-      fetch("/api/practice/stats")
-        .then((res) => (res.ok ? (res.json() as Promise<HomeStats>) : null))
-        .catch(() => null),
-      fetch("/api/practice/history?limit=3")
-        .then((res) => (res.ok ? (res.json() as Promise<HomeHistory>) : null))
-        .catch(() => null),
-    ]).then(([statsData, historyData]) => {
-      if (statsData) setStats(statsData);
-      if (historyData) setHistory(historyData);
-      setStatsLoading(false);
+    const controller = new AbortController();
+
+    async function loadDashboard() {
+      setIsLoading(true);
+      setErrorMessage("");
+
+      const [statsResponse, historyResponse] = await Promise.all([
+        fetch("/api/practice/stats", { signal: controller.signal }),
+        fetch("/api/practice/history?limit=8", { signal: controller.signal }),
+      ]);
+
+      if (statsResponse.status === 401 || historyResponse.status === 401) {
+        setErrorMessage("Iniciá sesión para ver tu inicio personalizado.");
+        setIsLoading(false);
+        return;
+      }
+
+      if (!statsResponse.ok || !historyResponse.ok) {
+        setErrorMessage("No se pudo cargar tu tablero de estudio.");
+        setIsLoading(false);
+        return;
+      }
+
+      setStats(await statsResponse.json() as StatsResponse);
+      setHistory(await historyResponse.json() as HomeHistory);
+      setIsLoading(false);
+    }
+
+    loadDashboard().catch((error: unknown) => {
+      if (controller.signal.aborted) return;
+      setErrorMessage(error instanceof Error ? error.message : "Error inesperado al cargar inicio.");
+      setIsLoading(false);
     });
+
+    return () => controller.abort();
   }, []);
 
-  const quickStartHref = useMemo(() => {
-    const params = new URLSearchParams({ source: "real", mode: quickMode });
-    if (quickMode === "by_subject") params.set("area", quickArea);
-    if (quickDifficulty) params.set("difficulty", quickDifficulty);
-    return `/practice?${params.toString()}`;
-  }, [quickArea, quickDifficulty, quickMode]);
-
-  const kpis = useMemo(
-    () => [
-      {
-        label: "Preguntas disponibles",
-        value: stats ? stats.summary.totalQuestions.toString() : "—",
-        note: "base generada desde fuentes",
-        link: "Ver banco",
-        href: "/admin/questions",
-      },
-      {
-        label: "Practicadas",
-        value: stats ? stats.summary.practiced.toString() : "—",
-        note: stats ? `de ${stats.summary.totalQuestions} en el banco` : "pendiente de iniciar",
-        link: "Ir a practicar",
-        href: "/practice",
-      },
-      {
-        label: "Dominadas",
-        value: stats ? stats.summary.mastered.toString() : "—",
-        note: "según rúbrica institucional",
-        link: "Ver estadísticas",
-        href: "/history#estadisticas",
-      },
-      {
-        label: "Para repaso",
-        value: stats ? stats.summary.needsReview.toString() : "—",
-        note: "se actualiza con desempeño",
-        link: "Practicar repaso",
-        href: "/practice?mode=review",
-      },
-    ],
+  const weakSubjects = useMemo(
+    () => stats?.bySubject.slice().sort((a, b) => a.averageScore - b.averageScore) ?? [],
     [stats],
   );
-
-  const weakSubjects = useMemo(() => {
-    if (!stats?.bySubject?.length) return defaultWeakSubjects;
-    return stats.bySubject
-      .slice()
-      .sort((a, b) => a.averageScore - b.averageScore)
-      .slice(0, 3)
-      .map((s) => ({ name: s.label, area: `${s.attempts} intentos`, progress: Math.round(s.averageScore) }));
-  }, [stats]);
-
-  const recentAttempts = useMemo(() => {
-    if (!history?.attempts?.length) return defaultRecentAttempts;
-    return history.attempts.map((a) => ({
-      id: a.id,
-      subject: a.question.statement.length > 55
-        ? `${a.question.statement.slice(0, 55)}...`
-        : a.question.statement,
-      professor: a.question.professorName,
-      score: a.score > 0 ? `${a.score}%` : "Pendiente",
-      scoreClass: a.score > 0 ? scorePillClass(a.score) : "warn",
-    }));
-  }, [history]);
-
-  const rubricScore = stats?.summary.averageScore ?? 0;
+  const strongSubjects = useMemo(
+    () => stats?.bySubject.slice().sort((a, b) => b.averageScore - a.averageScore) ?? [],
+    [stats],
+  );
+  const maxTimelineAttempts = Math.max(...(stats?.scoreTimeline.map((point) => point.attempts) ?? [1]), 1);
 
   return (
-    <main className="app-shell">
-      <AppSidebar />
+    <main className="menu-page-shell home-dashboard-shell">
+      <AppTopNav />
 
-      <section className="main">
-        <header className="topbar">
-          <div>
-            <h2>Buen día, futura abogada.</h2>
-            <p>Practicá con preguntas ponderadas por profesor, materia y probabilidad de aparición.</p>
+      <header className="page-hero dashboard-hero">
+        <div>
+          <p className="eyebrow">Inicio</p>
+          <h1>Tu tablero de avance para estudiar mejor</h1>
+          <p>
+            El inicio deja de ser vidriera y pasa a ser tablero: promedio, ramos, uso por día, materias débiles/fuertes, profesores e intentos recientes para reintentar.
+          </p>
+        </div>
+        <div className="hero-action-stack">
+          <Link className="primary-button" href="/practice">Practicar ahora</Link>
+          <Link className="secondary-button" href="/questions">Explorar banco</Link>
+        </div>
+      </header>
+
+      {isLoading && <section className="practice-card-large">Cargando tablero...</section>}
+
+      {!isLoading && errorMessage && (
+        <section className="practice-card-large empty-state">
+          <h2>{errorMessage}</h2>
+          <p>Sin sesión no hay progreso individual que mostrar. Podés entrar o revisar el banco público.</p>
+          <div className="inline-actions">
+            <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
+            <Link className="secondary-button" href="/questions">Ver banco</Link>
           </div>
-          <div className="date-pill">Entrenamiento activo</div>
-        </header>
-
-        <section className="kpi-grid" aria-label="Resumen de avance">
-          {statsLoading
-            ? Array.from({ length: 4 }).map((_, i) => <KpiSkeleton key={i} />)
-            : kpis.map((kpi) => (
-                <article className="card kpi" key={kpi.label}>
-                  <p className="kpi-label">{kpi.label}</p>
-                  <p className="kpi-value">{kpi.value}</p>
-                  <p className="kpi-note">{kpi.note}</p>
-                  <Link className="kpi-link" href={kpi.href}>
-                    {kpi.link} →
-                  </Link>
-                </article>
-              ))}
         </section>
+      )}
 
-        <section className="dashboard-grid">
-          <div>
-            <article className="card practice-card">
-              <div className="practice-visual">
+      {!isLoading && stats && history && (
+        <>
+          <section className="history-kpi-grid">
+            <article className="card kpi">
+              <p className="kpi-label">Promedio general</p>
+              <p className="kpi-value">{stats.summary.averageScore}%</p>
+              <p className="kpi-note">{stats.summary.attemptCount} intentos registrados</p>
+            </article>
+            <article className="card kpi">
+              <p className="kpi-label">Tiempo de estudio</p>
+              <p className="kpi-value">{formatDuration(stats.summary.totalTimeSeconds)}</p>
+              <p className="kpi-note">{stats.summary.sessionCount} sesiones usadas</p>
+            </article>
+            <article className="card kpi">
+              <p className="kpi-label">Intentos</p>
+              <p className="kpi-value">{stats.summary.attemptCount}</p>
+              <p className="kpi-note">{stats.summary.practiced} preguntas practicadas</p>
+            </article>
+            <article className="card kpi">
+              <p className="kpi-label">Estado de banco</p>
+              <p className="kpi-value">{stats.summary.mastered}</p>
+              <p className="kpi-note">dominadas · {stats.summary.needsReview} para repaso</p>
+            </article>
+          </section>
+
+          <section className="dashboard-analytics-grid">
+            <article className="practice-card-large wide-panel">
+              <div className="section-heading-row">
                 <div>
-                  <div className="icon-circle" style={{ margin: "0 auto 18px" }}>🎓</div>
-                  <strong>Empezar práctica</strong>
-                  <p>Simulá el examen oral y mejorá con cada intento.</p>
+                  <h2>Uso de la plataforma por día</h2>
+                  <p className="muted-copy">Intentos diarios y promedio de acierto. Acá el estudiante ve constancia, no humo.</p>
                 </div>
+                <Link className="secondary-button" href="/history">Ver historial</Link>
               </div>
-              <div className="practice-controls">
-                <strong>¿Cómo querés practicar?</strong>
-                <div className="segmented" role="group" aria-label="Modo de práctica rápida">
-                  {quickPracticeModes.map((mode) => (
-                    <button
-                      key={mode.value}
-                      type="button"
-                      className={quickMode === mode.value ? "active" : ""}
-                      onClick={() => setQuickMode(mode.value)}
-                    >
-                      {mode.label}
-                    </button>
+              {stats.scoreTimeline.length > 0 ? (
+                <div className="usage-chart">
+                  {stats.scoreTimeline.map((point) => (
+                    <div className="usage-day" key={point.day}>
+                      <span className="usage-score" style={{ height: `${Math.max(point.averageScore, 6)}%` }} />
+                      <span className="usage-attempts" style={{ height: `${Math.max((point.attempts / maxTimelineAttempts) * 100, 8)}%` }} />
+                      <small>{shortDate(point.day)}</small>
+                    </div>
                   ))}
                 </div>
-                <label>
-                  Seleccioná una materia
-                  <select
-                    className="select-like native-select"
-                    value={quickArea}
-                    onChange={(event) => setQuickArea(event.target.value)}
-                    disabled={quickMode !== "by_subject"}
-                  >
-                    {quickAreas.map((area) => (
-                      <option key={area}>{area}</option>
-                    ))}
-                  </select>
-                </label>
-                <div className="segmented" role="group" aria-label="Dificultad de práctica rápida">
-                  {quickDifficulties.map((difficulty) => (
-                    <button
-                      key={difficulty.label}
-                      type="button"
-                      className={quickDifficulty === difficulty.value ? "active" : ""}
-                      onClick={() => setQuickDifficulty(difficulty.value)}
-                    >
-                      {difficulty.label}
-                    </button>
-                  ))}
-                </div>
-                <Link className="primary-button" href={quickStartHref}>
-                  ▶ Comenzar práctica
-                </Link>
+              ) : <EmptyMetric>Todavía no hay intentos suficientes para graficar uso.</EmptyMetric>}
+            </article>
+
+            <article className="practice-card-large">
+              <h2>Promedio por ramo principal</h2>
+              <div className="ranking-list roomy-list">
+                {stats.byArea.length > 0 ? stats.byArea.map((area) => (
+                  <div className="ranking-row" key={area.label}>
+                    <span>{area.label}</span>
+                    <strong>{area.averageScore}%</strong>
+                    <small>{area.attempts} intentos</small>
+                  </div>
+                )) : <EmptyMetric>Sin intentos por ramo principal todavía.</EmptyMetric>}
               </div>
             </article>
 
-            <article className="card panel attempts-card">
-              <h3>Intentos recientes</h3>
-              <div className="attempt-list">
-                {recentAttempts.map((attempt) => (
-                  <div className="attempt-row" key={attempt.id}>
-                    <div className="icon-circle">📖</div>
+            <article className="practice-card-large tall-panel">
+              <h2>Materias débiles</h2>
+              <div className="ranking-list roomy-list">
+                {weakSubjects.length > 0 ? weakSubjects.map((subject) => (
+                  <div className="ranking-row weakness-row" key={subject.label}>
+                    <span>{subject.label}</span>
+                    <strong>{subject.averageScore}%</strong>
+                    <small>{subject.attempts} intentos</small>
+                  </div>
+                )) : <EmptyMetric>Todavía no hay materias débiles detectadas.</EmptyMetric>}
+              </div>
+            </article>
+
+            <article className="practice-card-large tall-panel">
+              <h2>Materias fuertes</h2>
+              <div className="ranking-list roomy-list">
+                {strongSubjects.length > 0 ? strongSubjects.map((subject) => (
+                  <div className="ranking-row strength-row" key={subject.label}>
+                    <span>{subject.label}</span>
+                    <strong>{subject.averageScore}%</strong>
+                    <small>{subject.attempts} intentos</small>
+                  </div>
+                )) : <EmptyMetric>Todavía no hay materias fuertes para comparar.</EmptyMetric>}
+              </div>
+            </article>
+
+            <article className="practice-card-large">
+              <h2>Promedio por profesor</h2>
+              <div className="ranking-list roomy-list">
+                {stats.byProfessor.length > 0 ? stats.byProfessor.map((professor) => (
+                  <div className="ranking-row" key={professor.label}>
+                    <span>{professor.label}</span>
+                    <strong>{professor.averageScore}%</strong>
+                    <small>{professor.attempts} intentos</small>
+                  </div>
+                )) : <EmptyMetric>Sin intentos asociados a profesores todavía.</EmptyMetric>}
+              </div>
+            </article>
+
+            <article className="practice-card-large">
+              <h2>Preguntas hechas recientemente</h2>
+              <div className="attempt-history-list compact-attempts">
+                {history.attempts.length > 0 ? history.attempts.map((attempt) => (
+                  <Link className="attempt-history-row clickable-attempt" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`} key={attempt.id}>
                     <div>
-                      <strong>{attempt.subject}</strong>
-                      <br />
-                      <span>{attempt.professor}</span>
+                      <strong>{compactStatement(attempt.question.statement)}</strong>
+                      <p>{attempt.question.subjectName} · {attempt.question.professorName}</p>
                     </div>
-                    <span className={`score-pill ${attempt.scoreClass}`}>{attempt.score}</span>
-                  </div>
-                ))}
+                    <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
+                  </Link>
+                )) : <EmptyMetric>Todavía no hay intentos recientes.</EmptyMetric>}
               </div>
             </article>
-          </div>
-
-          <div>
-            <article className="card panel">
-              <h3>Materias prioritarias</h3>
-              <div className="weak-list">
-                {weakSubjects.map((subject) => (
-                  <div className="weak-row" key={subject.name}>
-                    <div className="icon-circle">⚖</div>
-                    <div>
-                      <strong>{subject.name}</strong>
-                      <br />
-                      <span>{subject.area}</span>
-                      <div className="progress-bar">
-                        <span style={{ width: `${subject.progress}%` }} />
-                      </div>
-                    </div>
-                    <strong>{subject.progress}%</strong>
-                  </div>
-                ))}
-              </div>
-            </article>
-
-            <article className="card panel rubric-card">
-              <h3>Desglose por rúbrica</h3>
-              <div className="rubric-layout">
-                <div className="score-ring">
-                  <strong>{Math.round(rubricScore)}</strong>
-                </div>
-                <div className="rubric-list">
-                  <div className="rubric-item">
-                    <span>Normas jurídicas aplicables</span>
-                    <strong>0 / 10</strong>
-                  </div>
-                  <div className="rubric-item">
-                    <span>Conceptos técnico-jurídicos</span>
-                    <strong>0 / 10</strong>
-                  </div>
-                  <div className="rubric-item">
-                    <span>Aplicación práctica</span>
-                    <strong>0 / 10</strong>
-                  </div>
-                  <div className="rubric-item">
-                    <span>Fundamentación y orden</span>
-                    <strong>0 / 10</strong>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-      </section>
+          </section>
+        </>
+      )}
     </main>
   );
 }

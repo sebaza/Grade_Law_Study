@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { Prisma } from "@prisma/client";
 import { isAdminAuthFailure, requireAdminUser } from "@/lib/auth/admin";
 import { getPrisma } from "@/lib/db/prisma";
 
@@ -67,7 +68,7 @@ function formatScoreRows(rows: ScoreRow[]) {
   }));
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   const admin = await requireAdminUser();
 
   if (isAdminAuthFailure(admin)) {
@@ -75,6 +76,18 @@ export async function GET() {
   }
 
   const db = getPrisma();
+  const { searchParams } = new URL(request.url);
+  const selectedUserId = searchParams.get("userId") || undefined;
+  const selectedUser = selectedUserId
+    ? await db.userProfile.findUnique({ where: { id: selectedUserId }, select: { id: true, fullName: true, email: true } })
+    : null;
+  const scopedUserId = selectedUser?.id;
+  const attemptWhere = scopedUserId ? Prisma.sql`where user_id = ${scopedUserId}::uuid` : Prisma.empty;
+  const practiceAttemptWhere = scopedUserId ? { userId: scopedUserId } : undefined;
+  const practiceSessionWhere = scopedUserId ? { userId: scopedUserId } : undefined;
+  const stateWhere = scopedUserId ? { userId: scopedUserId } : undefined;
+  const attemptAliasWhere = scopedUserId ? Prisma.sql`where pa.user_id = ${scopedUserId}::uuid` : Prisma.empty;
+
   const [
     totalUsers,
     activeUserRows,
@@ -101,13 +114,15 @@ export async function GET() {
     db.question.count(),
     db.question.count({ where: { isActive: true } }),
     db.practiceAttempt.aggregate({
+      where: practiceAttemptWhere,
       _avg: { score: true },
       _sum: { timeSeconds: true },
       _count: true,
     }),
-    db.practiceSession.count(),
+    db.practiceSession.count({ where: practiceSessionWhere }),
     db.studentQuestionState.groupBy({
       by: ["status"],
+      where: stateWhere,
       _count: true,
     }),
     db.$queryRaw<UserPerformanceRow[]>`
@@ -156,6 +171,7 @@ export async function GET() {
              avg(score)::float as average_score,
              count(*)::bigint as attempts
       from practice_attempts
+      ${attemptWhere}
       group by date_trunc('day', created_at)
       order by day asc
       limit 30
@@ -167,6 +183,7 @@ export async function GET() {
       from practice_attempts pa
       join questions q on q.id = pa.question_id
       join law_areas la on la.id = q.area_id
+      ${attemptAliasWhere}
       group by la.name
       order by avg(pa.score) desc
     `,
@@ -177,6 +194,7 @@ export async function GET() {
       from practice_attempts pa
       join questions q on q.id = pa.question_id
       left join subjects s on s.id = q.subject_id
+      ${attemptAliasWhere}
       group by coalesce(s.name, 'Sin materia')
       order by avg(pa.score) desc
     `,
@@ -187,6 +205,7 @@ export async function GET() {
       from practice_attempts pa
       join questions q on q.id = pa.question_id
       left join subsubjects ss on ss.id = q.subsubject_id
+      ${attemptAliasWhere}
       group by coalesce(ss.name, 'Sin submateria')
       order by avg(pa.score) desc
     `,
@@ -198,6 +217,7 @@ export async function GET() {
       join questions q on q.id = pa.question_id
       left join question_professors qp on qp.question_id = q.id
       left join professors p on p.id = qp.professor_id
+      ${attemptAliasWhere}
       group by coalesce(p.name, 'Sin profesor')
       order by avg(pa.score) desc
     `,
@@ -207,6 +227,7 @@ export async function GET() {
              count(*)::bigint as attempts
       from practice_attempts pa
       join questions q on q.id = pa.question_id
+      ${attemptAliasWhere}
       group by q.difficulty
       order by avg(pa.score) desc
     `,
@@ -229,6 +250,7 @@ export async function GET() {
       join law_areas la on la.id = q.area_id
       left join subjects s on s.id = q.subject_id
       left join subsubjects ss on ss.id = q.subsubject_id
+      ${attemptAliasWhere}
       group by q.id, q.statement, la.name, coalesce(s.name, 'Sin materia'), coalesce(ss.name, 'Sin submateria')
       having count(*) > 0
       order by avg(pa.score) asc, count(*) desc
@@ -245,6 +267,9 @@ export async function GET() {
       email: admin.user.email,
       restrictedByEmail: admin.restrictedByEmail,
     },
+    selectedUser: selectedUser
+      ? { id: selectedUser.id, fullName: selectedUser.fullName, email: selectedUser.email }
+      : null,
     summary: {
       totalUsers,
       activeUsers,
