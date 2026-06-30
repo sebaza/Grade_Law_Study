@@ -181,6 +181,12 @@ const rubricLabels: Record<string, string> = {
 const requiredTopicCount = 3;
 const questionsPerTopic = 10;
 
+function scoreTone(score: number) {
+  if (score >= 60) return "strong";
+  if (score >= 40) return "warn";
+  return "danger";
+}
+
 function formatTimer(totalSeconds: number) {
   const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, "0");
   const seconds = (totalSeconds % 60).toString().padStart(2, "0");
@@ -1057,7 +1063,7 @@ export default function ExamPage() {
                     <p><strong>Pauta esperada:</strong> {question.modelAnswer ?? "No hay pauta cargada para esta pregunta."}</p>
                   </details>
                 </div>
-                <span className={`score-pill ${(question.score ?? 0) >= 70 ? "strong" : "danger"}`}>
+                <span className={`score-pill ${scoreTone(question.score ?? 0)}`}>
                   {question.answered ? `${question.score}%` : "Pendiente"}
                 </span>
               </article>

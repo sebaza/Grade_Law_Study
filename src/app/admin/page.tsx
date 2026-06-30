@@ -85,8 +85,8 @@ function formatDuration(seconds: number) {
 }
 
 function scoreTone(score: number) {
-  if (score >= 85) return "strong";
-  if (score >= 60) return "warn";
+  if (score >= 60) return "strong";
+  if (score >= 40) return "warn";
   return "danger";
 }
 

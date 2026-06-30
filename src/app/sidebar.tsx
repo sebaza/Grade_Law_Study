@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { ThemeToggle } from "./theme-toggle";
 
 const baseNavItems = [
   { href: "/", label: "Inicio", Icon: Home },
@@ -124,6 +125,26 @@ export function AppSidebar() {
           </button>
         </div>
 
+        <div className="sidebar-account">
+          {user ? (
+            <>
+              <div className="avatar">{initialsFrom(user)}</div>
+              <div className="sidebar-user">
+                <strong>{user.fullName}</strong>
+                {user.email && <span>{user.email}</span>}
+              </div>
+              <button className="sidebar-signout" type="button" onClick={signOut} aria-label="Cerrar sesión" title="Cerrar sesión">
+                <LogOut size={18} strokeWidth={1.8} />
+              </button>
+            </>
+          ) : (
+            <Link className="nav-item sidebar-login" href="/auth/login" onClick={close}>
+              <LogIn size={18} strokeWidth={1.8} />
+              Iniciar sesión
+            </Link>
+          )}
+        </div>
+
         <nav className="nav" aria-label="Navegación principal">
           {navItems.map(({ href, label, Icon }) => {
             const basePath = href.split("#")[0];
@@ -145,25 +166,7 @@ export function AppSidebar() {
           })}
         </nav>
 
-        <div className="sidebar-footer">
-          {user ? (
-            <>
-              <div className="avatar">{initialsFrom(user)}</div>
-              <div className="sidebar-user">
-                <strong>{user.fullName}</strong>
-                {user.email && <span>{user.email}</span>}
-              </div>
-              <button className="sidebar-signout" type="button" onClick={signOut} aria-label="Cerrar sesión" title="Cerrar sesión">
-                <LogOut size={18} strokeWidth={1.8} />
-              </button>
-            </>
-          ) : (
-            <Link className="nav-item sidebar-login" href="/auth/login" onClick={close}>
-              <LogIn size={18} strokeWidth={1.8} />
-              Iniciar sesión
-            </Link>
-          )}
-        </div>
+        <ThemeToggle inline />
       </aside>
     </>
   );

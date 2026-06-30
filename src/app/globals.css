@@ -440,7 +440,7 @@ a {
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 42px;
+  margin-bottom: 22px;
 }
 
 .sidebar {
@@ -514,11 +514,13 @@ a {
   color: var(--accent);
 }
 
-.sidebar-footer {
-  margin-top: auto;
+.sidebar-account {
   display: flex;
   gap: 12px;
   align-items: center;
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
   color: var(--muted);
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
