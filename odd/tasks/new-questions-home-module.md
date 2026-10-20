@@ -61,6 +61,7 @@ Recover the current unfinished work safely, add the next question set through a 
   - Upload decision: blocked. The user's condition to upload only if the full batch is correct is not satisfied, so no database, seed, or manifest mutation was performed.
   - Material corrections: constitutional amparo is filed before the competent Court of Appeals, not the Guarantee Court; subjective belief does not convert factual information into opinion; political impulse does not arise exclusively from the President; civil seller obligations include delivery/tradition and warranty; an unregistered property is not automatically State-owned; notification by publication does not follow automatically from a failed article 44 certification; and the five-day nullity rule must be distinguished from absolute lack of jurisdiction.
   - Legal-review validation: JSON parsed; 226/226 records matched the review mappings; all `sourceReference` and statement values are unique; no model-answer or taxonomy placeholders remain; every record has a valid review status and at least one official-source URL; ready/blocked counts reconcile to 226.
+  - Legal-review work-unit commit: `9ca97baa` (`data: review october question bank`).
 - [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
   - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
 - [ ] **NQ-05 — Add the Home module.**
