@@ -13,7 +13,7 @@
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
     "legalReviewStatus": "approved",
-    "legalReviewNotes": "",
+    "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ]
@@ -33,7 +33,7 @@
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
     "legalReviewStatus": "approved",
-    "legalReviewNotes": "",
+    "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ]
@@ -51,7 +51,7 @@
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
     "legalReviewStatus": "approved",
-    "legalReviewNotes": "",
+    "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ]
@@ -69,7 +69,7 @@
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
     "legalReviewStatus": "approved",
-    "legalReviewNotes": "",
+    "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ]
@@ -102,7 +102,7 @@
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
     "legalReviewStatus": "approved",
-    "legalReviewNotes": "",
+    "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ]
@@ -139,7 +139,7 @@
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
     "legalReviewStatus": "approved",
-    "legalReviewNotes": "",
+    "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ]
@@ -175,7 +175,7 @@
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Compraventa",
     "legalReviewStatus": "approved",
-    "legalReviewNotes": "",
+    "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ]
@@ -212,13 +212,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:002": {
     "expectedAnswer": "La expresión «determinada» exige que el objeto poseído esté individualizado o sea determinable; no se posee una cosa puramente indeterminada.",
@@ -231,13 +238,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:003": {
     "expectedAnswer": "Pueden poseerse cosas corporales e incorporales; estas últimas son derechos reales o personales, aunque la extensión práctica de la posesión de créditos es discutida.",
@@ -252,12 +266,19 @@
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La posesión de derechos personales requiere el enfoque doctrinal del curso. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "La posesión de derechos personales requiere el enfoque doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:004": {
     "expectedAnswer": "El tenor de los artículos 576 y 715 permite sostener que los derechos personales, como cosas incorporales, son susceptibles de posesión. Se discute porque la posesión presupone ejercicio con apariencia de titularidad y varios efectos posesorios están diseñados para cosas corporales o derechos reales.",
@@ -272,12 +293,19 @@
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "No existe una solución legal expresa completa; confirmar la postura doctrinal exigida por el curso. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "No existe una solución legal expresa completa; confirmar la postura doctrinal exigida por el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:005": {
     "expectedAnswer": "Los derechos son cosas incorporales y se dividen en reales y personales.",
@@ -289,13 +317,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota fuente es correcta pero incompleta. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota fuente es correcta pero incompleta. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:006": {
     "expectedAnswer": "La tesis amplia entiende que los artículos 576 y 715 comprenden derechos personales. La tesis restrictiva reserva la posesión propiamente tal a derechos susceptibles de ejercicio posesorio y a los efectos previstos por la ley, principalmente derechos reales.",
@@ -310,12 +345,19 @@
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar la postura doctrinal que exige el curso. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "Confirmar la postura doctrinal que exige el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:007": {
     "expectedAnswer": "El pago debe hacerlo el deudor o un tercero habilitado, ajustarse al tenor de la obligación, realizarse en lugar y tiempo debidos y recibirse por el acreedor, su representante, quien esté autorizado por ley o juez, o quien posea el crédito, con las salvedades legales.",
@@ -331,13 +373,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Pago",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:008": {
     "expectedAnswer": "La posesión puede ser regular o irregular; de buena o mala fe; viciosa —violenta o clandestina— o no viciosa; y, en inmuebles, inscrita o no inscrita.",
@@ -349,13 +398,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:009": {
     "expectedAnswer": "Son títulos traslaticios los que por su naturaleza sirven para transferir el dominio, como venta, permuta y donación entre vivos; requieren tradición para producir la adquisición.",
@@ -369,13 +425,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:010": {
     "expectedAnswer": "Son ejemplos la compraventa, la permuta y la donación entre vivos.",
@@ -387,13 +450,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:011": {
     "expectedAnswer": "Es irregular la posesión que carece de uno o más requisitos de la regular: justo título, buena fe inicial y, si el título es traslaticio, tradición.",
@@ -405,13 +475,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:012": {
     "expectedAnswer": "La posesión genera presunción de dominio, protección posesoria cuando proceda, adquisición de frutos para el poseedor de buena fe bajo el artículo 907 y posibilidad de adquirir por prescripción; la posesión regular permite prescripción ordinaria.",
@@ -423,13 +500,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:013": {
     "expectedAnswer": "El poseedor de buena fe no restituye los frutos percibidos antes de contestar la demanda; después responde como poseedor de mala fe. El de mala fe restituye los percibidos y los que el dueño habría podido percibir, descontados los gastos ordinarios.",
@@ -443,13 +527,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:014": {
     "expectedAnswer": "Las posesiones viciosas son la violenta y la clandestina.",
@@ -461,13 +552,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota fuente es correcta. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota fuente es correcta. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:015": {
     "expectedAnswer": "No son jurídicamente inexistentes: pueden producir ciertos efectos, pero tienen protección restringida y sus vicios inciden en cómputos y acciones.",
@@ -480,12 +578,19 @@
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La utilidad prescriptiva de estas posesiones es doctrinalmente discutida. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "La utilidad prescriptiva de estas posesiones es doctrinalmente discutida. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:016": {
     "expectedAnswer": "La posesión irregular puede conducir a prescripción extraordinaria, pero no debe afirmarse sin matices que una posesión actualmente violenta o clandestina siempre prescribe. Debe cesar la clandestinidad y no persistir la violencia, existir posesión en concepto de dueño, continuidad y ausencia de interrupción; en inmuebles inscritos rige además el artículo 2505.",
@@ -498,12 +603,19 @@
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar el enfoque doctrinal del curso. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "Confirmar el enfoque doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:017": {
     "expectedAnswer": "En principio no: la posesión regular exige buena fe al adquirir y la violencia empleada o consentida para adquirir es incompatible con ella. Deben concurrir además justo título y tradición cuando corresponda.",
@@ -516,12 +628,19 @@
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota sobre falta de buena fe inicial es correcta, pero incompleta. Existe elaboración doctrinal sobre la relación entre las clasificaciones. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "La nota sobre falta de buena fe inicial es correcta, pero incompleta. Existe elaboración doctrinal sobre la relación entre las clasificaciones. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:018": {
     "expectedAnswer": "Sí. «Clandestina» describe un vicio e «irregular» la falta de requisitos del artículo 702; son clasificaciones distintas y pueden concurrir.",
@@ -533,13 +652,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:019": {
     "expectedAnswer": "Sí. La posesión violenta será normalmente irregular por falta de buena fe inicial, aunque violencia e irregularidad son clasificaciones conceptualmente distintas.",
@@ -551,13 +677,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:020": {
     "expectedAnswer": "No son absolutamente inútiles; subsiste una relación posesoria de hecho y existen efectos legales específicos, pero no deben confundirse con posesión tranquila apta para todas las acciones o para prescribir sin resolver el vicio.",
@@ -570,12 +703,19 @@
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La aptitud prescriptiva exige confirmar la postura doctrinal del curso. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "La aptitud prescriptiva exige confirmar la postura doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:021": {
     "expectedAnswer": "La prescripción ordinaria exige dos años para muebles y cinco para inmuebles; la extraordinaria, diez años. Debe precisarse la clase de prescripción y la naturaleza del bien.",
@@ -587,13 +727,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:022": {
     "expectedAnswer": "Un mueble sustraído podría adquirirse por prescripción extraordinaria de diez años si existe posesión en concepto de dueño, continua y no interrumpida y no concurre una regla especial; no hay justo título ni buena fe para prescripción ordinaria.",
@@ -608,13 +755,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota «sí, en diez años» solo es correcta condicionalmente. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota «sí, en diez años» solo es correcta condicionalmente. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:023": {
     "expectedAnswer": "La tradición del dominio y demás derechos reales sobre inmuebles se efectúa mediante inscripción del título en el Registro de Propiedad del Conservador de Bienes Raíces competente, sin perjuicio de reglas especiales para servidumbres y sucesión.",
@@ -628,13 +782,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:024": {
     "expectedAnswer": "La inscripción cumple funciones de tradición, publicidad, conservación de la historia de la propiedad, requisito, prueba y garantía de la posesión inscrita, y continuidad registral.",
@@ -646,13 +807,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:025": {
     "expectedAnswer": "Como garantía posesoria, mientras la inscripción subsiste nadie adquiere posesión del inmueble inscrito por mero apoderamiento material y la posesión inscrita se prueba por la inscripción bajo los requisitos legales. No garantiza por sí sola que el inscrito sea dueño.",
@@ -664,13 +832,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:026": {
     "expectedAnswer": "Contra título inscrito solo cabe prescripción en virtud de otro título inscrito y desde esa segunda inscripción. Respecto de un inmueble no inscrito deben acreditarse posesión material con ánimo de dueño y plazo; la falta de inscripción no significa automáticamente que el predio sea fiscal. Si carece de otro dueño, el artículo 590 lo atribuye al Estado; los bienes nacionales de uso público no son prescriptibles.",
@@ -683,13 +858,20 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota fuente debe corregirse. Conviene reemplazar «ocupa» por «ocupante material». La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota fuente debe corregirse. Conviene reemplazar «ocupa» por «ocupante material». Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8720565"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:001": {
     "expectedAnswer": "Los vicios del consentimiento son error, fuerza y dolo.",
@@ -701,11 +883,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:002": {
     "expectedAnswer": "El error es una falsa representación de la realidad; solo vicia en los casos legales: error esencial, sustancial, accidental determinante conocido y, excepcionalmente, error en la persona. El error de derecho no vicia.",
@@ -717,11 +906,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:003": {
     "expectedAnswer": "El acto jurídico es una manifestación de voluntad destinada a producir efectos jurídicos queridos por su autor y reconocidos por el ordenamiento.",
@@ -736,10 +932,17 @@
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Es una definición doctrinal, no textual del Código. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "Es una definición doctrinal, no textual del Código. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:004": {
     "expectedAnswer": "El error de hecho puede recaer sobre la especie del acto, la identidad de la cosa, su sustancia o calidad esencial, una calidad accidental determinante conocida o la persona cuando esta es causa principal.",
@@ -751,11 +954,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:005": {
     "expectedAnswer": "El error accidental recae sobre una cualidad no esencial y solo vicia si fue motivo principal para contratar y la otra parte conoció ese motivo. Ejemplo: comprar un objeto porque se cree que perteneció a una persona determinada, motivo conocido por el vendedor, siendo falso.",
@@ -769,11 +979,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:006": {
     "expectedAnswer": "Vicia cuando la cualidad accidental fue el motivo principal de una parte para contratar y ese motivo era conocido por la otra.",
@@ -785,11 +1002,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:007": {
     "expectedAnswer": "La sanción es nulidad relativa. La acción dura cuatro años contados, tratándose de error, desde la celebración del acto o contrato.",
@@ -802,11 +1026,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:008": {
     "expectedAnswer": "Generan nulidad relativa los vicios del consentimiento, la incapacidad relativa y los demás defectos sancionados así por la ley. El cuadrienio corre, en violencia, desde que cesa; en error o dolo, desde el acto; y en incapacidad, desde que cesa.",
@@ -819,11 +1050,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:009": {
     "expectedAnswer": "La fuerza física irresistible elimina materialmente la voluntad y no corresponde exactamente a la fuerza moral regulada como vicio por los artículos 1456 y 1457. Su sanción se discute entre inexistencia y nulidad absoluta por falta de consentimiento.",
@@ -837,10 +1075,17 @@
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Pregunta doctrinal: confirmar la tesis exigida por el curso. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "Pregunta doctrinal: confirmar la tesis exigida por el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:010": {
     "expectedAnswer": "La fuerza debe ser grave, determinante y dirigida a obtener el consentimiento; puede provenir de cualquier persona. Doctrinalmente debe ser injusta. El temor reverencial por sí solo no basta.",
@@ -856,11 +1101,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:011": {
     "expectedAnswer": "El ejercicio regular de un derecho, como advertir que se interpondrá una acción judicial procedente, no constituye fuerza injusta; puede viciar si se usa abusivamente para obtener una ventaja ajena al derecho ejercido.",
@@ -875,10 +1127,17 @@
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Respuesta doctrinal no resuelta literalmente por el Código; confirmar enfoque del curso. La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewNotes": "Respuesta doctrinal no resuelta literalmente por el Código; confirmar enfoque del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:012": {
     "expectedAnswer": "La lesión enorme es una desproporción objetiva grave entre precio y justo precio en la compraventa de inmuebles, que habilita a rescindir conforme a los artículos 1888 a 1890.",
@@ -892,11 +1151,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Lesión enorme",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:013": {
     "expectedAnswer": "Son susceptibles las compraventas voluntarias de bienes raíces. No procede en ventas por ministerio de la justicia ni en ventas de minas.",
@@ -909,11 +1175,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Lesión enorme",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:014": {
     "expectedAnswer": "El justo precio es el valor real o de mercado de la cosa al tiempo del contrato; no se consideran variaciones posteriores.",
@@ -926,11 +1199,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Lesión enorme",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:015": {
     "expectedAnswer": "El vendedor sufre lesión si recibe menos de la mitad del justo precio; el comprador, si el justo precio es inferior a la mitad del precio pagado, esto es, si paga más del doble.",
@@ -945,11 +1225,18 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Lesión enorme",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La fuente no atribuye expresamente Derecho Civil a Aníbal Chacama; confirmar profesor.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Aníbal Chacama"
+      }
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:001": {
     "expectedAnswer": "La capacidad de ejercicio permite obligarse por sí mismo. Por edad, los impúberes son absolutamente incapaces y los menores adultos relativamente incapaces; la mayoría de edad comienza a los dieciocho años.",
@@ -964,7 +1251,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado, ausentes en la fuente.",
+    "legalReviewNotes": "Confirmar profesor y grado, ausentes en la fuente. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -983,7 +1270,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Usar con cautela la terminología legal vigente. Confirmar profesor y grado.",
+    "legalReviewNotes": "Usar con cautela la terminología legal vigente. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1000,7 +1287,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1017,7 +1304,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1035,7 +1322,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es sustancialmente correcta, pero el ejemplo debe limitarse a la función del artículo 671. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota es sustancialmente correcta, pero el ejemplo debe limitarse a la función del artículo 671. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1052,7 +1339,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1069,7 +1356,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1086,7 +1373,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta pero incompleta. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota es correcta pero incompleta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1103,7 +1390,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1120,7 +1407,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad del menor adulto",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota sobre reconocimiento es correcta. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota sobre reconocimiento es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1138,7 +1425,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Filiación",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota no está desactualizada según el Código Civil vigente. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota no está desactualizada según el Código Civil vigente. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1155,7 +1442,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad del menor adulto",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1172,7 +1459,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1189,7 +1476,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1206,7 +1493,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1224,7 +1511,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La definición de discernimiento es doctrinal. Confirmar profesor y grado y el enfoque del curso.",
+    "legalReviewNotes": "La definición de discernimiento es doctrinal. Confirmar profesor y grado y el enfoque del curso. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1242,7 +1529,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es razonable, pero debe distinguir texto legal y regla de competencia. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota es razonable, pero debe distinguir texto legal y regla de competencia. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1260,7 +1547,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Sucesiones",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1280,7 +1567,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1298,7 +1585,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1315,7 +1602,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1332,7 +1619,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1349,7 +1636,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1366,7 +1653,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta pero incompleta. Confirmar profesor y grado.",
+    "legalReviewNotes": "La nota es correcta pero incompleta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1384,7 +1671,7 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado.",
+    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"

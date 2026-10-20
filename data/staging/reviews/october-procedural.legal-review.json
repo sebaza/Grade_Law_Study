@@ -505,11 +505,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Notificación personal",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:002",
@@ -524,12 +531,19 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Ministros de fe",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740",
       "https://www.bcn.cl/leychile/navegar?idNorma=25563"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:003",
@@ -542,11 +556,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Procedencia de la notificación personal",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:004",
@@ -559,11 +580,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Sujetos notificados",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:005",
@@ -576,11 +604,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Estado diario",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:006",
@@ -593,11 +628,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Procedencia de la notificación personal",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:007",
@@ -610,11 +652,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Orden judicial",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:008",
@@ -628,11 +677,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Lugares, días y horas",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:009",
@@ -645,11 +701,18 @@
     ],
     "subjectName": "Juicio ejecutivo",
     "subsubjectName": "Requerimiento de pago",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:010",
@@ -662,11 +725,18 @@
     ],
     "subjectName": "Juicio ejecutivo",
     "subsubjectName": "Cédula de espera",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:011",
@@ -679,11 +749,18 @@
     ],
     "subjectName": "Juicio ejecutivo",
     "subsubjectName": "Requerimiento de pago",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:012",
@@ -696,11 +773,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Artículo 44",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:013",
@@ -713,11 +797,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Requisitos del artículo 44",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:014",
@@ -730,11 +821,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Búsquedas del artículo 44",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:015",
@@ -747,11 +845,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Certificación del receptor",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:016",
@@ -764,11 +869,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Avisos",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:017",
@@ -781,11 +893,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Procedencia de avisos",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:018",
@@ -798,11 +917,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Práctica por avisos",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:019",
@@ -815,11 +941,18 @@
     ],
     "subjectName": "Notificaciones",
     "subsubjectName": "Contenido de avisos",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:020",
@@ -833,11 +966,18 @@
     ],
     "subjectName": "Prueba pericial",
     "subsubjectName": "Nombramiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:021",
@@ -850,11 +990,18 @@
     ],
     "subjectName": "Prueba pericial",
     "subsubjectName": "Procedimiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:022",
@@ -867,11 +1014,18 @@
     ],
     "subjectName": "Prueba pericial",
     "subsubjectName": "Audiencia de nombramiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:023",
@@ -884,11 +1038,18 @@
     ],
     "subjectName": "Prueba pericial",
     "subsubjectName": "Audiencia de nombramiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:024",
@@ -901,11 +1062,18 @@
     ],
     "subjectName": "Prueba pericial",
     "subsubjectName": "Objeto de la audiencia",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:001",
@@ -918,11 +1086,18 @@
     ],
     "subjectName": "Incidentes",
     "subsubjectName": "Oportunidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:002",
@@ -935,11 +1110,18 @@
     ],
     "subjectName": "Incidentes",
     "subsubjectName": "Hechos anteriores o coetáneos",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:003",
@@ -952,11 +1134,18 @@
     ],
     "subjectName": "Incidentes",
     "subsubjectName": "Resolución de plano",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:004",
@@ -969,11 +1158,18 @@
     ],
     "subjectName": "Medidas prejudiciales",
     "subsubjectName": "Concepto y clases",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:005",
@@ -986,11 +1182,18 @@
     ],
     "subjectName": "Medidas prejudiciales",
     "subsubjectName": "Preparatorias",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:006",
@@ -1003,11 +1206,18 @@
     ],
     "subjectName": "Medidas prejudiciales",
     "subsubjectName": "Requisitos",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:007",
@@ -1020,11 +1230,18 @@
     ],
     "subjectName": "Medidas prejudiciales",
     "subsubjectName": "Incumplimiento de exhibición",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:008",
@@ -1037,11 +1254,18 @@
     ],
     "subjectName": "Tercerías",
     "subsubjectName": "Dominio",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:009",
@@ -1054,11 +1278,18 @@
     ],
     "subjectName": "Tercerías",
     "subsubjectName": "Tramitación de la tercería de dominio",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   },
   {
     "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:010",
@@ -1071,10 +1302,17 @@
     ],
     "subjectName": "Tercerías",
     "subsubjectName": "Efectos",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Felipe Ortiz.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "metadata": {
+      "professorConfirmation": {
+        "type": "user_confirmed_commission_assignment",
+        "date": "2026-10-20",
+        "professorName": "Felipe Ortiz"
+      }
+    }
   }
 ]
