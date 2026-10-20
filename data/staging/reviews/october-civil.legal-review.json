@@ -1250,12 +1250,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado, ausentes en la fuente. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:002": {
     "expectedAnswer": "Son absolutamente incapaces quienes el artículo 1447 denomina dementes, los impúberes y las personas sordas o sordomudas que no puedan darse a entender claramente. Son relativamente incapaces los menores adultos y los disipadores bajo interdicción.",
@@ -1269,12 +1279,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Usar con cautela la terminología legal vigente. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Usar con cautela la terminología legal vigente. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:003": {
     "expectedAnswer": "Son impúberes el varón menor de catorce años y la mujer menor de doce, conforme al texto vigente del artículo 26.",
@@ -1286,12 +1306,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:004": {
     "expectedAnswer": "Los impúberes no pueden obligarse personalmente y deben actuar por representante legal. Sus actos propios no producen ni obligación natural ni admiten caución.",
@@ -1303,12 +1333,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:005": {
     "expectedAnswer": "La enumeración del artículo 43 no agota todas las representaciones legales especiales. En venta forzada, el artículo 671 considera al juez representante legal del tradente para efectuar la tradición.",
@@ -1321,12 +1361,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es sustancialmente correcta, pero el ejemplo debe limitarse a la función del artículo 671. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota es sustancialmente correcta, pero el ejemplo debe limitarse a la función del artículo 671. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:006": {
     "expectedAnswer": "Son menores adultos quienes dejaron de ser impúberes y no han cumplido dieciocho años: mujer desde los doce y varón desde los catorce, hasta antes de los dieciocho.",
@@ -1338,12 +1388,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:007": {
     "expectedAnswer": "El impúber es absolutamente incapaz y solo actúa representado; el menor adulto es relativamente incapaz y sus actos pueden valer representado, autorizado o en casos permitidos directamente por la ley.",
@@ -1355,12 +1415,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:008": {
     "expectedAnswer": "La capacidad de actuar es relevante para ejercer derechos y obligarse válidamente mediante actos y contratos.",
@@ -1372,12 +1442,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta pero incompleta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota es correcta pero incompleta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:009": {
     "expectedAnswer": "El menor adulto puede actuar por representante o personalmente con autorización cuando la ley lo admite; también puede hacerlo solo en materias expresamente exceptuadas, como testar, reconocer hijos o administrar su peculio profesional.",
@@ -1389,12 +1469,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:010": {
     "expectedAnswer": "Puede testar y reconocer hijos sin autorización de sus padres, y administrar y gozar su peculio profesional o industrial dentro de los límites legales.",
@@ -1406,12 +1496,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad del menor adulto",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota sobre reconocimiento es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota sobre reconocimiento es correcta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:011": {
     "expectedAnswer": "Puede reconocer desde que es menor adulto: mujer desde los doce y varón desde los catorce años, pues el artículo 262 dispensa autorización y el artículo 26 fija esas edades.",
@@ -1424,12 +1524,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Filiación",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota no está desactualizada según el Código Civil vigente. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota no está desactualizada según el Código Civil vigente. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:012": {
     "expectedAnswer": "Puede otorgar testamento; además puede administrar su peculio profesional o industrial dentro de los límites legales.",
@@ -1441,12 +1551,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Capacidad del menor adulto",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:013": {
     "expectedAnswer": "En responsabilidad extracontractual, la edad determina la capacidad delictual o cuasidelictual y la posible responsabilidad de quien tiene al incapaz a su cargo.",
@@ -1458,12 +1578,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota es correcta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:014": {
     "expectedAnswer": "Se analiza la aptitud para quedar obligado a reparar el daño causado por delito o cuasidelito civil.",
@@ -1475,12 +1605,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota es correcta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:015": {
     "expectedAnswer": "No son capaces de delito o cuasidelito civil los menores de siete años ni quienes el artículo 2319 denomina dementes; quienes los tienen a su cargo pueden responder por negligencia. Entre siete y menos de dieciséis años se responde si el juez reconoce discernimiento.",
@@ -1492,12 +1632,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:016": {
     "expectedAnswer": "Discernimiento es la aptitud concreta para comprender el carácter ilícito o dañoso de la conducta y actuar conforme a esa comprensión; el juez lo aprecia en el caso.",
@@ -1511,11 +1661,21 @@
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
     "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La definición de discernimiento es doctrinal. Confirmar profesor y grado y el enfoque del curso. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewNotes": "La definición de discernimiento es doctrinal. Confirmar el enfoque del curso. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:017": {
     "expectedAnswer": "Lo determina el juez competente para la acción civil, normalmente el juez de letras en lo civil. El artículo 2319 solo señala que queda a la prudencia del juez.",
@@ -1528,12 +1688,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es razonable, pero debe distinguir texto legal y regla de competencia. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota es razonable, pero debe distinguir texto legal y regla de competencia. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:018": {
     "expectedAnswer": "Se puede testar desde que se deja de ser impúber: mujer a los doce y varón a los catorce, pues el artículo 1005 inhabilita al impúber y el artículo 26 define esa categoría.",
@@ -1546,12 +1716,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Sucesiones",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:019": {
     "expectedAnswer": "El arrendamiento es el contrato por el cual una parte concede el goce de una cosa, ejecuta una obra o presta un servicio, y la otra paga un precio determinado.",
@@ -1566,12 +1746,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:020": {
     "expectedAnswer": "El arrendamiento de cosas requiere consentimiento, una cosa susceptible de uso sin consumirse y no prohibida, y precio determinado o determinable; además rigen capacidad, objeto y causa lícitos.",
@@ -1584,12 +1774,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:021": {
     "expectedAnswer": "Compraventa y arrendamiento exigen consentimiento, cosa y precio; pero en la venta se promete dar y el precio debe ser dinero, mientras el arrendamiento concede goce temporal y el precio puede consistir en dinero o frutos.",
@@ -1601,12 +1801,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:022": {
     "expectedAnswer": "Se requiere consentimiento válido; cosa corporal o incorporal utilizable sin consumirse, determinada o determinable y legalmente arrendable; y precio determinado en dinero o frutos. Puede arrendarse cosa ajena, con saneamiento para el arrendatario de buena fe en caso de evicción.",
@@ -1618,12 +1828,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:023": {
     "expectedAnswer": "Precio es el término general; se llama renta cuando se paga periódicamente.",
@@ -1635,12 +1855,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota es correcta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:024": {
     "expectedAnswer": "La cosa puede ser corporal o incorporal, debe poder usarse sin consumirse, no estar legalmente prohibida y no consistir en un derecho estrictamente personal; puede ser ajena.",
@@ -1652,12 +1882,22 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota es correcta pero incompleta. Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "La nota es correcta pero incompleta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:025": {
     "expectedAnswer": "El arrendador debe entregar la cosa, mantenerla apta para el fin arrendado y librar al arrendatario de turbaciones. El arrendatario debe usarla conforme al contrato, cuidarla, efectuar reparaciones locativas cuando procedan, pagar el precio y restituirla al terminar.",
@@ -1670,11 +1910,21 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Arrendamiento",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar profesor y grado. Professor attribution is unresolved. Grade attribution is unresolved.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
-    ]
+    ],
+    "metadata": {
+      "orderInheritanceConfirmation": {
+        "type": "user_confirmed_order_inheritance",
+        "date": "2026-10-20",
+        "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "professorName": "Aníbal Chacama",
+        "grade": "Tercer grado"
+      },
+      "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
+    }
   }
 }

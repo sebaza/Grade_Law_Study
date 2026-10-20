@@ -376,11 +376,21 @@
       ],
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Ley N.º 20.609",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "La consigna es demasiado abierta y debe delimitar el artículo o tema esperado. Missing required metadata: professor. Professor attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "La consigna es demasiado abierta y debe delimitar el artículo o tema esperado. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:002",
@@ -397,11 +407,21 @@
       ],
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Legitimación y plazo",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta profesor en el registro. Missing required metadata: professor. Professor attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:003",
@@ -416,11 +436,21 @@
       ],
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Incompatibilidades",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta profesor en el registro. Missing required metadata: professor. Professor attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:004",
@@ -435,11 +465,21 @@
       ],
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Admisibilidad",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "La nota es correcta pero incompleta; falta profesor. Missing required metadata: professor. Professor attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota es correcta pero incompleta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:005",
@@ -454,12 +494,22 @@
       ],
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Distinciones legales",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta profesor en el registro. Missing required metadata: professor. Professor attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
         "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:006",
@@ -476,11 +526,21 @@
       ],
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Orden público",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "El resultado depende de hechos y prueba; falta profesor. Missing required metadata: professor. Professor attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "El resultado depende de hechos y prueba. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:007",
@@ -496,11 +556,21 @@
       ],
       "subjectName": "Acciones constitucionales",
       "subsubjectName": "Protección de la libertad de trabajo",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta profesor en el registro. Missing required metadata: professor. Professor attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:001",
@@ -1623,11 +1693,21 @@
       ],
       "subjectName": "Soberanía",
       "subsubjectName": "Artículo 5",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar.  Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:002",
@@ -1643,11 +1723,21 @@
       ],
       "subjectName": "Soberanía",
       "subsubjectName": "Nación y pueblo",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. La respuesta depende del marco doctrinal del curso. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "La respuesta depende del marco doctrinal del curso. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:003",
@@ -1661,11 +1751,21 @@
       ],
       "subjectName": "Soberanía",
       "subsubjectName": "Concepto de Nación",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. La nota fuente no es sostenible como respuesta jurídica única. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "La nota fuente no es sostenible como respuesta jurídica única. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:004",
@@ -1680,11 +1780,21 @@
       ],
       "subjectName": "Soberanía",
       "subsubjectName": "Pueblo y cuerpo electoral",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar.  Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:005",
@@ -1699,11 +1809,21 @@
       ],
       "subjectName": "Ciudadanía",
       "subsubjectName": "Requisitos",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar.  Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:006",
@@ -1719,12 +1839,22 @@
       ],
       "subjectName": "Derechos políticos",
       "subsubjectName": "Sufragio de extranjeros",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. La nota sobre el cambio a diez años es correcta. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota sobre el cambio a diez años es correcta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
         "https://www.bcn.cl/leychile/Navegar/imprimir?idNorma=1217272&idParte=10564746&idVersion=2026-01-01"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:007",
@@ -1739,11 +1869,21 @@
       ],
       "subjectName": "Soberanía",
       "subsubjectName": "Límites",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar.  Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:008",
@@ -1758,11 +1898,21 @@
       ],
       "subjectName": "Fuentes constitucionales",
       "subsubjectName": "Bloque de constitucionalidad",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. Debe ajustarse a la doctrina empleada por la cátedra. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "Debe ajustarse a la doctrina empleada por la cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:009",
@@ -1778,11 +1928,21 @@
       ],
       "subjectName": "Derechos fundamentales",
       "subsubjectName": "Derechos implícitos",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. Tema doctrinal. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "Tema doctrinal. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:010",
@@ -1797,11 +1957,21 @@
       ],
       "subjectName": "Derechos fundamentales",
       "subsubjectName": "Reconocimiento de derechos implícitos",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. La nota fuente requiere matiz doctrinal. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "La nota fuente requiere matiz doctrinal. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:011",
@@ -1819,11 +1989,21 @@
       ],
       "subjectName": "Libertad de trabajo",
       "subsubjectName": "Artículo 19 N.º 16",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar.  Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:012",
@@ -1838,12 +2018,22 @@
       ],
       "subjectName": "Libertad de trabajo",
       "subsubjectName": "Trabajo forzoso",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. La nota fuente era falsa. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era falsa. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
         "https://normlex.ilo.org/dyn/nrmlx_es/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C029"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:013",
@@ -1858,12 +2048,22 @@
       ],
       "subjectName": "Libertad de trabajo",
       "subsubjectName": "Abogados de turno",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. La nota fuente era incorrecta. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era incorrecta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
         "https://www2.tribunalconstitucional.cl/wp-content/uploads/2022/03/2844.pdf"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:014",
@@ -1879,12 +2079,22 @@
       ],
       "subjectName": "Igualdad ante las cargas públicas",
       "subsubjectName": "Fundamento del turno",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar.  Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
         "https://www2.tribunalconstitucional.cl/wp-content/uploads/2022/03/2844.pdf"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:015",
@@ -1897,11 +2107,21 @@
       ],
       "subjectName": "Libertad de trabajo",
       "subsubjectName": "Contenido del artículo 19 N.º 16",
-      "legalReviewStatus": "needs_human_review",
-      "legalReviewNotes": "Falta confirmar profesor y grado antes de cargar. La pregunta depende de qué contenido se expuso previamente. Missing required metadata: professor, grade. Professor attribution is unresolved. Grade attribution is unresolved.",
+      "legalReviewStatus": "human_confirmation_required",
+      "legalReviewNotes": "La pregunta depende de qué contenido se expuso previamente. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
       "officialSourceUrls": [
         "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
-      ]
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
     }
   ]
 }
