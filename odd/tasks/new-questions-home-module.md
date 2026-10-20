@@ -48,7 +48,13 @@ Recover the current unfinished work safely, add the next question set through a 
   - Acceptance: choose global recency or per-student unseen status and record the display window/count.
 - [ ] **NQ-03 — Validate and ingest the supplied question set.**
   - Acceptance: normalize professor/area/subject/subsubject, reject duplicates by `sourceReference` and content review, and preserve traceable source metadata.
-  - Route: pending batch size; use admin creation for a small set or add a versioned reusable importer for a batch.
+  - Progress: normalized 226 questions into `data/staging/october-question-bank.staging.json`; no database write, canonical-seed update, or manifest update was performed.
+  - Coverage: Constitutional 87, Civil 77, and Procedural 62. By grade: first 66, second 80, third 40, and 40 pending grade review.
+  - Duplicate handling: removed one literally duplicated source block (`COMISION: Mauricio, Felipe, Aníbal — Segundo grado: Esteban Peredo`); retained two non-identical accounts of Dominique Luan's first-degree constitutional examination and flagged their semantic overlap for review.
+  - Attribution review: corrected both first-degree constitutional source accounts to professor Dominique Luan and preserved the full Dominique Luan / Constanza Astudillo / Carlos Alarcón commission. The second-degree constitutional professor remains `Pending review` because its source names the commission but not the assigned professor. Esteban Peredo and Vidal are retained only as unverified source/examinee labels.
+  - Review placeholders: unresolved subject and subsubject fields use `Pending review`. The two standalone capacity/lease and sovereignty/work blocks also use `Pending review` for professor and grade, with no inferred commission. Source answer hints remain metadata rather than unreviewed model answers or key points.
+  - Validation: JSON parse passed; `questionCount` matches the array length; all `sourceReference` values are unique; required seed-compatible fields and enum values passed local structural validation; no exact duplicate statements remain.
+  - Route: delegated writer because the batch requires non-trivial normalization and content review.
 - [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
   - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
 - [ ] **NQ-05 — Add the Home module.**
@@ -68,6 +74,6 @@ Recover the current unfinished work safely, add the next question set through a 
 
 ## Progress
 
-- Current step: waiting for the definition of `new` and the new question content.
-- Verification: documentation read back locally; no source checks were run because no source implementation was performed.
-- Next step: answer NQ-02, then inspect the supplied question batch for NQ-03.
+- Current step: NQ-03 is partially complete. The supplied October batch is staged and awaits legal/content review before ingestion.
+- Verification: staging JSON parsed and passed local structural, count, uniqueness, and exact-statement-duplicate checks. No database, build, or general test command was run.
+- Next step: complete content review and taxonomy assignment for NQ-03, then ingest through an explicitly authorized path. NQ-02 remains open before implementing the Home module.
