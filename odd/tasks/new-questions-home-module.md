@@ -56,6 +56,11 @@ Recover the current unfinished work safely, add the next question set through a 
   - Validation: JSON parse passed; `questionCount` matches the array length; all `sourceReference` values are unique; required seed-compatible fields and enum values passed local structural validation; no exact duplicate statements remain.
   - Work-unit commit: `68a64424` (`data: stage october oral exam questions`).
   - Route: delegated writer because the batch requires non-trivial normalization and content review.
+  - Legal review: completed for all 226 records against official sources. Every record now has a reviewed answer, key points, common errors, subject/subsubject taxonomy, review status, review notes, and official-source URLs. Historical `metadata.sourceAnswerNotes` values were retained unchanged.
+  - Readiness: 59 records are marked `reviewed`; 167 are marked `human_confirmation_required`. Primary blockers are unresolved professor attribution (47), unconfirmed individual attribution inside the Esteban Peredo/Vidal commission blocks (105), and legal ambiguity or course-dependent doctrine (15). Forty records also lack a confirmed grade.
+  - Upload decision: blocked. The user's condition to upload only if the full batch is correct is not satisfied, so no database, seed, or manifest mutation was performed.
+  - Material corrections: constitutional amparo is filed before the competent Court of Appeals, not the Guarantee Court; subjective belief does not convert factual information into opinion; political impulse does not arise exclusively from the President; civil seller obligations include delivery/tradition and warranty; an unregistered property is not automatically State-owned; notification by publication does not follow automatically from a failed article 44 certification; and the five-day nullity rule must be distinguished from absolute lack of jurisdiction.
+  - Legal-review validation: JSON parsed; 226/226 records matched the review mappings; all `sourceReference` and statement values are unique; no model-answer or taxonomy placeholders remain; every record has a valid review status and at least one official-source URL; ready/blocked counts reconcile to 226.
 - [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
   - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
 - [ ] **NQ-05 — Add the Home module.**
@@ -75,6 +80,6 @@ Recover the current unfinished work safely, add the next question set through a 
 
 ## Progress
 
-- Current step: NQ-03 is partially complete. The supplied October batch is staged and awaits legal/content review before ingestion.
-- Verification: staging JSON parsed and passed local structural, count, uniqueness, and exact-statement-duplicate checks. No database, build, or general test command was run.
-- Next step: complete content review and taxonomy assignment for NQ-03, then ingest through an explicitly authorized path. NQ-02 remains open before implementing the Home module.
+- Current step: NQ-03 is partially complete. Legal review is complete, but 167 records require human confirmation before the batch can be ingested.
+- Verification: staging JSON parsed and passed local structural, count, reference/statement uniqueness, non-placeholder answer/taxonomy, review-metadata, official-source, and ready/blocked reconciliation checks. No database, seed, manifest, build, or general test command was run.
+- Next step: resolve the 167 confirmation blocks, revalidate the complete batch, and only then ingest through the authorized path. NQ-02 remains open before implementing the Home module.

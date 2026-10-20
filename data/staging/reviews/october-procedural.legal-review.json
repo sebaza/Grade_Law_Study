@@ -1,0 +1,1080 @@
+[
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:001",
+    "expectedAnswer": "Depende de la instancia y del procedimiento. Contra una sentencia definitiva de primera instancia procede normalmente apelación y puede proceder casación en la forma; contra una sentencia definitiva inapelable dictada por una Corte de Apelaciones puede proceder casación en el fondo y, según el vicio, casación en la forma. La aclaración, rectificación o enmienda no impugna el mérito del fallo.",
+    "keyPoints": [
+      "CPC arts. 182, 186, 187, 766 y 767",
+      "Distinguir instancia, tribunal y ley especial"
+    ],
+    "commonErrors": [
+      "Enumerar recursos sin distinguir instancia o procedimiento",
+      "Tratar la aclaración como recurso de mérito"
+    ],
+    "subjectName": "Recursos procesales",
+    "subsubjectName": "Impugnación de sentencias definitivas",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "La pregunta es amplia: la respuesta exacta depende de la instancia, tribunal y procedimiento.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:002",
+    "expectedAnswer": "Concedida la apelación, el tribunal inferior remite electrónicamente la resolución, recurso y antecedentes pertinentes; la Corte asigna rol y forma cuaderno cuando corresponda, certifica recepción, examina admisibilidad, determina cuenta o relación, tramita adhesiones e incidentes, realiza la vista si corresponde y falla.",
+    "keyPoints": [
+      "CPC arts. 197, 199 a 201, 205, 217, 220 y 223"
+    ],
+    "commonErrors": [
+      "Describir la antigua remisión material",
+      "Exigir comparecencia personal del apelante"
+    ],
+    "subjectName": "Recurso de apelación",
+    "subsubjectName": "Tramitación en segunda instancia",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Respuesta construida desde el régimen vigente de tramitación electrónica.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740",
+      "https://www.bcn.cl/leychile/navegar?idNorma=25563"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:003",
+    "expectedAnswer": "La Corte controla si el recurso fue deducido dentro de plazo, contra resolución apelable, con fundamentos de hecho y de derecho y con peticiones concretas. También puede corregirse la concesión improcedente o el efecto equivocado mediante las reglas del recurso de hecho.",
+    "keyPoints": [
+      "CPC arts. 196, 201 y 213"
+    ],
+    "commonErrors": [
+      "Limitar el examen únicamente al plazo"
+    ],
+    "subjectName": "Recurso de apelación",
+    "subsubjectName": "Admisibilidad",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Sin nota fuente; contenido verificado.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:004",
+    "expectedAnswer": "Contra el fallo del tribunal de alzada que declara inadmisible la apelación por las materias del artículo 201 procede reposición dentro de tercero día.",
+    "keyPoints": [
+      "CPC art. 201"
+    ],
+    "commonErrors": [
+      "Confundirlo con recurso de hecho",
+      "Contar cinco días"
+    ],
+    "subjectName": "Recurso de apelación",
+    "subsubjectName": "Reposición contra inadmisibilidad",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "La nota fuente «reposición dentro de tercero día» es correcta.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:005",
+    "expectedAnswer": "Declarado admisible, el tribunal superior da al proceso la tramitación correspondiente y comunica lo pertinente al inferior; luego se determina su conocimiento en cuenta o previa vista.",
+    "keyPoints": [
+      "CPC arts. 199 y 205"
+    ],
+    "commonErrors": [
+      "Afirmar que toda apelación admisible pasa automáticamente a tabla"
+    ],
+    "subjectName": "Recurso de apelación",
+    "subsubjectName": "Tramitación posterior a la admisibilidad",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Sin nota fuente; contenido verificado.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:006",
+    "expectedAnswer": "La apelación de sentencia definitiva se conoce previa vista; la apelación de otra resolución se ve en cuenta, salvo que una parte solicite alegatos dentro de cinco días desde la certificación del artículo 200. Las leyes especiales pueden establecer reglas distintas.",
+    "keyPoints": [
+      "CPC arts. 199 y 200",
+      "COT art. 68"
+    ],
+    "commonErrors": [
+      "Usar la cuantía como criterio",
+      "Decir que toda apelación se ve previa vista"
+    ],
+    "subjectName": "Recurso de apelación",
+    "subsubjectName": "Cuenta y previa vista",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Debe conservarse la salvedad de leyes especiales.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740",
+      "https://www.bcn.cl/leychile/navegar?idNorma=25563"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:007",
+    "expectedAnswer": "Regla general: en segunda instancia no se admite prueba. Excepciones: CPC arts. 310 inciso final, 348 y 385; medidas para mejor resolver del art. 159; y testimonial excepcional ordenada por el tribunal sobre hechos no comprendidos en la prueba rendida, que no pudo rendirse en primera instancia y sea estrictamente necesaria, con término especial máximo de ocho días.",
+    "keyPoints": [
+      "CPC art. 207",
+      "Excepciones legales expresas"
+    ],
+    "commonErrors": [
+      "Sostener que puede abrirse libremente un nuevo término probatorio"
+    ],
+    "subjectName": "Segunda instancia",
+    "subsubjectName": "Prueba",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Sin nota fuente; contenido verificado.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:008",
+    "expectedAnswer": "El mandamiento debe ordenar embargar bienes suficientes para deuda, intereses y costas si no se paga; la diligencia debe recaer sobre bienes embargables, normalmente del deudor, suficientemente individualizados, y perfeccionarse mediante entrega real o simbólica al depositario. Debe levantarse acta con las menciones legales.",
+    "keyPoints": [
+      "CPC arts. 443 N.º 2, 445, 450 y 451",
+      "Suficiencia, embargabilidad, individualización y depósito"
+    ],
+    "commonErrors": [
+      "Reducir los requisitos al dominio del deudor",
+      "Confundir embargo con retiro material"
+    ],
+    "subjectName": "Juicio ejecutivo",
+    "subsubjectName": "Embargo",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "La formulación no aclara si pregunta por requisitos del bien, del mandamiento o de la diligencia.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:001",
+    "expectedAnswer": "En el proceso civil: reposición, apelación, recursos de hecho, casación en la forma, casación en el fondo, revisión y queja; además, aclaración, rectificación o enmienda como remedio que no altera el mérito.",
+    "keyPoints": [
+      "Delimitar el ámbito civil",
+      "Distinguir recursos jurisdiccionales, disciplinarios y remedios"
+    ],
+    "commonErrors": [
+      "Incluir automáticamente protección o amparo",
+      "Tratar aclaración como impugnación de mérito"
+    ],
+    "subjectName": "Teoría de los recursos",
+    "subsubjectName": "Enumeración",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:002",
+    "expectedAnswer": "Pueden clasificarse en ordinarios y extraordinarios; por órgano competente, en retractación y reforma; por finalidad, en enmienda, nulidad, disciplina y retractación; por extensión del conocimiento, en recursos de causal genérica o específica.",
+    "keyPoints": [
+      "Explicar el criterio de clasificación"
+    ],
+    "commonErrors": [
+      "Afirmar que extraordinario significa infrecuente"
+    ],
+    "subjectName": "Teoría de los recursos",
+    "subsubjectName": "Clasificaciones",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:003",
+    "expectedAnswer": "Además de ordinarios y extraordinarios, pueden clasificarse según tribunal competente, finalidad, resolución impugnada, extensión de competencia y efectos. Sus elementos comprenden resolución impugnable, agravio, legitimación, tribunal y oportunidad.",
+    "keyPoints": [
+      "Distinguir criterios de clasificación de elementos"
+    ],
+    "commonErrors": [
+      "Mezclar elementos y categorías sin indicar el criterio"
+    ],
+    "subjectName": "Teoría de los recursos",
+    "subsubjectName": "Criterios de clasificación",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:004",
+    "expectedAnswer": "Es el recurso cuya procedencia exige una resolución y causal específicamente previstas por la ley y cuyo tribunal no revisa el litigio con la amplitud propia de una apelación.",
+    "keyPoints": [
+      "Legalidad estricta",
+      "Competencia limitada por causales"
+    ],
+    "commonErrors": [
+      "Definirlo sólo porque conoce un tribunal superior"
+    ],
+    "subjectName": "Teoría de los recursos",
+    "subsubjectName": "Recursos extraordinarios",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:005",
+    "expectedAnswer": "En los recursos extraordinarios el agravio debe encuadrarse en el vicio o causal legal invocada; no basta una discrepancia genérica con lo resuelto.",
+    "keyPoints": [
+      "Causal específica",
+      "Perjuicio pertinente"
+    ],
+    "commonErrors": [
+      "Equipararlo al agravio genérico de apelación"
+    ],
+    "subjectName": "Teoría de los recursos",
+    "subsubjectName": "Agravio",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:006",
+    "expectedAnswer": "El CPC no contiene una definición general de agravio. Los artículos 186 y 189 permiten entenderlo como el perjuicio que la resolución causa al recurrente y cuya reparación solicita mediante peticiones concretas.",
+    "keyPoints": [
+      "CPC arts. 186 y 189"
+    ],
+    "commonErrors": [
+      "Atribuir al CPC una definición textual inexistente"
+    ],
+    "subjectName": "Recurso de apelación",
+    "subsubjectName": "Agravio",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:007",
+    "expectedAnswer": "Las causales del CPC art. 768 son: tribunal incompetente o integración ilegal; juez implicado o recusado; defecto de jueces o votos; ultra petita; omisión de requisitos del art. 170; cosa juzgada oportunamente alegada; decisiones contradictorias; sentencia dictada en apelación desistida; y omisión de trámite esencial u otro defecto expresamente sancionado con nulidad.",
+    "keyPoints": [
+      "CPC art. 768, numerales 1 a 9"
+    ],
+    "commonErrors": [
+      "Usar la lista histórica que incluía deserción y prescripción en el N.º 8"
+    ],
+    "subjectName": "Casación en la forma",
+    "subsubjectName": "Causales",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:008",
+    "expectedAnswer": "Se invalida la sentencia pronunciada con intervención del juez legalmente implicado; no se anula al juez. La extensión sobre actos anteriores depende de su conexión con el vicio y de lo resuelto por el tribunal.",
+    "keyPoints": [
+      "CPC art. 768 N.º 2"
+    ],
+    "commonErrors": [
+      "Afirmar nulidad automática de todo el proceso"
+    ],
+    "subjectName": "Casación en la forma",
+    "subsubjectName": "Juez implicado",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:009",
+    "expectedAnswer": "Es el acto procesal de parte dirigido a impugnar una resolución judicial dentro del mismo proceso para obtener su modificación, invalidación o sustitución por el tribunal competente.",
+    "keyPoints": [
+      "Impugnación dentro del proceso",
+      "Existencia de agravio"
+    ],
+    "commonErrors": [
+      "Definir todo recurso como nueva acción o nuevo juicio"
+    ],
+    "subjectName": "Teoría de los recursos",
+    "subsubjectName": "Concepto",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:010",
+    "expectedAnswer": "Existe ultra petita cuando la sentencia otorga más de lo pedido o se extiende a puntos no sometidos a decisión, salvo facultades legales para actuar de oficio.",
+    "keyPoints": [
+      "CPC art. 768 N.º 4"
+    ],
+    "commonErrors": [
+      "Confundir ultra petita con omisión de pronunciamiento"
+    ],
+    "subjectName": "Casación en la forma",
+    "subsubjectName": "Ultra petita",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:011",
+    "expectedAnswer": "Requiere resolución recurrible del art. 766, causal legal, agravio, preparación cuando procede, oportunidad, exposición del vicio y norma habilitante, patrocinio de abogado habilitado y perjuicio reparable sólo mediante invalidación.",
+    "keyPoints": [
+      "CPC arts. 766, 768 a 770 y 772"
+    ],
+    "commonErrors": [
+      "Tratar la preparación como requisito universal"
+    ],
+    "subjectName": "Casación en la forma",
+    "subsubjectName": "Procedencia",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:012",
+    "expectedAnswer": "Preparar el recurso significa haber reclamado oportunamente del vicio y haber ejercido en todos sus grados los recursos establecidos por la ley para corregirlo.",
+    "keyPoints": [
+      "CPC art. 769"
+    ],
+    "commonErrors": [
+      "Confundir preparación con anuncio o reserva verbal"
+    ],
+    "subjectName": "Casación en la forma",
+    "subsubjectName": "Preparación",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:013",
+    "expectedAnswer": "Debe prepararse si el vicio existía antes del fallo y había un medio legal para reclamarlo. No se exige si no había recurso, el vicio nació en la sentencia, se conoció después o concurre otra excepción expresa del art. 769.",
+    "keyPoints": [
+      "CPC art. 769 y sus excepciones"
+    ],
+    "commonErrors": [
+      "Exigir siempre reposición"
+    ],
+    "subjectName": "Casación en la forma",
+    "subsubjectName": "Preparación",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:014",
+    "expectedAnswer": "Debe aclararse la acción ambiental. La reparación del medio ambiente dañado compete al Tribunal Ambiental; la indemnización individual del art. 46 de la Ley 20.600 corresponde al juez civil después de establecida la responsabilidad ambiental. Si la primera se dedujo ante juez civil, existe incompetencia absoluta por materia y debe reclamarse oportunamente para preparar la casación.",
+    "keyPoints": [
+      "Ley 20.600 arts. 17 N.º 2 y 46",
+      "CPC arts. 303 N.º 1 y 769"
+    ],
+    "commonErrors": [
+      "Afirmar que toda demanda derivada de daño ambiental pertenece al Tribunal Ambiental"
+    ],
+    "subjectName": "Competencia y casación",
+    "subsubjectName": "Materia ambiental",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Debe precisarse si la pretensión es reparación ambiental o indemnización individual.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740",
+      "https://www.bcn.cl/leychile/navegar?idNorma=1041361"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:015",
+    "expectedAnswer": "Sólo existe incompetencia absoluta del juez civil si la pretensión es reparación del medio ambiente dañado. Si es indemnización de perjuicios posterior a la sentencia ambiental, la Ley 20.600 atribuye competencia al juzgado civil.",
+    "keyPoints": [
+      "Ley 20.600 arts. 17 N.º 2 y 46"
+    ],
+    "commonErrors": [
+      "Decidir sólo por la expresión daño ambiental"
+    ],
+    "subjectName": "Competencia absoluta",
+    "subsubjectName": "Tribunales Ambientales",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Debe precisarse la pretensión y la etapa procesal.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740",
+      "https://www.bcn.cl/leychile/navegar?idNorma=1041361"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:016",
+    "expectedAnswer": "La incompetencia puede alegarse como excepción dilatoria del CPC art. 303 N.º 1. No es el único mecanismo disponible.",
+    "keyPoints": [
+      "CPC art. 303 N.º 1"
+    ],
+    "commonErrors": [
+      "Afirmar que sólo comprende incompetencia relativa"
+    ],
+    "subjectName": "Excepciones dilatorias",
+    "subsubjectName": "Incompetencia",
+    "legalReviewStatus": "corrected",
+    "legalReviewNotes": "La nota fuente es correcta, pero incompleta.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:017",
+    "expectedAnswer": "Debe oponerse con las demás dilatorias, en un mismo escrito y dentro del término de emplazamiento, antes de contestar. Si no se hace, queda sujeta a los arts. 85 y 86; incompetencia y litispendencia pueden oponerse también en segunda instancia como incidente.",
+    "keyPoints": [
+      "CPC art. 305"
+    ],
+    "commonErrors": [
+      "Responder sólo antes de contestar sin precisar plazo o régimen posterior"
+    ],
+    "subjectName": "Excepciones dilatorias",
+    "subsubjectName": "Oportunidad",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:018",
+    "expectedAnswer": "La nulidad procesal puede emplearse si la incompetencia configura un vicio que causa perjuicio reparable sólo con nulidad. Tratándose de incompetencia absoluta, no rige el plazo de cinco días del art. 83.",
+    "keyPoints": [
+      "CPC art. 83"
+    ],
+    "commonErrors": [
+      "Sostener que toda incompetencia produce automáticamente nulidad"
+    ],
+    "subjectName": "Nulidad procesal",
+    "subsubjectName": "Incompetencia",
+    "legalReviewStatus": "corrected",
+    "legalReviewNotes": "La nota fuente identifica un mecanismo posible, sujeto a los presupuestos del art. 83.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:019",
+    "expectedAnswer": "La respuesta “en cualquier estado del juicio” sólo es correcta para incompetencia absoluta. Para otros vicios, la nulidad debe pedirse dentro de cinco días desde el conocimiento y no puede alegarla quien originó, convalidó o concurrió al vicio.",
+    "keyPoints": [
+      "CPC art. 83"
+    ],
+    "commonErrors": [
+      "Extender la excepción a la incompetencia relativa"
+    ],
+    "subjectName": "Nulidad procesal",
+    "subsubjectName": "Oportunidad",
+    "legalReviewStatus": "corrected",
+    "legalReviewNotes": "La nota fuente requería limitarse a incompetencia absoluta.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:020",
+    "expectedAnswer": "Las cuestiones de competencia se promueven por inhibitoria ante el tribunal estimado competente, para que requiera al que conoce, o por declinatoria ante el tribunal que conoce, para que se abstenga. Elegida una vía, no pueden usarse ambas simultánea ni sucesivamente.",
+    "keyPoints": [
+      "CPC art. 101 y siguientes"
+    ],
+    "commonErrors": [
+      "Confundir cuestión de competencia con contienda ya trabada entre tribunales"
+    ],
+    "subjectName": "Competencia",
+    "subsubjectName": "Inhibitoria y declinatoria",
+    "legalReviewStatus": "approved",
+    "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:001",
+    "expectedAnswer": "La notificación personal consiste en entregar directamente al notificado copia íntegra de la resolución y de la solicitud escrita en que recayó, dejando constancia de fecha, hora, lugar e identificación.",
+    "keyPoints": [
+      "CPC arts. 40 y 43"
+    ],
+    "commonErrors": [
+      "Exigir la firma del notificado para su validez"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Notificación personal",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:002",
+    "expectedAnswer": "Fuera de la oficina la practica normalmente el receptor; en la oficina, el secretario u oficial primero bajo su responsabilidad. Donde no exista receptor, puede practicarla el notario u oficial del Registro Civil; el juez puede nombrar ministro de fe ad hoc a un empleado.",
+    "keyPoints": [
+      "CPC art. 58",
+      "COT art. 390"
+    ],
+    "commonErrors": [
+      "Omitir al oficial del Registro Civil",
+      "Atribuir indistintamente toda notificación al secretario"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Ministros de fe",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740",
+      "https://www.bcn.cl/leychile/navegar?idNorma=25563"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:003",
+    "expectedAnswer": "Procede para la primera notificación a quienes puedan verse afectados; cuando la ley o el tribunal la ordenan expresamente; y puede emplearse en cualquier caso.",
+    "keyPoints": [
+      "CPC arts. 40 y 47"
+    ],
+    "commonErrors": [
+      "Decir que sólo procede con la demanda"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Procedencia de la notificación personal",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:004",
+    "expectedAnswer": "Se practica principalmente a la parte demandada o persona cuya primera intervención deba provocarse; al actor, la resolución recaída en su presentación se notifica por estado diario.",
+    "keyPoints": [
+      "CPC art. 40"
+    ],
+    "commonErrors": [
+      "Afirmar que la demanda se notifica personalmente a ambas partes"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Sujetos notificados",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:005",
+    "expectedAnswer": "Al demandante se le notifica por estado diario la resolución recaída en su propia demanda.",
+    "keyPoints": [
+      "CPC arts. 40 y 50"
+    ],
+    "commonErrors": [
+      "Exigir notificación personal al actor"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Estado diario",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:006",
+    "expectedAnswer": "Además de la primera gestión, procede cuando una norma la exige para validez, cuando el tribunal la ordena y, facultativamente, en cualquier caso.",
+    "keyPoints": [
+      "CPC art. 47"
+    ],
+    "commonErrors": [
+      "Reducirla a la primera notificación"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Procedencia de la notificación personal",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:007",
+    "expectedAnswer": "Sí. El tribunal puede ordenarla expresamente conforme al art. 47; la norma no exige una causal especial.",
+    "keyPoints": [
+      "CPC art. 47"
+    ],
+    "commonErrors": [
+      "Confundir esta facultad con la habilitación de lugar del art. 42"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Orden judicial",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:008",
+    "expectedAnswer": "En lugares de libre acceso público, cualquier día y hora; en morada, lugar donde pernocta o trabaja, o recinto privado accesible al ministro de fe, cualquier día entre 06:00 y 22:00; también son hábiles la oficina del secretario, tribunal y despacho del ministro de fe.",
+    "keyPoints": [
+      "CPC art. 41",
+      "Efectos de notificación practicada en día inhábil"
+    ],
+    "commonErrors": [
+      "Aplicar siempre el horario judicial ordinario"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Lugares, días y horas",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:009",
+    "expectedAnswer": "En juicio ejecutivo no puede practicarse en público el requerimiento de pago. Si la demanda fue notificada allí, el requerimiento se efectúa conforme al art. 443 N.º 1 mediante citación para día, hora y lugar.",
+    "keyPoints": [
+      "CPC arts. 41 y 443 N.º 1"
+    ],
+    "commonErrors": [
+      "Decir que tampoco puede notificarse la demanda en público"
+    ],
+    "subjectName": "Juicio ejecutivo",
+    "subsubjectName": "Requerimiento de pago",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:010",
+    "expectedAnswer": "Si no se encuentra al deudor para requerirlo, la copia debe señalar día, hora y lugar para el requerimiento; esa citación es conocida doctrinalmente como cédula de espera. Si no concurre, se procede inmediatamente al embargo.",
+    "keyPoints": [
+      "CPC art. 443 N.º 1"
+    ],
+    "commonErrors": [
+      "Creer que cédula de espera es la denominación textual del CPC"
+    ],
+    "subjectName": "Juicio ejecutivo",
+    "subsubjectName": "Cédula de espera",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:011",
+    "expectedAnswer": "El deudor puede concurrir a la citación y pagar o ser requerido; si no concurre, se procede inmediatamente y sin más trámite al embargo. La ley contempla una citación fijada por el ministro de fe.",
+    "keyPoints": [
+      "CPC art. 443 N.º 1"
+    ],
+    "commonErrors": [
+      "Afirmar que la ausencia impide el requerimiento"
+    ],
+    "subjectName": "Juicio ejecutivo",
+    "subsubjectName": "Requerimiento de pago",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:012",
+    "expectedAnswer": "Puede proceder la notificación sustitutiva del art. 44 si concurren y se certifican sus requisitos; no basta no encontrar a la persona una vez.",
+    "keyPoints": [
+      "CPC art. 44"
+    ],
+    "commonErrors": [
+      "Aplicar automáticamente el art. 44 tras una búsqueda"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Artículo 44",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:013",
+    "expectedAnswer": "Requiere dos búsquedas en días distintos en habitación o lugar habitual de trabajo; certificación de que la persona está en el lugar del juicio y de su morada o trabajo; notificación en la segunda búsqueda mediante entrega a adulto, fijación del aviso o entrega al portero; y aviso por carta certificada.",
+    "keyPoints": [
+      "CPC arts. 44 a 46"
+    ],
+    "commonErrors": [
+      "Exigir nueva orden judicial después de la segunda búsqueda"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Requisitos del artículo 44",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:014",
+    "expectedAnswer": "No puede contestarse automáticamente. La portería no reemplaza por sí sola la búsqueda en habitación o trabajo; puede ser relevante si el recinto impide libre acceso, pero deben constar las diligencias y certificaciones del receptor.",
+    "keyPoints": [
+      "CPC art. 44"
+    ],
+    "commonErrors": [
+      "Asumir que dos fechas bastan cualquiera sea el lugar"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Búsquedas del artículo 44",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:015",
+    "expectedAnswer": "El receptor debe certificar que, buscada la persona en dos días distintos, ésta se encuentra en el lugar del juicio y cuál es su morada o lugar habitual de industria, profesión o empleo.",
+    "keyPoints": [
+      "CPC art. 44"
+    ],
+    "commonErrors": [
+      "Exigir prueba documental adicional cuando la certificación basta"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Certificación del receptor",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:016",
+    "expectedAnswer": "La falta de certificación del art. 44 no autoriza automáticamente avisos. Estos proceden sólo si es difícil determinar individualidad o residencia, o el número de personas dificulta considerablemente la diligencia, previa resolución judicial.",
+    "keyPoints": [
+      "CPC art. 54"
+    ],
+    "commonErrors": [
+      "Usar avisos sólo porque fracasó una búsqueda"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Avisos",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. Además, la atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:017",
+    "expectedAnswer": "Procede cuando deba notificarse personalmente o por cédula a personas cuya individualidad o residencia sea difícil determinar, o cuyo número dificulte considerablemente la diligencia.",
+    "keyPoints": [
+      "CPC art. 54"
+    ],
+    "commonErrors": [
+      "Usarla meramente porque fracasó una búsqueda"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Procedencia de avisos",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:018",
+    "expectedAnswer": "Se practica mediante avisos en diarios del lugar, cabecera provincial o capital regional; el tribunal fija diarios y repeticiones, nunca menos de tres. Si es la primera notificación, se agrega publicación en el Diario Oficial del día primero o quince, o el siguiente si no se publica ese día.",
+    "keyPoints": [
+      "CPC art. 54"
+    ],
+    "commonErrors": [
+      "Omitir Diario Oficial en la primera gestión"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Práctica por avisos",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:019",
+    "expectedAnswer": "Los avisos contienen los datos exigidos para la notificación personal; si resulta muy costoso, el tribunal puede ordenar un extracto redactado por el secretario.",
+    "keyPoints": [
+      "CPC art. 54"
+    ],
+    "commonErrors": [
+      "Publicar sólo la parte resolutiva sin autorización"
+    ],
+    "subjectName": "Notificaciones",
+    "subsubjectName": "Contenido de avisos",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:020",
+    "expectedAnswer": "Solicitado y admitido el informe pericial, el tribunal cita a audiencia. Con quienes asistan se fija número de peritos, calidades, aptitudes o títulos y puntos del informe; si no hay acuerdo sobre las personas, nombra el tribunal conforme a la ley.",
+    "keyPoints": [
+      "CPC arts. 414 a 416"
+    ],
+    "commonErrors": [
+      "Omitir la audiencia",
+      "Permitir que el tribunal elija a una de las dos primeras personas propuestas por cada parte"
+    ],
+    "subjectName": "Prueba pericial",
+    "subsubjectName": "Nombramiento",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:021",
+    "expectedAnswer": "No. La solicitud y resoluciones constan en la carpeta, pero la determinación y designación se realiza en la audiencia del art. 414. La aceptación posterior del perito sí se declara por escrito.",
+    "keyPoints": [
+      "CPC arts. 414 y 417"
+    ],
+    "commonErrors": [
+      "Afirmar que todo se decide mediante escritos"
+    ],
+    "subjectName": "Prueba pericial",
+    "subsubjectName": "Procedimiento",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:022",
+    "expectedAnswer": "El nombramiento se efectúa en audiencia; si las partes no acuerdan la persona, la designa el tribunal.",
+    "keyPoints": [
+      "CPC art. 414"
+    ],
+    "commonErrors": [
+      "Confundir nombramiento con aceptación escrita del cargo"
+    ],
+    "subjectName": "Prueba pericial",
+    "subsubjectName": "Audiencia de nombramiento",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:023",
+    "expectedAnswer": "La audiencia se celebra con quienes asistan; se fija número, requisitos profesionales y puntos del informe. Las partes pueden acordar las personas; a falta de acuerdo, las nombra el tribunal.",
+    "keyPoints": [
+      "CPC art. 414"
+    ],
+    "commonErrors": [
+      "Creer que la inasistencia impide celebrar la audiencia"
+    ],
+    "subjectName": "Prueba pericial",
+    "subsubjectName": "Audiencia de nombramiento",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:esteban-peredo-grado-2-procesal:derecho-procesal:024",
+    "expectedAnswer": "Su finalidad es delimitar la pericia y designar al experto: número de peritos, calidad, aptitudes o títulos, puntos sometidos a informe y persona designada.",
+    "keyPoints": [
+      "CPC art. 414"
+    ],
+    "commonErrors": [
+      "Discutir allí el mérito probatorio definitivo del futuro informe"
+    ],
+    "subjectName": "Prueba pericial",
+    "subsubjectName": "Objeto de la audiencia",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:001",
+    "expectedAnswer": "Si el hecho es anterior o coetáneo al inicio, el incidente debe promoverse antes de cualquier gestión principal; si ocurre durante el juicio, tan pronto sea conocido; las causas simultáneas deben promoverse conjuntamente. La nulidad tiene régimen especial.",
+    "keyPoints": [
+      "CPC arts. 83 a 86"
+    ],
+    "commonErrors": [
+      "Responder con una única oportunidad para todo incidente"
+    ],
+    "subjectName": "Incidentes",
+    "subsubjectName": "Oportunidad",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:002",
+    "expectedAnswer": "Debe promoverse antes de realizar cualquier gestión principal. Después será rechazado de oficio, salvo vicio que anule el proceso o circunstancia esencial para su ritualidad o marcha.",
+    "keyPoints": [
+      "CPC art. 84"
+    ],
+    "commonErrors": [
+      "Omitir las excepciones legales"
+    ],
+    "subjectName": "Incidentes",
+    "subsubjectName": "Hechos anteriores o coetáneos",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:003",
+    "expectedAnswer": "Puede resolver de plano peticiones cuyo fallo se funde en hechos que consten en el proceso o sean de pública notoriedad, dejándolo consignado; también puede rechazar de plano incidentes inconexos o extemporáneos en los casos legales.",
+    "keyPoints": [
+      "CPC arts. 84, 85 y 89"
+    ],
+    "commonErrors": [
+      "Afirmar que basta considerar innecesaria la prueba para omitir siempre el traslado"
+    ],
+    "subjectName": "Incidentes",
+    "subsubjectName": "Resolución de plano",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:004",
+    "expectedAnswer": "Son diligencias anteriores a la demanda destinadas a preparar el juicio, conservar prueba que podría perderse o asegurar el resultado de la futura acción. Se distinguen preparatorias, probatorias y precautorias.",
+    "keyPoints": [
+      "CPC arts. 273 a 289"
+    ],
+    "commonErrors": [
+      "Equipararlas todas a medidas cautelares"
+    ],
+    "subjectName": "Medidas prejudiciales",
+    "subsubjectName": "Concepto y clases",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:005",
+    "expectedAnswer": "Las preparatorias del art. 273 son: declaración jurada sobre capacidad, personería o representantes; exhibición de la cosa; exhibición de sentencias, testamentos, inventarios, tasaciones, títulos u otros instrumentos; exhibición de libros de contabilidad; y reconocimiento jurado de firma privada.",
+    "keyPoints": [
+      "CPC art. 273, numerales 1 a 5"
+    ],
+    "commonErrors": [
+      "Incluir todas las prejudiciales probatorias o precautorias"
+    ],
+    "subjectName": "Medidas prejudiciales",
+    "subsubjectName": "Preparatorias",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:006",
+    "expectedAnswer": "El solicitante debe expresar la acción futura y someramente sus fundamentos. Las cuatro primeras del art. 273 requieren que el tribunal las estime necesarias; el reconocimiento de firma se decreta en todo caso. Las probatorias y precautorias tienen presupuestos específicos.",
+    "keyPoints": [
+      "CPC arts. 273, 279, 281, 284, 286 y 287"
+    ],
+    "commonErrors": [
+      "Dar requisitos de las precautorias como si rigieran todas"
+    ],
+    "subjectName": "Medidas prejudiciales",
+    "subsubjectName": "Requisitos",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:007",
+    "expectedAnswer": "Si se desobedece la exhibición de instrumentos o libros del art. 273 N.os 3 y 4, se pierde el derecho de hacerlos valer después, salvo excepciones del art. 277; además pueden aplicarse multa, arresto y, respecto de la cosa, allanamiento conforme a los arts. 274 a 276.",
+    "keyPoints": [
+      "CPC arts. 274 a 277"
+    ],
+    "commonErrors": [
+      "Responder simplemente que se tendrá por confesa"
+    ],
+    "subjectName": "Medidas prejudiciales",
+    "subsubjectName": "Incumplimiento de exhibición",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:008",
+    "expectedAnswer": "Es la tercería por la cual un tercero afirma ser dueño de bienes embargados en ejecución seguida contra otro y pide que se reconozca su dominio y se excluyan esos bienes del apremio.",
+    "keyPoints": [
+      "CPC art. 518 N.º 1"
+    ],
+    "commonErrors": [
+      "Confundirla con tercería de posesión"
+    ],
+    "subjectName": "Tercerías",
+    "subsubjectName": "Dominio",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:009",
+    "expectedAnswer": "No. Se sustancia en ramo separado contra ejecutante y ejecutado por los trámites del juicio ordinario, pero sin réplica ni dúplica.",
+    "keyPoints": [
+      "CPC art. 521"
+    ],
+    "commonErrors": [
+      "Afirmar que se tramita íntegramente como juicio ordinario"
+    ],
+    "subjectName": "Tercerías",
+    "subsubjectName": "Tramitación de la tercería de dominio",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  },
+  {
+    "sourceReference": "october-oral-exams:vidal-grado-3-procesal:derecho-procesal:010",
+    "expectedAnswer": "No suspende el procedimiento ejecutivo. El apremio sólo se suspende si la tercería de dominio se apoya en instrumento público anterior a la demanda ejecutiva; en los demás casos el remate recae sobre los derechos que el ejecutado tenga o pretenda tener.",
+    "keyPoints": [
+      "CPC arts. 522 y 523"
+    ],
+    "commonErrors": [
+      "Afirmar que toda tercería paraliza la ejecución o el remate"
+    ],
+    "subjectName": "Tercerías",
+    "subsubjectName": "Efectos",
+    "legalReviewStatus": "human_confirmation_required",
+    "legalReviewNotes": "Contenido jurídico verificado. La atribución individual a Felipe Ortiz no consta en la fuente; sólo consta la comisión.",
+    "officialSourceUrls": [
+      "https://www.bcn.cl/leychile/navegar?idNorma=22740"
+    ]
+  }
+]
