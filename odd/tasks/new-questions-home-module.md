@@ -42,6 +42,7 @@ Recover the current unfinished work safely, add the next question set through a 
 
 - [x] **NQ-01 — Recover and document the repository state.**
   - Evidence: inspected Git status/diff, relevant schema/Home/admin authorization, and prior Engram observations.
+  - Work-unit commit: `c32edf61` (`docs: record new questions home module plan`).
   - Route: delegated mapping because understanding required more than four files; parent performed structural readback.
 - [ ] **NQ-02 — Resolve the product definition of `new`.**
   - Acceptance: choose global recency or per-student unseen status and record the display window/count.
