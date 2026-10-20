@@ -54,6 +54,7 @@ Recover the current unfinished work safely, add the next question set through a 
   - Attribution review: corrected both first-degree constitutional source accounts to professor Dominique Luan and preserved the full Dominique Luan / Constanza Astudillo / Carlos Alarcón commission. The second-degree constitutional professor remains `Pending review` because its source names the commission but not the assigned professor. Esteban Peredo and Vidal are retained only as unverified source/examinee labels.
   - Review placeholders: unresolved subject and subsubject fields use `Pending review`. The two standalone capacity/lease and sovereignty/work blocks also use `Pending review` for professor and grade, with no inferred commission. Source answer hints remain metadata rather than unreviewed model answers or key points.
   - Validation: JSON parse passed; `questionCount` matches the array length; all `sourceReference` values are unique; required seed-compatible fields and enum values passed local structural validation; no exact duplicate statements remain.
+  - Work-unit commit: `68a64424` (`data: stage october oral exam questions`).
   - Route: delegated writer because the batch requires non-trivial normalization and content review.
 - [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
   - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
