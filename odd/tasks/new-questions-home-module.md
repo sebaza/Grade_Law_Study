@@ -63,6 +63,7 @@ Recover the current unfinished work safely, add the next question set through a 
   - Legal-review validation: JSON parsed; 226/226 records matched the review mappings; all `sourceReference` and statement values are unique; no model-answer or taxonomy placeholders remain; every record has a valid review status and at least one official-source URL; exactly 105 records carry the 2026-10-20 `user_confirmed_commission_assignment` metadata and exactly 47 carry `user_confirmed_order_inheritance`; ready/blocked counts reconcile to 226.
   - Legal-review work-unit commit: `9ca97baa` (`data: review october question bank`).
   - Commission-confirmation work-unit commit: `31ddd53f` (`data: confirm october exam commissions`).
+  - Ordered-inheritance work-unit commit: `875bd445` (`data: inherit october question metadata`).
 - [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
   - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
 - [ ] **NQ-05 — Add the Home module.**
