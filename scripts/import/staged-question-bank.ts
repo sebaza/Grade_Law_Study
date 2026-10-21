@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import type { Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import { loadEnvConfig } from "@next/env";
 
 import { getPrisma } from "../../src/lib/db/prisma";
@@ -59,12 +59,24 @@ export type ExistingQuestionSnapshot = {
   professorNames: string[];
 };
 
-export const KNOWN_CONTENT_MATCH = {
+export const CIVIL_IMPUBERES_CONTENT_MATCH = {
   sourceReference:
     "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:003",
   statement: "¿Quiénes son impúberes?",
   areaName: "Derecho Civil",
 } as const;
+
+export const SOVEREIGNTY_CONTENT_MATCH = {
+  sourceReference:
+    "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:007",
+  statement: "¿Cuáles son los límites de la soberanía?",
+  areaName: "Derecho Constitucional",
+} as const;
+
+const APPROVED_CONTENT_MATCHES = [
+  CIVIL_IMPUBERES_CONTENT_MATCH,
+  SOVEREIGNTY_CONTENT_MATCH,
+] as const;
 
 export type PlanAction =
   | "insert"
@@ -95,6 +107,11 @@ const STAGING_PATH = path.join(
   "staging",
   "october-question-bank.staging.json",
 );
+
+const REMOTE_TRANSACTION_OPTIONS = {
+  maxWait: 60_000,
+  timeout: 60_000,
+} as const;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -276,10 +293,11 @@ function compareQuestion(question: StagedQuestion, existing: ExistingQuestionSna
 }
 
 function isKnownContentMatch(question: StagedQuestion) {
-  return (
-    question.sourceReference === KNOWN_CONTENT_MATCH.sourceReference &&
-    normalizedText(question.statement) === normalizedText(KNOWN_CONTENT_MATCH.statement) &&
-    normalizedText(question.areaName) === normalizedText(KNOWN_CONTENT_MATCH.areaName)
+  return APPROVED_CONTENT_MATCHES.some(
+    (approved) =>
+      question.sourceReference === approved.sourceReference &&
+      normalizedText(question.statement) === normalizedText(approved.statement) &&
+      normalizedText(question.areaName) === normalizedText(approved.areaName),
   );
 }
 
@@ -407,73 +425,140 @@ async function loadExistingQuestions(
   }));
 }
 
-async function createQuestion(
-  tx: Prisma.TransactionClient,
-  question: StagedQuestion,
-) {
-  const sourceCollision = await tx.question.findUnique({
-    where: { sourceReference: question.sourceReference },
-    select: { id: true },
-  });
-  if (sourceCollision) {
-    throw new Error(`Concurrent sourceReference collision: ${question.sourceReference}`);
+async function createQuestion(tx: Prisma.TransactionClient, question: StagedQuestion) {
+  const payload = JSON.stringify(question);
+  const rows = await tx.$queryRaw<Array<{ question_id: string }>>(Prisma.sql`
+    WITH payload AS (
+      SELECT ${payload}::jsonb AS data
+    ),
+    area AS (
+      INSERT INTO law_areas (name)
+      SELECT data->>'areaName' FROM payload
+      ON CONFLICT (name) DO UPDATE SET name = EXCLUDED.name
+      RETURNING id
+    ),
+    subject AS (
+      INSERT INTO subjects (area_id, name)
+      SELECT area.id, payload.data->>'subjectName' FROM area, payload
+      ON CONFLICT (area_id, name) DO UPDATE SET name = EXCLUDED.name
+      RETURNING id
+    ),
+    subsubject AS (
+      INSERT INTO subsubjects (subject_id, name)
+      SELECT subject.id, payload.data->>'subsubjectName' FROM subject, payload
+      ON CONFLICT (subject_id, name) DO UPDATE SET name = EXCLUDED.name
+      RETURNING id
+    ),
+    professor AS (
+      INSERT INTO professors (name)
+      SELECT data->>'professorName' FROM payload
+      ON CONFLICT (name) DO UPDATE SET name = EXCLUDED.name
+      RETURNING id
+    ),
+    inserted_question AS (
+      INSERT INTO questions (
+        source_reference,
+        statement,
+        area_id,
+        subject_id,
+        subsubject_id,
+        difficulty,
+        estimated_probability,
+        priority_score,
+        question_type,
+        origin,
+        is_active
+      )
+      SELECT
+        payload.data->>'sourceReference',
+        payload.data->>'statement',
+        area.id,
+        subject.id,
+        subsubject.id,
+        (payload.data->>'difficulty')::difficulty,
+        (payload.data->>'estimatedProbability')::numeric,
+        (payload.data->>'priorityScore')::numeric,
+        payload.data->>'questionType',
+        (payload.data->>'origin')::question_origin,
+        true
+      FROM payload, area, subject, subsubject
+      WHERE NOT EXISTS (
+        SELECT 1 FROM questions existing
+        WHERE existing.source_reference = payload.data->>'sourceReference'
+      )
+      AND NOT EXISTS (
+        SELECT 1 FROM questions existing
+        WHERE existing.area_id = area.id
+          AND existing.statement = payload.data->>'statement'
+      )
+      RETURNING id
+    ),
+    expected_answer AS (
+      INSERT INTO expected_answers (
+        question_id,
+        model_answer,
+        rubric_notes,
+        version,
+        is_active
+      )
+      SELECT
+        inserted_question.id,
+        payload.data->>'expectedAnswer',
+        payload.data->>'rubricNotes',
+        1,
+        true
+      FROM inserted_question, payload
+      RETURNING id
+    ),
+    key_points AS (
+      INSERT INTO key_points (
+        question_id,
+        label,
+        description,
+        weight,
+        is_required,
+        order_index
+      )
+      SELECT
+        inserted_question.id,
+        point.label,
+        point.description,
+        point.weight,
+        point."isRequired",
+        point."orderIndex"
+      FROM inserted_question, payload
+      CROSS JOIN LATERAL jsonb_to_recordset(payload.data->'keyPoints') AS point(
+        label text,
+        description text,
+        weight numeric,
+        "isRequired" boolean,
+        "orderIndex" integer
+      )
+      RETURNING id
+    ),
+    common_errors AS (
+      INSERT INTO common_errors (question_id, description, severity)
+      SELECT inserted_question.id, error.description, error.severity
+      FROM inserted_question, payload
+      CROSS JOIN LATERAL jsonb_to_recordset(payload.data->'commonErrors') AS error(
+        description text,
+        severity text
+      )
+      RETURNING id
+    ),
+    question_professor AS (
+      INSERT INTO question_professors (question_id, professor_id)
+      SELECT inserted_question.id, professor.id
+      FROM inserted_question, professor
+      RETURNING question_id
+    )
+    SELECT inserted_question.id AS question_id
+    FROM inserted_question
+  `);
+
+  if (rows.length !== 1) {
+    throw new Error(`Concurrent sourceReference or statement/area collision: ${question.sourceReference}`);
   }
-
-  const area = await tx.lawArea.upsert({
-    where: { name: question.areaName },
-    create: { name: question.areaName },
-    update: {},
-  });
-  const contentCollision = await tx.question.findFirst({
-    where: { areaId: area.id, statement: question.statement },
-    select: { id: true },
-  });
-  if (contentCollision) {
-    throw new Error(`Concurrent statement/area collision: ${question.sourceReference}`);
-  }
-
-  const subject = await tx.subject.upsert({
-    where: { areaId_name: { areaId: area.id, name: question.subjectName } },
-    create: { areaId: area.id, name: question.subjectName },
-    update: {},
-  });
-  const subsubject = await tx.subsubject.upsert({
-    where: { subjectId_name: { subjectId: subject.id, name: question.subsubjectName } },
-    create: { subjectId: subject.id, name: question.subsubjectName },
-    update: {},
-  });
-  const professor = await tx.professor.upsert({
-    where: { name: question.professorName },
-    create: { name: question.professorName },
-    update: {},
-  });
-
-  await tx.question.create({
-    data: {
-      sourceReference: question.sourceReference,
-      statement: question.statement,
-      areaId: area.id,
-      subjectId: subject.id,
-      subsubjectId: subsubject.id,
-      difficulty: question.difficulty,
-      estimatedProbability: question.estimatedProbability,
-      priorityScore: question.priorityScore,
-      questionType: question.questionType,
-      origin: question.origin,
-      isActive: true,
-      expectedAnswers: {
-        create: {
-          modelAnswer: question.expectedAnswer,
-          rubricNotes: question.rubricNotes,
-          version: 1,
-          isActive: true,
-        },
-      },
-      keyPoints: { create: question.keyPoints },
-      commonErrors: { create: question.commonErrors },
-      professors: { create: { professorId: professor.id } },
-    },
-  });
 }
 
 function publicPlan(plan: ImportPlan) {
@@ -511,8 +596,8 @@ async function runDatabaseMode(mode: "plan" | "apply" | "verify", questions: Sta
       if (
         plan.conflicts !== 0 ||
         plan.inserts !== 0 ||
-        plan.sourceMatches !== 225 ||
-        plan.knownContentMatches !== 1
+        plan.sourceMatches !== 224 ||
+        plan.knownContentMatches !== 2
       ) {
         throw new Error(`Verification failed: ${JSON.stringify(publicPlan(plan))}`);
       }
@@ -533,7 +618,10 @@ async function runDatabaseMode(mode: "plan" | "apply" | "verify", questions: Sta
       const question = questions.find((item) => item.sourceReference === entry.sourceReference);
       if (!question) throw new Error(`Missing staged question: ${entry.sourceReference}`);
       try {
-        await db.$transaction((tx) => createQuestion(tx, question));
+        await db.$transaction(
+          (tx) => createQuestion(tx, question),
+          REMOTE_TRANSACTION_OPTIONS,
+        );
         inserted += 1;
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);

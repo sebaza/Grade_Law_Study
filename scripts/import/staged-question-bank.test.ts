@@ -3,7 +3,8 @@ import test from "node:test";
 
 import {
   buildImportPlan,
-  KNOWN_CONTENT_MATCH,
+  CIVIL_IMPUBERES_CONTENT_MATCH,
+  SOVEREIGNTY_CONTENT_MATCH,
   validateStagingBatch,
   type ExistingQuestionSnapshot,
   type StagedQuestion,
@@ -106,11 +107,11 @@ test("buildImportPlan blocks drift under an existing source reference", () => {
   assert.equal(plan.conflicts, 1);
 });
 
-test("buildImportPlan permits only the known Civil content match", () => {
+test("buildImportPlan permits the known Civil content match and blocks unapproved collisions", () => {
   const known = question(1, {
-    sourceReference: KNOWN_CONTENT_MATCH.sourceReference,
-    statement: KNOWN_CONTENT_MATCH.statement,
-    areaName: KNOWN_CONTENT_MATCH.areaName,
+    sourceReference: CIVIL_IMPUBERES_CONTENT_MATCH.sourceReference,
+    statement: CIVIL_IMPUBERES_CONTENT_MATCH.statement,
+    areaName: CIVIL_IMPUBERES_CONTENT_MATCH.areaName,
   });
   const existing = existingFrom(known, { sourceReference: "legacy:existing-question" });
   assert.equal(buildImportPlan([known], [existing]).entries[0].action, "noop_known_content_match");
@@ -120,4 +121,18 @@ test("buildImportPlan permits only the known Civil content match", () => {
   const blocked = buildImportPlan([other], [collision]);
   assert.equal(blocked.entries[0].action, "blocked_content_collision");
   assert.equal(blocked.conflicts, 1);
+});
+
+test("buildImportPlan permits the user-confirmed sovereignty content match", () => {
+  const known = question(3, {
+    sourceReference: SOVEREIGNTY_CONTENT_MATCH.sourceReference,
+    statement: SOVEREIGNTY_CONTENT_MATCH.statement,
+    areaName: SOVEREIGNTY_CONTENT_MATCH.areaName,
+  });
+  const existing = existingFrom(known, { sourceReference: "legacy:sovereignty-question" });
+
+  const plan = buildImportPlan([known], [existing]);
+  assert.equal(plan.entries[0].action, "noop_known_content_match");
+  assert.equal(plan.knownContentMatches, 1);
+  assert.equal(plan.conflicts, 0);
 });
