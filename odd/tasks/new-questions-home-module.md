@@ -35,6 +35,7 @@ Recover the current unfinished work safely, add the next question set through a 
 
 - This document records recovered work and the proposed feature only.
 - Source implementation is not authorized until the open product decision is answered and the question set is supplied.
+- NQ-03B is explicitly authorized to add and execute a versioned importer against the existing project `DATABASE_URL`; authorization is limited to planning, applying, and verifying the 226 staged October questions in the already configured Supabase/Postgres database.
 - Do not overwrite, discard, stage, or fold the existing political-brief or evaluation-scale changes into this feature.
 - Push, pull request creation, database migration execution, and remote database writes require separate explicit authorization.
 
@@ -65,6 +66,19 @@ Recover the current unfinished work safely, add the next question set through a 
   - Commission-confirmation work-unit commit: `31ddd53f` (`data: confirm october exam commissions`).
   - Ordered-inheritance work-unit commit: `875bd445` (`data: inherit october question metadata`).
   - Legal-ambiguity resolution work-unit commit: `c70ce76f` (`data: resolve october legal ambiguities`).
+- [ ] **NQ-03B — Import the reviewed October staging batch safely.**
+  - Objective: provide a versioned, reproducible importer and load the 226 reviewed staging records into the configured project database.
+  - Authorized scope: `scripts/import/staged-question-bank.ts`, its focused tests, the `package.json` command, this task document, and the remote plan/apply/verify operations against the existing `DATABASE_URL` only.
+  - Route: delegated writer because implementation, focused tests, database planning, and remote verification span multiple non-trivial artifacts.
+  - Import policy: support `validate`, `plan`, `apply`, and `verify`; plan is read-only; apply processes one question transaction at a time for `connection_limit=1`; reruns are idempotent; source-reference drift blocks; the known Civil “¿Quiénes son impúberes?” content match is a no-op against the existing record; every other statement-and-area collision blocks.
+  - Persistence: deterministically match or create area, subject, subsubject, and professor; persist the question, expected answer, key points, common errors, and professor link. Staging metadata remains versioned in JSON because the current schema has no metadata column for `questions`.
+  - Checks: observe focused RED before implementation, then GREEN/refactor; run `validate`, read-only `plan`, confirmed `apply`, `verify`, a second idempotent `apply`, and `npm test`; verify 225 new source references plus one approved content match. Do not change the canonical seed or manifest.
+  - TDD evidence: RED observed with `npx tsx --test scripts/import/staged-question-bank.test.ts` because the importer module did not yet exist; GREEN observed with `npm run test:staged-question-bank` (6/6 passing).
+  - Refactor evidence: removed an unused importer type; focused tests remained 6/6 GREEN, `npm run typecheck` passed, and scoped ESLint passed for the importer and its test.
+  - Validation result: `validate` passed with 226 reviewed records and zero structural errors.
+  - Plan result: blocked before apply with 223 inserts, 0 source-reference matches, 1 approved Civil content match, and 2 additional statement-and-area collisions. The collisions are “¿Qué son los apremios ilegítimos?” and “¿Cuáles son los límites de la soberanía?”, both in Derecho Constitucional and already present under `pasted-text-2026-06-27` source references.
+  - Safety outcome: no remote mutation was attempted. `apply`, `verify`, and the idempotent rerun are skipped until the two additional collisions receive an explicit resolution policy.
+  - Full-check result: `npm test` reached a passing typecheck and then failed ESLint on 35 pre-existing `@typescript-eslint/no-require-imports` errors under `tmp/`; the scoped importer lint is clean and the out-of-scope files were not changed.
 - [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
   - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
 - [ ] **NQ-05 — Add the Home module.**
@@ -84,6 +98,6 @@ Recover the current unfinished work safely, add the next question set through a 
 
 ## Progress
 
-- Current step: NQ-03 has a fully reviewed staging batch: 226 `reviewed`, 0 `human_confirmation_required`. Canonical ingestion remains pending and was intentionally not performed in this work unit.
-- Verification: before/after structural validation passed for JSON parsing, 226 records, unique references/statements, 87/77/62 mapping coverage, exact reviewed-field synchronization, official-source URLs, and preserved `sourceAnswerNotes`. Strict TDD RED is N/A for this declarative data transformation because no dedicated behavioral runner exists. No database, seed, manifest, network, build, or general test command was run.
-- Next step: ingest the 226 reviewed records through a separately authorized canonical path. NQ-02 remains open before implementing the Home module.
+- Current step: NQ-03B is blocked at its read-only plan gate. The importer is implemented and locally GREEN, but the plan found two non-authorized content collisions in addition to the single approved Civil no-op.
+- Verification: focused RED/GREEN/refactor, typecheck, scoped lint, and local staging validation passed. Remote plan returned 223 inserts, 1 approved content match, and 2 blocking collisions; therefore no remote write occurred and apply/verify/rerun remain pending. Full `npm test` is blocked only by 35 existing lint errors under `tmp/`. Seed and manifest remain untouched.
+- Next step: obtain an explicit policy for the two Constitutional content collisions, then rerun plan before any apply. NQ-02 remains open before implementing the Home module.
