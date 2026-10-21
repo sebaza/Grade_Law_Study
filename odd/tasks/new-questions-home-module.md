@@ -64,7 +64,7 @@ Recover the current unfinished work safely, add the next question set through a 
   - Legal-review work-unit commit: `9ca97baa` (`data: review october question bank`).
   - Commission-confirmation work-unit commit: `31ddd53f` (`data: confirm october exam commissions`).
   - Ordered-inheritance work-unit commit: `875bd445` (`data: inherit october question metadata`).
-  - Legal-ambiguity resolution work unit: `data: resolve october legal ambiguities` (single scoped commit; hash reported in delivery).
+  - Legal-ambiguity resolution work-unit commit: `c70ce76f` (`data: resolve october legal ambiguities`).
 - [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
   - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
 - [ ] **NQ-05 — Add the Home module.**
