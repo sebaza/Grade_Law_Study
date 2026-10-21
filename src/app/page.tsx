@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { AppSidebar } from "./sidebar";
+import { HomeQuestionFeed } from "./home-question-feed";
 
 type StatsResponse = {
   summary: {
@@ -260,7 +261,7 @@ export default function HomePage() {
           </section>
         )}
 
-        {!isLoading && loggedOut && !errorMessage && <HomeLanding overview={overview} />}
+        {!isLoading && loggedOut && !errorMessage && <><HomeLanding overview={overview} /><HomeQuestionFeed isPublic /></>}
 
         {!isLoading && stats && history && (
           <>
@@ -286,6 +287,7 @@ export default function HomePage() {
                 <p className="kpi-note">{stats.summary.needsReview} para repaso</p>
               </article>
             </section>
+            <HomeQuestionFeed isPublic={false} />
 
             <section className="dashboard-analytics-grid home-focus-grid">
               <article className="practice-card-large wide-panel">
