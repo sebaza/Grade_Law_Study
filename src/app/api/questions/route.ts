@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getPrisma } from "@/lib/db/prisma";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { buildQuestionSearchWhere } from "@/lib/home/question-search";
 
 const difficultyValues = new Set(["low", "medium", "high"]);
 
@@ -35,12 +36,12 @@ export async function GET(request: Request) {
     subsubject: subsubject ? { name: subsubject } : undefined,
     difficulty: difficulty as "low" | "medium" | "high" | undefined,
     questionType,
-    statement: q ? { contains: q, mode: "insensitive" as const } : undefined,
     professors: professorId
       ? { some: { professorId } }
       : professor
         ? { some: { professor: { name: professor } } }
         : undefined,
+    ...buildQuestionSearchWhere(q),
   };
 
   const supabase = await createSupabaseServerClient();

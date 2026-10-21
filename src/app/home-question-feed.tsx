@@ -17,6 +17,7 @@ function shortDate(value: string) {
 
 export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
   const [view, setView] = useState<"recent" | "featured">("recent");
+  const [searchTerm, setSearchTerm] = useState("");
   const [feed, setFeed] = useState<FeedResponse | null>(null);
   const [cursor, setCursor] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +29,7 @@ export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
     try {
       const query = new URLSearchParams({ view: nextView, limit: "3" });
       if (nextCursor) query.set("cursor", nextCursor);
+      if (searchTerm.trim()) query.set("q", searchTerm.trim());
       const response = await fetch(`/api/home/questions?${query}`);
       if (!response.ok) throw new Error("No se pudieron cargar las preguntas nuevas.");
       const result = await response.json() as FeedResponse;
@@ -45,6 +47,8 @@ export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
   useEffect(() => {
     const controller = new AbortController();
     const query = new URLSearchParams({ view, limit: "3" });
+    if (searchTerm.trim()) query.set("q", searchTerm.trim());
+    const timeout = window.setTimeout(() => {
     fetch(`/api/home/questions?${query}`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error("No se pudieron cargar las preguntas nuevas.");
@@ -61,14 +65,24 @@ export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
         setError(loadError instanceof Error ? loadError.message : "Error al cargar preguntas.");
         setIsLoading(false);
       });
-    return () => controller.abort();
-  }, [view]);
+    }, 250);
+    return () => { window.clearTimeout(timeout); controller.abort(); };
+  }, [view, searchTerm]);
 
   return (
     <section className="practice-card-large home-question-feed" aria-labelledby="home-question-feed-title">
       <div className="section-heading-row">
         <div><p className="eyebrow">Para practicar</p><h2 id="home-question-feed-title">Preguntas recién agregadas</h2></div>
       </div>
+      <label className="home-question-search-label" htmlFor="home-question-search">Buscar preguntas</label>
+      <input
+        id="home-question-search"
+        className="home-question-search"
+        type="search"
+        value={searchTerm}
+        onChange={(event) => { setIsLoading(true); setFeed(null); setCursor(null); setSearchTerm(event.target.value); }}
+        placeholder="Enunciado, materia, profesor o contenido…"
+      />
       <div className="home-question-tabs" aria-label="Tipo de preguntas">
         <button type="button" aria-pressed={view === "recent"} onClick={() => { if (view !== "recent") { setIsLoading(true); setFeed(null); setView("recent"); } }}>Más recientes</button>
         <button type="button" aria-pressed={view === "featured"} onClick={() => { if (view !== "featured") { setIsLoading(true); setFeed(null); setView("featured"); } }}>Destacadas</button>

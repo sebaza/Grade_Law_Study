@@ -2,17 +2,18 @@ import { NextResponse } from "next/server";
 import { getPrisma } from "@/lib/db/prisma";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { getHomeQuestionOrder, parseHomeFeedRequest, summarizePublicAreas } from "@/lib/home/question-feed";
+import { buildQuestionSearchWhere } from "@/lib/home/question-search";
 
 export async function GET(request: Request) {
   const db = getPrisma();
   const { searchParams } = new URL(request.url);
-  const { view, limit, cursor } = parseHomeFeedRequest(searchParams);
+  const { view, limit, cursor, query } = parseHomeFeedRequest(searchParams);
   const supabase = await createSupabaseServerClient();
   const { data } = await supabase.auth.getUser();
   const userId = data.user?.id;
   const orderBy = getHomeQuestionOrder(view);
   const selected = await db.question.findMany({
-    where: { isActive: true },
+    where: { isActive: true, ...buildQuestionSearchWhere(query) },
     orderBy,
     ...(userId && cursor ? { cursor: { id: cursor.id }, skip: 1 } : {}),
     take: userId ? limit + 1 : 3,

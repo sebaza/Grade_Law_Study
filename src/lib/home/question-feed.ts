@@ -8,7 +8,8 @@ export function parseHomeFeedRequest(params: URLSearchParams) {
   const rawCursor = params.get("cursor");
   const [createdAt, id] = rawCursor?.split("|") ?? [];
   const cursor = createdAt && id && !Number.isNaN(Date.parse(createdAt)) ? { createdAt, id } : null;
-  return { view, limit, cursor };
+  const query = params.get("q")?.trim().slice(0, 200) || undefined;
+  return { view, limit, cursor, query };
 }
 
 export function getHomeQuestionOrder(view: HomeQuestionView) {
