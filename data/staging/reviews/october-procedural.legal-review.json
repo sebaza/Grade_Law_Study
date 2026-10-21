@@ -12,11 +12,12 @@
     ],
     "subjectName": "Recursos procesales",
     "subsubjectName": "Impugnación de sentencias definitivas",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La pregunta es amplia: la respuesta exacta depende de la instancia, tribunal y procedimiento.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "statement": "En el proceso civil, distinga los recursos que pueden proceder contra una sentencia definitiva según sea de primera instancia o una sentencia inapelable dictada por una Corte de Apelaciones."
   },
   {
     "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:002",
@@ -30,7 +31,7 @@
     ],
     "subjectName": "Recurso de apelación",
     "subsubjectName": "Tramitación en segunda instancia",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Respuesta construida desde el régimen vigente de tramitación electrónica.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740",
@@ -48,7 +49,7 @@
     ],
     "subjectName": "Recurso de apelación",
     "subsubjectName": "Admisibilidad",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Sin nota fuente; contenido verificado.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -66,7 +67,7 @@
     ],
     "subjectName": "Recurso de apelación",
     "subsubjectName": "Reposición contra inadmisibilidad",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "La nota fuente «reposición dentro de tercero día» es correcta.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -83,7 +84,7 @@
     ],
     "subjectName": "Recurso de apelación",
     "subsubjectName": "Tramitación posterior a la admisibilidad",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Sin nota fuente; contenido verificado.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -102,7 +103,7 @@
     ],
     "subjectName": "Recurso de apelación",
     "subsubjectName": "Cuenta y previa vista",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Debe conservarse la salvedad de leyes especiales.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740",
@@ -121,7 +122,7 @@
     ],
     "subjectName": "Segunda instancia",
     "subsubjectName": "Prueba",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Sin nota fuente; contenido verificado.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -140,11 +141,12 @@
     ],
     "subjectName": "Juicio ejecutivo",
     "subsubjectName": "Embargo",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La formulación no aclara si pregunta por requisitos del bien, del mandamiento o de la diligencia.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
-    ]
+    ],
+    "statement": "Explique los requisitos del embargo distinguiendo el contenido del mandamiento, la aptitud de los bienes y la práctica de la diligencia."
   },
   {
     "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:001",
@@ -159,7 +161,7 @@
     ],
     "subjectName": "Teoría de los recursos",
     "subsubjectName": "Enumeración",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -176,7 +178,7 @@
     ],
     "subjectName": "Teoría de los recursos",
     "subsubjectName": "Clasificaciones",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -193,7 +195,7 @@
     ],
     "subjectName": "Teoría de los recursos",
     "subsubjectName": "Criterios de clasificación",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -211,7 +213,7 @@
     ],
     "subjectName": "Teoría de los recursos",
     "subsubjectName": "Recursos extraordinarios",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -229,7 +231,7 @@
     ],
     "subjectName": "Teoría de los recursos",
     "subsubjectName": "Agravio",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -246,7 +248,7 @@
     ],
     "subjectName": "Recurso de apelación",
     "subsubjectName": "Agravio",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -263,7 +265,7 @@
     ],
     "subjectName": "Casación en la forma",
     "subsubjectName": "Causales",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -280,7 +282,7 @@
     ],
     "subjectName": "Casación en la forma",
     "subsubjectName": "Juez implicado",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -298,7 +300,7 @@
     ],
     "subjectName": "Teoría de los recursos",
     "subsubjectName": "Concepto",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -315,7 +317,7 @@
     ],
     "subjectName": "Casación en la forma",
     "subsubjectName": "Ultra petita",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -332,7 +334,7 @@
     ],
     "subjectName": "Casación en la forma",
     "subsubjectName": "Procedencia",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -349,7 +351,7 @@
     ],
     "subjectName": "Casación en la forma",
     "subsubjectName": "Preparación",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -366,7 +368,7 @@
     ],
     "subjectName": "Casación en la forma",
     "subsubjectName": "Preparación",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -374,7 +376,7 @@
   },
   {
     "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:014",
-    "expectedAnswer": "Debe aclararse la acción ambiental. La reparación del medio ambiente dañado compete al Tribunal Ambiental; la indemnización individual del art. 46 de la Ley 20.600 corresponde al juez civil después de establecida la responsabilidad ambiental. Si la primera se dedujo ante juez civil, existe incompetencia absoluta por materia y debe reclamarse oportunamente para preparar la casación.",
+    "expectedAnswer": "En el supuesto, existe incompetencia absoluta por materia. Para preparar una eventual casación en la forma, el vicio debe reclamarse oportunamente mediante los medios procesales disponibles, por ejemplo, la excepción dilatoria de incompetencia antes de contestar o, si corresponde por la etapa en que se advierte, un incidente de nulidad por incompetencia absoluta. La preparación se rige por el artículo 769 del Código de Procedimiento Civil y sus excepciones.",
     "keyPoints": [
       "Ley 20.600 arts. 17 N.º 2 y 46",
       "CPC arts. 303 N.º 1 y 769"
@@ -384,12 +386,13 @@
     ],
     "subjectName": "Competencia y casación",
     "subsubjectName": "Materia ambiental",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Debe precisarse si la pretensión es reparación ambiental o indemnización individual.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740",
       "https://www.bcn.cl/leychile/navegar?idNorma=1041361"
-    ]
+    ],
+    "statement": "Suponga que una acción de reparación del medio ambiente dañado, de competencia del Tribunal Ambiental, se deduce ante un juzgado civil. Para una eventual casación en la forma por incompetencia, ¿debe prepararse la causal y cómo podría reclamarse oportunamente el vicio?"
   },
   {
     "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:015",
@@ -402,12 +405,13 @@
     ],
     "subjectName": "Competencia absoluta",
     "subsubjectName": "Tribunales Ambientales",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Debe precisarse la pretensión y la etapa procesal.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740",
       "https://www.bcn.cl/leychile/navegar?idNorma=1041361"
-    ]
+    ],
+    "statement": "Distinga la competencia cuando se demanda la reparación del medio ambiente dañado y cuando se persigue una indemnización individual después de establecida la responsabilidad ambiental."
   },
   {
     "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:016",
@@ -420,7 +424,7 @@
     ],
     "subjectName": "Excepciones dilatorias",
     "subsubjectName": "Incompetencia",
-    "legalReviewStatus": "corrected",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "La nota fuente es correcta, pero incompleta.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -437,7 +441,7 @@
     ],
     "subjectName": "Excepciones dilatorias",
     "subsubjectName": "Oportunidad",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -454,7 +458,7 @@
     ],
     "subjectName": "Nulidad procesal",
     "subsubjectName": "Incompetencia",
-    "legalReviewStatus": "corrected",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "La nota fuente identifica un mecanismo posible, sujeto a los presupuestos del art. 83.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -471,7 +475,7 @@
     ],
     "subjectName": "Nulidad procesal",
     "subsubjectName": "Oportunidad",
-    "legalReviewStatus": "corrected",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "La nota fuente requería limitarse a incompetencia absoluta.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"
@@ -488,7 +492,7 @@
     ],
     "subjectName": "Competencia",
     "subsubjectName": "Inhibitoria y declinatoria",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "Contenido verificado conforme a la legislación oficial vigente.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=22740"

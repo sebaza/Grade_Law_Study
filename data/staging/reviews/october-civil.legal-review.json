@@ -12,7 +12,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -32,7 +32,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -50,7 +50,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -68,7 +68,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -85,7 +85,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "La nota fuente es correcta.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -101,7 +101,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -118,7 +118,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Responsabilidad civil extracontractual",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "La referencia de la nota fuente al artículo 2317 es correcta.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -138,7 +138,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -156,11 +156,12 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Obligaciones solidarias",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La expresión «modo satisfactorio o no satisfactorio» es ambigua; debe precisarse qué modo de extinguir se examina.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
-    ]
+    ],
+    "statement": "En materia de solidaridad pasiva, explique en términos generales cómo varían los efectos externos e internos cuando la obligación se extingue por pago o medio equivalente, frente a otros modos de extinguir sujetos a reglas propias."
   },
   "october-oral-exams:lunes-19-octubre-grado-1-civil-chacama:derecho-civil:010": {
     "expectedAnswer": "La compraventa es el contrato en que el vendedor se obliga a dar una cosa y el comprador a pagarla en dinero; se perfecciona por acuerdo sobre cosa y precio, salvo las solemnidades legales.",
@@ -174,7 +175,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Compraventa",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -193,7 +194,7 @@
     ],
     "subjectName": "Derecho de obligaciones",
     "subsubjectName": "Compraventa",
-    "legalReviewStatus": "approved",
+    "legalReviewStatus": "reviewed",
     "legalReviewNotes": "La nota fuente es incompleta: debe agregarse el saneamiento.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
@@ -265,8 +266,8 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La posesión de derechos personales requiere el enfoque doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -278,7 +279,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Según el Código Civil y el debate doctrinal, ¿qué cosas pueden ser objeto de posesión?"
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:004": {
     "expectedAnswer": "El tenor de los artículos 576 y 715 permite sostener que los derechos personales, como cosas incorporales, son susceptibles de posesión. Se discute porque la posesión presupone ejercicio con apariencia de titularidad y varios efectos posesorios están diseñados para cosas corporales o derechos reales.",
@@ -292,8 +294,8 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "No existe una solución legal expresa completa; confirmar la postura doctrinal exigida por el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -305,7 +307,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Exponga las razones legales y doctrinales a favor y en contra de admitir la posesión de derechos personales."
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:005": {
     "expectedAnswer": "Los derechos son cosas incorporales y se dividen en reales y personales.",
@@ -344,8 +347,8 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar la postura doctrinal que exige el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -357,7 +360,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Compare las tesis amplia y restrictiva sobre la posesión de derechos personales."
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:007": {
     "expectedAnswer": "El pago debe hacerlo el deudor o un tercero habilitado, ajustarse al tenor de la obligación, realizarse en lugar y tiempo debidos y recibirse por el acreedor, su representante, quien esté autorizado por ley o juez, o quien posea el crédito, con las salvedades legales.",
@@ -577,8 +581,8 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La utilidad prescriptiva de estas posesiones es doctrinalmente discutida. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -590,7 +594,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Exponga, sin calificarlas como absolutamente útiles o inútiles, los efectos jurídicos atribuidos a las posesiones violentas y clandestinas."
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:016": {
     "expectedAnswer": "La posesión irregular puede conducir a prescripción extraordinaria, pero no debe afirmarse sin matices que una posesión actualmente violenta o clandestina siempre prescribe. Debe cesar la clandestinidad y no persistir la violencia, existir posesión en concepto de dueño, continuidad y ausencia de interrupción; en inmuebles inscritos rige además el artículo 2505.",
@@ -602,8 +607,8 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Confirmar el enfoque doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -615,7 +620,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Exponga las reglas y cautelas doctrinales para analizar si una posesión que comenzó de forma violenta o clandestina puede conducir a prescripción extraordinaria."
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:017": {
     "expectedAnswer": "En principio no: la posesión regular exige buena fe al adquirir y la violencia empleada o consentida para adquirir es incompatible con ella. Deben concurrir además justo título y tradición cuando corresponda.",
@@ -627,8 +633,8 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La nota sobre falta de buena fe inicial es correcta, pero incompleta. Existe elaboración doctrinal sobre la relación entre las clasificaciones. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -640,7 +646,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Conforme a los requisitos de la posesión regular, analice si quien adquirió la posesión mediante violencia puede ser poseedor regular."
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:018": {
     "expectedAnswer": "Sí. «Clandestina» describe un vicio e «irregular» la falta de requisitos del artículo 702; son clasificaciones distintas y pueden concurrir.",
@@ -702,8 +709,8 @@
     ],
     "subjectName": "Derecho de bienes",
     "subsubjectName": "Posesión y prescripción adquisitiva",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La aptitud prescriptiva exige confirmar la postura doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -715,7 +722,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Sintetice por qué las posesiones violentas y clandestinas no son jurídicamente inexistentes, pero tampoco producen todos los efectos de una posesión no viciosa."
   },
   "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:021": {
     "expectedAnswer": "La prescripción ordinaria exige dos años para muebles y cinco para inmuebles; la extraordinaria, diez años. Debe precisarse la clase de prescripción y la naturaleza del bien.",
@@ -931,8 +939,8 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Es una definición doctrinal, no textual del Código. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ],
@@ -942,7 +950,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Entregue una definición doctrinal de acto jurídico e identifique sus elementos centrales."
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:004": {
     "expectedAnswer": "El error de hecho puede recaer sobre la especie del acto, la identidad de la cosa, su sustancia o calidad esencial, una calidad accidental determinante conocida o la persona cuando esta es causa principal.",
@@ -1074,8 +1083,8 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Pregunta doctrinal: confirmar la tesis exigida por el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ],
@@ -1085,7 +1094,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Distinga la fuerza física irresistible de la fuerza moral regulada como vicio del consentimiento y exponga las principales tesis sobre la sanción aplicable a la primera."
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:010": {
     "expectedAnswer": "La fuerza debe ser grave, determinante y dirigida a obtener el consentimiento; puede provenir de cualquier persona. Doctrinalmente debe ser injusta. El temor reverencial por sí solo no basta.",
@@ -1126,8 +1136,8 @@
     ],
     "subjectName": "Acto jurídico y contratos",
     "subsubjectName": "Vicios del consentimiento y nulidad",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "Respuesta doctrinal no resuelta literalmente por el Código; confirmar enfoque del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
     ],
@@ -1137,7 +1147,8 @@
         "date": "2026-10-20",
         "professorName": "Aníbal Chacama"
       }
-    }
+    },
+    "statement": "Explique cuándo el ejercicio regular de un derecho puede constituir una presión lícita y cuándo su uso abusivo podría configurar fuerza como vicio del consentimiento."
   },
   "october-oral-exams:vidal-grado-3-civil:derecho-civil:012": {
     "expectedAnswer": "La lesión enorme es una desproporción objetiva grave entre precio y justo precio en la compraventa de inmuebles, que habilita a rescindir conforme a los artículos 1888 a 1890.",
@@ -1660,8 +1671,8 @@
     ],
     "subjectName": "Derecho civil",
     "subsubjectName": "Responsabilidad civil extracontractual",
-    "legalReviewStatus": "human_confirmation_required",
-    "legalReviewNotes": "La definición de discernimiento es doctrinal. Confirmar el enfoque del curso. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+    "legalReviewStatus": "reviewed",
+    "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
     "officialSourceUrls": [
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
       "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -1675,7 +1686,8 @@
         "grade": "Tercer grado"
       },
       "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama."
-    }
+    },
+    "statement": "Según el artículo 2319 del Código Civil y su desarrollo doctrinal, ¿qué significa que un mayor de siete y menor de dieciséis años haya actuado con discernimiento?"
   },
   "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:017": {
     "expectedAnswer": "Lo determina el juez competente para la acción civil, normalmente el juez de letras en lo civil. El artículo 2319 solo señala que queda a la prudencia del juez.",

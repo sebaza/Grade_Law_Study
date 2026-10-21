@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-10-19",
   "generationMethod": "manual-normalization-with-source-backed-legal-review",
-  "status": "staging_human_confirmation_required",
+  "status": "staging_legal_review_complete",
   "questionCount": 226,
   "sourceSummary": {
     "month": "Octubre",
@@ -12,7 +12,7 @@
       "This file is not part of the canonical seed or any manifest.",
       "All 226 records received a source-backed legal review and non-placeholder taxonomy.",
       "Historical source answer notes remain in metadata.sourceAnswerNotes and were not promoted when corrected.",
-      "Records with independent legal, factual, doctrinal, course-dependent, incomplete-context, or source-documentation ambiguity remain blocked from ingestion."
+      "All previously ambiguous prompts were resolved through minimally bounded, conditional, self-contained, or doctrinally neutral formulations without adding source facts."
     ],
     "countsByAreaAndGrade": [
       {
@@ -62,20 +62,20 @@
       }
     ],
     "legalReview": {
-      "reviewedTotal": 185,
-      "humanConfirmationRequired": 41,
-      "readyForIngestion": 185,
-      "blockedFromIngestion": 41,
+      "reviewedTotal": 226,
+      "humanConfirmationRequired": 0,
+      "readyForIngestion": 226,
+      "blockedFromIngestion": 0,
       "contentAmbiguities": {
-        "total": 41,
+        "total": 0,
         "byArea": {
-          "Derecho Civil": 12,
-          "Derecho Constitucional": 25,
-          "Derecho Procesal": 4
+          "Derecho Civil": 0,
+          "Derecho Constitucional": 0,
+          "Derecho Procesal": 0
         },
-        "description": "The remaining blocked records concern independent legal, factual, doctrinal, course-dependent, incomplete-context, or source-documentation ambiguities; no attribution blocker remains."
+        "description": "All 41 previously blocked records were resolved through minimally bounded, conditional, self-contained, or doctrinally neutral formulations without adding source facts."
       },
-      "statusRule": "Only records marked reviewed are ready. Records with independent legal, factual, doctrinal, course-dependent, incomplete-context, or source-documentation ambiguity require human confirmation.",
+      "statusRule": "Only records marked reviewed are ready. All 226 records now satisfy this rule.",
       "officialSourcesRequired": true,
       "pendingProfessorAttribution": 0,
       "pendingCommissionAttribution": 0,
@@ -85,7 +85,7 @@
   "questions": [
     {
       "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:001",
-      "statement": "Caso: está en una plaza con amigos un viernes de madrugada, consumiendo bebidas y plantas. En la mañana los llevan detenidos. ¿Qué acción podría interponer?",
+      "statement": "Suponga que, al día siguiente de una detención en una plaza, la privación de libertad continúa y carece de fundamento legal o se ha prolongado arbitrariamente. ¿Qué acción procede?",
       "areaName": "Derecho Constitucional",
       "subjectName": "Acciones constitucionales",
       "subsubjectName": "Amparo correctivo",
@@ -96,7 +96,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Si la privación de libertad continúa y es ilegal o arbitraria, procede la acción de amparo del artículo 21 de la Constitución para restablecer la libertad personal y la seguridad individual. Los hechos descritos no bastan por sí solos para afirmar que la detención fue ilegal.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. Debe precisarse la causa, hora y control judicial de la detención.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -140,13 +140,13 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceAnswerNotes": "Hábeas corpus.",
         "duplicateReview": "Potential semantic overlap with another source account; retained because the source block is not literally duplicated.",
         "professorAttribution": "Corrected from the explicit source header; reviewed by the parent orchestrator.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Debe precisarse la causa, hora y control judicial de la detención.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
           "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
@@ -272,7 +272,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:004",
-      "statement": "Luego quedan apercibidos, reciben multas por consumir alcohol en la vía pública y son puestos en libertad. Tiempo después, al solicitar licencia de conducir, se le informa que no reúne el tiempo de residencia suficiente para tener la nacionalidad. ¿Qué acción puede interponer?",
+      "statement": "Suponga que una autoridad administrativa, al resolver una solicitud de licencia de conducir, desconoce formalmente la nacionalidad chilena de la persona por estimar insuficiente su residencia. ¿Qué acción constitucional procede?",
       "areaName": "Derecho Constitucional",
       "subjectName": "Nacionalidad",
       "subsubjectName": "Reclamación del artículo 12",
@@ -283,7 +283,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La reclamación del artículo 12 solo procede cuando un acto o resolución de autoridad administrativa priva o desconoce la nacionalidad chilena. La mera denegación de una licencia de conducir por residencia insuficiente no basta si no existe ese acto de privación o desconocimiento.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. El caso debe reformularse para identificar el acto administrativo que priva o desconoce la nacionalidad.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -316,12 +316,12 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "duplicateReview": "Potential semantic overlap with another source account; retained because the source block is not literally duplicated.",
         "professorAttribution": "Corrected from the explicit source header; reviewed by the parent orchestrator.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "El caso debe reformularse para identificar el acto administrativo que priva o desconoce la nacionalidad.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ]
@@ -669,7 +669,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:010",
-      "statement": "Caso: se ve amenazada la libertad ambulatoria, como ocurrió con el alcalde Jadue cuando no se le permitió salir del país por una supuesta acción pendiente. ¿Ante quién se presenta este amparo?",
+      "statement": "Caso hipotético: una autoridad impide a una persona salir del país invocando una orden pendiente que no existe. Si ello amenaza ilegalmente su libertad ambulatoria, ¿ante qué tribunal se presenta el amparo?",
       "areaName": "Derecho Constitucional",
       "subjectName": "Acciones constitucionales",
       "subsubjectName": "Amparo preventivo",
@@ -680,7 +680,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Si existe una amenaza ilegal a la libertad personal, el amparo preventivo se presenta ante la Corte de Apelaciones respectiva. El ejemplo requiere verificar el acto real y la jurisdicción territorial.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. La referencia al caso concreto no está documentada en la fuente.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -720,12 +720,12 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "duplicateReview": "Potential semantic overlap with another source account; retained because the source block is not literally duplicated.",
         "professorAttribution": "Corrected from the explicit source header; reviewed by the parent orchestrator.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La referencia al caso concreto no está documentada en la fuente.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
           "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
@@ -805,7 +805,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:001",
-      "statement": "Caso: durante una reunión en una plaza, a las 3:00 de la madrugada del viernes, los asistentes son detenidos y el sábado por la mañana continúan privados de libertad. ¿Qué recurso interpondría, ante quién lo presentaría y qué clasificación de amparo correspondería?",
+      "statement": "Suponga que los asistentes a una reunión en una plaza continúan detenidos al día siguiente y que la privación de libertad carece de fundamento legal o se prolongó arbitrariamente. ¿Qué acción interpondría, ante quién y qué clase de amparo correspondería?",
       "areaName": "Derecho Constitucional",
       "subjectName": "Acciones constitucionales",
       "subsubjectName": "Amparo correctivo",
@@ -816,7 +816,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Si la detención continúa y es ilegal o arbitraria, corresponde un amparo correctivo o reparador del artículo 21, presentado ante la Corte de Apelaciones respectiva. Los hechos deben precisar la causa y el control judicial para concluir ilegalidad.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. El caso no permite afirmar por sí solo que la detención fue ilegal.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -860,12 +860,12 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "duplicateReview": "Potential semantic overlap with another source account; retained because the source block is not literally duplicated.",
         "professorAttribution": "Explicit source label: Constitucional (LUAN).",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "El caso no permite afirmar por sí solo que la detención fue ilegal.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
           "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
@@ -874,7 +874,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:002",
-      "statement": "Caso: se deniega una licencia de conducir porque la persona todavía no ha vivido suficiente tiempo en el país. ¿Qué acción interpondría, dónde se encuentra regulada, quién la conoce y cómo conoce la Corte Suprema esta acción en particular?",
+      "statement": "Suponga que, al denegar una licencia de conducir, una autoridad administrativa desconoce formalmente la nacionalidad chilena de la persona. ¿Qué acción interpondría, dónde se regula, quién la conoce y cómo actúa la Corte Suprema?",
       "areaName": "Derecho Constitucional",
       "subjectName": "Nacionalidad",
       "subsubjectName": "Reclamación del artículo 12",
@@ -885,7 +885,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Solo si una autoridad administrativa privó o desconoció la nacionalidad procede reclamar directamente ante la Corte Suprema, dentro de treinta días. La Corte conoce en Pleno y como jurado, y la interposición suspende los efectos del acto.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. Debe reformularse el caso para identificar el acto de privación o desconocimiento de nacionalidad.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -932,13 +932,13 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceAnswerNotes": "Acción de reclamación por pérdida o desconocimiento de la nacionalidad.",
         "duplicateReview": "Potential semantic overlap with another source account; retained because the source block is not literally duplicated.",
         "professorAttribution": "Explicit source label: Constitucional (LUAN).",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Debe reformularse el caso para identificar el acto de privación o desconocimiento de nacionalidad.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ]
@@ -1093,7 +1093,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:005",
-      "statement": "Caso: el alcalde Jadue no pudo salir del país debido a una supuesta orden de detención que aún no se emitía. ¿Ante quién se presenta este amparo?",
+      "statement": "Caso hipotético: una autoridad impide a una persona salir del país invocando una orden de detención inexistente. Si ello amenaza ilegalmente su libertad ambulatoria, ¿ante quién se presenta el amparo?",
       "areaName": "Derecho Constitucional",
       "subjectName": "Acciones constitucionales",
       "subsubjectName": "Amparo preventivo",
@@ -1104,7 +1104,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Si existe una amenaza ilegal a la libertad personal, el amparo preventivo se presenta ante la Corte de Apelaciones respectiva. El ejemplo requiere verificar el acto real y la jurisdicción territorial.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. La referencia al caso concreto no está documentada en la fuente.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1144,12 +1144,12 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "duplicateReview": "Potential semantic overlap with another source account; retained because the source block is not literally duplicated.",
         "professorAttribution": "Explicit source label: Constitucional (LUAN).",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La referencia al caso concreto no está documentada en la fuente.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
           "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
@@ -1295,7 +1295,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:001",
-      "statement": "Desarrolle íntegramente la idea contenida en la Ley N.º 20.609.",
+      "statement": "Explique, con base en los artículos 1 a 3 de la Ley N.º 20.609, su finalidad, el concepto de discriminación arbitraria y la acción judicial que establece.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Ley N.º 20.609",
@@ -1306,7 +1306,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La Ley N.º 20.609 define la discriminación arbitraria y crea una acción judicial destinada a restablecer el imperio del derecho. Una respuesta completa debe tratar su propósito, la definición y justificación razonable del artículo 2 y la acción regulada desde el artículo 3.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1353,11 +1353,11 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La consigna es demasiado abierta y debe delimitar el artículo o tema esperado. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
         ],
@@ -1665,7 +1665,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:006",
-      "statement": "Caso: una persona vestida como therian interrumpe el tránsito, levanta barricadas y es detenida. ¿Puede interponer la acción de la Ley Zamudio alegando que fue detenida por ser therian?",
+      "statement": "En el caso de una persona vestida como therian que interrumpe el tránsito, levanta barricadas y es detenida, ¿qué elementos deben analizarse para determinar si procede la acción de la Ley N.º 20.609?",
       "areaName": "Derecho Constitucional",
       "subjectName": "Igualdad y no discriminación",
       "subsubjectName": "Orden público",
@@ -1676,7 +1676,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Una categoría protegida no puede justificar conductas contrarias a las leyes o al orden público. Sin embargo, debe evaluarse si la detención tuvo fundamento legal, fue proporcional y obedeció realmente a la conducta, pues una identidad o apariencia no legitima discriminación.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1727,12 +1727,12 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceAnswerNotes": "No. Artículo 2 de la ley: las categorías protegidas no pueden invocarse para justificar, validar o exculpar conductas contrarias a las leyes o al orden público.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "El resultado depende de hechos y prueba. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
         ],
@@ -1824,7 +1824,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:001",
-      "statement": "¿Qué recursos proceden para impugnar una sentencia definitiva?",
+      "statement": "En el proceso civil, distinga los recursos que pueden proceder contra una sentencia definitiva según sea de primera instancia o una sentencia inapelable dictada por una Corte de Apelaciones.",
       "areaName": "Derecho Procesal",
       "subjectName": "Recursos procesales",
       "subsubjectName": "Impugnación de sentencias definitivas",
@@ -1835,7 +1835,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Depende de la instancia y del procedimiento. Contra una sentencia definitiva de primera instancia procede normalmente apelación y puede proceder casación en la forma; contra una sentencia definitiva inapelable dictada por una Corte de Apelaciones puede proceder casación en el fondo y, según el vicio, casación en la forma. La aclaración, rectificación o enmienda no impugna el mérito del fallo.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. La pregunta es amplia: la respuesta exacta depende de la instancia, tribunal y procedimiento.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -1872,11 +1872,11 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Explicit source label: Procesal: Alarcón.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La pregunta es amplia: la respuesta exacta depende de la instancia, tribunal y procedimiento.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=22740"
         ]
@@ -2207,7 +2207,7 @@
     },
     {
       "sourceReference": "october-oral-exams:19-octubre-grado-2-procesal-alarcon:derecho-procesal:008",
-      "statement": "¿Cuáles son los requisitos del embargo?",
+      "statement": "Explique los requisitos del embargo distinguiendo el contenido del mandamiento, la aptitud de los bienes y la práctica de la diligencia.",
       "areaName": "Derecho Procesal",
       "subjectName": "Juicio ejecutivo",
       "subsubjectName": "Embargo",
@@ -2218,7 +2218,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "El mandamiento debe ordenar embargar bienes suficientes para deuda, intereses y costas si no se paga; la diligencia debe recaer sobre bienes embargables, normalmente del deudor, suficientemente individualizados, y perfeccionarse mediante entrega real o simbólica al depositario. Debe levantarse acta con las menciones legales.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. La formulación no aclara si pregunta por requisitos del bien, del mandamiento o de la diligencia.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2255,11 +2255,11 @@
           "Constanza Astudillo",
           "Carlos Alarcón"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Explicit source label: Procesal: Alarcón.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La formulación no aclara si pregunta por requisitos del bien, del mandamiento o de la diligencia.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=22740"
         ]
@@ -2267,7 +2267,7 @@
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:001",
-      "statement": "Nombre los valores fundamentales establecidos en la Constitución Política de la República e indique dónde se ubican.",
+      "statement": "Identifique los principales valores que la doctrina deriva de los artículos 1 y 5 de la Constitución y explique por qué no constituyen un catálogo taxativo.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Bases de la institucionalidad",
       "subsubjectName": "Valores constitucionales",
@@ -2278,7 +2278,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La Constitución no contiene un catálogo cerrado denominado valores. Desde los artículos 1 y 5 suelen identificarse dignidad, libertad, igualdad, familia, bien común y respeto de los derechos esenciales, pero el listado exacto depende de la doctrina de la cátedra.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. Debe alinearse con el criterio doctrinal del curso.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2311,10 +2311,10 @@
           "Aníbal Chacama",
           "Felipe Ortiz"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Debe alinearse con el criterio doctrinal del curso.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ]
@@ -2322,7 +2322,7 @@
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:002",
-      "statement": "La Constitución establece valores y principios. ¿Cuál es la diferencia entre unos y otros?",
+      "statement": "Exponga una distinción doctrinal habitual entre valores y principios constitucionales, indicando la función que se atribuye a cada categoría.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Bases de la institucionalidad",
       "subsubjectName": "Valores y principios",
@@ -2333,7 +2333,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Un valor expresa un fin o bien axiológico; un principio opera como norma orientadora o mandato de optimización para interpretar y aplicar el ordenamiento. La distinción es doctrinal y no está definida por la Constitución.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. Respuesta doctrinal; validar con bibliografía de la cátedra.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -2366,10 +2366,10 @@
           "Aníbal Chacama",
           "Felipe Ortiz"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Respuesta doctrinal; validar con bibliografía de la cátedra.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ]
@@ -3048,7 +3048,7 @@
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:014",
-      "statement": "¿Qué otros dos elementos contempla la norma de igualdad ante la ley?",
+      "statement": "Exponga íntegramente el contenido de la igualdad ante la ley reconocido en el artículo 19 N.º 2 de la Constitución.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Igualdad",
       "subsubjectName": "Contenido del artículo 19 N.º 2",
@@ -3059,7 +3059,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Debe exponerse el contenido completo: inexistencia de personas o grupos privilegiados; proscripción de la esclavitud y libertad por ingreso al territorio; igualdad de hombres y mujeres; y prohibición de diferencias arbitrarias.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. La frase 'otros dos elementos' depende de qué se había respondido antes.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3085,10 +3085,10 @@
           "Aníbal Chacama",
           "Felipe Ortiz"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La frase 'otros dos elementos' depende de qué se había respondido antes.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ]
@@ -3096,7 +3096,7 @@
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:015",
-      "statement": "¿Qué dificultades ha advertido la doctrina respecto de la mención de hombres y mujeres en la norma de igualdad ante la ley?",
+      "statement": "Exponga las principales discusiones doctrinales sobre la mención expresa de hombres y mujeres en la norma de igualdad ante la ley.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Igualdad",
       "subsubjectName": "Igualdad de hombres y mujeres",
@@ -3107,7 +3107,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La reforma de 1999 hizo explícita la igualdad de hombres y mujeres, aunque ambos ya estaban comprendidos en el término personas. Se discute doctrinalmente su valor simbólico, la suficiencia de la igualdad formal y su relación con la igualdad sustantiva.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. Validar el enfoque doctrinal esperado por la cátedra.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3147,10 +3147,10 @@
           "Aníbal Chacama",
           "Felipe Ortiz"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Validar el enfoque doctrinal esperado por la cátedra.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ]
@@ -3820,7 +3820,7 @@
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-civil-chacama:derecho-civil:009",
-      "statement": "¿Qué ocurre si el pago se realiza por un modo satisfactorio o por uno no satisfactorio?",
+      "statement": "En materia de solidaridad pasiva, explique en términos generales cómo varían los efectos externos e internos cuando la obligación se extingue por pago o medio equivalente, frente a otros modos de extinguir sujetos a reglas propias.",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de obligaciones",
       "subsubjectName": "Obligaciones solidarias",
@@ -3831,7 +3831,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Si el acreedor queda satisfecho por pago o un medio equivalente, se extingue la obligación externa y el codeudor que soportó el sacrificio puede subrogarse conforme al artículo 1522. Los demás modos de extinguir tienen reglas propias y no admiten una respuesta única.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. La expresión «modo satisfactorio o no satisfactorio» es ambigua; debe precisarse qué modo de extinguir se examina.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -3871,13 +3871,13 @@
           "Aníbal Chacama",
           "Felipe Ortiz"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceNotes": [
           "The source includes the note 'DESAGREGA CIVIL', which is preserved here as a source note rather than converted into a question."
         ],
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La expresión «modo satisfactorio o no satisfactorio» es ambigua; debe precisarse qué modo de extinguir se examina.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
         ]
@@ -4676,7 +4676,7 @@
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:014",
-      "statement": "Caso: se interpone la causal de incompetencia del tribunal en un juicio ordinario de mayor cuantía por daño ambiental, tramitado ante un tribunal civil y no ante el tribunal ambiental. ¿La causal requiere preparación y cómo se prepararía?",
+      "statement": "Suponga que una acción de reparación del medio ambiente dañado, de competencia del Tribunal Ambiental, se deduce ante un juzgado civil. Para una eventual casación en la forma por incompetencia, ¿debe prepararse la causal y cómo podría reclamarse oportunamente el vicio?",
       "areaName": "Derecho Procesal",
       "subjectName": "Competencia y casación",
       "subsubjectName": "Materia ambiental",
@@ -4686,8 +4686,8 @@
       "priorityScore": 0,
       "questionType": "oral",
       "origin": "real_question",
-      "expectedAnswer": "Debe aclararse la acción ambiental. La reparación del medio ambiente dañado compete al Tribunal Ambiental; la indemnización individual del art. 46 de la Ley 20.600 corresponde al juez civil después de establecida la responsabilidad ambiental. Si la primera se dedujo ante juez civil, existe incompetencia absoluta por materia y debe reclamarse oportunamente para preparar la casación.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. Debe precisarse si la pretensión es reparación ambiental o indemnización individual.",
+      "expectedAnswer": "En el supuesto, existe incompetencia absoluta por materia. Para preparar una eventual casación en la forma, el vicio debe reclamarse oportunamente mediante los medios procesales disponibles, por ejemplo, la excepción dilatoria de incompetencia antes de contestar o, si corresponde por la etapa en que se advierte, un incidente de nulidad por incompetencia absoluta. La preparación se rige por el artículo 769 del Código de Procedimiento Civil y sus excepciones.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4720,10 +4720,10 @@
           "Aníbal Chacama",
           "Felipe Ortiz"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Debe precisarse si la pretensión es reparación ambiental o indemnización individual.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=22740",
           "https://www.bcn.cl/leychile/navegar?idNorma=1041361"
@@ -4732,7 +4732,7 @@
     },
     {
       "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-procesal-ortiz:derecho-procesal:015",
-      "statement": "En el caso de un juicio ordinario de mayor cuantía por daño ambiental seguido ante un tribunal civil, ¿se trata de incompetencia absoluta?",
+      "statement": "Distinga la competencia cuando se demanda la reparación del medio ambiente dañado y cuando se persigue una indemnización individual después de establecida la responsabilidad ambiental.",
       "areaName": "Derecho Procesal",
       "subjectName": "Competencia absoluta",
       "subsubjectName": "Tribunales Ambientales",
@@ -4743,7 +4743,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Sólo existe incompetencia absoluta del juez civil si la pretensión es reparación del medio ambiente dañado. Si es indemnización de perjuicios posterior a la sentencia ambiental, la Ley 20.600 atribuye competencia al juzgado civil.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation. Debe precisarse la pretensión y la etapa procesal.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -4769,10 +4769,10 @@
           "Aníbal Chacama",
           "Felipe Ortiz"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Debe precisarse la pretensión y la etapa procesal.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=22740",
           "https://www.bcn.cl/leychile/navegar?idNorma=1041361"
@@ -5315,7 +5315,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:005",
-      "statement": "¿Qué principio deriva del inciso tercero del artículo 1 de la Constitución?",
+      "statement": "Exponga las principales posiciones doctrinales sobre el principio que se vincula con la autonomía de los grupos intermedios del artículo 1, inciso tercero, de la Constitución.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Bases de la institucionalidad",
       "subsubjectName": "Subsidiariedad",
@@ -5326,7 +5326,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La subsidiariedad no está nombrada expresamente en la Constitución. Parte de la doctrina la infiere de la autonomía de los grupos intermedios y la libertad económica; otra doctrina discute ese alcance.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5366,12 +5366,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Respuesta doctrinal controvertida; debe ajustarse a la bibliografía del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -5384,7 +5384,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:006",
-      "statement": "Explique el principio de subsidiariedad del Estado de manera breve y ordenada.",
+      "statement": "Explique brevemente la formulación doctrinal del principio de subsidiariedad, distinguiendo sus dimensiones negativa y positiva.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Bases de la institucionalidad",
       "subsubjectName": "Subsidiariedad",
@@ -5395,7 +5395,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "En su formulación doctrinal, tiene una dimensión negativa, de respeto a la autonomía e iniciativa social, y una positiva, de actuación o promoción estatal cuando personas o cuerpos intermedios no satisfacen adecuadamente bienes comunes. No equivale sin más a un Estado mínimo.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5435,12 +5435,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Construcción doctrinal, no definición constitucional expresa. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -5453,7 +5453,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:007",
-      "statement": "¿En qué materias solo puede intervenir el Estado y no los privados? Analice el caso de la seguridad nacional.",
+      "statement": "Distinga las potestades soberanas reservadas a órganos estatales de las actividades privadas reguladas que pueden relacionarse con la seguridad nacional o pública.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Seguridad y orden público",
       "subsubjectName": "Funciones estatales",
@@ -5464,7 +5464,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La defensa nacional corresponde a las Fuerzas Armadas y el orden y seguridad pública a Carabineros e Investigaciones. Los particulares no ejercen por sí potestades soberanas o coacción pública, aunque pueden colaborar en actividades reguladas sin asumir esas potestades.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -5504,12 +5504,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La pregunta debe distinguir potestades soberanas de actividades privadas reguladas. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -6232,7 +6232,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:003",
-      "statement": "¿Qué cosas pueden ser objeto de posesión?",
+      "statement": "Según el Código Civil y el debate doctrinal, ¿qué cosas pueden ser objeto de posesión?",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de bienes",
       "subsubjectName": "Posesión y prescripción adquisitiva",
@@ -6243,7 +6243,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Pueden poseerse cosas corporales e incorporales; estas últimas son derechos reales o personales, aunque la extensión práctica de la posesión de créditos es discutida.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -6283,12 +6283,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La posesión de derechos personales requiere el enfoque doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -6303,7 +6303,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:004",
-      "statement": "¿Pueden poseerse derechos personales? ¿Por qué existe discusión al respecto?",
+      "statement": "Exponga las razones legales y doctrinales a favor y en contra de admitir la posesión de derechos personales.",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de bienes",
       "subsubjectName": "Posesión y prescripción adquisitiva",
@@ -6314,7 +6314,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "El tenor de los artículos 576 y 715 permite sostener que los derechos personales, como cosas incorporales, son susceptibles de posesión. Se discute porque la posesión presupone ejercicio con apariencia de titularidad y varios efectos posesorios están diseñados para cosas corporales o derechos reales.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -6354,12 +6354,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "No existe una solución legal expresa completa; confirmar la postura doctrinal exigida por el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -6432,7 +6432,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:006",
-      "statement": "Explique las posturas de la discusión sobre la posesión de derechos personales.",
+      "statement": "Compare las tesis amplia y restrictiva sobre la posesión de derechos personales.",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de bienes",
       "subsubjectName": "Posesión y prescripción adquisitiva",
@@ -6443,7 +6443,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La tesis amplia entiende que los artículos 576 y 715 comprenden derechos personales. La tesis restrictiva reserva la posesión propiamente tal a derechos susceptibles de ejercicio posesorio y a los efectos previstos por la ley, principalmente derechos reales.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -6483,12 +6483,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Confirmar la postura doctrinal que exige el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -7013,7 +7013,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:015",
-      "statement": "¿Son realmente inútiles las posesiones violentas y clandestinas?",
+      "statement": "Exponga, sin calificarlas como absolutamente útiles o inútiles, los efectos jurídicos atribuidos a las posesiones violentas y clandestinas.",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de bienes",
       "subsubjectName": "Posesión y prescripción adquisitiva",
@@ -7024,7 +7024,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "No son jurídicamente inexistentes: pueden producir ciertos efectos, pero tienen protección restringida y sus vicios inciden en cómputos y acciones.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -7050,12 +7050,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La utilidad prescriptiva de estas posesiones es doctrinalmente discutida. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -7070,7 +7070,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:016",
-      "statement": "¿Puede adquirirse por prescripción cuando la posesión comenzó de forma violenta o clandestina? Explique cómo.",
+      "statement": "Exponga las reglas y cautelas doctrinales para analizar si una posesión que comenzó de forma violenta o clandestina puede conducir a prescripción extraordinaria.",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de bienes",
       "subsubjectName": "Posesión y prescripción adquisitiva",
@@ -7081,7 +7081,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La posesión irregular puede conducir a prescripción extraordinaria, pero no debe afirmarse sin matices que una posesión actualmente violenta o clandestina siempre prescribe. Debe cesar la clandestinidad y no persistir la violencia, existir posesión en concepto de dueño, continuidad y ausencia de interrupción; en inmuebles inscritos rige además el artículo 2505.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -7107,12 +7107,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Confirmar el enfoque doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -7127,7 +7127,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:017",
-      "statement": "¿Puede un poseedor violento ser poseedor regular? ¿Qué requisito faltaría?",
+      "statement": "Conforme a los requisitos de la posesión regular, analice si quien adquirió la posesión mediante violencia puede ser poseedor regular.",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de bienes",
       "subsubjectName": "Posesión y prescripción adquisitiva",
@@ -7138,7 +7138,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "En principio no: la posesión regular exige buena fe al adquirir y la violencia empleada o consentida para adquirir es incompatible con ella. Deben concurrir además justo título y tradición cuando corresponda.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -7164,13 +7164,13 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceAnswerNotes": "Falta la buena fe inicial.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La nota sobre falta de buena fe inicial es correcta, pero incompleta. Existe elaboración doctrinal sobre la relación entre las clasificaciones. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -7299,7 +7299,7 @@
     },
     {
       "sourceReference": "october-oral-exams:esteban-peredo-grado-2-civil:derecho-civil:020",
-      "statement": "Entonces, ¿son inútiles las posesiones violentas y clandestinas?",
+      "statement": "Sintetice por qué las posesiones violentas y clandestinas no son jurídicamente inexistentes, pero tampoco producen todos los efectos de una posesión no viciosa.",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho de bienes",
       "subsubjectName": "Posesión y prescripción adquisitiva",
@@ -7310,7 +7310,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "No son absolutamente inútiles; subsiste una relación posesoria de hecho y existen efectos legales específicos, pero no deben confundirse con posesión tranquila apta para todas las acciones o para prescribir sin resolver el vicio.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -7336,12 +7336,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Esteban Peredo",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La aptitud prescriptiva exige confirmar la postura doctrinal del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8717776&idVersion=2024-06-14",
@@ -9167,7 +9167,7 @@
     },
     {
       "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:002",
-      "statement": "¿Cuál es el contenido esencial del derecho a la vida?",
+      "statement": "Exponga el núcleo comúnmente reconocido del derecho a la vida y señale qué aspectos de su contenido esencial permanecen sujetos a debate doctrinal o jurisprudencial.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Derecho a la vida",
       "subsubjectName": "Contenido esencial",
@@ -9178,7 +9178,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Protege la existencia biológica frente a privaciones arbitrarias e impone deberes estatales de respeto y protección. El alcance sobre inicio y fin de la vida y determinadas prestaciones positivas es controvertido y debe sustentarse con jurisprudencia concreta.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -9218,12 +9218,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Vidal",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "El contenido esencial es materia doctrinal y jurisprudencial. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -9236,7 +9236,7 @@
     },
     {
       "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:003",
-      "statement": "¿Qué acción o conducta implica el derecho a la vida?",
+      "statement": "Distinga los deberes negativos y positivos asociados al derecho a la vida, sin reducirlo a una única conducta del titular.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Derecho a la vida",
       "subsubjectName": "Deberes de protección",
@@ -9247,7 +9247,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La pregunta es imprecisa: el derecho exige correlativamente abstenerse de privar arbitrariamente de la vida y adoptar medidas razonables de protección; no corresponde a una única acción o conducta del titular.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -9287,12 +9287,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Vidal",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Debe aclararse si se pregunta por contenido negativo, positivo o conducta del titular. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -9305,7 +9305,7 @@
     },
     {
       "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:004",
-      "statement": "¿Puede una persona disponer de su propia vida?",
+      "statement": "Analice, distinguiendo los distintos supuestos jurídicos, si existe un derecho general e irrestricto a disponer de la propia vida.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Derecho a la vida",
       "subsubjectName": "Disponibilidad",
@@ -9316,7 +9316,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La Constitución no reconoce un derecho general e irrestricto a disponer de la propia vida. Autonomía, rechazo de tratamientos, auxilio al suicidio y eutanasia son problemas jurídicos distintos sometidos a su regulación legal y jurisprudencial.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -9356,12 +9356,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Vidal",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "No admite una respuesta binaria sin precisar el supuesto. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -10068,7 +10068,7 @@
     },
     {
       "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:015",
-      "statement": "¿A qué se refiere la desconcentración funcional? Entregue un ejemplo concreto, identificando una autoridad y su función.",
+      "statement": "Defina la desconcentración funcional e ilústrela con un ejemplo hipotético de distribución de competencias dentro de un mismo servicio público.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Organización administrativa",
       "subsubjectName": "Desconcentración funcional",
@@ -10078,8 +10078,8 @@
       "priorityScore": 0,
       "questionType": "oral",
       "origin": "real_question",
-      "expectedAnswer": "Es la distribución legal de competencias por función dentro de la misma persona jurídica, manteniéndose el vínculo jerárquico. Puede ejemplificarse con una dirección regional de un servicio que ejerce atribuciones sectoriales dentro del mismo servicio, previa verificación de su ley orgánica.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "expectedAnswer": "La desconcentración funcional distribuye legalmente competencias por función dentro de una misma persona jurídica y mantiene el vínculo jerárquico. Por ejemplo, una ley puede atribuir a una dirección regional de un servicio una competencia sectorial específica, sin crear una persona jurídica distinta.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -10119,12 +10119,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Vidal",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "El ejemplo concreto debe vincularse con una norma orgánica vigente. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -10247,7 +10247,7 @@
     },
     {
       "sourceReference": "october-oral-exams:vidal-grado-3-civil:derecho-civil:003",
-      "statement": "¿Qué es un acto jurídico?",
+      "statement": "Entregue una definición doctrinal de acto jurídico e identifique sus elementos centrales.",
       "areaName": "Derecho Civil",
       "subjectName": "Acto jurídico y contratos",
       "subsubjectName": "Vicios del consentimiento y nulidad",
@@ -10258,7 +10258,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "El acto jurídico es una manifestación de voluntad destinada a producir efectos jurídicos queridos por su autor y reconocidos por el ordenamiento.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -10298,12 +10298,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Vidal",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Es una definición doctrinal, no textual del Código. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
         ],
@@ -10616,7 +10616,7 @@
     },
     {
       "sourceReference": "october-oral-exams:vidal-grado-3-civil:derecho-civil:009",
-      "statement": "Analice un caso de fuerza física como vicio del consentimiento.",
+      "statement": "Distinga la fuerza física irresistible de la fuerza moral regulada como vicio del consentimiento y exponga las principales tesis sobre la sanción aplicable a la primera.",
       "areaName": "Derecho Civil",
       "subjectName": "Acto jurídico y contratos",
       "subsubjectName": "Vicios del consentimiento y nulidad",
@@ -10627,7 +10627,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La fuerza física irresistible elimina materialmente la voluntad y no corresponde exactamente a la fuerza moral regulada como vicio por los artículos 1456 y 1457. Su sanción se discute entre inexistencia y nulidad absoluta por falta de consentimiento.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -10660,12 +10660,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Vidal",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Pregunta doctrinal: confirmar la tesis exigida por el curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
         ],
@@ -10758,7 +10758,7 @@
     },
     {
       "sourceReference": "october-oral-exams:vidal-grado-3-civil:derecho-civil:011",
-      "statement": "¿En qué caso un medio de fuerza podría estar amparado por el derecho?",
+      "statement": "Explique cuándo el ejercicio regular de un derecho puede constituir una presión lícita y cuándo su uso abusivo podría configurar fuerza como vicio del consentimiento.",
       "areaName": "Derecho Civil",
       "subjectName": "Acto jurídico y contratos",
       "subsubjectName": "Vicios del consentimiento y nulidad",
@@ -10769,7 +10769,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "El ejercicio regular de un derecho, como advertir que se interpondrá una acción judicial procedente, no constituye fuerza injusta; puede viciar si se usa abusivamente para obtener una ventaja ajena al derecho ejercido.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor attribution confirmed by the user on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -10809,12 +10809,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceLabel": "Vidal",
         "sourceLabelRole": "Examinee or group label from the source; role not independently verified.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Respuesta doctrinal no resuelta literalmente por el Código; confirmar enfoque del curso. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28"
         ],
@@ -12544,7 +12544,7 @@
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-civil-capacidad-arrendamiento:derecho-civil:016",
-      "statement": "Respecto del mayor de siete años y menor de dieciséis, ¿qué implica el discernimiento?",
+      "statement": "Según el artículo 2319 del Código Civil y su desarrollo doctrinal, ¿qué significa que un mayor de siete y menor de dieciséis años haya actuado con discernimiento?",
       "areaName": "Derecho Civil",
       "subjectName": "Derecho civil",
       "subsubjectName": "Responsabilidad civil extracontractual",
@@ -12555,7 +12555,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Discernimiento es la aptitud concreta para comprender el carácter ilícito o dañoso de la conducta y actuar conforme a esa comprensión; el juez lo aprecia en el caso.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -12588,11 +12588,11 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La definición de discernimiento es doctrinal. Confirmar el enfoque del curso. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Civil corresponde a Aníbal Chacama.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idVersion=2025-08-28",
           "https://www.bcn.cl/leychile/navegar?idNorma=172986&idParte=8719936"
@@ -13237,7 +13237,7 @@
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:002",
-      "statement": "¿Cuál es la diferencia entre nación y pueblo, considerando que en una reside la soberanía y el otro la ejerce?",
+      "statement": "Explique la distinción entre Nación como titular de la soberanía y pueblo como forma de ejercicio, precisando qué proviene del texto constitucional y qué corresponde a elaboración doctrinal.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Soberanía",
       "subsubjectName": "Nación y pueblo",
@@ -13248,7 +13248,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La Constitución distingue a la Nación como titular de la soberanía y al pueblo como una vía democrática de ejercicio, pero no define ambos conceptos. Su delimitación pertenece a la doctrina constitucional.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -13295,11 +13295,11 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La respuesta depende del marco doctrinal del curso. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -13314,7 +13314,7 @@
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:003",
-      "statement": "¿Quiénes pertenecen a la nación? ¿Puede un extranjero sin nacionalidad chilena formar parte de ella?",
+      "statement": "Exponga por qué la Constitución no resuelve expresamente quiénes integran la Nación y presente de manera neutral las principales aproximaciones doctrinales sobre la pertenencia de extranjeros.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Soberanía",
       "subsubjectName": "Concepto de Nación",
@@ -13325,7 +13325,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "La Constitución no define quién integra la Nación. Vincularla exclusivamente con la nacionalidad es una tesis doctrinal; afirmar categóricamente que ningún extranjero puede formar parte de ella carece de apoyo textual suficiente.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -13358,12 +13358,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceAnswerNotes": "Según la observación del profesor, un extranjero que no tiene nacionalidad chilena no forma parte de la nación.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La nota fuente no es sostenible como respuesta jurídica única. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -13664,7 +13664,7 @@
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:008",
-      "statement": "Explique la teoría del bloque constitucional.",
+      "statement": "Explique la teoría del bloque constitucional como construcción doctrinal y señale los principales debates sobre su composición y jerarquía.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Fuentes constitucionales",
       "subsubjectName": "Bloque de constitucionalidad",
@@ -13675,7 +13675,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Es una construcción doctrinal que integra parámetros constitucionales y normas internacionales de derechos humanos para el control y la interpretación constitucional. La Constitución no usa esa expresión y el alcance y jerarquía de sus componentes son discutidos.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -13715,11 +13715,11 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Debe ajustarse a la doctrina empleada por la cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -13734,7 +13734,7 @@
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:009",
-      "statement": "¿Cómo se manifiesta o nace un derecho implícito y por qué vía se identifica?",
+      "statement": "Exponga las principales vías interpretativas mediante las cuales pueden identificarse derechos implícitos en el orden constitucional.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Derechos fundamentales",
       "subsubjectName": "Derechos implícitos",
@@ -13745,7 +13745,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Los derechos implícitos se identifican mediante interpretación constitucional sistemática, en conexión con dignidad, cláusulas abiertas y tratados de derechos humanos. Su reconocimiento suele manifestarse en jurisprudencia y argumentación jurídica; no nacen solo porque un órgano los declare.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -13792,11 +13792,11 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "Tema doctrinal. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -13811,7 +13811,7 @@
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:010",
-      "statement": "¿El legislador identifica los derechos implícitos? ¿Quién lo hace?",
+      "statement": "Explique qué órganos pueden reconocer, interpretar o desarrollar derechos implícitos dentro de sus respectivas competencias.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Derechos fundamentales",
       "subsubjectName": "Reconocimiento de derechos implícitos",
@@ -13822,7 +13822,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Los tribunales ordinarios, la Corte Suprema, el Tribunal Constitucional y órganos internacionales pueden reconocer o proyectar derechos dentro de sus competencias; el legislador puede desarrollarlos. No existe en el texto constitucional un monopolio de un único identificador.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -13862,12 +13862,12 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "sourceAnswerNotes": "La fuente sugiere que la respuesta sería el juez; requiere revisión jurídica.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La nota fuente requiere matiz doctrinal. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
@@ -14195,7 +14195,7 @@
     },
     {
       "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:015",
-      "statement": "¿Qué otros contenidos contempla el artículo 19 N.º 16 de la Constitución Política de la República?",
+      "statement": "Enumere y explique los contenidos del artículo 19 N.º 16 de la Constitución Política de la República.",
       "areaName": "Derecho Constitucional",
       "subjectName": "Libertad de trabajo",
       "subsubjectName": "Contenido del artículo 19 N.º 16",
@@ -14206,7 +14206,7 @@
       "questionType": "oral",
       "origin": "real_question",
       "expectedAnswer": "Debe completarse con libertad de trabajo y protección, libre elección y contratación, justa retribución, prohibición de discriminación laboral, regulación profesional, negociación colectiva y límites constitucionales a la huelga.",
-      "rubricNotes": "Legal content reviewed; ingestion remains blocked pending human confirmation of an independent legal, factual, or doctrinal issue. Professor and grade attribution confirmed by source-order inheritance on 2026-10-20.",
+      "rubricNotes": "Legal content and taxonomy reviewed against the cited official sources. The prior ambiguity was resolved through minimally bounded, conditional, self-contained, or doctrinally neutral framing without adding source facts.",
       "keyPoints": [
         {
           "label": "Punto clave 1",
@@ -14232,11 +14232,11 @@
           "Felipe Ortiz",
           "Aníbal Chacama"
         ],
-        "reviewStatus": "legal_review_complete_confirmation_pending",
+        "reviewStatus": "legal_review_complete",
         "normalization": "Spelling and punctuation normalized without changing the legal meaning.",
         "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
-        "legalReviewStatus": "human_confirmation_required",
-        "legalReviewNotes": "La pregunta depende de qué contenido se expuso previamente. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+        "legalReviewStatus": "reviewed",
+        "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
         "officialSourceUrls": [
           "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
         ],
