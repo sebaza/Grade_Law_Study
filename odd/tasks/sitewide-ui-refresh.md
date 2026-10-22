@@ -10,7 +10,7 @@ Five coherent work units; forecast 650–1000 authored changed lines, excluding 
 - [x] F1 Shared foundations — delegated writer; token/cascade research and analyzed CSS changes. Semantic 4/6/10px radii, restrained elevation, theme-aware text, visible keyboard focus. No responsive or navigation behavior changes.
 - [x] F2 Accessible navigation — delegated writer; shared component/CSS changes. Clear current route, keyboard access, mobile navigation without overflow.
 - [x] F3 Home and bank responsive layout — delegated writer; multiple page/layout changes. Preserve feed filters and bank actions, readable mobile hierarchy.
-- [ ] F4 Practice and exam — delegated writer; related interaction/layout changes. Preserve session, answer, timer, and evaluation behavior; usable forms and action hierarchy.
+- [x] F4 Practice and exam — delegated writer; related interaction/layout changes. Preserve session, answer, timer, and evaluation behavior; usable forms and action hierarchy.
 - [ ] F5 History, authentication, and administration — delegated writer; related page/layout changes. Consistent feedback, readable lists/forms, retained administrative capabilities.
 
 ## Acceptance and checks
@@ -51,3 +51,13 @@ Edge live public Home/bank: requested widths 390, 980, 1100, 1181, 1440 (Windows
 Captures (local, ignored): output/playwright/home-bank-{home,bank}-classic-{390,980,1100,1181,1440}.png; home-bank-{home,bank}-{forest,night}-{390,1440}.png; home-bank-bank-tooltip-mobile.png. Full npm test log: output/playwright/home-bank-npm-test.txt. F3 source commit identity is recorded after the work-unit commit.
 
 `3100f756794081822c309a383682fd19f2d0cee0` — `fix(ui): make Home and question bank responsive`; 169 additions, 5 deletions (174 authored lines). Sequential F3 slice; F1/F2 remain intact. Next: F4 Practice/exam.
+
+
+## F4 Practice and exam evidence
+Route: delegated writer; analyzed two interaction pages and shared CSS. Presentation-only: calmer question typography, bounded controls, wrapped action groups with separators and 44px targets, compact mobile padding, two-column tablet filters, theme-aware clock card and squared topic blocks. Source and answer modes now expose aria-pressed in labeled groups; current exam question exposes aria-current=step. All hooks, API calls, handlers, session/authentication, timer and evaluation logic are unchanged.
+
+RED: both new structural assertions failed before edits (selection semantics and resilient layout). GREEN/refactor: all 11 UI structural tests pass; npm run typecheck, npx eslint src scripts, and git diff --check pass. npm test fails on the same baseline tmp JavaScript lint: 35 errors and one warning. React checklist: no effects/state/data fetching/component boundaries changed; native labeled controls and existing handlers retained.
+
+Edge public/demo at 390/768/1440 in classic/forest/night: 18 route/theme/viewport combinations pass no-horizontal-overflow and bounded-control assertions. Visual readback: desktop practice and mobile night exam setup. Practice interaction checks: typing enables submit, text/voice roundtrip retains answer, demo recording stays disabled, next resets answer, previous navigation works, textarea focus has a solid 3px outline. Exam setup checks: choosing a topic enables its professor, prevents duplicate topics, time and strategy remain editable; clock radius is 10px. No evaluation submitted, recording started, protected exam session or authenticated results exercised. Initial matrix captured facet-loading controls; exam screenshots refreshed after facets loaded and setup interactions. Only favicon 404 observed. Direct dataset assignment exercised all three CSS themes, not theme-button persistence (already verified F3).
+
+Captures (ignored): output/playwright/practice-exam-{practice,exam}-{classic,forest,night}-{390,768,1440}.png and practice-exam-answer-focus.png. Baseline log: output/playwright/practice-exam-npm-test.txt. Rollback boundary: F4 scoped CSS block, selection ARIA attributes in practice/exam, its regression test and task evidence; F1-F3 independent. No remote work, push/PR, or RDD. Next: F5 history/authentication/administration.

@@ -829,6 +829,7 @@ export default function ExamPage() {
 
                   return (
                     <button
+                      aria-current={index === currentIndex ? "step" : undefined}
                       className={`exam-step ${index === currentIndex ? "active" : ""} ${evaluations[question.id] ? "done" : ""}`}
                       key={question.id}
                       type="button"
@@ -867,9 +868,9 @@ export default function ExamPage() {
               {" "}{currentQuestion.subsubjectName} · {currentQuestion.keyPointCount} puntos clave esperados
             </p>
 
-            <div className="answer-mode-tabs" aria-label="Modo de respuesta">
-              <button className={answerMode === "text" ? "active" : ""} type="button" onClick={() => setAnswerMode("text")}>Texto</button>
-              <button className={answerMode === "voice" ? "active" : ""} type="button" onClick={() => setAnswerMode("voice")}>Voz</button>
+            <div className="answer-mode-tabs" role="group" aria-label="Modo de respuesta">
+              <button aria-pressed={answerMode === "text"} className={answerMode === "text" ? "active" : ""} type="button" onClick={() => setAnswerMode("text")}>Texto</button>
+              <button aria-pressed={answerMode === "voice"} className={answerMode === "voice" ? "active" : ""} type="button" onClick={() => setAnswerMode("voice")}>Voz</button>
             </div>
 
             {answerMode === "voice" ? (

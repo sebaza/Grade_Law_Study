@@ -640,9 +640,9 @@ export default function PracticePage() {
           El modo demo te deja probar sin iniciar sesión.
         </p>
 
-        <div className="mode-switch" aria-label="Tipo de práctica">
-          <button type="button" className={practiceSource === "real" ? "active" : ""} onClick={() => setPracticeSource("real")}>Real</button>
-          <button type="button" className={practiceSource === "demo" ? "active" : ""} onClick={() => setPracticeSource("demo")}>Demo</button>
+        <div className="mode-switch" role="group" aria-label="Tipo de práctica">
+          <button type="button" aria-pressed={practiceSource === "real"} className={practiceSource === "real" ? "active" : ""} onClick={() => setPracticeSource("real")}>Real</button>
+          <button type="button" aria-pressed={practiceSource === "demo"} className={practiceSource === "demo" ? "active" : ""} onClick={() => setPracticeSource("demo")}>Demo</button>
         </div>
 
         {errorMessage && (
@@ -767,16 +767,16 @@ export default function PracticePage() {
             </article>
 
             <article className="practice-card-large answer-panel">
-              <div className="answer-mode-tabs" aria-label="Modo de respuesta">
+              <div className="answer-mode-tabs" role="group" aria-label="Modo de respuesta">
                 <button
                   type="button"
-                  className={answerMode === "text" ? "active" : ""}
+                  aria-pressed={answerMode === "text"} className={answerMode === "text" ? "active" : ""}
                   onClick={() => {
                     if (isRecording) stopRecording();
                     setAnswerMode("text");
                   }}
                 >Texto</button>
-                <button type="button" className={answerMode === "voice" ? "active" : ""} onClick={() => setAnswerMode("voice")}>Voz</button>
+                <button type="button" aria-pressed={answerMode === "voice"} className={answerMode === "voice" ? "active" : ""} onClick={() => setAnswerMode("voice")}>Voz</button>
               </div>
 
               {answerMode === "voice" && (
