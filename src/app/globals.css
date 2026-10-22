@@ -3835,3 +3835,110 @@ body:has(.app-top-nav) > .theme-toggle {
 .exam-shell :is(.exam-clock-card, .exam-topic-order) {
   border-radius: var(--radius-card);
 }
+
+/* History and authentication: quiet surfaces, readable forms and bounded rows. */
+.history-student-shell .app-top-nav {
+  width: min(1180px, 100%);
+}
+
+.history-student-shell :is(section, article, .question-risk-row > div, .attempt-history-row > div) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.history-student-shell .question-risk-row {
+  border-radius: var(--radius-panel);
+}
+
+.history-student-shell :is(.question-risk-row, .attempt-history-row) {
+  line-height: 1.6;
+}
+
+.history-student-shell .history-question-link {
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.history-student-shell .attempt-actions-stack {
+  display: grid;
+  justify-items: stretch;
+  min-width: 110px;
+}
+
+.history-student-shell .attempt-actions-stack .score-pill {
+  justify-self: end;
+}
+
+.history-student-shell :is(.primary-button, .secondary-button),
+.auth-form button,
+.auth-form input {
+  min-height: 44px;
+}
+
+.history-question-anchor {
+  display: block;
+  scroll-margin-top: 110px;
+}
+
+.auth-card {
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.auth-card h1 {
+  margin-top: 22px;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.auth-form input {
+  min-height: 44px;
+  min-width: 0;
+  width: 100%;
+  color: var(--ink);
+  background: var(--surface-soft);
+}
+
+.auth-form .practice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.auth-card .auth-message {
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .auth-shell {
+    padding: 80px 18px 28px;
+    align-items: start;
+  }
+
+  .history-student-shell :is(.question-risk-row, .attempt-history-row) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .history-student-shell .attempt-actions-stack {
+    display: flex;
+    justify-content: flex-start;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+
+  .auth-form .practice-actions button {
+    flex: 1 1 140px;
+  }
+}
+
+.history-student-shell > .empty-state {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+}

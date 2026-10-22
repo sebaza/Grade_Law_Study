@@ -68,26 +68,28 @@ export default function LoginPage() {
           porcentajes, preguntas dominadas y preguntas para repaso.
         </p>
 
-        <form className="auth-form" onSubmit={submit}>
+        <form className="auth-form" onSubmit={submit} aria-busy={isLoading}>
           <label>
             Correo
-            <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+            <input type="email" name="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} required />
           </label>
           <label>
             Contraseña
-            <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={6} required />
+            <input type="password" name="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} minLength={6} required />
           </label>
 
           <div className="practice-actions">
             <button type="submit" disabled={isLoading}>{isLoading ? "Procesando..." : "Entrar"}</button>
-            <button className="secondary" type="button" disabled={isLoading} onClick={() => authenticate("signup")}>
+            <button className="secondary" type="button" disabled={isLoading} onClick={(event) => {
+              if (event.currentTarget.form?.reportValidity()) void authenticate("signup");
+            }}>
               Crear cuenta
             </button>
             {isLoggedIn && <button className="secondary" type="button" onClick={signOut}>Cerrar sesión</button>}
           </div>
         </form>
 
-        {message && <p className="auth-message">{message}</p>}
+        {message && <p className="auth-message" role="status" aria-live="polite">{message}</p>}
       </section>
     </main>
   );

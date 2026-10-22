@@ -190,9 +190,9 @@ export default function HistoryPage() {
       {isLoading && <LoadingCard label="Cargando historial..." />}
 
       {!isLoading && errorMessage && (
-        <section className="practice-card-large empty-state">
+        <section className="practice-card-large empty-state" role="alert">
           <h2>{errorMessage}</h2>
-          <p>El historial pertenece a una estudiante autenticada. Sin login no hay progreso que proteger.</p>
+          <p>Inicia sesión para consultar tus respuestas guardadas y continuar tu progreso.</p>
           <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
         </section>
       )}
@@ -222,7 +222,7 @@ export default function HistoryPage() {
             </article>
           </section>
 
-          {actionMessage && <p className="form-message success">{actionMessage}</p>}
+          {actionMessage && <p className="form-message" role="status">{actionMessage}</p>}
 
           <section className="history-grid">
             <article className="practice-card-large">
@@ -262,8 +262,11 @@ export default function HistoryPage() {
             <h2>Intentos y respuestas</h2>
             <div className="attempt-history-list">
               {history.attempts.length > 0 ? history.attempts.map((attempt) => (
-                <article className="attempt-history-row rich-attempt-row" id={`question-${attempt.question.id}`} key={attempt.id}>
+                <article className="attempt-history-row rich-attempt-row" id={`attempt-${attempt.id}`} key={attempt.id}>
                   <div>
+                    {uniqueQuestions.find((latest) => latest.question.id === attempt.question.id)?.id === attempt.id && (
+                      <span className="history-question-anchor" id={`question-${attempt.question.id}`} aria-hidden="true" />
+                    )}
                     <div className="question-meta">
                       <span>{attempt.question.areaName}</span>
                       <span>{attempt.question.subjectName}</span>

@@ -4,14 +4,15 @@
 Deliver a squared, elegant, consistent interface across Home, bank, practice, exam, history, login, admin dashboard, and admin questions while preserving functionality and all three themes. User authorized local UI/UX changes only; backend and political brief behavior are excluded.
 
 ## Scope and delivery
-Five coherent work units; forecast 650–1000 authored changed lines, excluding generated files. Advisory target approximately 400 lines per task, never a hard cap. Delivery strategy: stacked-to-main, sequential slices (prior user preference). No push or PR without explicit authorization. Branch: `codex/sitewide-ui-foundations`, based on the unpushed Home feed audit. RDD globally OFF: ordinary checks only.
+Six coherent work units; forecast 650–1000 authored changed lines, excluding generated files. Advisory target approximately 400 lines per task, never a hard cap. Delivery strategy: stacked-to-main, sequential slices (prior user preference). No push or PR without explicit authorization. Branch: `codex/sitewide-ui-foundations`, based on the unpushed Home feed audit. RDD globally OFF: ordinary checks only.
 
 ## Tasks and routes
 - [x] F1 Shared foundations — delegated writer; token/cascade research and analyzed CSS changes. Semantic 4/6/10px radii, restrained elevation, theme-aware text, visible keyboard focus. No responsive or navigation behavior changes.
 - [x] F2 Accessible navigation — delegated writer; shared component/CSS changes. Clear current route, keyboard access, mobile navigation without overflow.
 - [x] F3 Home and bank responsive layout — delegated writer; multiple page/layout changes. Preserve feed filters and bank actions, readable mobile hierarchy.
 - [x] F4 Practice and exam — delegated writer; related interaction/layout changes. Preserve session, answer, timer, and evaluation behavior; usable forms and action hierarchy.
-- [ ] F5 History, authentication, and administration — delegated writer; related page/layout changes. Consistent feedback, readable lists/forms, retained administrative capabilities.
+- [x] F5a History and authentication — delegated writer; two analyzed pages and scoped CSS. Accessible feedback/forms, stable attempt and question anchors, responsive lists.
+- [ ] F5b Administration — delegated writer; pending dashboard/questions layouts and retained administrative capabilities.
 
 ## Acceptance and checks
 - Shared components use deliberate semantic radii; avatars/spinners remain circular.
@@ -62,3 +63,15 @@ Edge public/demo at 390/768/1440 in classic/forest/night: 18 route/theme/viewpor
 
 Captures (ignored): output/playwright/practice-exam-{practice,exam}-{classic,forest,night}-{390,768,1440}.png and practice-exam-answer-focus.png. Baseline log: output/playwright/practice-exam-npm-test.txt. Rollback boundary: F4 scoped CSS block, selection ARIA attributes in practice/exam, its regression test and task evidence; F1-F3 independent. No remote work, push/PR, or RDD. Next: F5 history/authentication/administration.
 `739c5fc6805f173275fe0d61056fb9c7065c016b` — `style(ui): refine practice and exam study interfaces`; 227 additions, 10 deletions (237 authored lines). Sequential F4 slice; F1-F3 preserved. Browser and dev server stopped after checks.
+
+
+## F5a History and authentication evidence
+Route: delegated writer; analyzed history/login and scoped shared CSS. F5 split into F5a history/auth and pending F5b administration before source edits. F1-F4 preserved. History rows and action groups wrap, long content is bounded, squared row panels and calmer question typography retain hierarchy; unauthenticated feedback aligns with the page container and uses neutral Spanish guidance. Login has more restrained heading scale, bounded 44px inputs, wrapping actions, theme-aware feedback and compact mobile spacing.
+
+Fixed duplicate history IDs: each attempt now has a stable attempt-{id} anchor, and existing question-{id} links resolve to exactly one latest attempt per question. History errors announce as alerts, action messages use neutral live status rather than success styling even on failure. Login exposes busy/status semantics, named username/current-password autofill, and signup now runs existing native required/email/minLength validation before calling the unchanged authentication function. Supabase calls, redirects, auth state, data APIs and credentials remain unchanged. React checklist: no new hooks/effects or data fetching; existing labels/handlers retained.
+
+RED: all three new structural assertions failed before edits. GREEN/refactor: 14/14 UI structural tests pass; npm run typecheck, npx eslint src scripts, and git diff --check pass. Full npm test fails only baseline tmp JavaScript lint: 35 errors and one warning; log output/playwright/history-auth-npm-test.txt.
+
+Edge browser: public login and unauthenticated history at 390/768/1440 in classic/forest/night pass no-horizontal-overflow (18 combinations). Login empty and malformed signup input remains invalid, no authentication POST emitted, username autocomplete and visible solid focus outline verified. Additional browser-only synthetic history response with two attempts for one question verifies unique attempt anchors and a single legacy question anchor; all nine theme/viewport combinations pass no-overflow with long content. Synthetic fixtures do not authenticate or write data. Real authenticated history, restore mutations, actual login/signup/logout and admin flows are not exercised without credentials. Direct dataset theme assignment tests CSS rather than theme button persistence. Visual readback: mobile night login, desktop unauthenticated history, long mobile night synthetic history. Favicon 404 and expected history 401 observed.
+
+Captures ignored: output/playwright/history-auth-{auth-login,history}-{classic,forest,night}-{390,768,1440}.png, history-auth-fixture-{classic,forest,night}-{390,768,1440}.png, history-auth-login-validation.png. Server and browser stopped. No push/PR, remote work or RDD. Next: F5b administration. Commit evidence follows after work-unit commit.
