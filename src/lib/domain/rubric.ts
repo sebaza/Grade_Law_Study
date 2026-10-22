@@ -27,6 +27,8 @@ export const LAW_EXAM_RUBRIC = {
           "Identifica escasamente las normas o las define de manera precaria; tiene dificultad para ubicarlas y relacionarlas.",
         "No cumple":
           "No identifica las normas correspondientes, no las ubica y no logra relacionarlas con el ordenamiento jurídico.",
+        Ausente:
+          "No aborda el criterio: no menciona norma alguna y no hay contenido normativo evaluable.",
       },
     },
     {
@@ -46,6 +48,8 @@ export const LAW_EXAM_RUBRIC = {
           "Distingue con dificultad, no demuestra acervo jurídico mínimo, no relaciona conceptos ni usa lenguaje técnico.",
         "No cumple":
           "No distingue conceptos jurídicos ni demuestra acervo técnico o dogmático sobre la institución preguntada.",
+        Ausente:
+          "No aborda el criterio: no hay concepto jurídico alguno ni contenido técnico evaluable.",
       },
     },
     {
@@ -65,6 +69,8 @@ export const LAW_EXAM_RUBRIC = {
           "Desarrolla algunas normas o instituciones, pero fundamenta escasamente las opciones planteadas.",
         "No cumple":
           "No desarrolla ni interpreta normas o instituciones aplicables y no fundamenta opciones jurídicas.",
+        Ausente:
+          "No aborda el criterio: no hay intento de aplicación ni contenido evaluable sobre el planteamiento concreto.",
       },
     },
     {
@@ -84,6 +90,8 @@ export const LAW_EXAM_RUBRIC = {
           "Expresa ideas con poca claridad y expone de manera poco lógica, sin hilo conductor permanente.",
         "No cumple":
           "No expresa ideas con claridad ni sigue un hilo conductor común.",
+        Ausente:
+          "No aborda el criterio: no hay exposición evaluable, sea por respuesta vacía o completamente ajena a la pregunta.",
       },
     },
   ],
@@ -93,5 +101,6 @@ export const LAW_EXAM_RUBRIC = {
     { level: "Regular", score: 6 },
     { level: "Deficiente", score: 4 },
     { level: "No cumple", score: 2 },
+    { level: "Ausente", score: 0 },
   ],
 } as const;

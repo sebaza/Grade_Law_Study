@@ -52,6 +52,27 @@ type HomeHistory = {
   }>;
 };
 
+type PoliticalBriefResponse = {
+  climateSummary: string;
+  climateTone: "estable" | "activo" | "tenso" | "polarizado";
+  highlightArea: string | null;
+  highlightSubject: string | null;
+  highlightReason: string | null;
+  items: Array<{
+    title: string;
+    url: string;
+    source: string;
+    publishedAt: string | null;
+    areaName: string;
+    subjectName: string | null;
+    legalAngle: string;
+    relevance: "alta" | "media" | "baja";
+  }>;
+  sources: string[];
+  headlineCount: number;
+  generatedAt: string;
+};
+
 function scoreTone(score: number) {
   if (score >= 60) return "strong";
   if (score >= 40) return "warn";
@@ -73,6 +94,21 @@ function compactStatement(statement: string, limit = 110) {
 function shortDate(value: string) {
   return new Intl.DateTimeFormat("es-CL", { day: "2-digit", month: "short" }).format(new Date(value));
 }
+
+function relativeTime(value: string) {
+  const minutes = Math.round((Date.now() - new Date(value).getTime()) / 60000);
+  if (minutes < 60) return `hace ${Math.max(minutes, 1)} min`;
+  const hours = Math.round(minutes / 60);
+  if (hours < 24) return `hace ${hours} h`;
+  return `hace ${Math.round(hours / 24)} d`;
+}
+
+const climateToneCopy: Record<PoliticalBriefResponse["climateTone"], string> = {
+  estable: "Clima estable",
+  activo: "Agenda activa",
+  tenso: "Clima tenso",
+  polarizado: "Clima polarizado",
+};
 
 function EmptyMetric({ children }: { children: React.ReactNode }) {
   return <p className="muted-copy">{children}</p>;
@@ -105,6 +141,75 @@ function HomeSkeleton() {
         ))}
       </div>
     </div>
+  );
+}
+
+function PoliticalBriefSection({ brief, isLoading }: { brief: PoliticalBriefResponse | null; isLoading: boolean }) {
+  if (isLoading) {
+    return (
+      <section className="practice-card-large political-brief" aria-busy="true">
+        <div className="section-heading-row">
+          <h2>Coyuntura política</h2>
+        </div>
+        <span className="skeleton skel-line" />
+        <span className="skeleton skel-line short" />
+      </section>
+    );
+  }
+
+  // La coyuntura es un extra: si el feed o el modelo fallan, se oculta en
+  // silencio en vez de ensuciar el tablero con un error.
+  if (!brief || brief.items.length === 0) return null;
+
+  return (
+    <section className="practice-card-large political-brief">
+      <div className="section-heading-row">
+        <h2>Coyuntura política · Chile</h2>
+        <span className={`climate-pill tone-${brief.climateTone}`}>{climateToneCopy[brief.climateTone]}</span>
+      </div>
+
+      <p className="brief-summary">{brief.climateSummary}</p>
+
+      {brief.highlightArea && (
+        <div className="brief-highlight">
+          <div>
+            <p className="brief-highlight-label">Materia más destacable</p>
+            <strong>
+              {brief.highlightArea}
+              {brief.highlightSubject && <span className="brief-highlight-subject"> · {brief.highlightSubject}</span>}
+            </strong>
+            {brief.highlightReason && <p className="brief-highlight-reason">{brief.highlightReason}</p>}
+          </div>
+          <Link className="secondary-button" href={`/questions?area=${encodeURIComponent(brief.highlightArea)}`}>
+            Practicar este ramo
+          </Link>
+        </div>
+      )}
+
+      <div className="brief-item-list">
+        {brief.items.map((item) => (
+          <article className="brief-item" key={item.url}>
+            <div className="brief-item-head">
+              <a href={item.url} target="_blank" rel="noreferrer noopener">{item.title}</a>
+              <span className={`relevance-pill relevance-${item.relevance}`}>{item.relevance}</span>
+            </div>
+            <p className="brief-item-angle">{item.legalAngle}</p>
+            <div className="brief-item-meta">
+              <Link className="brief-area-tag" href={`/questions?area=${encodeURIComponent(item.areaName)}`}>
+                {item.areaName}
+                {item.subjectName && ` · ${item.subjectName}`}
+              </Link>
+              <small>{item.source}{item.publishedAt && ` · ${shortDate(item.publishedAt)}`}</small>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p className="brief-footnote">
+        Lectura automática de {brief.headlineCount} titulares · {brief.sources.join(", ")} · actualizado {relativeTime(brief.generatedAt)}.
+        Es una orientación, no un pronóstico de la comisión.
+      </p>
+    </section>
   );
 }
 
@@ -168,9 +273,33 @@ export default function HomePage() {
   const [stats, setStats] = useState<StatsResponse | null>(null);
   const [history, setHistory] = useState<HomeHistory | null>(null);
   const [overview, setOverview] = useState<OverviewResponse | null>(null);
+  const [brief, setBrief] = useState<PoliticalBriefResponse | null>(null);
+  const [isBriefLoading, setIsBriefLoading] = useState(true);
   const [loggedOut, setLoggedOut] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Aparte del tablero: regenerar la coyuntura puede tardar varios segundos y
+  // no debe retrasar los KPIs ni el historial.
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch("/api/news/political-brief", { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        return await response.json() as PoliticalBriefResponse;
+      })
+      .then((data) => {
+        setBrief(data);
+        setIsBriefLoading(false);
+      })
+      .catch(() => {
+        if (controller.signal.aborted) return;
+        setIsBriefLoading(false);
+      });
+
+    return () => controller.abort();
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -287,6 +416,9 @@ export default function HomePage() {
                 <p className="kpi-note">{stats.summary.needsReview} para repaso</p>
               </article>
             </section>
+
+            <PoliticalBriefSection brief={brief} isLoading={isBriefLoading} />
+
             <HomeQuestionFeed isPublic={false} />
 
             <section className="dashboard-analytics-grid home-focus-grid">

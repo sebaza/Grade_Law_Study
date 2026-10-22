@@ -8,6 +8,7 @@ export type EnvVarName =
   | "OPENAI_API_KEY"
   | "OPENAI_TRANSCRIPTION_MODEL"
   | "OPENAI_EVALUATION_MODEL"
+  | "POLITICAL_BRIEF_TTL_HOURS"
   | "ADMIN_EMAILS";
 
 export type EnvRequirement = {
@@ -71,6 +72,12 @@ export const envRequirements: EnvRequirement[] = [
     scope: "server",
     required: true,
     purpose: "Modelo usado para evaluar respuestas contra la rúbrica.",
+  },
+  {
+    name: "POLITICAL_BRIEF_TTL_HOURS",
+    scope: "server",
+    required: false,
+    purpose: "Horas antes de regenerar la lectura de coyuntura política (por defecto 6).",
   },
   {
     name: "ADMIN_EMAILS",
