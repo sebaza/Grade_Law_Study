@@ -4,6 +4,13 @@
    Fix: --muted pasa a violeta-gris cálido para "puente" entre
    tinta marina y acento vino; --blue-soft → lavanda suave. */
 :root {
+  --foreground: var(--ink);
+  --accent-strong: var(--accent-dark);
+  --on-accent: #ffffff;
+  --radius-control: 4px;
+  --radius-panel: 6px;
+  --radius-card: 10px;
+  --elevation-card: 0 2px 8px color-mix(in srgb, var(--ink) 6%, transparent);
   --background: #f7f4f0;
   --surface: #ffffff;
   --surface-soft: #faf6f3;
@@ -45,6 +52,7 @@
    luminoso); muted y ink con mismo subtono cálido (pergamino
    cálido); surfaces con más diferencia de luminosidad. */
 :root[data-theme="night"] {
+  --on-accent: #0d1117;
   --background: #0d1117;
   --surface: #141c28;
   --surface-soft: #1b2538;
@@ -3347,4 +3355,107 @@ body:has(.app-top-nav) > .theme-toggle {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Shared visual foundations. Keep this after legacy page overrides so geometry
+   stays consistent without changing layout, circular badges, or progress UI. */
+.card,
+.practice-card-large,
+.home-focus-grid .practice-card-large,
+.auth-card,
+.bank-question-card,
+.bank-filter-bar,
+.app-top-nav {
+  border-radius: var(--radius-card);
+  box-shadow: var(--elevation-card);
+}
+
+.home-question-row,
+.home-question-empty,
+.home-question-tabs,
+.attempt-history-row,
+.roomy-list .ranking-row,
+.home-focus-grid .roomy-list .ranking-row,
+.notice-card,
+.rubric-box,
+.answer-review-box {
+  border-radius: var(--radius-panel);
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button,
+.segmented button,
+.select-like,
+.mode-switch button,
+.notice-link,
+.practice-actions button,
+.answer-mode-tabs button,
+.top-nav-link,
+.theme-toggle button,
+.theme-toggle-inline button,
+.top-nav-actions .theme-toggle-inline button,
+.home-question-tabs button,
+.filter-stack select,
+.auth-form input,
+.answer-panel textarea,
+.adaptive-follow-up textarea,
+.admin-filters :is(input, select),
+.admin-form-grid :is(input, select, textarea),
+.admin-textarea-label textarea,
+.keypoint-editor-row input,
+.exam-settings-grid :is(input, select),
+.exam-topic-grid select,
+.exam-answer textarea,
+.bank-filter-bar :is(input, select),
+.admin-user-filter-card select,
+.home-question-search {
+  border-radius: var(--radius-control);
+}
+
+.top-nav-actions .theme-toggle-inline > div {
+  border-radius: var(--radius-panel);
+}
+
+/* Legacy controls used literal white, making night-mode text unreadable. */
+.segmented button,
+.select-like,
+.mode-switch button,
+.notice-link {
+  background: var(--surface);
+}
+
+.segmented button:hover:not(.active) {
+  background: var(--surface-soft);
+}
+
+.primary-button,
+.theme-toggle button.active,
+.theme-toggle-inline button.active,
+.top-nav-actions .theme-toggle-inline button.active,
+.practice-actions button:not(.secondary):not(.danger),
+.home-question-tabs button[aria-pressed="true"],
+.avatar,
+.top-nav-mark {
+  color: var(--on-accent);
+}
+
+.primary-button,
+.primary-button:hover,
+.primary-button:active,
+.top-nav-actions .theme-toggle-inline button.active {
+  box-shadow: var(--elevation-card);
+}
+
+.primary-button .spinner,
+.practice-actions button:not(.secondary):not(.danger) .spinner {
+  border-color: color-mix(in srgb, var(--on-accent) 40%, transparent);
+  border-top-color: var(--on-accent);
+}
+
+/* Includes admin/exam inputs whose legacy declarations remove the outline.
+   The offset separates the ring from filled controls in all three themes. */
+:is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
