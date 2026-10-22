@@ -41,5 +41,6 @@ coverage/
 tmp/
 outputs/
 output/
+.playwright-cli/
 
 # Prisma local generated artifacts are handled by package manager / node_modules

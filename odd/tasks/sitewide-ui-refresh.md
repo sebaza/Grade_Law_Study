@@ -89,3 +89,5 @@ Edge public denied shells at 390/768/1440 in classic/forest/night: all 18 combin
 
 Captures (ignored): output/playwright/admin-admin-{classic,forest,night}-{390,768,1440}.png, admin-admin-questions-{classic,forest,night}-{390,768,1440}.png, admin-editor-focus.png, admin-loading.png. Rollback boundary: F5b scoped CSS, admin ARIA/copy changes, regression test and task evidence. No RDD, remote work, push or PR. All planned UI units complete; protected runtime verification remains credential-dependent. Commit identity follows after work-unit commit.
 `a1009c1fd93c007b53139cd101ca09e375dbd539` — `style(ui): refine administration workspace interfaces`; 184 additions, 9 deletions (193 authored lines). Sequential final F5b slice; prior units preserved.
+
+F5b verification hygiene: `.playwright-cli/` is ignored alongside existing `output/` artifacts because browser CLI snapshots/logs regenerate locally. Existing generated logs are preserved, not deleted. `git check-ignore .playwright-cli/`, `git diff --check` and final clean tracked/untracked status verified; no UI source, remote or RDD changes.
