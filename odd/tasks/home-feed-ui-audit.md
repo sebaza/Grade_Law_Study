@@ -31,6 +31,7 @@ Improve the recent/featured Home module's hierarchy, clarity and accessible feed
 - Visual QA: inspected 375px mobile, 1100px desktop and night screenshots under ignored `output/playwright/home-feed-*.png`; forest generated. No horizontal overflow or nested feed scroll. Fixture mocks API and blocks all non-local origins; no credentials or database used.
 - Refactor: centralized empty feedback in the existing polite status region; no new dependencies or hooks. Native pressed filter buttons retained instead of incomplete ARIA tabs.
 - `npm test`: TypeScript passed; global ESLint FAILED on 35 pre-existing CommonJS-import errors and one unused-variable warning in ignored `tmp/**/*.js`. Those files remain untouched. This is a known local verification limitation, not a passed suite.
-- Commit evidence: see the work-unit commit containing this document; exact identity recorded after creation.
+- Commit evidence: `922388a70c12353f00d45db81aa1f0f0667aed7a` (`fix(home): clarify question feed views and responsive styles`).
+- Scoped ESLint passed; full ESLint excluding the pre-existing ignored `tmp/**` passed. `git diff --check` passed.
 - Running authored change count: under 150 lines including this document; no delivery split needed. RDD disabled/unmanaged.
 - Remaining: live authenticated Next/API/database integration was not exercised; parent should report this limitation and the global lint failure.
