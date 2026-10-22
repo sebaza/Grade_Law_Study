@@ -30,4 +30,5 @@ Browser: Edge CLI (Chrome unavailable), public Home at 1440/390px in classic/for
 Full npm test: FAIL, 35 pre-existing no-require-imports errors and 1 unused-variable warning in tmp/**/*.js. No failures in scoped src/scripts lint. Protected admin/exam runtime not exercised without credentials; global focus coverage verified structurally. Next: F2 accessible navigation.
 
 ## Commit and slice evidence
-Starting boundary: parent of the first foundations commit. F1 commit: recorded in git history as `style(ui): establish squared shared visual foundations` (this document is included in that commit). F1 authored diff: approximately 180 lines; first sequential slice, no remote operation. One conventional work-unit commit per completed task, tests/docs alongside changes, no AI attribution. Subsequent slices remain uncreated until authorized.
+Starting boundary: parent of the first foundations commit. F1 commit: `c1a2b847bb9bf99134442a20ba584bfe9b11e21b` — `style(ui): establish squared shared visual foundations`. F1 authored diff: 164 additions; first sequential slice, no remote operation. One conventional work-unit commit per completed task, tests/docs alongside changes, no AI attribution. Subsequent slices remain uncreated until authorized.
+
