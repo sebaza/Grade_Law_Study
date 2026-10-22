@@ -19,7 +19,15 @@ Improve the recent/featured Home module's hierarchy, clarity and accessible feed
 - Public counts clearly describe a sample, not the whole bank.
 - Empty/loading/error and completion marker remain understandable; pagination retains rows and normal page scrolling.
 - Mobile layout has no horizontal overflow; focus and selected filters remain visible.
-- Check `node --test scripts/smoke/home-question-feed.mjs`, `npx tsx --test src/lib/home/question-feed.test.ts`, `npm test`.
+- Browser check requires an installed Playwright package. The bare `node --test scripts/smoke/home-question-feed.mjs` is unavailable in this checkout (`MODULE_NOT_FOUND: playwright`); Playwright is not a local dependency. All reported passing browser runs used this exact PowerShell invocation with an existing package, not the bare command:
+
+```powershell
+$env:PLAYWRIGHT_MODULE_PATH = 'C:\Users\seba_\AppData\Local\npm-cache\_npx\31e32ef8478fbf80\node_modules\playwright'
+node --test scripts/smoke/home-question-feed.mjs
+```
+
+- That cache path exists on the tested machine but is not portable or guaranteed to survive cache cleanup. On another machine, explicitly point `PLAYWRIGHT_MODULE_PATH` to its installed Playwright package; do not report the fixture as passing when the prerequisite is missing. The fixture defaults to installed Microsoft Edge (`msedge`).
+- Other checks: `npx tsx --test src/lib/home/question-feed.test.ts`, `npm test` (known global lint failure below), `npm run typecheck`, and `npx eslint . --ignore-pattern 'tmp/**'`.
 
 ## Audit evidence
 - `src/app/home-question-feed.tsx`: heading always says recent, including featured; public sample counts have no explanation; empty results are outside live feedback.
