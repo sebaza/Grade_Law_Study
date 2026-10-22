@@ -450,8 +450,8 @@ export default function AdminQuestionsPage() {
         </div>
       </header>
 
-      {errorMessage ? <div className="notice error">{errorMessage}</div> : null}
-      {message ? <div className="notice success">{message}</div> : null}
+      {errorMessage ? <div className="notice error" role="alert">{errorMessage}</div> : null}
+      {message ? <div className="notice success" role="status">{message}</div> : null}
 
       <section className="admin-layout">
         <aside className="admin-list-panel card">
@@ -544,6 +544,7 @@ export default function AdminQuestionsPage() {
               <button
                 className={`admin-question-row ${selectedId === question.id ? "active" : ""}`}
                 key={question.id}
+                aria-pressed={selectedId === question.id}
                 type="button"
                 onClick={() => selectQuestion(question)}
               >
@@ -559,7 +560,7 @@ export default function AdminQuestionsPage() {
           </div>
         </aside>
 
-        <section className="admin-editor card">
+        <section className="admin-editor card" aria-busy={isSaving}>
           <div className="admin-panel-header">
             <div>
               <h2>{selectedId ? "Editar pregunta" : "Nueva pregunta"}</h2>
@@ -745,11 +746,13 @@ export default function AdminQuestionsPage() {
               {form.keyPoints.map((point, index) => (
                 <div className="keypoint-editor-row" key={point.id ?? `new-${index}`}>
                   <input
+                    aria-label={`Etiqueta del punto ${index + 1}`}
                     value={point.label}
                     onChange={(event) => updateKeyPoint(index, { label: event.target.value })}
                     placeholder="Etiqueta"
                   />
                   <input
+                    aria-label={`Descripción del punto ${index + 1}`}
                     value={point.description}
                     onChange={(event) => updateKeyPoint(index, { description: event.target.value })}
                     placeholder="Descripción esperada"
@@ -759,7 +762,7 @@ export default function AdminQuestionsPage() {
                     type="number"
                     value={point.weight}
                     onChange={(event) => updateKeyPoint(index, { weight: Number(event.target.value) })}
-                    aria-label="Peso"
+                    aria-label={`Peso del punto ${index + 1}`}
                   />
                   <label className="checkbox-label">
                     <input

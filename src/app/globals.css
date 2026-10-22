@@ -3942,3 +3942,135 @@ body:has(.app-top-nav) > .theme-toggle {
   width: min(1180px, 100%);
   margin-inline: auto;
 }
+
+/* Administration workspace refinement: preserve data and action semantics. */
+.admin-shell {
+  padding: 32px max(24px, calc((100% - 1400px) / 2));
+}
+
+.admin-shell :is(.admin-layout, .admin-hero, .admin-panel-header, .admin-filters, .admin-form-grid, .keypoint-editor-row) > *,
+.admin-dashboard-shell :is(.history-hero, .admin-chart-row, .admin-user-filter-card) > * {
+  min-width: 0;
+}
+
+.admin-shell :is(h1, h2, h3, p, strong, small),
+.admin-dashboard-shell :is(h1, h2, p, strong, small) {
+  overflow-wrap: anywhere;
+}
+
+.admin-hero h1,
+.admin-dashboard-shell .history-hero h1 {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.admin-hero-card,
+.admin-chart-row,
+.admin-question-row,
+.keypoint-editor-row {
+  border-radius: var(--radius-panel);
+}
+
+.keypoint-editor-row {
+  background: var(--surface-soft);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) minmax(64px, 0.4fr);
+}
+
+.keypoint-editor-row .checkbox-label {
+  grid-column: 1 / -1;
+}
+
+.admin-shell :is(input:not([type="checkbox"]), select, textarea),
+.admin-user-filter-card select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  width: 100%;
+}
+
+.admin-shell textarea {
+  line-height: 1.6;
+}
+
+.admin-shell .admin-question-list {
+  padding: 4px;
+}
+
+.admin-question-row {
+  border-color: var(--border);
+  min-height: 44px;
+}
+
+.admin-question-row:hover,
+.admin-question-row.active {
+  background: var(--surface-soft);
+  border-color: var(--accent);
+  box-shadow: none;
+  transform: none;
+}
+
+.admin-question-row strong {
+  line-height: 1.5;
+}
+
+.admin-shell .admin-actions,
+.admin-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-width: 0;
+}
+
+.admin-shell .admin-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.admin-shell :is(.primary-button, .secondary-button, .ghost-button),
+.admin-hero-actions a {
+  min-height: 44px;
+  white-space: normal;
+  text-align: center;
+}
+
+.admin-dashboard-shell > .empty-state {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+@media (max-width: 1180px) {
+  .admin-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .admin-shell .admin-question-list {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 540px) {
+  .admin-shell {
+    padding: 24px 16px;
+  }
+  .admin-shell :is(.admin-list-panel, .admin-editor, .admin-hero-card) {
+    padding: 18px;
+  }
+  .admin-shell :is(.admin-panel-header, .keypoint-editor-row) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .admin-shell .admin-actions > *,
+  .admin-hero-actions > * {
+    width: 100%;
+  }
+  .admin-chart-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .admin-chart-row small {
+    grid-column: 1 / -1;
+  }
+}
+
+.admin-dashboard-shell > .app-top-nav {
+  width: 100%;
+  max-width: 1180px;
+}

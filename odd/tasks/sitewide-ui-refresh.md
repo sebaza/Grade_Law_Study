@@ -12,7 +12,7 @@ Six coherent work units; forecast 650–1000 authored changed lines, excluding g
 - [x] F3 Home and bank responsive layout — delegated writer; multiple page/layout changes. Preserve feed filters and bank actions, readable mobile hierarchy.
 - [x] F4 Practice and exam — delegated writer; related interaction/layout changes. Preserve session, answer, timer, and evaluation behavior; usable forms and action hierarchy.
 - [x] F5a History and authentication — delegated writer; two analyzed pages and scoped CSS. Accessible feedback/forms, stable attempt and question anchors, responsive lists.
-- [ ] F5b Administration — delegated writer; pending dashboard/questions layouts and retained administrative capabilities.
+- [x] F5b Administration — delegated writer; dashboard/questions responsive layouts, accessible feedback and retained administrative capabilities.
 
 ## Acceptance and checks
 - Shared components use deliberate semantic radii; avatars/spinners remain circular.
@@ -76,3 +76,15 @@ Edge browser: public login and unauthenticated history at 390/768/1440 in classi
 
 Captures ignored: output/playwright/history-auth-{auth-login,history}-{classic,forest,night}-{390,768,1440}.png, history-auth-fixture-{classic,forest,night}-{390,768,1440}.png, history-auth-login-validation.png. Server and browser stopped. No push/PR, remote work or RDD. Next: F5b administration. Commit evidence follows after work-unit commit.
 `e5e3558eb42aaa9739b3755bf74e331ee04b0da1` — `style(ui): refine history and authentication interfaces`; 160 additions, 11 deletions (171 authored lines). Sequential F5a slice; F5b remains pending.
+
+
+## F5b Administration evidence
+Route: delegated writer; analyzed dashboard, question editor and scoped CSS. F1-F5a preserved. Admin headings have restrained scale; list/editor controls have zero minimum width and 44px targets, wrapped actions, squared panels and theme-aware keypoint backgrounds. Editor moves below the list at 1180px, keypoint fields stack on small screens. Dashboard denial feedback stays within the content cap. Browser found existing top-nav viewport-based width exceeded its padded dashboard parent by 2px on mobile; scoped parent-relative width fixes it without clipping.
+
+Verified and corrected garbled student-filter copy to neutral Spanish and missing dashboard accents. Student filter and keypoint inputs now have accessible names, selected question buttons expose aria-pressed, errors announce alerts, success messages announce status, and editor exposes saving busy state. React checklist: no hooks/effects/state/fetching or handlers changed; permissions, API/data payloads and submission semantics unchanged. No table exists on these routes; bank remains the existing button list.
+
+TDD RED: both new structural tests failed before implementation; third nav containment assertion failed after browser finding. GREEN/refactor: 17/17 focused UI tests pass, npm run typecheck, npx eslint src scripts and git diff --check pass. Full npm test fails only baseline tmp JS lint: 35 errors and one warning; output/playwright/admin-npm-test.txt.
+
+Edge public denied shells at 390/768/1440 in classic/forest/night: all 18 combinations have no horizontal overflow. Visible editor keypoint focus is solid 3px with 4px control radius; night keypoint panel uses dark theme surface. Loading dashboard checked using browser-only delayed synthetic 401; no protected payload, authentication or mutation occurred. Real protected dashboard charts, question data, saves/archive and authenticated editor interactions remain untested without credentials. Direct dataset theme assignment checks CSS, not theme-button state. Visual readback: full mobile night empty editor. Expected 401 responses observed; initial browser navigation raced server startup and was retried only after server ready. Browser and dev server stopped.
+
+Captures (ignored): output/playwright/admin-admin-{classic,forest,night}-{390,768,1440}.png, admin-admin-questions-{classic,forest,night}-{390,768,1440}.png, admin-editor-focus.png, admin-loading.png. Rollback boundary: F5b scoped CSS, admin ARIA/copy changes, regression test and task evidence. No RDD, remote work, push or PR. All planned UI units complete; protected runtime verification remains credential-dependent. Commit identity follows after work-unit commit.
