@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import {
   BarChart2,
   BookOpen,
@@ -36,10 +36,63 @@ function initialsFrom(user: SidebarUser) {
   return letters.toUpperCase();
 }
 
+const mobileQuery = "(max-width: 1100px)";
+function subscribeToViewport(change: () => void) {
+  const media = window.matchMedia(mobileQuery);
+  media.addEventListener("change", change);
+  return () => media.removeEventListener("change", change);
+}
+
 export function AppSidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const sidebarRef = useRef<HTMLElement>(null);
+  const isMobile = useSyncExternalStore(subscribeToViewport, () => window.matchMedia(mobileQuery).matches, () => false);
+
+  useEffect(() => {
+    if (!isOpen || !isMobile) return;
+    const sidebar = sidebarRef.current;
+    const trigger = triggerRef.current;
+    if (!sidebar) return;
+    const content = sidebar.parentElement?.querySelector<HTMLElement>(".main");
+    const previousInert = content?.inert ?? false;
+    const previousOverflow = document.body.style.overflow;
+    if (content) content.inert = true;
+    document.body.style.overflow = "hidden";
+    const focusFrame = requestAnimationFrame(() => {
+      sidebar.querySelector<HTMLButtonElement>(".sidebar-close-btn")?.focus();
+    });
+
+    function handleKey(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsOpen(false);
+        return;
+      }
+      if (event.key !== "Tab" || !sidebar) return;
+      const controls = Array.from(sidebar.querySelectorAll<HTMLElement>('a[href], button:not(:disabled), [tabindex="0"]'))
+        .filter((element) => element.getClientRects().length > 0);
+      const first = controls[0];
+      const last = controls.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    }
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = previousOverflow;
+      if (content) content.inert = previousInert;
+      trigger?.focus();
+    };
+  }, [isOpen, isMobile]);
   const [user, setUser] = useState<SidebarUser | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -88,6 +141,9 @@ export function AppSidebar() {
   return (
     <>
       <button
+        ref={triggerRef}
+        aria-controls="app-sidebar"
+        aria-expanded={isOpen}
         className="hamburger-btn"
         type="button"
         onClick={() => setIsOpen(true)}
@@ -100,7 +156,14 @@ export function AppSidebar() {
         <div className="sidebar-overlay" onClick={close} aria-hidden="true" />
       )}
 
-      <aside className={`sidebar${isOpen ? " sidebar-open" : ""}`}>
+      <aside
+        id="app-sidebar"
+        ref={sidebarRef}
+        className={`sidebar${isOpen ? " sidebar-open" : ""}`}
+        role={isOpen && isMobile ? "dialog" : undefined}
+        aria-modal={isOpen && isMobile ? true : undefined}
+        aria-label="Menú principal"
+      >
         <div className="sidebar-top">
           <div className="brand">
             <div className="brand-mark">
@@ -157,6 +220,7 @@ export function AppSidebar() {
                 key={href}
                 className={`nav-item${isActive ? " active" : ""}`}
                 href={href}
+                aria-current={isActive ? "page" : undefined}
                 onClick={close}
               >
                 <Icon size={18} strokeWidth={1.8} />

@@ -8,7 +8,7 @@ Five coherent work units; forecast 650–1000 authored changed lines, excluding 
 
 ## Tasks and routes
 - [x] F1 Shared foundations — delegated writer; token/cascade research and analyzed CSS changes. Semantic 4/6/10px radii, restrained elevation, theme-aware text, visible keyboard focus. No responsive or navigation behavior changes.
-- [ ] F2 Accessible navigation — delegated writer; shared component/CSS changes. Clear current route, keyboard access, mobile navigation without overflow.
+- [x] F2 Accessible navigation — delegated writer; shared component/CSS changes. Clear current route, keyboard access, mobile navigation without overflow.
 - [ ] F3 Home and bank responsive layout — delegated writer; multiple page/layout changes. Preserve feed filters and bank actions, readable mobile hierarchy.
 - [ ] F4 Practice and exam — delegated writer; related interaction/layout changes. Preserve session, answer, timer, and evaluation behavior; usable forms and action hierarchy.
 - [ ] F5 History, authentication, and administration — delegated writer; related page/layout changes. Consistent feedback, readable lists/forms, retained administrative capabilities.
@@ -27,8 +27,15 @@ F1 complete: shared aliases, 4/6/10px geometry, restrained elevation, on-accent 
 
 Browser: Edge CLI (Chrome unavailable), public Home at 1440/390px in classic/forest/night: computed card radius 10px, foreground aliases defined; six screenshots at output/playwright/foundations-{theme}-{width}.png. Login input computed radius 4px and visible solid focus ring in three themes; screenshot foundations-login-focus.png. Device-pixel rounding reports 2.4px for CSS 3px outline; visible-ring check uses >=2px. Public API 401s and favicon 404 observed, no backend changes. Mobile sidebar positioning/overflow remains a later F2/F3 concern; no behavioral/responsive fixes in F1.
 
-Full npm test: FAIL, 35 pre-existing no-require-imports errors and 1 unused-variable warning in tmp/**/*.js. No failures in scoped src/scripts lint. Protected admin/exam runtime not exercised without credentials; global focus coverage verified structurally. Next: F2 accessible navigation.
+Full npm test: FAIL, 35 pre-existing no-require-imports errors and 1 unused-variable warning in tmp/**/*.js. No failures in scoped src/scripts lint. Protected admin/exam runtime not exercised without credentials; global focus coverage verified structurally. Next: F3 Home/bank responsive layout.
 
 ## Commit and slice evidence
 Starting boundary: parent of the first foundations commit. F1 commit: `c1a2b847bb9bf99134442a20ba584bfe9b11e21b` — `style(ui): establish squared shared visual foundations`. F1 authored diff: 164 additions; first sequential slice, no remote operation. One conventional work-unit commit per completed task, tests/docs alongside changes, no AI attribution. Subsequent slices remain uncreated until authorized.
 
+
+## F2 navigation evidence
+Route: delegated writer; four analyzed shared source files, scoped to navigation only. Both navs expose aria-current; theme group exposes aria-pressed. Mobile drawer now has controlled dialog semantics, initial focus, Tab wrapping, Escape dismissal, focus restoration, inert background content, and body scroll locking with cleanup. Closed mobile drawer is visibility-hidden (not keyboard reachable); open trigger is hidden. Top-nav links wrap instead of hidden horizontal scrolling; compact squared geometry and 44px link targets. Auth and route destinations unchanged.
+
+RED: both navigation structural tests failed before implementation. GREEN/refactor: five total UI tests pass; typecheck and scoped ESLint pass without warnings. Browser exposed that transitioning visibility delayed initial focus; removed visibility transition and retained transform animation, with requestAnimationFrame focus. React checklist: effects clean up events/overflow/inert/frame, viewport external store subscribes safely, refs captured for cleanup, no data-flow/auth changes.
+
+Edge browser: mobile 390x844 initial focus, reverse/forward Tab wrapping, Escape, focus restore, inert/scroll restoration pass; theme pressed state and captures for classic/forest/night pass. Desktop 1440x900 current Home state passes; bank mobile current-route and top-nav no-horizontal-overflow pass. Captures: output/playwright/navigation-mobile-{Clásico,Bosque,Noche}.png, navigation-desktop.png, navigation-bank-mobile.png. Full npm test still fails only existing tmp JS lint (35 errors, 1 warning). Protected auth/admin flows not exercised. RDD OFF, no remote work. F2 commit identity follows below after source commit.

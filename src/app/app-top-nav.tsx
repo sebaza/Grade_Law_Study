@@ -28,7 +28,7 @@ export function AppTopNav() {
           const isActive = href === "/" ? pathname === href : pathname.startsWith(href);
 
           return (
-            <Link className={`top-nav-link${isActive ? " active" : ""}`} href={href} key={href}>
+            <Link className={`top-nav-link${isActive ? " active" : ""}`} href={href} key={href} aria-current={isActive ? "page" : undefined}>
               <Icon size={16} strokeWidth={1.8} />
               {label}
             </Link>

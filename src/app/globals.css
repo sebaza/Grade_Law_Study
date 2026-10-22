@@ -3459,3 +3459,72 @@ body:has(.app-top-nav) > .theme-toggle {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
+
+/* Navigation: discoverable links, compact geometry, and a real mobile drawer. */
+.nav-item,
+.sidebar-login,
+.sidebar-account,
+.hamburger-btn,
+.sidebar-close-btn {
+  border-radius: var(--radius-control);
+}
+
+.top-nav-links {
+  overflow: visible;
+  flex-wrap: wrap;
+}
+
+.top-nav-link,
+.nav-item {
+  min-height: 44px;
+}
+
+.top-nav-link[aria-current="page"],
+.nav-item[aria-current="page"] {
+  box-shadow: inset 0 -2px var(--accent);
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    visibility: hidden;
+    height: 100dvh;
+    overscroll-behavior: contain;
+    transition: transform 0.2s ease;
+  }
+
+  .sidebar.sidebar-open {
+    visibility: visible;
+  }
+
+  .app-top-nav {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    position: relative;
+    top: auto;
+  }
+
+  .top-nav-brand,
+  .top-nav-actions {
+    justify-content: center;
+  }
+
+  .top-nav-links {
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .top-nav-link {
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .top-nav-link {
+    transition: none;
+  }
+}
+
+.hamburger-btn[aria-expanded="true"] {
+  visibility: hidden;
+}
