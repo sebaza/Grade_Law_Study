@@ -4,7 +4,7 @@ Recover the current unfinished work safely, add the next question set through a 
 
 ## Current state
 
-- Branch: `codex/new-questions-home-module`.
+- Active isolated delivery branch: `codex/home-question-feed-search`; original dirty worktree remains untouched.
 - The branch was created from `main` while the existing working tree was dirty; no pre-existing source change was staged or modified by this note.
 - Two unrelated changes are already in progress and uncommitted:
   - Chilean political brief on Home: API, RSS/OpenAI generation, persistence, styling, Prisma model, and migration.
@@ -33,7 +33,7 @@ Recover the current unfinished work safely, add the next question set through a 
 | Search | Shared case-insensitive substring search across question statement, area, subject, subsubject, professor, active expected answer/model answer and rubric notes, key-point label/description, and common-error description. Exclude technical/internal identifiers, source references, ranking scores, attempts, and user state/scores. |
 | Search semantics | Existing bank filters remain separate constraints ANDed with `q`; `q` matches any approved content field (OR). Home applies the same `q` under both views. Preserve ordering, pagination, active-question behavior, and response payloads; do not return answer/rubric text. Public Home remains aggregate-only by area. |
 | Search strategy | Exact substring/contains semantics; no typo-tolerant or full-text ranking. No schema migration absent evidence it is required. |
-| Delivery strategy | `ask-on-risk`. Forecast: likely below 400 authored changed lines if global recency is selected; per-student tracking may exceed it. |
+| Delivery strategy | `ask-on-risk`; user selected `stacked-to-main`. Keep question ingestion separate from the cohesive Home + shared-search slice. Current module diffs are 20,588 authored lines for ingestion and 338 for Home/search; the ingestion review size remains a delivery risk. |
 | TDD | Enabled by project instructions. Runner: `npm test` (typecheck and lint); add focused behavior tests if the selected implementation introduces testable query/domain logic. |
 
 ## Authorized scope
@@ -111,7 +111,7 @@ Recover the current unfinished work safely, add the next question set through a 
   - Acceptance: `Más recientes` and `Destacadas` tabs appear on both Home variants; public mode renders only aggregated counts and a sign-in/practice CTA, while authenticated mode renders complete rows, dates, area/subject, practice links, and a small `✓ Realizada` marker for attempted questions.
   - Acceptance: load three rows initially and append the next bounded page into the normal document flow (no nested scrolling); keep pagination separate per tab. Provide loading, empty, and recoverable error states; retain mobile reflow/accessibility.
   - Implementation: added a reusable Home feed component for both public and signed-in Home states, with independent view switching, initial three rows, progressive loading, loading/empty/error states, public area aggregates only, and attempted markers from the authenticated feed API.
-  - Checks: `npm run typecheck` passed; `npx eslint src/app/page.tsx src/app/home-question-feed.tsx src/app/api/home/questions/route.ts src/lib/home/question-feed.ts src/lib/home/question-feed.test.ts` passed; focused feed tests passed 3/3. Browser smoke not run. Tabs use native buttons with `aria-pressed`, avoiding incomplete ARIA tab semantics; clicking the active view is a no-op (prevents a stuck loading state).
+  - Checks: `npm run typecheck` passed; `npx eslint src/app/page.tsx src/app/home-question-feed.tsx src/app/api/home/questions/route.ts src/lib/home/question-feed.ts src/lib/home/question-feed.test.ts` passed; focused feed tests passed 3/3. A local Playwright smoke in Edge passed with all `/api/**` requests mocked and non-local hosts blocked: public aggregates only, both views, search, authenticated completion marker, and progressive pagination. Fixture-only 401/503 responses for unrelated dashboard and political-brief APIs did not affect the feed. Tabs use native buttons with `aria-pressed`, avoiding incomplete ARIA tab semantics; clicking the active view is a no-op (prevents a stuck loading state).
   - Work-unit commit: `f2fdcb3d` (`feat(home): show recent and featured questions`). Only the isolated component and exact Home feed import/mount lines from the otherwise-dirty `page.tsx` were staged; unrelated political brief and CSS changes remain unstaged.
 - [x] **NQ-07 — Add shared broad question search to Home and the question bank.**
   - User decision: search all pedagogical/question-finding fields, not only statements. Keep exact case-insensitive substring semantics; do not introduce semantic/vector search.
@@ -124,8 +124,30 @@ Recover the current unfinished work safely, add the next question set through a 
   - Runtime harness: N/A; verification is query-builder unit tests plus static checks, and no live database/browser session was used.
   - Rollback boundary: remove the shared query helper/imports, Home query-input wiring, and the focused tests; preserve all other question-bank filters and existing result serialization.
   - Work-unit commit: `159bef0b` (`feat(search): broaden question bank and Home queries`).
+- [x] **NQ-08 — Audit and improve the Home question-feed UI/UX.**
+  - Objective: make the existing compact feed readable, actionable, and resilient without changing its data/privacy contract.
+  - Authorized scope: isolated Home feed component/styles, focused offline regression harness, and this document; no remote/DB changes, unrelated files, push, PR, or merge.
+  - Route: delegated direct; component request lifecycle, CSS, and regression coverage are multiple non-trivial files. Reading prepares the bounded writer's changes.
+  - Acceptance: scoped responsive styles, visible selected views and keyboard focus, accessible search guidance, year-aware dates, real sign-in CTA, retry for first-page/pagination failures, preserved rows while appending, and cancellation/stale-response protection when changing search/view.
+  - Preserve: public aggregate-only rendering, three initial rows, two views, shared search, completed marker, practice URLs, natural page scroll, empty/loading states.
+  - TDD: strict enabled by project instructions; browser regression must fail before behavioral edits, then pass. Runner: fixture-only browser harness plus `npx tsx --test src/lib/home/question-feed.test.ts`, `npm run typecheck`, scoped ESLint, and `npm test`.
+  - Forecast: one coherent UI/recovery work unit; advisory 400-line heuristic, not a reason to omit meaningful tests. Delivery remains stacked-to-main; parent handles integration.
+  - Implementation: unified first-page, pagination, and retry fetching under one abortable effect; synchronous invalidation on view/search changes prevents stale pages during debounce. Pagination retains existing rows while loading/on failure. Added actual sign-in/retry actions, semantic year-aware dates, shared search guidance, visible selection/focus, and responsive theme-token styling.
+  - TDD evidence: `node --test scripts/smoke/home-question-feed.mjs` observed RED before source edits (0/6 passing): missing sign-in link/retry/time, hidden rows after pagination error, and late pagination incorrectly appending obsolete rows after both view and search changes. GREEN after implementation: 6/6; supplemental empty/loading coverage and refactor: 7/7 passing.
+  - Runtime harness: the same command passes 7/7 in local Edge with `PLAYWRIGHT_MODULE_PATH` selecting an already installed local Playwright package. It mounts the real component/CSS in a loopback-only fixture, substitutes Next Link with a native anchor, mocks every `/api/**` request, and aborts external origins. No Next server, credentials, live DB, authentication service, or remote operation. It verifies public aggregates, both views/shared search, initial three rows, retry, pagination retry, stale view/search responses, completion/practice URLs, year-aware dates, 375px no-overflow layout, normal scrolling, focus, and loading/empty recovery.
+  - Visual QA: inspected generated mobile, desktop, and night-theme screenshots; forest screenshot also generated. Artifacts remain ignored under `output/playwright/home-feed-{mobile,desktop,forest,night}.png`.
+  - Checks: focused query tests 6/6, `npm run typecheck`, `npx eslint src/app/home-question-feed.tsx scripts/smoke/home-question-feed.mjs`, `npm test`, and `git diff --check` passed in the isolated clean worktree. The original dirty root still has its historical ignored tmp lint failures; those files are absent here and were not modified.
+  - React checklist: primitive effect dependencies, cleanup on dependency changes/unmount, no nested component definitions or gratuitous memoization, labeled search with associated hint, native pressed-state buttons, persistent live status and error alert, preserved full statements. Retry reuses the failing page cursor; active view is a no-op.
+  - Work-unit commit: `c6c7481b473600b7db654573db8133fa0dae9c35` (`fix(home): improve question feed clarity and recovery`); 416 additions plus 65 deletions across four scoped files (481 authored changed lines).
+  - Delivery: one coherent UI/recovery work unit including the offline regression harness exceeds the advisory 400-line task heuristic; preserving meaningful regression coverage is preferable to artificial splitting. Parent independently reran `npm test` successfully. No push, PR, merge, or remote change performed.
+  - Rollback boundary: this component's presentation/request-lifecycle changes, scoped CSS, regression harness, and NQ-08 tracking only; keep the feed API, shared search, ingestion, and unrelated work.
+
 - [ ] **NQ-06 — Verify and document the completed behavior.**
-  - Acceptance: observe required RED/GREEN/REFACTOR evidence for focused behavior tests; run `npm test`; record skipped or environmental failures honestly. Update this document and its Engram mirror after each completed work unit, and record each commit identity.
+  - Focused checks: `npx tsx --test src/lib/home/question-feed.test.ts` passed 6/6; `npm run typecheck` passed; feature-scoped ESLint passed; offline Playwright smoke passed for public/authenticated Home, tab switching, search, completion marker, and pagination.
+  - Historical dirty-root full check: `npm test` typecheck passed, then repository ESLint failed on 35 pre-existing `@typescript-eslint/no-require-imports` errors and one unused-variable warning in unrelated `tmp/**/*.js` files. No feature file had a scoped ESLint violation.
+  - Delivery: user selected module separation with Home + search together, ingestion separate, and stacked integration to `main`. Local worktrees are prepared as `codex/questions-ingestion` at `fab9e5a8` and `codex/home-question-feed-search` at `3054796b`; no push or PR was performed. The current Home/search candidate is 697 authored lines and assessed `medium / slice_budget_reached`; its native review was explicitly declined. Ingestion is 20,588 lines and its native review was declined twice. The user then requested receipt-driven review mode off; `gentle-ai review mode status` confirmed `off (decided by global)`. Do not reopen either review automatically.
+  - Current isolated-worktree checks after NQ-08: browser regressions 7/7, query tests 6/6, typecheck, scoped ESLint, full `npm test`, and diff whitespace check passed. No tmp lint issue exists in this clean worktree; the dirty root remains untouched.
+  - Remaining: user requested pull requests and merges to `main`, but remote destination/session authorization and applicable issue-first PR requirements must be confirmed before any remote operation. Do not include unrelated political-brief or evaluation changes.
 
 ## Existing backlog recovered
 
@@ -139,6 +161,6 @@ Recover the current unfinished work safely, add the next question set through a 
 
 ## Progress
 
-- Current step: NQ-03/NQ-03B, NQ-04, NQ-05, and NQ-07 are complete; NQ-06 remains.
-- Verification: import validation and focused API tests (3/3), typecheck, and focused ESLint passed. Repo-wide lint currently reports existing errors in `tmp/**/*.js`; the browser smoke is pending. The import resolved 224 source references plus two approved existing-content no-ops with zero conflicts. Seed and manifest remain untouched.
-- Next step: run the combined final NQ-06 verification/documentation pass.
+- Current step: NQ-08 UI/UX implementation and independent verification complete; NQ-06 remains open for delivery reconciliation.
+- Verification: query tests 6/6, UI fixture regressions 7/7, typecheck, feature lint, and full `npm test` passed in this clean worktree. The original dirty-root check historically fails on unrelated ignored tmp files; they were not touched. Import resolved 224 source references plus two approved existing-content no-ops with zero conflicts. Seed and manifest remain untouched.
+- Next step: confirm the remote repository and credential/session for the requested PRs and merges; satisfy applicable issue and PR requirements before remote delivery. Both native reviews were declined and review mode is off by explicit user choice.
