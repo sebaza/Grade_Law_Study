@@ -9,6 +9,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "npm run typecheck && npm run lint",
+    "test:staged-question-bank": "tsx --test scripts/import/staged-question-bank.test.ts",
+    "import:staged-question-bank": "tsx scripts/import/staged-question-bank.ts",
     "env:check": "tsx scripts/validate-env.ts",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",

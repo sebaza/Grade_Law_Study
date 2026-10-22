@@ -1,0 +1,2153 @@
+{
+  "reviewType": "legal-content-review",
+  "areaName": "Derecho Constitucional",
+  "reviewedAgainstDate": "2026-10-19",
+  "questionCount": 87,
+  "loadRecommendation": "ready_for_ingestion",
+  "reviews": [
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:001",
+      "expectedAnswer": "Si la privación de libertad continúa y es ilegal o arbitraria, procede la acción de amparo del artículo 21 de la Constitución para restablecer la libertad personal y la seguridad individual. Los hechos descritos no bastan por sí solos para afirmar que la detención fue ilegal.",
+      "keyPoints": [
+        "Privación actual de libertad",
+        "Ilegalidad o arbitrariedad",
+        "Artículo 21 de la Constitución"
+      ],
+      "commonErrors": [
+        "Invocar hábeas corpus sin analizar los presupuestos",
+        "Presumir ilegalidad solo por la duración narrada"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Amparo correctivo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
+      ],
+      "statement": "Suponga que, al día siguiente de una detención en una plaza, la privación de libertad continúa y carece de fundamento legal o se ha prolongado arbitrariamente. ¿Qué acción procede?"
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:002",
+      "expectedAnswer": "Correspondería un amparo correctivo o reparador, pues se busca poner término a una privación de libertad ya consumada.",
+      "keyPoints": [
+        "Privación efectiva",
+        "Finalidad reparadora"
+      ],
+      "commonErrors": [
+        "Calificarlo como preventivo"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Amparo correctivo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:003",
+      "expectedAnswer": "Se presenta ante la Corte de Apelaciones respectiva, no ante el Juzgado de Garantía.",
+      "keyPoints": [
+        "Corte de Apelaciones",
+        "Artículo 21 de la Constitución"
+      ],
+      "commonErrors": [
+        "Juzgado de Garantía"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Competencia del amparo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era jurídicamente incorrecta.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:004",
+      "expectedAnswer": "La reclamación del artículo 12 solo procede cuando un acto o resolución de autoridad administrativa priva o desconoce la nacionalidad chilena. La mera denegación de una licencia de conducir por residencia insuficiente no basta si no existe ese acto de privación o desconocimiento.",
+      "keyPoints": [
+        "Acto o resolución administrativa",
+        "Privación o desconocimiento de nacionalidad"
+      ],
+      "commonErrors": [
+        "Confundir denegación de licencia con desconocimiento de nacionalidad"
+      ],
+      "subjectName": "Nacionalidad",
+      "subsubjectName": "Reclamación del artículo 12",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "statement": "Suponga que una autoridad administrativa, al resolver una solicitud de licencia de conducir, desconoce formalmente la nacionalidad chilena de la persona por estimar insuficiente su residencia. ¿Qué acción constitucional procede?"
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:005",
+      "expectedAnswer": "La acción está regulada en el artículo 12 de la Constitución.",
+      "keyPoints": [
+        "Artículo 12",
+        "Plazo de treinta días",
+        "Efecto suspensivo"
+      ],
+      "commonErrors": [
+        "Confundirla con la acción de protección"
+      ],
+      "subjectName": "Nacionalidad",
+      "subsubjectName": "Reclamación del artículo 12",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:006",
+      "expectedAnswer": "Conoce directamente la Corte Suprema.",
+      "keyPoints": [
+        "Corte Suprema",
+        "Competencia directa"
+      ],
+      "commonErrors": [
+        "Corte de Apelaciones"
+      ],
+      "subjectName": "Nacionalidad",
+      "subsubjectName": "Competencia",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:007",
+      "expectedAnswer": "La Corte Suprema conoce en Pleno y como jurado. La reclamación debe deducirse dentro de treinta días y suspende los efectos del acto o resolución recurrida.",
+      "keyPoints": [
+        "Tribunal Pleno",
+        "Resuelve como jurado",
+        "Treinta días",
+        "Efecto suspensivo"
+      ],
+      "commonErrors": [
+        "Conocimiento en sala",
+        "Tratarla como apelación"
+      ],
+      "subjectName": "Nacionalidad",
+      "subsubjectName": "Procedimiento",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:008",
+      "expectedAnswer": "La acción de amparo protege la libertad personal y la seguridad individual, especialmente frente a privaciones, perturbaciones o amenazas ilegales vinculadas con las garantías del artículo 19 N.º 7.",
+      "keyPoints": [
+        "Libertad personal",
+        "Seguridad individual",
+        "Artículo 19 N.º 7"
+      ],
+      "commonErrors": [
+        "Afirmar que tutela todos los derechos fundamentales"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Bienes protegidos por el amparo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:009",
+      "expectedAnswer": "El artículo 19 N.º 7 asegura la libertad personal y la seguridad individual. Comprende residencia, traslado, entrada y salida del país; privación o restricción solo conforme a la Constitución y la ley; reglas de arresto y detención, puesta a disposición judicial y lugares de detención; libertad provisional; límites a declaraciones autoincriminatorias e indemnización por error judicial, según sus letras.",
+      "keyPoints": [
+        "Artículo 19 N.º 7",
+        "Libertad ambulatoria",
+        "Garantías de arresto y detención",
+        "Libertad provisional",
+        "Error judicial"
+      ],
+      "commonErrors": [
+        "Reducir el numeral únicamente a libertad de locomoción"
+      ],
+      "subjectName": "Derechos fundamentales",
+      "subsubjectName": "Libertad personal y seguridad individual",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:010",
+      "expectedAnswer": "Si existe una amenaza ilegal a la libertad personal, el amparo preventivo se presenta ante la Corte de Apelaciones respectiva. El ejemplo requiere verificar el acto real y la jurisdicción territorial.",
+      "keyPoints": [
+        "Amenaza",
+        "Corte de Apelaciones",
+        "Competencia territorial"
+      ],
+      "commonErrors": [
+        "Presentarlo ante el Juzgado de Garantía"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Amparo preventivo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
+      ],
+      "statement": "Caso hipotético: una autoridad impide a una persona salir del país invocando una orden pendiente que no existe. Si ello amenaza ilegalmente su libertad ambulatoria, ¿ante qué tribunal se presenta el amparo?"
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-notes:derecho-constitucional:011",
+      "expectedAnswer": "Los padres tienen el derecho preferente y el deber de educar a sus hijos; el Estado debe proteger ese ejercicio, promover, financiar y fomentar la educación en los términos constitucionales; y la comunidad debe contribuir a su desarrollo y perfeccionamiento.",
+      "keyPoints": [
+        "Padres",
+        "Estado",
+        "Comunidad",
+        "Artículo 19 N.º 10"
+      ],
+      "commonErrors": [
+        "Afirmar que todos tienen obligaciones idénticas"
+      ],
+      "subjectName": "Derecho a la educación",
+      "subsubjectName": "Deberes correlativos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:001",
+      "expectedAnswer": "Si la detención continúa y es ilegal o arbitraria, corresponde un amparo correctivo o reparador del artículo 21, presentado ante la Corte de Apelaciones respectiva. Los hechos deben precisar la causa y el control judicial para concluir ilegalidad.",
+      "keyPoints": [
+        "Privación actual",
+        "Amparo correctivo",
+        "Corte de Apelaciones"
+      ],
+      "commonErrors": [
+        "Amparo preventivo",
+        "Juzgado de Garantía"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Amparo correctivo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
+      ],
+      "statement": "Suponga que los asistentes a una reunión en una plaza continúan detenidos al día siguiente y que la privación de libertad carece de fundamento legal o se prolongó arbitrariamente. ¿Qué acción interpondría, ante quién y qué clase de amparo correspondería?"
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:002",
+      "expectedAnswer": "Solo si una autoridad administrativa privó o desconoció la nacionalidad procede reclamar directamente ante la Corte Suprema, dentro de treinta días. La Corte conoce en Pleno y como jurado, y la interposición suspende los efectos del acto.",
+      "keyPoints": [
+        "Artículo 12",
+        "Acto administrativo",
+        "Corte Suprema en Pleno",
+        "Treinta días"
+      ],
+      "commonErrors": [
+        "Inferir la acción por la sola denegación de licencia"
+      ],
+      "subjectName": "Nacionalidad",
+      "subsubjectName": "Reclamación del artículo 12",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "statement": "Suponga que, al denegar una licencia de conducir, una autoridad administrativa desconoce formalmente la nacionalidad chilena de la persona. ¿Qué acción interpondría, dónde se regula, quién la conoce y cómo actúa la Corte Suprema?"
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:003",
+      "expectedAnswer": "La Corte Suprema conoce en Pleno y como jurado. La reclamación debe deducirse dentro de treinta días y suspende los efectos del acto o resolución recurrida.",
+      "keyPoints": [
+        "Tribunal Pleno",
+        "Resuelve como jurado",
+        "Treinta días",
+        "Efecto suspensivo"
+      ],
+      "commonErrors": [
+        "Conocimiento en sala",
+        "Tratarla como apelación"
+      ],
+      "subjectName": "Nacionalidad",
+      "subsubjectName": "Procedimiento",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:004",
+      "expectedAnswer": "El amparo protege la libertad personal y la seguridad individual. Estas garantías se regulan en el artículo 19 N.º 7, cuyo contenido incluye libertad ambulatoria, reglas de privación y restricción, garantías de detención, libertad provisional y otras salvaguardas expresas.",
+      "keyPoints": [
+        "Artículo 21",
+        "Artículo 19 N.º 7",
+        "Libertad personal",
+        "Seguridad individual"
+      ],
+      "commonErrors": [
+        "Limitar la protección a locomoción"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Libertad personal y seguridad individual",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:005",
+      "expectedAnswer": "Si existe una amenaza ilegal a la libertad personal, el amparo preventivo se presenta ante la Corte de Apelaciones respectiva. El ejemplo requiere verificar el acto real y la jurisdicción territorial.",
+      "keyPoints": [
+        "Amenaza",
+        "Corte de Apelaciones",
+        "Competencia territorial"
+      ],
+      "commonErrors": [
+        "Presentarlo ante el Juzgado de Garantía"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Amparo preventivo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
+      ],
+      "statement": "Caso hipotético: una autoridad impide a una persona salir del país invocando una orden de detención inexistente. Si ello amenaza ilegalmente su libertad ambulatoria, ¿ante quién se presenta el amparo?"
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:006",
+      "expectedAnswer": "Los padres tienen el derecho preferente y el deber de educar a sus hijos; el Estado debe proteger ese ejercicio, promover, financiar y fomentar la educación en los términos constitucionales; y la comunidad debe contribuir a su desarrollo y perfeccionamiento.",
+      "keyPoints": [
+        "Padres",
+        "Estado",
+        "Comunidad",
+        "Artículo 19 N.º 10"
+      ],
+      "commonErrors": [
+        "Afirmar que todos tienen obligaciones idénticas"
+      ],
+      "subjectName": "Derecho a la educación",
+      "subsubjectName": "Deberes correlativos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-dominique-luan-grado-1-consti-checklist:derecho-constitucional:007",
+      "expectedAnswer": "El amparo preventivo procede frente a una amenaza ilegal; el correctivo o reparador, frente a una privación o perturbación ya producida. Ambos se presentan ante la Corte de Apelaciones respectiva.",
+      "keyPoints": [
+        "Amenaza",
+        "Privación o perturbación",
+        "Corte de Apelaciones"
+      ],
+      "commonErrors": [
+        "Asignar alguno al Juzgado de Garantía"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Amparo preventivo y correctivo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1031127"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:001",
+      "expectedAnswer": "La Ley N.º 20.609 define la discriminación arbitraria y crea una acción judicial destinada a restablecer el imperio del derecho. Una respuesta completa debe tratar su propósito, la definición y justificación razonable del artículo 2 y la acción regulada desde el artículo 3.",
+      "keyPoints": [
+        "Falta de justificación razonable",
+        "Agentes estatales o particulares",
+        "Afectación de derechos fundamentales",
+        "Acción judicial"
+      ],
+      "commonErrors": [
+        "Tratar las categorías del artículo 2 como lista cerrada"
+      ],
+      "subjectName": "Igualdad y no discriminación",
+      "subsubjectName": "Ley N.º 20.609",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      },
+      "statement": "Explique, con base en los artículos 1 a 3 de la Ley N.º 20.609, su finalidad, el concepto de discriminación arbitraria y la acción judicial que establece."
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:002",
+      "expectedAnswer": "Puede interponerla el afectado, su representante legal, quien tenga de hecho su cuidado o educación y, excepcionalmente, cualquier persona cuando el afectado esté imposibilitado y no cuente con representantes hábiles. El plazo es de noventa días corridos desde el acto u omisión o desde su conocimiento cierto, con máximo absoluto de un año.",
+      "keyPoints": [
+        "Artículo 4",
+        "Noventa días corridos",
+        "Conocimiento cierto",
+        "Máximo de un año"
+      ],
+      "commonErrors": [
+        "Contar días hábiles",
+        "Omitir el plazo máximo"
+      ],
+      "subjectName": "Igualdad y no discriminación",
+      "subsubjectName": "Legitimación y plazo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:003",
+      "expectedAnswer": "La acción es inadmisible si una acción de protección o amparo ya fue declarada admisible, aunque exista desistimiento, o si se requirió tutela laboral conforme a los artículos 485 y siguientes del Código del Trabajo. Si ello ocurre después de admitida, el proceso termina.",
+      "keyPoints": [
+        "Artículo 6 letra a",
+        "Admisibilidad previa",
+        "Tutela laboral"
+      ],
+      "commonErrors": [
+        "Sostener incompatibilidad desde la mera presentación"
+      ],
+      "subjectName": "Igualdad y no discriminación",
+      "subsubjectName": "Incompatibilidades",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:004",
+      "expectedAnswer": "No puede emplearse para objetar sentencias de tribunales creados por la Constitución o la ley, conforme al artículo 6 letra c; no es una vía recursiva.",
+      "keyPoints": [
+        "Sentencias",
+        "Inadmisibilidad",
+        "Artículo 6 letra c"
+      ],
+      "commonErrors": [
+        "Explicar solo que no es recursiva sin citar la causal"
+      ],
+      "subjectName": "Igualdad y no discriminación",
+      "subsubjectName": "Admisibilidad",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota es correcta pero incompleta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:005",
+      "expectedAnswer": "La ley puede establecer diferencias razonables y constitucionalmente legítimas, pero no diferencias arbitrarias. La acción de la Ley N.º 20.609 no permite impugnar el contenido de leyes vigentes, sin perjuicio de los mecanismos de control constitucional.",
+      "keyPoints": [
+        "Razonabilidad",
+        "Artículo 19 N.º 2",
+        "Artículo 6 letra b"
+      ],
+      "commonErrors": [
+        "Equiparar toda diferencia a discriminación"
+      ],
+      "subjectName": "Igualdad y no discriminación",
+      "subsubjectName": "Distinciones legales",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:006",
+      "expectedAnswer": "Una categoría protegida no puede justificar conductas contrarias a las leyes o al orden público. Sin embargo, debe evaluarse si la detención tuvo fundamento legal, fue proporcional y obedeció realmente a la conducta, pues una identidad o apariencia no legitima discriminación.",
+      "keyPoints": [
+        "Artículo 2 inciso segundo",
+        "Causa real de la detención",
+        "Legalidad y proporcionalidad",
+        "Nexo discriminatorio"
+      ],
+      "commonErrors": [
+        "Rechazar automáticamente por la identidad",
+        "Presumir que cualquier detención es válida"
+      ],
+      "subjectName": "Igualdad y no discriminación",
+      "subsubjectName": "Orden público",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=1042092&idParte=9282775"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      },
+      "statement": "En el caso de una persona vestida como therian que interrumpe el tránsito, levanta barricadas y es detenida, ¿qué elementos deben analizarse para determinar si procede la acción de la Ley N.º 20.609?"
+    },
+    {
+      "sourceReference": "october-oral-exams:19-octubre-grado-2-consti:derecho-constitucional:007",
+      "expectedAnswer": "La acción de protección tutela, respecto del artículo 19 N.º 16, la libertad de trabajo y el derecho a la libre elección y libre contratación. No cubre automáticamente todo el contenido laboral del numeral.",
+      "keyPoints": [
+        "Artículo 20",
+        "Libertad de trabajo",
+        "Libre elección",
+        "Libre contratación"
+      ],
+      "commonErrors": [
+        "Afirmar que protege todo derecho laboral"
+      ],
+      "subjectName": "Acciones constitucionales",
+      "subsubjectName": "Protección de la libertad de trabajo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado.",
+          "professorName": "Dominique Luan",
+          "grade": "Segundo grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda al profesor Dominique Luan del bloque de primer grado inmediatamente anterior; el bloque ya identifica Segundo grado."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:001",
+      "expectedAnswer": "La Constitución no contiene un catálogo cerrado denominado valores. Desde los artículos 1 y 5 suelen identificarse dignidad, libertad, igualdad, familia, bien común y respeto de los derechos esenciales, pero el listado exacto depende de la doctrina de la cátedra.",
+      "keyPoints": [
+        "Artículos 1 y 5",
+        "Ausencia de catálogo taxativo"
+      ],
+      "commonErrors": [
+        "Presentar una lista doctrinal como texto expreso"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Valores constitucionales",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "statement": "Identifique los principales valores que la doctrina deriva de los artículos 1 y 5 de la Constitución y explique por qué no constituyen un catálogo taxativo."
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:002",
+      "expectedAnswer": "Un valor expresa un fin o bien axiológico; un principio opera como norma orientadora o mandato de optimización para interpretar y aplicar el ordenamiento. La distinción es doctrinal y no está definida por la Constitución.",
+      "keyPoints": [
+        "Dimensión axiológica",
+        "Función normativa e interpretativa"
+      ],
+      "commonErrors": [
+        "Afirmar una frontera rígida"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Valores y principios",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "statement": "Exponga una distinción doctrinal habitual entre valores y principios constitucionales, indicando la función que se atribuye a cada categoría."
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:003",
+      "expectedAnswer": "La equidad no aparece como un principio constitucional general expresamente formulado. Existen manifestaciones de justicia material, como la igual repartición de tributos del artículo 19 N.º 20, y puede cumplir una función interpretativa.",
+      "keyPoints": [
+        "No existe cláusula general expresa",
+        "Manifestaciones materiales"
+      ],
+      "commonErrors": [
+        "Inventar un artículo que consagre un principio general de equidad"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Equidad",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La respuesta debe distinguir texto expreso de construcción interpretativa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:004",
+      "expectedAnswer": "Ejemplo: si una regla administrativa admite dos interpretaciones, debe preferirse la que evite una diferencia arbitraria conforme al artículo 19 N.º 2, siempre que sea compatible con el texto legal.",
+      "keyPoints": [
+        "Interpretación conforme",
+        "Igualdad ante la ley"
+      ],
+      "commonErrors": [
+        "Usar el principio para ignorar una norma expresa"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Aplicación de principios",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:005",
+      "expectedAnswer": "La igualdad parte de la igual dignidad y prohíbe diferencias arbitrarias. No exige trato idéntico en todo caso: admite distinciones objetivas, razonables y proporcionales, y comprende dimensiones formal y material.",
+      "keyPoints": [
+        "Igual dignidad",
+        "No arbitrariedad",
+        "Razonabilidad",
+        "Igualdad formal y material"
+      ],
+      "commonErrors": [
+        "Igualdad equivale siempre a trato idéntico"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Concepto y dimensiones",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:006",
+      "expectedAnswer": "La igualdad puede operar como valor constitucional, principio interpretativo y derecho o garantía explícita, especialmente en los artículos 1 y 19 N.º 2.",
+      "keyPoints": [
+        "Valor",
+        "Principio",
+        "Derecho o garantía"
+      ],
+      "commonErrors": [
+        "Reducirla a una sola categoría"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Dimensiones constitucionales",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:007",
+      "expectedAnswer": "Analíticamente no son idénticos: el derecho es la posición o bien protegido y la garantía es una técnica para asegurarlo, como reserva legal, tutela judicial o acción constitucional. Sin embargo, el lenguaje constitucional también usa garantía para designar derechos asegurados.",
+      "keyPoints": [
+        "Derecho protegido",
+        "Mecanismo de garantía",
+        "Uso polisémico"
+      ],
+      "commonErrors": [
+        "Dar una distinción absoluta sin matices"
+      ],
+      "subjectName": "Teoría de los derechos fundamentales",
+      "subsubjectName": "Derechos y garantías",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:008",
+      "expectedAnswer": "Las manifestaciones principales son: N.º 2, igualdad ante la ley; N.º 3, igual protección y debido proceso; N.º 16, no discriminación laboral; N.º 20, igual repartición tributaria; y N.º 22, no discriminación arbitraria en materia económica por el Estado.",
+      "keyPoints": [
+        "Números 2, 3, 16, 20 y 22"
+      ],
+      "commonErrors": [
+        "Dar una lista sin explicar el criterio"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Manifestaciones en el artículo 19",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:009",
+      "expectedAnswer": "El artículo 19 N.º 2 dispone que no hay personas ni grupos privilegiados; en Chile no hay esclavos y quien pise su territorio queda libre; hombres y mujeres son iguales ante la ley; y ni la ley ni autoridad alguna pueden establecer diferencias arbitrarias.",
+      "keyPoints": [
+        "Ausencia de privilegios",
+        "Proscripción de esclavitud",
+        "Igualdad de hombres y mujeres",
+        "Prohibición de diferencias arbitrarias"
+      ],
+      "commonErrors": [
+        "Sostener que igualdad exige identidad de trato"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Igualdad ante la ley",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:010",
+      "expectedAnswer": "Los hitos centrales son la libertad de vientres de 1811, la abolición general en 1823 y la regla vigente del artículo 19 N.º 2, que proscribe la esclavitud y declara libre a quien pise territorio chileno.",
+      "keyPoints": [
+        "1811",
+        "1823",
+        "Artículo 19 N.º 2"
+      ],
+      "commonErrors": [
+        "Confundir libertad de vientres con liberación inmediata universal"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Abolición de la esclavitud",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:011",
+      "expectedAnswer": "La libertad de vientres declaró libres a los hijos nacidos de mujeres esclavizadas desde la vigencia de la medida; no significó por sí sola la liberación inmediata de todas las personas esclavizadas.",
+      "keyPoints": [
+        "Hijos nacidos",
+        "1811",
+        "Alcance limitado"
+      ],
+      "commonErrors": [
+        "Afirmar que liberó automáticamente a las madres"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Libertad de vientres",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:012",
+      "expectedAnswer": "La esclavitud es una condición de dominación que trata a la persona como propiedad y anula su libertad y personalidad jurídica; está absolutamente prohibida.",
+      "keyPoints": [
+        "Dominación",
+        "Cosificación",
+        "Dignidad",
+        "Libertad"
+      ],
+      "commonErrors": [
+        "Reducirla a trabajo no remunerado"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Esclavitud",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:013",
+      "expectedAnswer": "Conforme al artículo 19 N.º 2, quien pise el territorio chileno queda libre.",
+      "keyPoints": [
+        "Efecto inmediato",
+        "Territorio chileno"
+      ],
+      "commonErrors": [
+        "Sostener que la persona conserva en Chile su condición de esclavitud"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Proscripción de la esclavitud",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:014",
+      "expectedAnswer": "Debe exponerse el contenido completo: inexistencia de personas o grupos privilegiados; proscripción de la esclavitud y libertad por ingreso al territorio; igualdad de hombres y mujeres; y prohibición de diferencias arbitrarias.",
+      "keyPoints": [
+        "Cuatro componentes del numeral"
+      ],
+      "commonErrors": [
+        "Adivinar cuáles son los dos puntos omitidos"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Contenido del artículo 19 N.º 2",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "statement": "Exponga íntegramente el contenido de la igualdad ante la ley reconocido en el artículo 19 N.º 2 de la Constitución."
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:015",
+      "expectedAnswer": "La reforma de 1999 hizo explícita la igualdad de hombres y mujeres, aunque ambos ya estaban comprendidos en el término personas. Se discute doctrinalmente su valor simbólico, la suficiencia de la igualdad formal y su relación con la igualdad sustantiva.",
+      "keyPoints": [
+        "Reforma de 1999",
+        "Igualdad formal",
+        "Igualdad sustantiva"
+      ],
+      "commonErrors": [
+        "Presentar una sola dificultad doctrinal como indiscutida"
+      ],
+      "subjectName": "Igualdad",
+      "subsubjectName": "Igualdad de hombres y mujeres",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "statement": "Exponga las principales discusiones doctrinales sobre la mención expresa de hombres y mujeres en la norma de igualdad ante la ley."
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:016",
+      "expectedAnswer": "Regula la igual protección de la ley, defensa jurídica y asistencia, juez natural, exigencia de procedimiento e investigación racionales y justos, y garantías penales como legalidad, tipicidad y prohibiciones constitucionales específicas.",
+      "keyPoints": [
+        "Igual protección",
+        "Defensa jurídica",
+        "Juez natural",
+        "Debido proceso",
+        "Legalidad y tipicidad"
+      ],
+      "commonErrors": [
+        "Reducir el numeral únicamente a igualdad"
+      ],
+      "subjectName": "Debido proceso",
+      "subsubjectName": "Artículo 19 N.º 3",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "No material legal correction or unresolved classification issue identified.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:lunes-19-octubre-grado-1-consti-figueroa:derecho-constitucional:017",
+      "expectedAnswer": "Las exigencias de procedimiento racional y justo se proyectan especialmente a la potestad sancionadora administrativa. La cláusula de juez natural se refiere a órganos que ejercen jurisdicción; un procedimiento escolar no es automáticamente jurisdiccional, aunque debe respetar garantías procedimentales según su normativa.",
+      "keyPoints": [
+        "Potestad sancionadora",
+        "Procedimiento racional y justo",
+        "Matiz sobre jurisdicción"
+      ],
+      "commonErrors": [
+        "Equiparar todo procedimiento privado con jurisdicción"
+      ],
+      "subjectName": "Debido proceso",
+      "subsubjectName": "Ámbito administrativo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente generalizaba en exceso.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ]
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:001",
+      "expectedAnswer": "El artículo 1 regula persona, familia, grupos intermedios, servicio a la persona, bien común y deberes estatales; el artículo 3 define a Chile como Estado unitario y ordena una administración descentralizada o desconcentrada conforme a la ley.",
+      "keyPoints": [
+        "Artículo 1",
+        "Artículo 3",
+        "Bien común",
+        "Estado unitario"
+      ],
+      "commonErrors": [
+        "Atribuir toda la regulación estatal al artículo 1"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Estado en la Constitución",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:002",
+      "expectedAnswer": "El artículo 1 incluye el deber de resguardar la seguridad nacional y proteger a la población y la familia. Se concreta mediante órganos y potestades sometidos a la Constitución y la ley, especialmente los previstos en los artículos 101 y siguientes.",
+      "keyPoints": [
+        "Seguridad nacional",
+        "Protección de población y familia",
+        "Principio de juridicidad"
+      ],
+      "commonErrors": [
+        "Tratarlo como facultad ilimitada"
+      ],
+      "subjectName": "Seguridad y orden público",
+      "subsubjectName": "Deber estatal de seguridad",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:003",
+      "expectedAnswer": "El artículo 101 dispone que Carabineros e Investigaciones constituyen las Fuerzas de Orden y Seguridad Pública, destinadas a dar eficacia al derecho y garantizar el orden público y la seguridad pública interior.",
+      "keyPoints": [
+        "Carabineros",
+        "Policía de Investigaciones",
+        "Artículo 101"
+      ],
+      "commonErrors": [
+        "Confundirlas con las Fuerzas Armadas"
+      ],
+      "subjectName": "Seguridad y orden público",
+      "subsubjectName": "Fuerzas de Orden y Seguridad Pública",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:004",
+      "expectedAnswer": "El artículo 1 inciso tercero reconoce y ampara a los grupos intermedios y les garantiza adecuada autonomía para cumplir sus fines específicos.",
+      "keyPoints": [
+        "Reconocimiento",
+        "Amparo",
+        "Autonomía",
+        "Fines específicos"
+      ],
+      "commonErrors": [
+        "Describirlo solo como un deber estatal genérico"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Grupos intermedios",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:005",
+      "expectedAnswer": "La subsidiariedad no está nombrada expresamente en la Constitución. Parte de la doctrina la infiere de la autonomía de los grupos intermedios y la libertad económica; otra doctrina discute ese alcance.",
+      "keyPoints": [
+        "Principio no textual",
+        "Inferencia doctrinal",
+        "Debate constitucional"
+      ],
+      "commonErrors": [
+        "Presentarla como mandato expreso"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Subsidiariedad",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "Exponga las principales posiciones doctrinales sobre el principio que se vincula con la autonomía de los grupos intermedios del artículo 1, inciso tercero, de la Constitución."
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:006",
+      "expectedAnswer": "En su formulación doctrinal, tiene una dimensión negativa, de respeto a la autonomía e iniciativa social, y una positiva, de actuación o promoción estatal cuando personas o cuerpos intermedios no satisfacen adecuadamente bienes comunes. No equivale sin más a un Estado mínimo.",
+      "keyPoints": [
+        "Dimensión negativa",
+        "Dimensión positiva",
+        "Bien común"
+      ],
+      "commonErrors": [
+        "Equipararla a abstención estatal absoluta"
+      ],
+      "subjectName": "Bases de la institucionalidad",
+      "subsubjectName": "Subsidiariedad",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una formulación condicional que explicita los supuestos necesarios sin afirmar hechos no contenidos en la fuente. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "Explique brevemente la formulación doctrinal del principio de subsidiariedad, distinguiendo sus dimensiones negativa y positiva."
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:007",
+      "expectedAnswer": "La defensa nacional corresponde a las Fuerzas Armadas y el orden y seguridad pública a Carabineros e Investigaciones. Los particulares no ejercen por sí potestades soberanas o coacción pública, aunque pueden colaborar en actividades reguladas sin asumir esas potestades.",
+      "keyPoints": [
+        "Artículo 101",
+        "Potestad pública",
+        "Colaboración privada regulada"
+      ],
+      "commonErrors": [
+        "Afirmar exclusividad estatal de toda actividad relacionada con seguridad"
+      ],
+      "subjectName": "Seguridad y orden público",
+      "subsubjectName": "Funciones estatales",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "Distinga las potestades soberanas reservadas a órganos estatales de las actividades privadas reguladas que pueden relacionarse con la seguridad nacional o pública."
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:008",
+      "expectedAnswer": "Asegura emitir opinión e informar sin censura previa, por cualquier medio, sin perjuicio de responsabilidades ulteriores; contempla rectificación, prohíbe el monopolio estatal de los medios y regula aspectos de televisión y del Consejo Nacional de Televisión.",
+      "keyPoints": [
+        "Opinión",
+        "Información",
+        "Sin censura previa",
+        "Responsabilidad ulterior",
+        "Rectificación",
+        "No monopolio estatal"
+      ],
+      "commonErrors": [
+        "Confundir ausencia de censura con ausencia de responsabilidad"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Artículo 19 N.º 12",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:009",
+      "expectedAnswer": "La información comunica hechos susceptibles de contraste o verificación; la opinión expresa juicios de valor que no son demostrables como verdaderos o falsos del mismo modo. La creencia subjetiva del emisor en un hecho no lo convierte en opinión.",
+      "keyPoints": [
+        "Hechos verificables",
+        "Juicios de valor",
+        "Naturaleza del enunciado"
+      ],
+      "commonErrors": [
+        "Usar la convicción subjetiva del emisor como criterio"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Opinión e información",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era jurídicamente insuficiente. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:010",
+      "expectedAnswer": "La información comunica hechos susceptibles de contraste o verificación; la opinión expresa juicios de valor que no son demostrables como verdaderos o falsos del mismo modo. La creencia subjetiva del emisor en un hecho no lo convierte en opinión.",
+      "keyPoints": [
+        "Hechos verificables",
+        "Juicios de valor",
+        "Naturaleza del enunciado"
+      ],
+      "commonErrors": [
+        "Usar la convicción subjetiva del emisor como criterio"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Opinión e información",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era jurídicamente insuficiente. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:011",
+      "expectedAnswer": "La distinción entre opinión e información atiende a la naturaleza del enunciado, su contexto y verificabilidad, interpretados conforme al artículo 19 N.º 12 y al artículo 13 de la Convención Americana. La moralidad o concepción subjetiva del emisor no basta.",
+      "keyPoints": [
+        "Naturaleza",
+        "Contexto",
+        "Verificabilidad"
+      ],
+      "commonErrors": [
+        "Psicologizar la clasificación"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Criterios de distinción",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Conviene complementar con la jurisprudencia indicada por la cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:012",
+      "expectedAnswer": "Televisión Nacional de Chile es una empresa autónoma del Estado, no un monopolio. El artículo 19 N.º 12 prohíbe expresamente el monopolio estatal sobre los medios de comunicación social.",
+      "keyPoints": [
+        "Empresa estatal",
+        "Prohibición de monopolio",
+        "Pluralidad de medios"
+      ],
+      "commonErrors": [
+        "Equiparar empresa estatal con monopolio"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Medios de comunicación",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:013",
+      "expectedAnswer": "Es el control, autorización o restricción estatal que condiciona o impide una expresión antes de su difusión. La regla es su prohibición, sin perjuicio de responsabilidades ulteriores y de la excepción convencional acotada para espectáculos públicos destinada a proteger moralmente a la infancia y adolescencia.",
+      "keyPoints": [
+        "Control ex ante",
+        "Prohibición",
+        "Responsabilidad ulterior"
+      ],
+      "commonErrors": [
+        "Calificar toda regulación como censura"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Censura previa",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:014",
+      "expectedAnswer": "La censura es previa cuando opera antes de la emisión, publicación o exhibición. Una sanción posterior no es censura previa, aunque puede vulnerar la libertad de expresión por otras razones.",
+      "keyPoints": [
+        "Antes de la difusión",
+        "Diferencia con responsabilidad ulterior"
+      ],
+      "commonErrors": [
+        "Confundir sanción posterior con censura previa"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Temporalidad de la censura",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:esteban-peredo-grado-2-consti:derecho-constitucional:015",
+      "expectedAnswer": "Sí. La prohibición judicial de exhibición constituyó censura previa y vulneró el artículo 13 de la Convención Americana, según la Corte Interamericana; Chile debió adecuar su ordenamiento.",
+      "keyPoints": [
+        "Prohibición judicial de exhibición",
+        "Artículo 13 de la Convención Americana",
+        "Responsabilidad internacional"
+      ],
+      "commonErrors": [
+        "Negar la censura por provenir de una sentencia"
+      ],
+      "subjectName": "Libertad de expresión",
+      "subsubjectName": "Caso La última tentación de Cristo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.corteidh.or.cr/docs/casos/articulos/Seriec_73_esp.pdf"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:001",
+      "expectedAnswer": "Asegura el derecho a la vida y a la integridad física y psíquica; ordena a la ley proteger la vida del que está por nacer; limita la pena de muerte a una ley de quórum calificado; y prohíbe todo apremio ilegítimo.",
+      "keyPoints": [
+        "Vida",
+        "Integridad física y psíquica",
+        "Vida del que está por nacer",
+        "Pena de muerte",
+        "Apremios ilegítimos"
+      ],
+      "commonErrors": [
+        "Omitir la integridad personal"
+      ],
+      "subjectName": "Derecho a la vida e integridad",
+      "subsubjectName": "Artículo 19 N.º 1",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:002",
+      "expectedAnswer": "Protege la existencia biológica frente a privaciones arbitrarias e impone deberes estatales de respeto y protección. El alcance sobre inicio y fin de la vida y determinadas prestaciones positivas es controvertido y debe sustentarse con jurisprudencia concreta.",
+      "keyPoints": [
+        "Existencia",
+        "Deber de abstención",
+        "Deber de protección"
+      ],
+      "commonErrors": [
+        "Presentar una posición doctrinal como única"
+      ],
+      "subjectName": "Derecho a la vida",
+      "subsubjectName": "Contenido esencial",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "Exponga el núcleo comúnmente reconocido del derecho a la vida y señale qué aspectos de su contenido esencial permanecen sujetos a debate doctrinal o jurisprudencial."
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:003",
+      "expectedAnswer": "La pregunta es imprecisa: el derecho exige correlativamente abstenerse de privar arbitrariamente de la vida y adoptar medidas razonables de protección; no corresponde a una única acción o conducta del titular.",
+      "keyPoints": [
+        "Respeto",
+        "Protección",
+        "Deberes estatales"
+      ],
+      "commonErrors": [
+        "Inventar una conducta única"
+      ],
+      "subjectName": "Derecho a la vida",
+      "subsubjectName": "Deberes de protección",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "Distinga los deberes negativos y positivos asociados al derecho a la vida, sin reducirlo a una única conducta del titular."
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:004",
+      "expectedAnswer": "La Constitución no reconoce un derecho general e irrestricto a disponer de la propia vida. Autonomía, rechazo de tratamientos, auxilio al suicidio y eutanasia son problemas jurídicos distintos sometidos a su regulación legal y jurisprudencial.",
+      "keyPoints": [
+        "Ausencia de derecho general a morir",
+        "Autonomía",
+        "Distinción de supuestos"
+      ],
+      "commonErrors": [
+        "Inferir un derecho a morir de la no punibilidad del suicidio"
+      ],
+      "subjectName": "Derecho a la vida",
+      "subsubjectName": "Disponibilidad",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "Analice, distinguiendo los distintos supuestos jurídicos, si existe un derecho general e irrestricto a disponer de la propia vida."
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:005",
+      "expectedAnswer": "Son actos de agentes públicos o partícipes que, abusando de sus funciones, aplican tratos crueles, inhumanos o degradantes que no alcanzan por su gravedad a constituir tortura, conforme al artículo 150 D del Código Penal, además de la prohibición constitucional.",
+      "keyPoints": [
+        "Abuso funcional",
+        "Trato cruel, inhumano o degradante",
+        "Gravedad inferior a tortura"
+      ],
+      "commonErrors": [
+        "Confundirlos con todo apremio procesal legítimo"
+      ],
+      "subjectName": "Derecho a la integridad",
+      "subsubjectName": "Apremios ilegítimos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1984"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "¿Cómo tipifica el artículo 150 D del Código Penal los apremios ilegítimos y cómo se distinguen de la tortura?"
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:006",
+      "expectedAnswer": "La integridad psíquica es un bien o derecho protegido; el apremio ilegítimo es una conducta prohibida capaz de lesionar esa integridad y también la integridad física.",
+      "keyPoints": [
+        "Bien jurídico",
+        "Conducta prohibida"
+      ],
+      "commonErrors": [
+        "Tratar ambos conceptos como categorías equivalentes"
+      ],
+      "subjectName": "Derecho a la integridad",
+      "subsubjectName": "Bien protegido y conducta",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/navegar?idNorma=1984"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:007",
+      "expectedAnswer": "La tortura exige dolores o sufrimientos graves y una finalidad específica del artículo 150 A. Los apremios ilegítimos u otros tratos del artículo 150 D no alcanzan esa gravedad y no exigen la misma finalidad especial.",
+      "keyPoints": [
+        "Gravedad",
+        "Finalidad específica",
+        "Artículos 150 A y 150 D"
+      ],
+      "commonErrors": [
+        "Diferenciarlos solo por lesión física"
+      ],
+      "subjectName": "Derecho a la integridad",
+      "subsubjectName": "Tortura y apremios ilegítimos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/navegar?idNorma=1984"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:008",
+      "expectedAnswer": "La tortura puede perseguir obtener información, declaración o confesión; castigar; intimidar o coaccionar; o discriminar por los motivos contemplados en el artículo 150 A del Código Penal.",
+      "keyPoints": [
+        "Obtención de información",
+        "Castigo",
+        "Intimidación o coacción",
+        "Discriminación"
+      ],
+      "commonErrors": [
+        "Reducirla a quebrar la voluntad"
+      ],
+      "subjectName": "Derecho a la integridad",
+      "subsubjectName": "Finalidades de la tortura",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/navegar?idNorma=1984"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:009",
+      "expectedAnswer": "El tipo de apremios ilegítimos no exige una finalidad especial como la tortura; se caracteriza por el trato cruel, inhumano o degradante, el abuso funcional y una gravedad que no alcanza la tortura.",
+      "keyPoints": [
+        "Sin finalidad especial",
+        "Abuso funcional",
+        "Gravedad inferior"
+      ],
+      "commonErrors": [
+        "Inventar una finalidad típica necesaria"
+      ],
+      "subjectName": "Derecho a la integridad",
+      "subsubjectName": "Apremios ilegítimos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/navegar?idNorma=1984"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:010",
+      "expectedAnswer": "El artículo 3 dispone que Chile es un Estado unitario y que su administración será funcional y territorialmente descentralizada o desconcentrada, según corresponda y conforme a la ley.",
+      "keyPoints": [
+        "Estado unitario",
+        "Descentralización",
+        "Desconcentración"
+      ],
+      "commonErrors": [
+        "Confundir forma de Estado con forma de gobierno"
+      ],
+      "subjectName": "Organización del Estado",
+      "subsubjectName": "Forma de Estado",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:011",
+      "expectedAnswer": "Existe un único ordenamiento y centro de poder estatal soberano, aunque las funciones se distribuyen entre órganos y la administración puede descentralizarse o desconcentrarse.",
+      "keyPoints": [
+        "Unidad política y jurídica",
+        "Distribución de funciones"
+      ],
+      "commonErrors": [
+        "Inferir centralización administrativa obligatoria"
+      ],
+      "subjectName": "Organización del Estado",
+      "subsubjectName": "Estado unitario",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:012",
+      "expectedAnswer": "El impulso político no nace exclusivamente del Presidente. El poder estatal se ejerce por los órganos constitucionales; el Presidente dirige el gobierno y la administración, mientras el Congreso y otros órganos cumplen funciones propias.",
+      "keyPoints": [
+        "Separación de funciones",
+        "Presidente",
+        "Congreso y otros órganos"
+      ],
+      "commonErrors": [
+        "Identificar al Presidente como único centro político"
+      ],
+      "subjectName": "Organización del Estado",
+      "subsubjectName": "Distribución del poder estatal",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era incorrecta. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:013",
+      "expectedAnswer": "La ley se forma mediante el procedimiento constitucional con intervención del Congreso y del Presidente de la República, incluyendo iniciativa, deliberación, aprobación, sanción o veto, promulgación y publicación según corresponda. Otras normas provienen de otras potestades normativas.",
+      "keyPoints": [
+        "Congreso",
+        "Presidente",
+        "Procedimiento legislativo"
+      ],
+      "commonErrors": [
+        "Afirmar que las normas nacen solo del legislador"
+      ],
+      "subjectName": "Fuentes del derecho",
+      "subsubjectName": "Formación de la ley",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era incompleta. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:014",
+      "expectedAnswer": "Es la atribución legal de competencias a otra persona jurídica pública, dotada de patrimonio y autonomía, sin dependencia jerárquica del poder central en el ejercicio de esas competencias. Puede ser funcional o territorial.",
+      "keyPoints": [
+        "Personalidad jurídica",
+        "Patrimonio",
+        "Autonomía",
+        "Competencia"
+      ],
+      "commonErrors": [
+        "Confundirla con delegación o desconcentración"
+      ],
+      "subjectName": "Organización administrativa",
+      "subsubjectName": "Descentralización",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:vidal-grado-3-consti:derecho-constitucional:015",
+      "expectedAnswer": "La desconcentración funcional distribuye legalmente competencias por función dentro de una misma persona jurídica y mantiene el vínculo jerárquico. Por ejemplo, una ley puede atribuir a una dirección regional de un servicio una competencia sectorial específica, sin crear una persona jurídica distinta.",
+      "keyPoints": [
+        "Misma persona jurídica",
+        "Jerarquía",
+        "Competencia funcional"
+      ],
+      "commonErrors": [
+        "Confundirla con descentralización"
+      ],
+      "subjectName": "Organización administrativa",
+      "subsubjectName": "Desconcentración funcional",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Atribución docente confirmada por el usuario el 2026-10-20 (user_confirmed_commission_assignment): Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "professorConfirmation": {
+          "type": "user_confirmed_commission_assignment",
+          "date": "2026-10-20",
+          "professorName": "Mauricio Figueroa"
+        }
+      },
+      "statement": "Defina la desconcentración funcional e ilústrela con un ejemplo hipotético de distribución de competencias dentro de un mismo servicio público."
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:001",
+      "expectedAnswer": "La soberanía reside esencialmente en la Nación. El pueblo la ejerce mediante plebiscito y elecciones periódicas, y también las autoridades establecidas por la Constitución. Su límite es el respeto de los derechos esenciales, que los órganos deben respetar y promover conforme a la Constitución y tratados ratificados y vigentes.",
+      "keyPoints": [
+        "Titularidad",
+        "Ejercicio",
+        "Límite por derechos esenciales"
+      ],
+      "commonErrors": [
+        "Afirmar soberanía ilimitada"
+      ],
+      "subjectName": "Soberanía",
+      "subsubjectName": "Artículo 5",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:002",
+      "expectedAnswer": "La Constitución distingue a la Nación como titular de la soberanía y al pueblo como una vía democrática de ejercicio, pero no define ambos conceptos. Su delimitación pertenece a la doctrina constitucional.",
+      "keyPoints": [
+        "Artículo 5",
+        "Titularidad",
+        "Ejercicio",
+        "Ausencia de definición"
+      ],
+      "commonErrors": [
+        "Presentar una definición doctrinal como texto expreso"
+      ],
+      "subjectName": "Soberanía",
+      "subsubjectName": "Nación y pueblo",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      },
+      "statement": "Explique la distinción entre Nación como titular de la soberanía y pueblo como forma de ejercicio, precisando qué proviene del texto constitucional y qué corresponde a elaboración doctrinal."
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:003",
+      "expectedAnswer": "La Constitución no define quién integra la Nación. Vincularla exclusivamente con la nacionalidad es una tesis doctrinal; afirmar categóricamente que ningún extranjero puede formar parte de ella carece de apoyo textual suficiente.",
+      "keyPoints": [
+        "Silencio constitucional",
+        "Concepto doctrinal"
+      ],
+      "commonErrors": [
+        "Tratar la nota del profesor como derecho positivo"
+      ],
+      "subjectName": "Soberanía",
+      "subsubjectName": "Concepto de Nación",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      },
+      "statement": "Exponga por qué la Constitución no resuelve expresamente quiénes integran la Nación y presente de manera neutral las principales aproximaciones doctrinales sobre la pertenencia de extranjeros."
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:004",
+      "expectedAnswer": "Para el ejercicio electoral, participan los ciudadanos con sufragio y los extranjeros habilitados por el artículo 14. Como concepto político o social, pueblo puede ser más amplio y su delimitación es doctrinal.",
+      "keyPoints": [
+        "Ciudadanos",
+        "Extranjeros habilitados",
+        "Artículos 13 y 14"
+      ],
+      "commonErrors": [
+        "Equiparar pueblo exclusivamente con ciudadanos en todo contexto"
+      ],
+      "subjectName": "Soberanía",
+      "subsubjectName": "Pueblo y cuerpo electoral",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:005",
+      "expectedAnswer": "Es ciudadano el chileno que haya cumplido dieciocho años y no haya sido condenado a pena aflictiva. La ciudadanía otorga sufragio, opción a cargos de elección popular y los demás derechos conferidos por la Constitución o la ley.",
+      "keyPoints": [
+        "Nacionalidad chilena",
+        "Dieciocho años",
+        "Sin condena a pena aflictiva"
+      ],
+      "commonErrors": [
+        "Confundir nacionalidad con ciudadanía"
+      ],
+      "subjectName": "Ciudadanía",
+      "subsubjectName": "Requisitos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:006",
+      "expectedAnswer": "Desde 2026, el artículo 14 permite sufragar a extranjeros avecindados en Chile por más de diez años ininterrumpidos que cumplan los requisitos del artículo 13 inciso primero, en los casos y formas determinados por la ley.",
+      "keyPoints": [
+        "Más de diez años ininterrumpidos",
+        "Requisitos del artículo 13",
+        "Vigencia desde 2026"
+      ],
+      "commonErrors": [
+        "Aplicar el antiguo plazo de cinco años",
+        "Exigir ciudadanía chilena"
+      ],
+      "subjectName": "Derechos políticos",
+      "subsubjectName": "Sufragio de extranjeros",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota sobre el cambio a diez años es correcta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www.bcn.cl/leychile/Navegar/imprimir?idNorma=1217272&idParte=10564746&idVersion=2026-01-01"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:007",
+      "expectedAnswer": "El ejercicio de la soberanía reconoce como límite el respeto de los derechos esenciales que emanan de la naturaleza humana. Los órganos deben respetar y promover los derechos garantizados por la Constitución y por tratados internacionales ratificados por Chile y vigentes.",
+      "keyPoints": [
+        "Derechos esenciales",
+        "Constitución",
+        "Tratados ratificados y vigentes"
+      ],
+      "commonErrors": [
+        "Afirmar que la soberanía carece de límites"
+      ],
+      "subjectName": "Soberanía",
+      "subsubjectName": "Límites",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:008",
+      "expectedAnswer": "Es una construcción doctrinal que integra parámetros constitucionales y normas internacionales de derechos humanos para el control y la interpretación constitucional. La Constitución no usa esa expresión y el alcance y jerarquía de sus componentes son discutidos.",
+      "keyPoints": [
+        "Artículo 5 inciso segundo",
+        "Tratados de derechos humanos",
+        "Construcción doctrinal"
+      ],
+      "commonErrors": [
+        "Afirmar una composición o jerarquía unívoca"
+      ],
+      "subjectName": "Fuentes constitucionales",
+      "subsubjectName": "Bloque de constitucionalidad",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      },
+      "statement": "Explique la teoría del bloque constitucional como construcción doctrinal y señale los principales debates sobre su composición y jerarquía."
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:009",
+      "expectedAnswer": "Los derechos implícitos se identifican mediante interpretación constitucional sistemática, en conexión con dignidad, cláusulas abiertas y tratados de derechos humanos. Su reconocimiento suele manifestarse en jurisprudencia y argumentación jurídica; no nacen solo porque un órgano los declare.",
+      "keyPoints": [
+        "Interpretación sistemática",
+        "Artículo 5",
+        "Tratados",
+        "Jurisprudencia"
+      ],
+      "commonErrors": [
+        "Atribuir su creación exclusiva al juez"
+      ],
+      "subjectName": "Derechos fundamentales",
+      "subsubjectName": "Derechos implícitos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      },
+      "statement": "Exponga las principales vías interpretativas mediante las cuales pueden identificarse derechos implícitos en el orden constitucional."
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:010",
+      "expectedAnswer": "Los tribunales ordinarios, la Corte Suprema, el Tribunal Constitucional y órganos internacionales pueden reconocer o proyectar derechos dentro de sus competencias; el legislador puede desarrollarlos. No existe en el texto constitucional un monopolio de un único identificador.",
+      "keyPoints": [
+        "Pluralidad institucional",
+        "Interpretación",
+        "Desarrollo legislativo"
+      ],
+      "commonErrors": [
+        "Responder exclusivamente el juez o exclusivamente el legislador"
+      ],
+      "subjectName": "Derechos fundamentales",
+      "subsubjectName": "Reconocimiento de derechos implícitos",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una exposición doctrinal neutral que distingue el texto vigente de las posiciones interpretativas sin imponer una tesis de cátedra. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      },
+      "statement": "Explique qué órganos pueden reconocer, interpretar o desarrollar derechos implícitos dentro de sus respectivas competencias."
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:011",
+      "expectedAnswer": "Asegura libertad de trabajo y su protección, libre elección y contratación y justa retribución; prohíbe discriminaciones salvo capacidad o idoneidad; permite regulación legal de profesiones; y regula negociación colectiva y restricciones a la huelga en los términos del numeral.",
+      "keyPoints": [
+        "Libertad de trabajo",
+        "Libre contratación",
+        "Justa retribución",
+        "No discriminación",
+        "Negociación colectiva",
+        "Huelga"
+      ],
+      "commonErrors": [
+        "Reducirlo al acceso a un empleo"
+      ],
+      "subjectName": "Libertad de trabajo",
+      "subsubjectName": "Artículo 19 N.º 16",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:012",
+      "expectedAnswer": "El trabajo forzoso no equivale a falta de remuneración. Conforme al Convenio OIT N.º 29, es todo trabajo o servicio exigido bajo amenaza de una pena y para el cual la persona no se ofrece voluntariamente, sujeto a sus excepciones.",
+      "keyPoints": [
+        "Amenaza de pena",
+        "Ausencia de voluntariedad",
+        "Convenio OIT N.º 29"
+      ],
+      "commonErrors": [
+        "Definirlo solo como trabajo no remunerado"
+      ],
+      "subjectName": "Libertad de trabajo",
+      "subsubjectName": "Trabajo forzoso",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era falsa. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://normlex.ilo.org/dyn/nrmlx_es/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C029"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:013",
+      "expectedAnswer": "La institución puede servir a la asistencia jurídica, pero la STC Rol N.º 1254 declaró contraria a la Constitución la imposición gratuita del turno: la gratuidad vulnera la libertad de trabajo y la justa retribución. No corresponde justificarla como carga gratuita inherente a ser abogado.",
+      "keyPoints": [
+        "STC Rol N.º 1254",
+        "Justa retribución",
+        "Asistencia jurídica"
+      ],
+      "commonErrors": [
+        "Afirmar que la calidad de abogado justifica gratuidad"
+      ],
+      "subjectName": "Libertad de trabajo",
+      "subsubjectName": "Abogados de turno",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "La nota fuente era incorrecta. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www2.tribunalconstitucional.cl/wp-content/uploads/2022/03/2844.pdf"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:014",
+      "expectedAnswer": "La asistencia jurídica a quienes no pueden procurársela se vincula al artículo 19 N.º 3 y a su regulación legal. La distribución de esa carga debe respetar igualdad, libertad de trabajo y retribución, conforme a la STC Rol N.º 1254.",
+      "keyPoints": [
+        "Defensa jurídica",
+        "Regulación legal",
+        "Igualdad",
+        "Retribución"
+      ],
+      "commonErrors": [
+        "Inferir una obligación gratuita automática"
+      ],
+      "subjectName": "Igualdad ante las cargas públicas",
+      "subsubjectName": "Fundamento del turno",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525",
+        "https://www2.tribunalconstitucional.cl/wp-content/uploads/2022/03/2844.pdf"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      }
+    },
+    {
+      "sourceReference": "october-oral-exams:octubre-grado-no-indicado-consti-soberania-trabajo:derecho-constitucional:015",
+      "expectedAnswer": "Debe completarse con libertad de trabajo y protección, libre elección y contratación, justa retribución, prohibición de discriminación laboral, regulación profesional, negociación colectiva y límites constitucionales a la huelga.",
+      "keyPoints": [
+        "Contenido íntegro del numeral"
+      ],
+      "commonErrors": [
+        "Omitir negociación colectiva o huelga"
+      ],
+      "subjectName": "Libertad de trabajo",
+      "subsubjectName": "Contenido del artículo 19 N.º 16",
+      "legalReviewStatus": "reviewed",
+      "legalReviewNotes": "Ambigüedad resuelta mediante una consigna autosuficiente que delimita expresamente el contenido solicitado. Orden fuente confirmado por el usuario el 2026-10-20 (user_confirmed_order_inheritance): Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+      "officialSourceUrls": [
+        "https://www.bcn.cl/leychile/Navegar?idNorma=242302&idParte=8563525"
+      ],
+      "metadata": {
+        "orderInheritanceConfirmation": {
+          "type": "user_confirmed_order_inheritance",
+          "date": "2026-10-20",
+          "explanation": "Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa.",
+          "professorName": "Mauricio Figueroa",
+          "grade": "Tercer grado"
+        },
+        "professorAttribution": "Resolved through user-confirmed source-order inheritance (user_confirmed_order_inheritance) on 2026-10-20: Hereda la comisión Mauricio Figueroa / Felipe Ortiz / Aníbal Chacama y el Tercer grado del mensaje anterior; por ramo, Derecho Constitucional corresponde a Mauricio Figueroa."
+      },
+      "statement": "Enumere y explique los contenidos del artículo 19 N.º 16 de la Constitución Política de la República."
+    }
+  ]
+}
