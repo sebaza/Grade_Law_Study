@@ -289,6 +289,23 @@ model RelatedQuestion {
   @@map("related_questions")
 }
 
+model PoliticalBrief {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  climateSummary  String   @map("climate_summary")
+  climateTone     String   @map("climate_tone")
+  highlightArea   String?  @map("highlight_area")
+  highlightSubject String? @map("highlight_subject")
+  highlightReason String?  @map("highlight_reason")
+  items           Json     @default("[]")
+  sources         Json     @default("[]")
+  headlineCount   Int      @default(0) @map("headline_count")
+  model           String
+  generatedAt     DateTime @default(now()) @map("generated_at") @db.Timestamptz(6)
+
+  @@index([generatedAt])
+  @@map("political_briefs")
+}
+
 model StudentQuestionState {
   id            String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   userId         String         @map("user_id") @db.Uuid

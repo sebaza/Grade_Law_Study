@@ -17,24 +17,29 @@ Recover the current unfinished work safely, add the next question set through a 
 
 1. Add the user's new questions without duplicating existing records.
 2. Make the ingestion path reproducible for the expected batch size.
-3. Add a compact `New in the bank` module to Home with direct practice links.
+3. Add a compact Home module that surfaces new and highlighted questions for practice.
 
 ## Scope and decisions
 
 | Topic | Current direction |
 | --- | --- |
-| Meaning of new | **Open decision:** globally recent by `Question.createdAt`, or unseen/unpracticed per student. |
-| Available data | Global recency works now with `createdAt`; per-student seen status requires new persistence. |
-| Home placement | After dashboard KPIs and before the political brief in `src/app/page.tsx`. |
+| Meaning of new | **Resolved:** global recency by `Question.createdAt`; no fixed 30-day cutoff. |
+| Views | Two tabs: `Más recientes` (newest first) and `Destacadas` (existing bank priority order). |
+| Authenticated experience | Full question rows, per-user `Realizada` marker when `attemptCount > 0`, and progressive loading. |
+| Public experience | Aggregate counts by area for the selected view only; never expose question statements or per-user state. |
+| Home placement | Add to both the public landing page and authenticated dashboard in `src/app/page.tsx`; keep separate from recent practice attempts. |
 | Navigation | Reuse `/practice?source=real&mode=random&questionId=<id>`. |
-| Data access | Prefer a lightweight recent-questions query/API; do not reuse the heavier faceted `/api/questions` request. |
+| Data access | Add a lightweight Home query/API with stable ordering and bounded pagination; do not reuse the heavier faceted `/api/questions` request unchanged. |
+| Search | Shared case-insensitive substring search across question statement, area, subject, subsubject, professor, active expected answer/model answer and rubric notes, key-point label/description, and common-error description. Exclude technical/internal identifiers, source references, ranking scores, attempts, and user state/scores. |
+| Search semantics | Existing bank filters remain separate constraints ANDed with `q`; `q` matches any approved content field (OR). Home applies the same `q` under both views. Preserve ordering, pagination, active-question behavior, and response payloads; do not return answer/rubric text. Public Home remains aggregate-only by area. |
+| Search strategy | Exact substring/contains semantics; no typo-tolerant or full-text ranking. No schema migration absent evidence it is required. |
 | Delivery strategy | `ask-on-risk`. Forecast: likely below 400 authored changed lines if global recency is selected; per-student tracking may exceed it. |
 | TDD | Enabled by project instructions. Runner: `npm test` (typecheck and lint); add focused behavior tests if the selected implementation introduces testable query/domain logic. |
 
 ## Authorized scope
 
-- This document records recovered work and the proposed feature only.
-- Source implementation is not authorized until the open product decision is answered and the question set is supplied.
+- The source implementation was previously blocked pending a product decision and supplied question set. Both conditions were satisfied: the user resolved the Home views on 2026-10-21 and the October question set is already imported.
+- The user approved the implementation scope on 2026-10-21. Authorization covers only the Home recent/highlighted module and its read path/tests; it does not authorize remote writes, migrations, pushes, or unrelated cleanup.
 - NQ-03B is explicitly authorized to add and execute a versioned importer against the existing project `DATABASE_URL`; authorization is limited to planning, applying, and verifying the 226 staged October questions in the already configured Supabase/Postgres database.
 - Do not overwrite, discard, stage, or fold the existing political-brief or evaluation-scale changes into this feature.
 - Push, pull request creation, database migration execution, and remote database writes require separate explicit authorization.
@@ -45,8 +50,12 @@ Recover the current unfinished work safely, add the next question set through a 
   - Evidence: inspected Git status/diff, relevant schema/Home/admin authorization, and prior Engram observations.
   - Work-unit commit: `c32edf61` (`docs: record new questions home module plan`).
   - Route: delegated mapping because understanding required more than four files; parent performed structural readback.
-- [ ] **NQ-02 — Resolve the product definition of `new`.**
-  - Acceptance: choose global recency or per-student unseen status and record the display window/count.
+- [x] **NQ-02 — Resolve the product definition of `new`.**
+  - Decision: use global `Question.createdAt` for `Más recientes`; do not impose an arbitrary time window. The user wants the stream to continue to older additions as they scroll.
+  - Decision: provide a separate `Destacadas` view using the bank's existing `priorityScore`, `estimatedProbability`, and `createdAt` ordering.
+  - Public display: both views return only aggregate counts by area, with no statement text, identifiers, or personal practice state.
+  - Authenticated display: show complete question rows; indicate practiced only when the current user's `attemptCount > 0`.
+  - Evidence: user confirmations in the Home-module discussion on 2026-10-21.
 - [x] **NQ-03 — Validate and ingest the supplied question set.**
   - Acceptance: normalize professor/area/subject/subsubject, reject duplicates by `sourceReference` and content review, and preserve traceable source metadata.
   - Progress: normalized 226 questions into `data/staging/october-question-bank.staging.json`; no database write, canonical-seed update, or manifest update was performed.
@@ -91,12 +100,32 @@ Recover the current unfinished work safely, add the next question set through a 
   - Independent verification: PASS for commit scope, 226/226 database resolution, reviewed-content parity, relationships, historical no-op preservation, and idempotent rerun.
   - Work-unit commit: `b8927018` (`data: import october question batch`).
   - RDD assessment: `medium` with `slice_budget_reached`. The committed-only native lifecycle could not start because STATUS requested selection of unrelated untracked political-brief files despite projecting only the eight committed feature paths; stopped before START without including those files. Independent verification remains the completed check of record.
-- [ ] **NQ-04 — Expose a lightweight recent-questions read path.**
-  - Acceptance: authenticated response returns only active questions, deterministic newest-first ordering, required display metadata, and a bounded result.
-- [ ] **NQ-05 — Add the Home module.**
-  - Acceptance: show 3–5 items with date, subject/professor, loading/empty/error states, and direct practice links.
+- [x] **NQ-04 — Add a privacy-safe Home question feed API.**
+  - Route: delegated direct; implementation requires a query/serialization path and focused tests across multiple files. Preserve the unrelated dirty worktree changes.
+  - Acceptance: return active questions only; `recent` sorts by `createdAt DESC, id DESC`; `featured` uses `priorityScore DESC, estimatedProbability DESC, createdAt DESC, id DESC`; both are bounded and progressively pageable.
+  - Acceptance: authenticated response includes the minimum question details needed for display/practice and a per-user `attemptCount > 0` flag; unauthenticated response contains only counts grouped by area for the first three results of the selected view, with no question identifiers or statements.
+  - Checks: `npx tsx --test src/lib/home/question-feed.test.ts` observed RED before implementation (module missing), then GREEN (3/3). `npm run typecheck` passed; `npx eslint src/app/page.tsx src/app/api/home/questions/route.ts src/lib/home/question-feed.ts src/lib/home/question-feed.test.ts` passed. The first full-repo lint attempt was not clean: an initial feed effect pattern was fixed, and repo lint also reports pre-existing `tmp/**/*.js` `require()` errors. No database migration or remote write.
+  - Work-unit commit: `c9ac75bd` (`feat(home): add privacy-safe question feed API`).
+- [x] **NQ-05 — Integrate two Home views for authenticated and public users.**
+  - Route: delegated direct; non-trivial UI and API integration span multiple files.
+  - Acceptance: `Más recientes` and `Destacadas` tabs appear on both Home variants; public mode renders only aggregated counts and a sign-in/practice CTA, while authenticated mode renders complete rows, dates, area/subject, practice links, and a small `✓ Realizada` marker for attempted questions.
+  - Acceptance: load three rows initially and append the next bounded page into the normal document flow (no nested scrolling); keep pagination separate per tab. Provide loading, empty, and recoverable error states; retain mobile reflow/accessibility.
+  - Implementation: added a reusable Home feed component for both public and signed-in Home states, with independent view switching, initial three rows, progressive loading, loading/empty/error states, public area aggregates only, and attempted markers from the authenticated feed API.
+  - Checks: `npm run typecheck` passed; `npx eslint src/app/page.tsx src/app/home-question-feed.tsx src/app/api/home/questions/route.ts src/lib/home/question-feed.ts src/lib/home/question-feed.test.ts` passed; focused feed tests passed 3/3. Browser smoke not run. Tabs use native buttons with `aria-pressed`, avoiding incomplete ARIA tab semantics; clicking the active view is a no-op (prevents a stuck loading state).
+  - Work-unit commit: `f2fdcb3d` (`feat(home): show recent and featured questions`). Only the isolated component and exact Home feed import/mount lines from the otherwise-dirty `page.tsx` were staged; unrelated political brief and CSS changes remain unstaged.
+- [x] **NQ-07 — Add shared broad question search to Home and the question bank.**
+  - User decision: search all pedagogical/question-finding fields, not only statements. Keep exact case-insensitive substring semantics; do not introduce semantic/vector search.
+  - Route: delegated direct; shared query where-building and its tests affect multiple non-trivial files. Preserve unrelated dirty worktree changes.
+  - Acceptance: q searches question statement, area, subject, subsubject, professor, active expected answer/model answer and rubric notes, key-point label/description, and common-error description; technical/internal IDs, source references, ranking scores, attempts, and user states/scores are excluded.
+  - Acceptance: q matches with OR across searchable fields and ANDs with existing independent bank filters; Home applies q to both recent and featured views. Preserve active-only filtering, existing sort/pagination, and response payloads; never serialize answer/rubric contents. Public Home returns only aggregate counts by area and no user-specific data.
+  - Implementation: added a shared Prisma where-builder, OR-ed the approved searchable fields while retaining separate bank filters as AND constraints, wired `q` through the Home API and both Home views, and added a labeled debounced search input. The Home and bank response payloads remain unchanged and do not include answer/rubric contents.
+  - TDD: RED observed after adding tests before the helper existed (`MODULE_NOT_FOUND: ./question-search`); GREEN/refactor observed with `npx tsx --test src/lib/home/question-feed.test.ts` (6/6).
+  - Checks: `npm run typecheck` passed; `npx eslint src/app/home-question-feed.tsx src/app/api/home/questions/route.ts src/app/api/questions/route.ts src/lib/home/question-search.ts src/lib/home/question-feed.ts src/lib/home/question-feed.test.ts` passed. React checklist: field has an explicit label; request timer and fetch are cleaned up on dependency change/unmount; dependencies are primitive; no nested components or unnecessary memoization. No migration/remote operation.
+  - Runtime harness: N/A; verification is query-builder unit tests plus static checks, and no live database/browser session was used.
+  - Rollback boundary: remove the shared query helper/imports, Home query-input wiring, and the focused tests; preserve all other question-bank filters and existing result serialization.
+  - Work-unit commit: `159bef0b` (`feat(search): broaden question bank and Home queries`).
 - [ ] **NQ-06 — Verify and document the completed behavior.**
-  - Acceptance: observe required RED/GREEN/REFACTOR evidence where applicable; run `npm test`; record any skipped or environmental checks.
+  - Acceptance: observe required RED/GREEN/REFACTOR evidence for focused behavior tests; run `npm test`; record skipped or environmental failures honestly. Update this document and its Engram mirror after each completed work unit, and record each commit identity.
 
 ## Existing backlog recovered
 
@@ -110,6 +139,6 @@ Recover the current unfinished work safely, add the next question set through a 
 
 ## Progress
 
-- Current step: NQ-03 and NQ-03B are complete. The reviewed October batch is loaded and independently repeatable through the versioned importer.
-- Verification: focused RED/GREEN/refactor, staging validation, read-only plan, remote apply, exact verify, idempotent rerun, typecheck, and scoped lint passed. The import resolved 224 source references plus two approved existing-content no-ops with zero conflicts. Seed and manifest remain untouched.
-- Next step: resolve NQ-02's definition of “new” before implementing the Home module.
+- Current step: NQ-03/NQ-03B, NQ-04, NQ-05, and NQ-07 are complete; NQ-06 remains.
+- Verification: import validation and focused API tests (3/3), typecheck, and focused ESLint passed. Repo-wide lint currently reports existing errors in `tmp/**/*.js`; the browser smoke is pending. The import resolved 224 source references plus two approved existing-content no-ops with zero conflicts. Seed and manifest remain untouched.
+- Next step: run the combined final NQ-06 verification/documentation pass.
