@@ -111,12 +111,16 @@ export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
           {(feed.questions ?? []).map((question) => (
             <article className="home-question-row" key={question.id}>
               <div className="home-question-content">
-                <p className="home-question-meta">{question.areaName} · {question.subjectName} · <time dateTime={question.createdAt}>{shortDate(question.createdAt)}</time></p>
+                <div className="home-question-meta">
+                  <span className="home-question-area">{question.areaName}</span>
+                  <span>{question.subjectName}</span>
+                  <time dateTime={question.createdAt}>{shortDate(question.createdAt)}</time>
+                </div>
                 <p className="home-question-statement">{question.statement}</p>
               </div>
               <div className="inline-actions">
                 {question.completed && <span className="question-completed" title="Ya practicaste esta pregunta; puedes volver a intentarlo.">✓ Realizada</span>}
-                <Link className="secondary-button" href={`/practice?source=real&mode=random&questionId=${question.id}`}>Practicar</Link>
+                <Link className="secondary-button home-question-practice" href={`/practice?source=real&mode=random&questionId=${question.id}`}>Practicar<span aria-hidden="true"> →</span></Link>
               </div>
             </article>
           ))}

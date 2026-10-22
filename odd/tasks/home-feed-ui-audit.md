@@ -12,6 +12,7 @@ Improve the recent/featured Home module's hierarchy, clarity and accessible feed
 
 ## Tasks
 - [x] T1 Audit and improve module clarity/accessibility/responsiveness; prove RED then GREEN in the fixture, run npm test, inspect screenshots and commit the coherent unit.
+- [x] T2 Strengthen visual hierarchy with individual question cards, area/date metadata, contextual practice actions and a themed filter control. Delegated direct: coordinated component/CSS/fixture changes. Preserved T1 behavior. Rollback: only T2 component/CSS/fixture changes.
 
 ## Acceptance and checks
 - Recent/featured selection communicates actual view and retains search behavior.
@@ -35,3 +36,11 @@ Improve the recent/featured Home module's hierarchy, clarity and accessible feed
 - Scoped ESLint passed; full ESLint excluding the pre-existing ignored `tmp/**` passed. `git diff --check` passed.
 - Running authored change count: under 150 lines including this document; no delivery split needed. RDD disabled/unmanaged.
 - Remaining: live authenticated Next/API/database integration was not exercised; parent should report this limitation and the global lint failure.
+
+## T2 visual pass
+- Parent requested stronger visual styling after inspecting T1. Added accent module edge/eyebrow, segmented pressed filters, separate soft-surface question cards, area chips and date separators, themed outlined practice links, and practiced badges. Mobile actions align along the card footer; desktop actions form a compact right column.
+- RED: fixture 6/7, card top border was `none`, expected `solid`. GREEN after styling: 7/7. Refactor retained the existing native buttons and shared theme tokens without new dependencies or behavioral state.
+- Visual QA: inspected updated mobile (375px), desktop (1100px) and night screenshots. Forest generated. Fixture also checks 320px no-overflow. Long statements remain fully visible, deliberately increasing card height instead of truncating exam content.
+- TypeScript and full ESLint excluding unchanged ignored `tmp/**` passed; global npm test limitation from T1 remains. No live backend check.
+- Combined authored diff remains below 400 lines; no delivery split or RDD.
+- Commit evidence: recorded after the T2 work-unit commit.

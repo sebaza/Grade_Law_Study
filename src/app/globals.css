@@ -2939,6 +2939,14 @@ body:has(.app-top-nav) > .theme-toggle {
 /* Home question feed: normal document flow, shared theme tokens. */
 .home-question-feed {
   min-width: 0;
+  border-top: 4px solid var(--accent);
+}
+
+.home-question-feed .eyebrow {
+  color: var(--accent);
+  font: 800 0.75rem/1.5 ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .home-question-description {
@@ -2986,14 +2994,20 @@ body:has(.app-top-nav) > .theme-toggle {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-soft);
 }
 
 .home-question-tabs button {
   min-height: 44px;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-radius: 12px;
   padding: 10px 14px;
-  background: var(--surface);
+  background: transparent;
   color: var(--ink);
   cursor: pointer;
   font: 700 0.9rem ui-sans-serif, system-ui, sans-serif;
@@ -3001,8 +3015,9 @@ body:has(.app-top-nav) > .theme-toggle {
 
 .home-question-tabs button[aria-pressed="true"] {
   border-color: var(--accent);
-  background: var(--blue-soft);
-  box-shadow: inset 0 -3px var(--accent);
+  background: var(--accent);
+  color: var(--surface);
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--ink) 12%, transparent);
 }
 
 .home-question-tabs button:hover {
@@ -3016,7 +3031,8 @@ body:has(.app-top-nav) > .theme-toggle {
 
 .home-question-list {
   display: grid;
-  margin-top: 12px;
+  gap: 14px;
+  margin-top: 20px;
 }
 
 .home-question-row {
@@ -3024,8 +3040,10 @@ body:has(.app-top-nav) > .theme-toggle {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-soft);
 }
 
 .home-question-content {
@@ -3034,11 +3052,30 @@ body:has(.app-top-nav) > .theme-toggle {
 }
 
 .home-question-meta {
-  margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 12px;
   color: var(--muted);
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8rem;
   line-height: 1.6;
+}
+
+.home-question-area {
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  border-radius: 6px;
+  padding: 3px 8px;
+  background: var(--blue-soft);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.home-question-meta time {
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+  white-space: nowrap;
 }
 
 .home-question-statement {
@@ -3049,11 +3086,29 @@ body:has(.app-top-nav) > .theme-toggle {
 
 .home-question-row .inline-actions {
   justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.home-question-practice {
+  min-height: 44px;
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface);
+  gap: 10px;
+}
+
+.home-question-practice:hover {
+  background: var(--accent);
+  color: var(--surface);
 }
 
 .home-question-feed .question-completed {
   border-radius: 999px;
   background: var(--blue-soft);
+  color: var(--ink);
+  border: 1px solid var(--border);
   padding: 5px 9px;
   font: 700 0.75rem ui-sans-serif, system-ui, sans-serif;
   white-space: nowrap;
@@ -3078,10 +3133,17 @@ body:has(.app-top-nav) > .theme-toggle {
   .home-question-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 12px;
+    padding: 16px;
   }
 
   .home-question-row .inline-actions {
-    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .home-question-practice {
+    margin-left: auto;
   }
 
   .home-question-feed .landing-area-list {

@@ -104,6 +104,9 @@ test("pagination keeps rows visible on failure and retries the same page", async
     await page.getByRole("button", { name: "Cargar más", exact: true }).click();
     await visible(page.getByRole("alert"));
     assert.equal(await page.locator("article").count(), 3);
+    assert.equal(await page.locator("article").first().evaluate((node) => getComputedStyle(node).borderTopStyle), "solid", "questions have individual card boundaries");
+    assert.ok(await page.locator("article").first().evaluate((node) => parseFloat(getComputedStyle(node).borderRadius) >= 12), "question cards have distinct rounded surfaces");
+    assert.equal(await page.locator(".home-question-area").first().innerText(), "Derecho Civil");
     await page.getByRole("button", { name: "Reintentar", exact: true }).click({ timeout: 3000 });
     await visible(page.getByText("Pregunta 6:", { exact: false }));
     assert.equal(await page.locator("article").count(), 6);
@@ -159,6 +162,8 @@ test("mobile rows, dates, completion and practice remain readable", async () => 
     assert.equal(await page.getByRole("button", { name: "Destacadas", exact: true }).evaluate((node) => node === document.activeElement), true);
     await mkdir("output/playwright", { recursive: true });
     await page.screenshot({ path: "output/playwright/home-feed-mobile.png", fullPage: true });
+    await page.setViewportSize({ width: 320, height: 812 });
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), "small mobile cards do not overflow");
     await page.setViewportSize({ width: 1100, height: 900 });
     assert.equal(await page.locator(".home-question-row").first().evaluate((node) => getComputedStyle(node).gridTemplateColumns.split(" ").length), 2);
     // Home's mobile CSS block must close before the unrelated section begins.
