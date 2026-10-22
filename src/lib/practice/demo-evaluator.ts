@@ -34,12 +34,13 @@ function scoreToLevel(score: number) {
   if (score >= 8) return "Bueno" as const;
   if (score >= 6) return "Regular" as const;
   if (score >= 4) return "Deficiente" as const;
-  return "No cumple" as const;
+  if (score >= 2) return "No cumple" as const;
+  return "Ausente" as const;
 }
 
 function rubricScore(score: number, feedback: string, impact: string) {
   return {
-    score: score as 2 | 4 | 6 | 8 | 10,
+    score: score as 0 | 2 | 4 | 6 | 8 | 10,
     level: scoreToLevel(score),
     feedback,
     impact,
@@ -51,7 +52,8 @@ function clampRubricScore(value: number) {
   if (value >= 7) return 8;
   if (value >= 5) return 6;
   if (value >= 3) return 4;
-  return 2;
+  if (value >= 1) return 2;
+  return 0;
 }
 
 function hasLegalSignals(answer: string) {
@@ -106,10 +108,19 @@ export function evaluateDemoAnswer(question: DemoQuestion, answer: string): Eval
   const hasLegalLanguage = hasLegalSignals(answer);
 
   const keyPointRatio = question.keyPoints.length > 0 ? matchedKeyPoints.length / question.keyPoints.length : expectedRatio;
-  const legalNormsScore = clampRubricScore((hasLegalLanguage ? 4 : 2) + expectedRatio * 6);
-  const legalConceptsScore = clampRubricScore(2 + keyPointRatio * 8);
-  const practicalScore = clampRubricScore(2 + Math.max(expectedRatio, keyPointRatio) * 8 + (question.questionType === "case" ? 0 : -1));
-  const structureScore = clampRubricScore((answerTokens.length > 25 ? 5 : 2) + (hasStructure ? 4 : 1));
+
+  // Nivel Ausente (0): se reserva para criterios sin ninguna señal detectable. Con señal, aunque sea
+  // pobre, el puntaje sigue la escala normal desde 2 (No cumple).
+  const legalNormsScore = hasLegalLanguage || expectedRatio > 0
+    ? clampRubricScore((hasLegalLanguage ? 4 : 2) + expectedRatio * 6)
+    : 0;
+  const legalConceptsScore = keyPointRatio > 0 ? clampRubricScore(2 + keyPointRatio * 8) : 0;
+  const practicalScore = expectedRatio > 0 || keyPointRatio > 0
+    ? clampRubricScore(2 + Math.max(expectedRatio, keyPointRatio) * 8 + (question.questionType === "case" ? 0 : -1))
+    : 0;
+  const structureScore = answerTokens.length > 0
+    ? clampRubricScore((answerTokens.length > 25 ? 5 : 2) + (hasStructure ? 4 : 1))
+    : 0;
   const totalScore = legalNormsScore + legalConceptsScore + practicalScore + structureScore;
   const percentage = Math.round((totalScore / 40) * 100);
 

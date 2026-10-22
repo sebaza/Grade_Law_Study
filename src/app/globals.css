@@ -3065,5 +3065,200 @@ body:has(.app-top-nav) > .theme-toggle {
 
   .home-question-feed .landing-area-list {
     grid-template-columns: minmax(0, 1fr);
+/* ── Coyuntura política ──────────────────────────────────────
+   Lectura automática de prensa chilena mapeada a los ramos del
+   banco. Los colores salen de los tokens vía color-mix, así los
+   tres temas quedan cubiertos sin overrides por tema. */
+.political-brief {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.brief-summary {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.climate-pill {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.climate-pill.tone-estable {
+  background: color-mix(in srgb, var(--green) 16%, transparent);
+  color: color-mix(in srgb, var(--green) 82%, var(--ink));
+  border-color: color-mix(in srgb, var(--green) 32%, transparent);
+}
+
+.climate-pill.tone-activo {
+  background: color-mix(in srgb, var(--blue-soft) 70%, transparent);
+  color: color-mix(in srgb, var(--ink) 78%, var(--accent));
+  border-color: color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.climate-pill.tone-tenso {
+  background: color-mix(in srgb, var(--amber) 18%, transparent);
+  color: color-mix(in srgb, var(--amber) 82%, var(--ink));
+  border-color: color-mix(in srgb, var(--amber) 34%, transparent);
+}
+
+.climate-pill.tone-polarizado {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 34%, transparent);
+}
+
+.brief-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface-soft));
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
+}
+
+.brief-highlight-label {
+  margin: 0 0 2px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.brief-highlight strong {
+  font-size: 17px;
+  color: var(--accent);
+}
+
+.brief-highlight-subject {
+  font-weight: 600;
+  color: color-mix(in srgb, var(--ink) 70%, transparent);
+}
+
+.brief-highlight-reason {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.brief-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brief-item {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.brief-item-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brief-item-head a {
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brief-item-head a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.relevance-pill {
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.relevance-pill.relevance-alta {
+  background: color-mix(in srgb, var(--accent) 13%, transparent);
+  color: var(--accent);
+}
+
+.relevance-pill.relevance-media {
+  background: color-mix(in srgb, var(--amber) 16%, transparent);
+  color: color-mix(in srgb, var(--amber) 84%, var(--ink));
+}
+
+.relevance-pill.relevance-baja {
+  background: color-mix(in srgb, var(--muted) 14%, transparent);
+  color: var(--muted);
+}
+
+.brief-item-angle {
+  margin: 6px 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.brief-item-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.brief-area-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.brief-area-tag:hover {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+.brief-item-meta small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.brief-footnote {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 720px) {
+  .brief-highlight {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

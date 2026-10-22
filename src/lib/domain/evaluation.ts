@@ -1,14 +1,14 @@
 import { z } from "zod";
 
 export const rubricCriterionSchema = z.object({
-  score: z.union([z.literal(2), z.literal(4), z.literal(6), z.literal(8), z.literal(10)]),
-  level: z.enum(["No cumple", "Deficiente", "Regular", "Bueno", "Excelente"]),
+  score: z.union([z.literal(0), z.literal(2), z.literal(4), z.literal(6), z.literal(8), z.literal(10)]),
+  level: z.enum(["Ausente", "No cumple", "Deficiente", "Regular", "Bueno", "Excelente"]),
   feedback: z.string(),
   impact: z.string(),
 });
 
 export const evaluationResultSchema = z.object({
-  totalScore: z.number().min(8).max(40),
+  totalScore: z.number().min(0).max(40),
   percentage: z.number().min(0).max(100),
   isCorrect: z.boolean(),
   rubric: z.object({

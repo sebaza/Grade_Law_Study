@@ -34,8 +34,8 @@ const rubricCriterionSchema = {
   additionalProperties: false,
   required: ["score", "level", "feedback", "impact"],
   properties: {
-    score: { type: "number", enum: [2, 4, 6, 8, 10] },
-    level: { type: "string", enum: ["No cumple", "Deficiente", "Regular", "Bueno", "Excelente"] },
+    score: { type: "number", enum: [0, 2, 4, 6, 8, 10] },
+    level: { type: "string", enum: ["Ausente", "No cumple", "Deficiente", "Regular", "Bueno", "Excelente"] },
     feedback: { type: "string" },
     impact: { type: "string" },
   },
@@ -158,7 +158,9 @@ export async function evaluateAnswer(input: EvaluateAnswerInput): Promise<Evalua
                 : null,
               instructions: {
                 scoring:
-                  "Evaluá cada criterio con 2, 4, 6, 8 o 10 según la rúbrica institucional. totalScore es la suma de los 4 criterios. percentage = totalScore / 40 * 100.",
+                  "Evaluá cada criterio con 0, 2, 4, 6, 8 o 10 según la rúbrica institucional. totalScore es la suma de los 4 criterios. percentage = totalScore / 40 * 100.",
+                zeroLevel:
+                  "Distinguí bien los dos niveles inferiores. Usá 2 (No cumple) cuando el alumno intenta abordar el criterio pero falla: lo hace de manera precaria, errada o sin lograr lo que la rúbrica exige. Usá 0 (Ausente) solo cuando no hay absolutamente nada evaluable en ese criterio: respuesta vacía, completamente ajena a la pregunta, o que no toca el criterio en lo más mínimo. No regales 2 puntos por el solo hecho de haber escrito algo, pero tampoco castigues con 0 un intento genuino aunque sea malo.",
                 feedback:
                   "En cada criterio, feedback debe resumir qué se observó e impact debe explicar por qué ese criterio subió o bajó el puntaje. Sé breve, específico y pedagógico. Explicá mayor impacto cuando la pregunta exigía normas, conceptos, aplicación práctica u orden argumentativo.",
                 output:
@@ -190,7 +192,7 @@ export async function evaluateAnswer(input: EvaluateAnswerInput): Promise<Evalua
             "modelAnswer",
           ],
           properties: {
-            totalScore: { type: "number", minimum: 8, maximum: 40 },
+            totalScore: { type: "number", minimum: 0, maximum: 40 },
             percentage: { type: "number", minimum: 0, maximum: 100 },
             isCorrect: { type: "boolean" },
             rubric: {
