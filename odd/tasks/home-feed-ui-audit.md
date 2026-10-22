@@ -43,4 +43,4 @@ Improve the recent/featured Home module's hierarchy, clarity and accessible feed
 - Visual QA: inspected updated mobile (375px), desktop (1100px) and night screenshots. Forest generated. Fixture also checks 320px no-overflow. Long statements remain fully visible, deliberately increasing card height instead of truncating exam content.
 - TypeScript and full ESLint excluding unchanged ignored `tmp/**` passed; global npm test limitation from T1 remains. No live backend check.
 - Combined authored diff remains below 400 lines; no delivery split or RDD.
-- Commit evidence: recorded after the T2 work-unit commit.
+- Commit evidence: `7069c4f5` (`style(home): give question cards clearer visual hierarchy`).
