@@ -47,7 +47,7 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
   }
 
   return (
-    <div className={inline ? "theme-toggle-inline" : "theme-toggle"} aria-label="Selector de tema">
+    <div className={inline ? "theme-toggle-inline" : "theme-toggle"} role="group" aria-label="Selector de tema">
       <span>Tema</span>
       <div>
         {themes.map((item) => (
@@ -56,6 +56,7 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
             type="button"
             className={theme === item.id ? "active" : ""}
             onClick={() => changeTheme(item.id)}
+            aria-pressed={theme === item.id}
           >
             {item.label}
           </button>

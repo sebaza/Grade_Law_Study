@@ -361,7 +361,7 @@ export default function HomePage() {
         <header className="home-compact-header">
           <div>
             <p className="eyebrow">{loggedOut ? "Examen de grado · Derecho" : "Inicio"}</p>
-            <h2>{loggedOut ? "Prepara tu examen con práctica real" : "Resumen de estudio"}</h2>
+            <h1>{loggedOut ? "Prepara tu examen con práctica real" : "Resumen de estudio"}</h1>
           </div>
           <div className="hero-action-stack">
             {loggedOut ? (

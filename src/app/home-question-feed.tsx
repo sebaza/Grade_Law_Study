@@ -76,7 +76,7 @@ export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
   return (
     <section className="practice-card-large home-question-feed" aria-labelledby="home-question-feed-title" aria-busy={isLoading}>
       <div className="section-heading-row">
-        <div><p className="eyebrow">Para practicar</p><h2 id="home-question-feed-title">Preguntas recién agregadas</h2></div>
+        <div><p className="eyebrow">Para practicar</p><h2 id="home-question-feed-title">{view === "recent" ? "Preguntas recién agregadas" : "Preguntas destacadas"}</h2></div>
       </div>
       <div className="home-question-search-field">
         <label htmlFor="home-question-search">Buscar preguntas</label>
@@ -96,10 +96,14 @@ export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
         <button type="button" aria-pressed={view === "recent"} onClick={() => selectView("recent")}>Más recientes</button>
         <button type="button" aria-pressed={view === "featured"} onClick={() => selectView("featured")}>Destacadas</button>
       </div>
+      <p className="home-question-description">
+        {isPublic ? "Vista previa de hasta 3 preguntas, agrupadas por área." : view === "recent"
+          ? "Las últimas incorporaciones al banco. Elige una pregunta para practicar."
+          : "Ordenadas por prioridad de estudio y probabilidad estimada de examen."}
+      </p>
       {feed && isPublic && (
         <div className="landing-area-list">
           {(feed.byArea ?? []).map((area) => <div className="landing-area-row" key={area.areaName}><span>{area.areaName}</span><strong>{area.questionCount}</strong></div>)}
-          {!feed.byArea?.length && <p className="muted-copy">{emptyMessage}</p>}
         </div>
       )}
       {feed && !isPublic && (
@@ -107,20 +111,24 @@ export function HomeQuestionFeed({ isPublic }: { isPublic: boolean }) {
           {(feed.questions ?? []).map((question) => (
             <article className="home-question-row" key={question.id}>
               <div className="home-question-content">
-                <p className="home-question-meta">{question.areaName} · {question.subjectName} · <time dateTime={question.createdAt}>{shortDate(question.createdAt)}</time></p>
+                <div className="home-question-meta">
+                  <span className="home-question-area">{question.areaName}</span>
+                  <span>{question.subjectName}</span>
+                  <time dateTime={question.createdAt}>{shortDate(question.createdAt)}</time>
+                </div>
                 <p className="home-question-statement">{question.statement}</p>
               </div>
               <div className="inline-actions">
-                {question.completed && <span className="question-completed">✓ Realizada</span>}
-                <Link className="secondary-button" href={`/practice?source=real&mode=random&questionId=${question.id}`}>Practicar</Link>
+                {question.completed && <span className="question-completed" title="Ya practicaste esta pregunta; puedes volver a intentarlo.">✓ Realizada</span>}
+                <Link className="secondary-button home-question-practice" href={`/practice?source=real&mode=random&questionId=${question.id}`}>Practicar<span aria-hidden="true"> →</span></Link>
               </div>
             </article>
           ))}
-          {!feed.questions?.length && <p className="muted-copy">{emptyMessage}</p>}
         </div>
       )}
       <div className="home-question-feedback" role="status" aria-live="polite">
         {isLoading && <p className="muted-copy">{feed ? "Cargando más preguntas…" : "Cargando preguntas…"}</p>}
+        {!isLoading && !error && feed && !(isPublic ? feed.byArea?.length : feed.questions?.length) && <p className="home-question-empty">{emptyMessage}</p>}
       </div>
       {error && (
         <div className="home-question-error">

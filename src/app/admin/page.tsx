@@ -185,7 +185,7 @@ export default function AdminDashboardPage() {
           <p className="eyebrow">Panel admin · estadísticas globales</p>
           <h1>Uso real de la aplicación</h1>
           <p>
-            Estadisticas generales de usuarios, intentos, desempeno por area, materia, submateria y preguntas.
+            Estadísticas generales de usuarios, intentos, desempeño por área, materia, submateria y preguntas.
           </p>
         </div>
         <div className="admin-hero-actions">
@@ -197,7 +197,7 @@ export default function AdminDashboardPage() {
       {isLoading && <LoadingCard label="Cargando tablero admin..." />}
 
       {!isLoading && errorMessage && (
-        <section className="practice-card-large empty-state">
+        <section className="practice-card-large empty-state" role="alert">
           <h2>{errorMessage}</h2>
           <p className="muted-copy">
             Si esperabas acceso admin, revisá `ADMIN_EMAILS`. Sin esa variable, el MVP trata a cualquier usuario autenticado como admin.
@@ -211,9 +211,9 @@ export default function AdminDashboardPage() {
           <section className="practice-card-large admin-user-filter-card">
             <div>
               <h2>Filtro por estudiante</h2>
-              <p className="muted-copy">Eleg? una persona para ver sus m?tricas.</p>
+              <p className="muted-copy">Selecciona una persona para ver sus métricas.</p>
             </div>
-            <select value={selectedUserId} onChange={(event) => setSelectedUserId(event.target.value)}>
+            <select aria-label="Estudiante" value={selectedUserId} onChange={(event) => setSelectedUserId(event.target.value)}>
               <option value="">General de la plataforma</option>
               {stats.users.map((user) => (
                 <option key={user.id} value={user.id}>

@@ -4,6 +4,13 @@
    Fix: --muted pasa a violeta-gris cálido para "puente" entre
    tinta marina y acento vino; --blue-soft → lavanda suave. */
 :root {
+  --foreground: var(--ink);
+  --accent-strong: var(--accent-dark);
+  --on-accent: #ffffff;
+  --radius-control: 4px;
+  --radius-panel: 6px;
+  --radius-card: 10px;
+  --elevation-card: 0 2px 8px color-mix(in srgb, var(--ink) 6%, transparent);
   --background: #f7f4f0;
   --surface: #ffffff;
   --surface-soft: #faf6f3;
@@ -45,6 +52,7 @@
    luminoso); muted y ink con mismo subtono cálido (pergamino
    cálido); surfaces con más diferencia de luminosidad. */
 :root[data-theme="night"] {
+  --on-accent: #0d1117;
   --background: #0d1117;
   --surface: #141c28;
   --surface-soft: #1b2538;
@@ -2620,7 +2628,7 @@ summary {
 
 .bank-filter-bar {
   display: grid;
-  grid-template-columns: minmax(220px, 1.4fr) repeat(6, minmax(145px, 1fr)) auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 12px;
   align-items: end;
   width: min(1180px, 100%);
@@ -2777,7 +2785,7 @@ summary {
   margin-bottom: 18px;
 }
 
-.home-compact-header h2 {
+.home-compact-header h1 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3.6rem);
   line-height: 0.95;
@@ -2939,6 +2947,29 @@ body:has(.app-top-nav) > .theme-toggle {
 /* Home question feed: normal document flow, shared theme tokens. */
 .home-question-feed {
   min-width: 0;
+  border-top: 4px solid var(--accent);
+}
+
+.home-question-feed .eyebrow {
+  color: var(--accent);
+  font: 800 0.75rem/1.5 ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-question-description {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font: 0.875rem/1.6 ui-sans-serif, system-ui, sans-serif;
+}
+
+.home-question-empty {
+  margin: 16px 0 0;
+  padding: 18px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  line-height: 1.6;
 }
 
 .home-question-search-field {
@@ -2971,14 +3002,20 @@ body:has(.app-top-nav) > .theme-toggle {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-soft);
 }
 
 .home-question-tabs button {
   min-height: 44px;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-radius: 12px;
   padding: 10px 14px;
-  background: var(--surface);
+  background: transparent;
   color: var(--ink);
   cursor: pointer;
   font: 700 0.9rem ui-sans-serif, system-ui, sans-serif;
@@ -2986,8 +3023,13 @@ body:has(.app-top-nav) > .theme-toggle {
 
 .home-question-tabs button[aria-pressed="true"] {
   border-color: var(--accent);
-  background: var(--blue-soft);
-  box-shadow: inset 0 -3px var(--accent);
+  background: var(--accent);
+  color: var(--surface);
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.home-question-tabs button:hover {
+  border-color: var(--accent);
 }
 
 .home-question-feed :is(button, input, a):focus-visible {
@@ -2997,7 +3039,8 @@ body:has(.app-top-nav) > .theme-toggle {
 
 .home-question-list {
   display: grid;
-  margin-top: 12px;
+  gap: 14px;
+  margin-top: 20px;
 }
 
 .home-question-row {
@@ -3005,8 +3048,10 @@ body:has(.app-top-nav) > .theme-toggle {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-soft);
 }
 
 .home-question-content {
@@ -3015,24 +3060,63 @@ body:has(.app-top-nav) > .theme-toggle {
 }
 
 .home-question-meta {
-  margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 12px;
+  color: var(--muted);
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 0.8rem;
   line-height: 1.6;
 }
 
+.home-question-area {
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  border-radius: 6px;
+  padding: 3px 8px;
+  background: var(--blue-soft);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.home-question-meta time {
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+  white-space: nowrap;
+}
+
 .home-question-statement {
   margin: 0;
+  font-size: 1.05rem;
   line-height: 1.6;
 }
 
 .home-question-row .inline-actions {
   justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.home-question-practice {
+  min-height: 44px;
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface);
+  gap: 10px;
+}
+
+.home-question-practice:hover {
+  background: var(--accent);
+  color: var(--surface);
 }
 
 .home-question-feed .question-completed {
   border-radius: 999px;
   background: var(--blue-soft);
+  color: var(--ink);
+  border: 1px solid var(--border);
   padding: 5px 9px;
   font: 700 0.75rem ui-sans-serif, system-ui, sans-serif;
   white-space: nowrap;
@@ -3057,14 +3141,24 @@ body:has(.app-top-nav) > .theme-toggle {
   .home-question-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 12px;
+    padding: 16px;
   }
 
   .home-question-row .inline-actions {
-    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .home-question-practice {
+    margin-left: auto;
   }
 
   .home-question-feed .landing-area-list {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ── Coyuntura política ──────────────────────────────────────
    Lectura automática de prensa chilena mapeada a los ramos del
    banco. Los colores salen de los tokens vía color-mix, así los
@@ -3261,4 +3355,722 @@ body:has(.app-top-nav) > .theme-toggle {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Shared visual foundations. Keep this after legacy page overrides so geometry
+   stays consistent without changing layout, circular badges, or progress UI. */
+.card,
+.practice-card-large,
+.home-focus-grid .practice-card-large,
+.auth-card,
+.bank-question-card,
+.bank-filter-bar,
+.app-top-nav {
+  border-radius: var(--radius-card);
+  box-shadow: var(--elevation-card);
+}
+
+.home-question-row,
+.home-question-empty,
+.home-question-tabs,
+.attempt-history-row,
+.roomy-list .ranking-row,
+.home-focus-grid .roomy-list .ranking-row,
+.notice-card,
+.rubric-box,
+.answer-review-box {
+  border-radius: var(--radius-panel);
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button,
+.segmented button,
+.select-like,
+.mode-switch button,
+.notice-link,
+.practice-actions button,
+.answer-mode-tabs button,
+.top-nav-link,
+.theme-toggle button,
+.theme-toggle-inline button,
+.top-nav-actions .theme-toggle-inline button,
+.home-question-tabs button,
+.filter-stack select,
+.auth-form input,
+.answer-panel textarea,
+.adaptive-follow-up textarea,
+.admin-filters :is(input, select),
+.admin-form-grid :is(input, select, textarea),
+.admin-textarea-label textarea,
+.keypoint-editor-row input,
+.exam-settings-grid :is(input, select),
+.exam-topic-grid select,
+.exam-answer textarea,
+.bank-filter-bar :is(input, select),
+.admin-user-filter-card select,
+.home-question-search {
+  border-radius: var(--radius-control);
+}
+
+.top-nav-actions .theme-toggle-inline > div {
+  border-radius: var(--radius-panel);
+}
+
+/* Legacy controls used literal white, making night-mode text unreadable. */
+.segmented button,
+.select-like,
+.mode-switch button,
+.notice-link {
+  background: var(--surface);
+}
+
+.segmented button:hover:not(.active) {
+  background: var(--surface-soft);
+}
+
+.primary-button,
+.theme-toggle button.active,
+.theme-toggle-inline button.active,
+.top-nav-actions .theme-toggle-inline button.active,
+.practice-actions button:not(.secondary):not(.danger),
+.home-question-tabs button[aria-pressed="true"],
+.avatar,
+.top-nav-mark {
+  color: var(--on-accent);
+}
+
+.primary-button,
+.primary-button:hover,
+.primary-button:active,
+.top-nav-actions .theme-toggle-inline button.active {
+  box-shadow: var(--elevation-card);
+}
+
+.primary-button .spinner,
+.practice-actions button:not(.secondary):not(.danger) .spinner {
+  border-color: color-mix(in srgb, var(--on-accent) 40%, transparent);
+  border-top-color: var(--on-accent);
+}
+
+/* Includes admin/exam inputs whose legacy declarations remove the outline.
+   The offset separates the ring from filled controls in all three themes. */
+:is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Navigation: discoverable links, compact geometry, and a real mobile drawer. */
+.nav-item,
+.sidebar-login,
+.sidebar-account,
+.hamburger-btn,
+.sidebar-close-btn {
+  border-radius: var(--radius-control);
+}
+
+.top-nav-links {
+  overflow: visible;
+  flex-wrap: wrap;
+}
+
+.top-nav-link,
+.nav-item {
+  min-height: 44px;
+}
+
+.top-nav-link[aria-current="page"],
+.nav-item[aria-current="page"] {
+  box-shadow: inset 0 -2px var(--accent);
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    visibility: hidden;
+    height: 100dvh;
+    overscroll-behavior: contain;
+    transition: transform 0.2s ease;
+  }
+
+  .sidebar.sidebar-open {
+    visibility: visible;
+  }
+
+  .app-top-nav {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    position: relative;
+    top: auto;
+  }
+
+  .top-nav-brand,
+  .top-nav-actions {
+    justify-content: center;
+  }
+
+  .top-nav-links {
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .top-nav-link {
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .top-nav-link {
+    transition: none;
+  }
+}
+
+.hamburger-btn[aria-expanded="true"] {
+  visibility: hidden;
+}
+
+/* Home and bank: bounded tracks, calm hierarchy, and intrinsic content wrapping. */
+.question-bank-shell .app-top-nav {
+  width: min(1180px, 100%);
+}
+
+.bank-question-card {
+  position: relative;
+}
+
+/* Anchor explanations to the card, not an edge-adjacent icon. */
+.bank-question-card .info-hint {
+  position: static;
+}
+
+.bank-question-card .info-hint::after {
+  left: 18px;
+  right: 18px;
+  bottom: auto;
+  top: 12px;
+  width: auto;
+  max-width: none;
+  transform: translateY(4px);
+}
+
+.bank-question-card .info-hint:is(:hover, :focus-visible)::after {
+  transform: translateY(0);
+}
+
+.home-main-dashboard,
+.bank-filter-bar > *,
+.bank-card-body > *,
+.home-compact-header > * {
+  min-width: 0;
+}
+
+.bank-filter-bar :is(input, select) {
+  min-width: 0;
+  min-height: 44px;
+}
+
+.bank-filter-bar > button {
+  min-height: 44px;
+}
+
+.home-compact-header {
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.home-compact-header > div:first-child {
+  flex: 1 1 320px;
+}
+
+.home-compact-header h1 {
+  max-width: 22ch;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.home-compact-header .hero-action-stack {
+  flex: 0 1 auto;
+  justify-content: flex-start;
+}
+
+.question-bank-shell .page-hero {
+  align-items: center;
+  gap: 24px;
+}
+
+.bank-card-body h2 {
+  line-height: 1.35;
+}
+
+.bank-summary-strip,
+.question-bank-shell .pagination-bar {
+  flex-wrap: wrap;
+}
+
+.bank-question-card :is(h2, p, small),
+.home-main-dashboard :is(h1, h2, h3, .landing-area-row, .ranking-row) {
+  overflow-wrap: anywhere;
+}
+
+.question-bank-shell .bank-card-actions {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 1100px) {
+  .home-main-dashboard {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 860px) {
+  .bank-filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bank-filter-bar > label:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 540px) {
+  .bank-filter-bar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .question-bank-shell .bank-card-actions > a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-main-dashboard .landing-stat-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Practice and exam: restrained study surfaces and resilient controls. */
+.practice-main,
+.exam-shell :is(section, aside, label) {
+  min-width: 0;
+}
+
+.practice-shell .app-top-nav,
+.exam-shell .app-top-nav {
+  width: min(1180px, 100%);
+}
+
+.exam-clock-card {
+  background: var(--surface-soft);
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+
+.practice-sidebar h1 {
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.practice-main {
+  padding: clamp(18px, 3vw, 36px);
+}
+
+.practice-shell :is(.mode-switch button, .answer-mode-tabs button),
+.exam-shell .answer-mode-tabs button {
+  min-height: 44px;
+}
+
+.practice-shell [aria-pressed="true"],
+.exam-shell [aria-pressed="true"],
+.exam-step[aria-current="step"] {
+  border-color: var(--accent);
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+
+.practice-shell :is(.question-panel, .answer-panel),
+.exam-panel {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.practice-shell .question-panel h2,
+.exam-panel h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  line-height: 1.35;
+}
+
+.exam-hero h1 {
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.exam-clock-card p {
+  color: var(--muted);
+}
+
+.exam-clock-card span {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+}
+
+.exam-topic-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: 16px;
+}
+
+.exam-shell :is(input, select, textarea),
+.practice-shell textarea {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  min-height: 44px;
+  font-size: 1rem;
+  letter-spacing: normal;
+}
+
+.practice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.exam-actions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.practice-actions:not(.compact),
+.exam-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+
+.practice-actions button,
+.exam-actions button {
+  min-height: 44px;
+  white-space: normal;
+}
+
+.practice-shell audio,
+.exam-shell audio {
+  max-width: 100%;
+}
+
+.practice-shell .question-meta,
+.exam-panel .question-meta {
+  position: relative;
+}
+
+.practice-shell .info-hint,
+.exam-panel .info-hint {
+  position: static;
+}
+
+.practice-shell .info-hint::after,
+.exam-panel .info-hint::after {
+  left: 0;
+  right: 0;
+  width: auto;
+  max-width: none;
+  transform: none;
+}
+
+@media (max-width: 1100px) {
+  .exam-shell {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 860px) {
+  .practice-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    overflow: visible;
+  }
+
+  .practice-sidebar .filter-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .exam-question-list {
+    position: static;
+  }
+}
+
+@media (max-width: 540px) {
+  .exam-shell {
+    padding-inline: 16px;
+  }
+
+  .practice-sidebar,
+  .practice-card-large,
+  .exam-setup,
+  .exam-panel {
+    padding: 20px;
+  }
+
+  .practice-sidebar .filter-stack {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .practice-actions button,
+  .exam-actions button {
+    flex: 1 1 100%;
+  }
+
+  .exam-topic-order {
+    padding: 14px;
+  }
+}
+
+.exam-shell :is(.exam-clock-card, .exam-topic-order) {
+  border-radius: var(--radius-card);
+}
+
+/* History and authentication: quiet surfaces, readable forms and bounded rows. */
+.history-student-shell .app-top-nav {
+  width: min(1180px, 100%);
+}
+
+.history-student-shell :is(section, article, .question-risk-row > div, .attempt-history-row > div) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.history-student-shell .question-risk-row {
+  border-radius: var(--radius-panel);
+}
+
+.history-student-shell :is(.question-risk-row, .attempt-history-row) {
+  line-height: 1.6;
+}
+
+.history-student-shell .history-question-link {
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.history-student-shell .attempt-actions-stack {
+  display: grid;
+  justify-items: stretch;
+  min-width: 110px;
+}
+
+.history-student-shell .attempt-actions-stack .score-pill {
+  justify-self: end;
+}
+
+.history-student-shell :is(.primary-button, .secondary-button),
+.auth-form button,
+.auth-form input {
+  min-height: 44px;
+}
+
+.history-question-anchor {
+  display: block;
+  scroll-margin-top: 110px;
+}
+
+.auth-card {
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.auth-card h1 {
+  margin-top: 22px;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.auth-form input {
+  min-height: 44px;
+  min-width: 0;
+  width: 100%;
+  color: var(--ink);
+  background: var(--surface-soft);
+}
+
+.auth-form .practice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.auth-card .auth-message {
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .auth-shell {
+    padding: 80px 18px 28px;
+    align-items: start;
+  }
+
+  .history-student-shell :is(.question-risk-row, .attempt-history-row) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .history-student-shell .attempt-actions-stack {
+    display: flex;
+    justify-content: flex-start;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+
+  .auth-form .practice-actions button {
+    flex: 1 1 140px;
+  }
+}
+
+.history-student-shell > .empty-state {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+}
+
+/* Administration workspace refinement: preserve data and action semantics. */
+.admin-shell {
+  padding: 32px max(24px, calc((100% - 1400px) / 2));
+}
+
+.admin-shell :is(.admin-layout, .admin-hero, .admin-panel-header, .admin-filters, .admin-form-grid, .keypoint-editor-row) > *,
+.admin-dashboard-shell :is(.history-hero, .admin-chart-row, .admin-user-filter-card) > * {
+  min-width: 0;
+}
+
+.admin-shell :is(h1, h2, h3, p, strong, small),
+.admin-dashboard-shell :is(h1, h2, p, strong, small) {
+  overflow-wrap: anywhere;
+}
+
+.admin-hero h1,
+.admin-dashboard-shell .history-hero h1 {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.admin-hero-card,
+.admin-chart-row,
+.admin-question-row,
+.keypoint-editor-row {
+  border-radius: var(--radius-panel);
+}
+
+.keypoint-editor-row {
+  background: var(--surface-soft);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr) minmax(64px, 0.4fr);
+}
+
+.keypoint-editor-row .checkbox-label {
+  grid-column: 1 / -1;
+}
+
+.admin-shell :is(input:not([type="checkbox"]), select, textarea),
+.admin-user-filter-card select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  width: 100%;
+}
+
+.admin-shell textarea {
+  line-height: 1.6;
+}
+
+.admin-shell .admin-question-list {
+  padding: 4px;
+}
+
+.admin-question-row {
+  border-color: var(--border);
+  min-height: 44px;
+}
+
+.admin-question-row:hover,
+.admin-question-row.active {
+  background: var(--surface-soft);
+  border-color: var(--accent);
+  box-shadow: none;
+  transform: none;
+}
+
+.admin-question-row strong {
+  line-height: 1.5;
+}
+
+.admin-shell .admin-actions,
+.admin-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-width: 0;
+}
+
+.admin-shell .admin-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.admin-shell :is(.primary-button, .secondary-button, .ghost-button),
+.admin-hero-actions a {
+  min-height: 44px;
+  white-space: normal;
+  text-align: center;
+}
+
+.admin-dashboard-shell > .empty-state {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+@media (max-width: 1180px) {
+  .admin-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .admin-shell .admin-question-list {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 540px) {
+  .admin-shell {
+    padding: 24px 16px;
+  }
+  .admin-shell :is(.admin-list-panel, .admin-editor, .admin-hero-card) {
+    padding: 18px;
+  }
+  .admin-shell :is(.admin-panel-header, .keypoint-editor-row) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .admin-shell .admin-actions > *,
+  .admin-hero-actions > * {
+    width: 100%;
+  }
+  .admin-chart-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .admin-chart-row small {
+    grid-column: 1 / -1;
+  }
+}
+
+.admin-dashboard-shell > .app-top-nav {
+  width: 100%;
+  max-width: 1180px;
 }

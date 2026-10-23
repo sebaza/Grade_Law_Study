@@ -77,6 +77,8 @@ test("public aggregates, sign-in CTA, shared search and selected views", async (
     await page.getByRole("button", { name: "Destacadas", exact: true }).click();
     await visible(page.getByText("Derecho Civil", { exact: true }));
     assert.equal(await page.getByRole("button", { name: "Destacadas", exact: true }).getAttribute("aria-pressed"), "true");
+    await visible(page.getByRole("heading", { name: "Preguntas destacadas", exact: true }));
+    await visible(page.getByText("Vista previa de hasta 3 preguntas, agrupadas por área.", { exact: true }));
     assert.ok(seen.some((url) => url.searchParams.get("view") === "featured" && url.searchParams.get("q") === "obligaciones"));
   }, async (route, url) => {
     seen.push(url);
@@ -102,6 +104,9 @@ test("pagination keeps rows visible on failure and retries the same page", async
     await page.getByRole("button", { name: "Cargar más", exact: true }).click();
     await visible(page.getByRole("alert"));
     assert.equal(await page.locator("article").count(), 3);
+    assert.equal(await page.locator("article").first().evaluate((node) => getComputedStyle(node).borderTopStyle), "solid", "questions have individual card boundaries");
+    assert.ok(await page.locator("article").first().evaluate((node) => parseFloat(getComputedStyle(node).borderRadius) >= 12), "question cards have distinct rounded surfaces");
+    assert.equal(await page.locator(".home-question-area").first().innerText(), "Derecho Civil");
     await page.getByRole("button", { name: "Reintentar", exact: true }).click({ timeout: 3000 });
     await visible(page.getByText("Pregunta 6:", { exact: false }));
     assert.equal(await page.locator("article").count(), 6);
@@ -147,6 +152,7 @@ test("mobile rows, dates, completion and practice remain readable", async () => 
     assert.equal(await page.locator("article time").first().getAttribute("datetime"), "2024-10-15T12:00:00Z");
     assert.match(await page.locator("article time").first().innerText(), /2024/);
     assert.equal(await page.getByText("✓ Realizada", { exact: true }).count(), 1);
+    assert.equal(await page.getByText("✓ Realizada", { exact: true }).getAttribute("title"), "Ya practicaste esta pregunta; puedes volver a intentarlo.");
     assert.equal(await page.getByRole("link", { name: "Practicar", exact: true }).first().getAttribute("href"), "/practice?source=real&mode=random&questionId=1");
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     assert.equal(await page.locator(".home-question-list").evaluate((node) => getComputedStyle(node).overflowY), "visible");
@@ -156,7 +162,15 @@ test("mobile rows, dates, completion and practice remain readable", async () => 
     assert.equal(await page.getByRole("button", { name: "Destacadas", exact: true }).evaluate((node) => node === document.activeElement), true);
     await mkdir("output/playwright", { recursive: true });
     await page.screenshot({ path: "output/playwright/home-feed-mobile.png", fullPage: true });
+    await page.setViewportSize({ width: 320, height: 812 });
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), "small mobile cards do not overflow");
     await page.setViewportSize({ width: 1100, height: 900 });
+    assert.equal(await page.locator(".home-question-row").first().evaluate((node) => getComputedStyle(node).gridTemplateColumns.split(" ").length), 2);
+    // Home's mobile CSS block must close before the unrelated section begins.
+    assert.equal(await page.evaluate(() => {
+      const probe = document.createElement("div"); probe.className = "political-brief";
+      document.body.append(probe); const display = getComputedStyle(probe).display; probe.remove(); return display;
+    }), "flex");
     await page.screenshot({ path: "output/playwright/home-feed-desktop.png", fullPage: true });
     for (const theme of ["forest", "night"]) {
       await page.locator("html").evaluate((node, value) => { node.dataset.theme = value; }, theme);
@@ -172,6 +186,7 @@ test("empty search gives recovery guidance and pending requests expose loading",
     await page.getByLabel("Buscar preguntas", { exact: true }).fill("sin coincidencias");
     await visible(page.getByText("Cargando preguntas…", { exact: true }));
     await visible(page.getByText("No encontramos preguntas. Prueba con otro término o borra la búsqueda.", { exact: true }));
+    assert.match(await page.getByRole("status").innerText(), /No encontramos preguntas/);
     assert.equal(await page.locator("article").count(), 0);
     await page.getByLabel("Buscar preguntas", { exact: true }).fill("");
     await visible(page.getByText("Pregunta 1:", { exact: false }));
