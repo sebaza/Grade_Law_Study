@@ -59,16 +59,17 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="auth-shell">
-      <section className="auth-card">
+    <main className="auth-shell book-auth-shell">
+      <section className="auth-card auth-book-card">
         <Link className="back-link" href="/">← Volver al inicio</Link>
-        <h1>Ingreso de estudiante</h1>
-        <p>
-          La práctica real necesita identificarte: así se guardan tus intentos,
+        <p className="auth-book-kicker">Acceso a tu progreso</p>
+        <h1>Inicia sesión o crea tu cuenta</h1>
+        <p className="auth-card-intro">
+          Inicia sesión para continuar con tu progreso, o crea una cuenta para guardar tus intentos,
           porcentajes, preguntas dominadas y preguntas para repaso.
         </p>
 
-        <form className="auth-form" onSubmit={submit} aria-busy={isLoading}>
+        <form className="auth-form auth-book-form" onSubmit={submit} aria-busy={isLoading}>
           <label>
             Correo
             <input type="email" name="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} required />
@@ -79,14 +80,15 @@ export default function LoginPage() {
           </label>
 
           <div className="practice-actions">
-            <button type="submit" disabled={isLoading}>{isLoading ? "Procesando..." : "Entrar"}</button>
-            <button className="secondary" type="button" disabled={isLoading} onClick={(event) => {
+            <button className="auth-signin-action" type="submit" disabled={isLoading}>{isLoading ? "Procesando..." : "Iniciar sesión"}</button>
+            <button className="secondary auth-signup-action" type="button" disabled={isLoading} onClick={(event) => {
               if (event.currentTarget.form?.reportValidity()) void authenticate("signup");
             }}>
-              Crear cuenta
+              Crear una cuenta
             </button>
             {isLoggedIn && <button className="secondary" type="button" onClick={signOut}>Cerrar sesión</button>}
           </div>
+          <p className="auth-signup-hint">¿Aún no tienes cuenta? Usa «Crear una cuenta»; se validarán estos mismos datos.</p>
         </form>
 
         {message && <p className="auth-message" role="status" aria-live="polite">{message}</p>}

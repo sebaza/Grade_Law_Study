@@ -17,6 +17,45 @@ test("Home reserves drawer clearance through the actual navigation breakpoint", 
   assert.match(read("page.tsx"), /<h1>\{loggedOut \? "Prepara tu examen con práctica real" : "Resumen de estudio"\}<\/h1>/);
 });
 
+test("public Home presents its study features as ordered editorial chapters", () => {
+  const page = read("page.tsx");
+  const landing = page.slice(page.indexOf("function HomeLanding"), page.indexOf("export default function HomePage"));
+
+  assert.match(page, /className=\{loggedOut \? "home-compact-header public-home-header" : "home-compact-header dashboard-editorial-header"\}/);
+  assert.match(landing, /<ol className="landing-feature-grid">/);
+  assert.match(landing, /<li key=\{feature\.title\}>\s*<article className="landing-feature">/);
+  assert.match(css, /\.home-compact-header\.public-home-header h1\s*\{[^}]*font-family:/);
+  assert.match(css, /\.landing-feature-grid > li\s*\{[^}]*counter-increment:/);
+  assert.match(css, /\.landing-feature-grid > li::before\s*\{[^}]*counter\(landing-chapter, decimal-leading-zero\)/);
+  assert.match(css, /\.landing-feature-grid > li\s*\{[^}]*border-top:/);
+  assert.match(page, /<Link className="primary-button" href="\/auth\/login">Iniciar sesión<\/Link>/);
+  assert.match(page, /<Link className="secondary-button" href="\/questions">Explorar banco<\/Link>/);
+});
+
+test("signed-in Home has an editorial dashboard hierarchy distinct from the public landing", () => {
+  const page = read("page.tsx");
+
+  assert.match(page, /home-compact-header dashboard-editorial-header/);
+  assert.match(page, /history-kpi-grid home-kpi-grid dashboard-kpi-ledger/);
+  assert.match(page, /dashboard-analytics-grid home-focus-grid dashboard-chapters/);
+  assert.match(css, /\.dashboard-editorial-header h1\s*\{[^}]*font-family:/);
+  assert.match(css, /\.dashboard-kpi-ledger \.kpi-value\s*\{[^}]*font-family:/);
+  assert.match(css, /\.dashboard-chapters\s*\{[^}]*counter-reset:/);
+  assert.match(css, /\.dashboard-chapters > article::before\s*\{[^}]*counter\(dashboard-chapter, decimal-leading-zero\)/);
+});
+
+test("public question bank uses an editorial chapter hierarchy without replacing its controls", () => {
+  const bank = read("questions/page.tsx");
+
+  assert.match(bank, /page-hero compact-hero bank-editorial-hero/);
+  assert.match(bank, /question-bank-list bank-chapter-list/);
+  assert.match(bank, /bank-question-card bank-chapter-card/);
+  assert.match(css, /\.bank-editorial-hero h1\s*\{[^}]*font-family:/);
+  assert.match(css, /\.bank-chapter-list\s*\{[^}]*counter-reset:/);
+  assert.match(css, /\.bank-chapter-card::before\s*\{[^}]*counter\(bank-chapter, decimal-leading-zero\)/);
+  assert.match(css, /\.bank-filter-bar\s*\{[^}]*grid-template-columns:/);
+});
+
 test("bank filter dependencies, paging and navigation remain explicit", () => {
   const bank = read("questions/page.tsx");
   for (const marker of ['key === "area" ? { subject: "", subsubject: "" }', 'key === "subject" ? { subsubject: "" }', 'setPage(1)', 'limit: "20"', 'questionId=${question.id}', '/history#question-${question.id}']) {
@@ -25,6 +64,23 @@ test("bank filter dependencies, paging and navigation remain explicit", () => {
 });
 
 test("bank navigation and tooltips stay inside the page content", () => {
-  assert.match(css, /\.question-bank-shell \.app-top-nav\s*\{[^}]*width: min\(1180px, 100%\)/);
+  assert.match(css, /\.question-bank-shell \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), 100%\)/);
   assert.match(css, /\.bank-question-card \.info-hint::after\s*\{[^}]*left: 18px;[^}]*right: 18px;/);
+});
+
+test("Home and question bank make the next study action and primary filters easier to find", () => {
+  const home = read("page.tsx");
+  const bank = read("questions/page.tsx");
+  assert.match(home, /className="primary-button home-next-study-action" href="\/practice"/);
+  assert.match(home, /dashboard-kpi-ledger dashboard-secondary-metrics/);
+  assert.match(bank, /className="bank-filter-bar bank-filter-workspace"/);
+  assert.match(bank, /className="bank-primary-filters"/);
+  assert.match(bank, /className="bank-secondary-filters"/);
+});
+
+test("editorial pages share a wider canvas and rule-led read-only sections", () => {
+  assert.match(css, /--editorial-canvas:\s*1360px/);
+  assert.match(css, /\.menu-with-top-nav > \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), calc\(100vw - 32px\)\)/);
+  assert.match(css, /\.book-page-open-section,[\s\S]*?\.dashboard-chapters > article[\s\S]*?\.bank-chapter-card[\s\S]*?\.admin-editorial-layout > \.admin-list-panel\s*\)\s*\{[^}]*border-radius: 0;[^}]*box-shadow: none;[^}]*background: transparent/);
+  assert.match(css, /\.dashboard-kpi-ledger,\s*\.book-history-shell \.history-kpi-ledger\s*\{[^}]*gap: 0;[^}]*border-top: 1px solid var\(--border\);[^}]*border-bottom: 1px solid var\(--border\)/);
 });

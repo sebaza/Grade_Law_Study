@@ -434,7 +434,7 @@ export default function AdminQuestionsPage() {
 
   return (
     <main className="admin-shell">
-      <header className="admin-hero">
+      <header className="admin-hero admin-editorial-hero">
         <div>
           <Link className="back-link" href="/">← Volver al inicio</Link>
           <p className="eyebrow">Banco editable</p>
@@ -453,8 +453,8 @@ export default function AdminQuestionsPage() {
       {errorMessage ? <div className="notice error" role="alert">{errorMessage}</div> : null}
       {message ? <div className="notice success" role="status">{message}</div> : null}
 
-      <section className="admin-layout">
-        <aside className="admin-list-panel card">
+      <section className="admin-layout admin-editorial-layout">
+        <aside className="admin-list-panel card admin-editorial-chapter">
           <div className="admin-panel-header">
             <div>
               <h2>Banco de preguntas</h2>
@@ -465,8 +465,8 @@ export default function AdminQuestionsPage() {
             </button>
           </div>
 
-          <div className="admin-filters">
-            <label>
+          <div className="admin-filters admin-filter-groups">
+            <label className="admin-search-filter">
               Buscar
               <input
                 value={filters.q}
@@ -560,7 +560,7 @@ export default function AdminQuestionsPage() {
           </div>
         </aside>
 
-        <section className="admin-editor card" aria-busy={isSaving}>
+        <section className="admin-editor admin-editorial-chapter card" aria-busy={isSaving}>
           <div className="admin-panel-header">
             <div>
               <h2>{selectedId ? "Editar pregunta" : "Nueva pregunta"}</h2>
@@ -571,7 +571,8 @@ export default function AdminQuestionsPage() {
             </span>
           </div>
 
-          <div className="admin-form-grid">
+          <p className="admin-editor-group-label">Pregunta y clasificación</p>
+          <div className="admin-form-grid admin-editor-groups">
             <label className="wide">
               Enunciado
               <textarea
@@ -701,6 +702,10 @@ export default function AdminQuestionsPage() {
               />
             </label>
 
+          </div>
+
+          <div className="admin-form-grid admin-answer-guidance-group">
+            <p className="admin-editor-group-label">Pauta de evaluación</p>
             <label className="wide">
               Respuesta esperada
               <textarea

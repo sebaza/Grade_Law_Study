@@ -703,9 +703,9 @@ export default function ExamPage() {
   }
 
   return (
-    <main className="exam-shell menu-with-top-nav">
+    <main className="exam-shell menu-with-top-nav book-exam-shell">
       <AppTopNav />
-      <header className="exam-hero">
+      <header className="exam-hero book-exam-hero">
         <div>
           <Link className="back-link" href="/">← Volver al inicio</Link>
           <p className="eyebrow">Modo simulacro</p>
@@ -729,7 +729,7 @@ export default function ExamPage() {
       ) : null}
 
       {!exam ? (
-        <section className="exam-setup card">
+        <section className="exam-setup card exam-editorial-section exam-setup-chapter">
           <div>
             <h2>Configurar simulacro</h2>
             <p>Configurá materias, profesores, tiempo por pregunta y estrategia de selección.</p>
@@ -815,8 +815,8 @@ export default function ExamPage() {
       ) : null}
 
       {exam && currentQuestion && !finalResult ? (
-        <section className="exam-layout">
-          <aside className="exam-question-list card">
+        <section className="exam-layout exam-active-chapters">
+          <aside className="exam-question-list card exam-chapter-panel exam-round-chapter exam-context-navigation">
             <h2>Ronda</h2>
             {questionSections.map((section) => (
               <div className="exam-section-nav" key={section.sectionIndex}>
@@ -848,7 +848,7 @@ export default function ExamPage() {
             ))}
           </aside>
 
-          <section className="exam-panel card">
+          <section className="exam-panel card exam-chapter-panel exam-answer-chapter exam-question-primary">
             <div className="question-meta">
               <span>Bloque {(currentQuestion.sectionIndex ?? 0) + 1}</span>
               <span>
@@ -1023,7 +1023,7 @@ export default function ExamPage() {
       ) : null}
 
       {finalResult ? (
-        <section className="exam-result card">
+        <section className="exam-result card exam-editorial-section exam-result-chapter">
           <p className="eyebrow">Resultado final</p>
           <h2>{finalResult.verdict.label}</h2>
           <div className="exam-result-grid">

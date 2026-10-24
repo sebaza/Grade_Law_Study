@@ -144,7 +144,7 @@ export default function QuestionsPage() {
     <main className="menu-page-shell question-bank-shell">
       <AppTopNav />
 
-      <header className="page-hero compact-hero">
+      <header className="page-hero compact-hero bank-editorial-hero">
         <div>
           <p className="eyebrow">Banco de preguntas</p>
           <h1>Banco de preguntas</h1>
@@ -152,58 +152,65 @@ export default function QuestionsPage() {
         <Link className="primary-button" href="/practice">Practicar aleatorio</Link>
       </header>
 
-      <section className="bank-filter-bar" aria-label="Filtros del banco de preguntas">
-        <label>
-          Buscar
-          <input
-            type="search"
-            value={filters.q}
-            onChange={(event) => updateFilter("q", event.target.value)}
-            placeholder="Texto de la pregunta"
-          />
-        </label>
-        <label>
-          Ramo principal
-          <select value={filters.area} onChange={(event) => updateFilter("area", event.target.value)}>
-            <option value="">Todos</option>
-            {payload?.facets.areas.map((area) => <option key={area.id} value={area.name}>{area.name}</option>)}
-          </select>
-        </label>
-        <label>
-          Materia
-          <select value={filters.subject} onChange={(event) => updateFilter("subject", event.target.value)}>
-            <option value="">Todas</option>
-            {filteredSubjects.map((subject) => <option key={subject.id} value={subject.name}>{subject.name}</option>)}
-          </select>
-        </label>
-        <label>
-          Submateria
-          <select value={filters.subsubject} onChange={(event) => updateFilter("subsubject", event.target.value)}>
-            <option value="">Todas</option>
-            {filteredSubsubjects.map((subsubject) => <option key={subsubject.id} value={subsubject.name}>{subsubject.name}</option>)}
-          </select>
-        </label>
-        <label>
-          Profesor
-          <select value={filters.professor} onChange={(event) => updateFilter("professor", event.target.value)}>
-            <option value="">Todos</option>
-            {payload?.facets.professors.map((professor) => <option key={professor.id} value={professor.name}>{professor.name}</option>)}
-          </select>
-        </label>
-        <label>
-          Dificultad
-          <select value={filters.difficulty} onChange={(event) => updateFilter("difficulty", event.target.value)}>
-            <option value="">Todas</option>
-            {payload?.facets.difficulties.map((difficulty) => <option key={difficulty} value={difficulty}>{difficultyLabels[difficulty] ?? difficulty}</option>)}
-          </select>
-        </label>
-        <label>
-          Tipo
-          <select value={filters.questionType} onChange={(event) => updateFilter("questionType", event.target.value)}>
-            <option value="">Todos</option>
-            {payload?.facets.questionTypes.map((type) => <option key={type} value={type}>{type}</option>)}
-          </select>
-        </label>
+      <section className="bank-filter-bar bank-filter-workspace" aria-label="Filtros del banco de preguntas">
+        <div className="bank-primary-filters" role="group" aria-label="Búsqueda y filtros frecuentes">
+          <label>
+            Buscar
+            <input
+              type="search"
+              value={filters.q}
+              onChange={(event) => updateFilter("q", event.target.value)}
+              placeholder="Texto de la pregunta"
+            />
+          </label>
+          <label>
+            Ramo principal
+            <select value={filters.area} onChange={(event) => updateFilter("area", event.target.value)}>
+              <option value="">Todos</option>
+              {payload?.facets.areas.map((area) => <option key={area.id} value={area.name}>{area.name}</option>)}
+            </select>
+          </label>
+          <label>
+            Materia
+            <select value={filters.subject} onChange={(event) => updateFilter("subject", event.target.value)}>
+              <option value="">Todas</option>
+              {filteredSubjects.map((subject) => <option key={subject.id} value={subject.name}>{subject.name}</option>)}
+            </select>
+          </label>
+        </div>
+        <details className="bank-secondary-filters">
+          <summary>Más filtros</summary>
+          <div className="bank-secondary-filter-grid">
+            <label>
+              Submateria
+              <select value={filters.subsubject} onChange={(event) => updateFilter("subsubject", event.target.value)}>
+                <option value="">Todas</option>
+                {filteredSubsubjects.map((subsubject) => <option key={subsubject.id} value={subsubject.name}>{subsubject.name}</option>)}
+              </select>
+            </label>
+            <label>
+              Profesor
+              <select value={filters.professor} onChange={(event) => updateFilter("professor", event.target.value)}>
+                <option value="">Todos</option>
+                {payload?.facets.professors.map((professor) => <option key={professor.id} value={professor.name}>{professor.name}</option>)}
+              </select>
+            </label>
+            <label>
+              Dificultad
+              <select value={filters.difficulty} onChange={(event) => updateFilter("difficulty", event.target.value)}>
+                <option value="">Todas</option>
+                {payload?.facets.difficulties.map((difficulty) => <option key={difficulty} value={difficulty}>{difficultyLabels[difficulty] ?? difficulty}</option>)}
+              </select>
+            </label>
+            <label>
+              Tipo
+              <select value={filters.questionType} onChange={(event) => updateFilter("questionType", event.target.value)}>
+                <option value="">Todos</option>
+                {payload?.facets.questionTypes.map((type) => <option key={type} value={type}>{type}</option>)}
+              </select>
+            </label>
+          </div>
+        </details>
         <button className="secondary-button" type="button" onClick={clearFilters}>Limpiar</button>
       </section>
 
@@ -217,9 +224,9 @@ export default function QuestionsPage() {
 
       {!isLoading && payload && (
         <>
-          <section className="question-bank-list">
+          <section className="question-bank-list bank-chapter-list">
             {payload.questions.length > 0 ? payload.questions.map((question) => (
-              <article className="bank-question-card" key={question.id}>
+              <article className="bank-question-card bank-chapter-card" key={question.id}>
                 <div className="question-meta bank-card-meta">
                   <span>{question.areaName}</span>
                   <span>{question.subjectName}</span>

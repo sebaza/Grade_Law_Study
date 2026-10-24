@@ -224,6 +224,7 @@ function HomeLanding({ overview }: { overview: OverviewResponse | null }) {
   return (
     <>
       <section className="landing-intro">
+        <p className="landing-intro-kicker">Una guía para llegar preparado</p>
         <p>
           Banco de preguntas reales del examen de grado con corrección automática.
           Practica, mide tu nivel por ramo y llega listo a la comisión.
@@ -238,18 +239,30 @@ function HomeLanding({ overview }: { overview: OverviewResponse | null }) {
         )}
       </section>
 
-      <section className="landing-feature-grid">
-        {landingFeatures.map((feature) => (
-          <article className="practice-card-large landing-feature" key={feature.title}>
-            <h3>{feature.title}</h3>
-            <p>{feature.body}</p>
-          </article>
-        ))}
+      <section className="landing-feature-section" aria-labelledby="landing-features-heading">
+        <div className="landing-section-heading">
+          <p className="landing-section-kicker">El método</p>
+          <h2 id="landing-features-heading">Estudia capítulo a capítulo</h2>
+        </div>
+        <ol className="landing-feature-grid">
+          {landingFeatures.map((feature) => (
+            <li key={feature.title}>
+              <article className="landing-feature">
+                <h3>{feature.title}</h3>
+                <p>{feature.body}</p>
+              </article>
+            </li>
+          ))}
+        </ol>
       </section>
 
-      <section className="practice-card-large landing-areas">
-        <div className="section-heading-row">
-          <h2>Preguntas por ramo</h2>
+      <section className="landing-areas" aria-labelledby="landing-areas-heading">
+        <div className="landing-section-heading landing-area-heading">
+          <p className="landing-section-kicker">El índice</p>
+          <div>
+            <h2 id="landing-areas-heading">Preguntas por ramo</h2>
+            <p>Explora las materias y elige por dónde comenzar.</p>
+          </div>
           <Link className="secondary-button" href="/questions">Ver banco completo</Link>
         </div>
         {overview && overview.byArea.length > 0 ? (
@@ -358,7 +371,7 @@ export default function HomePage() {
       <AppSidebar />
 
       <section className="main home-main-dashboard">
-        <header className="home-compact-header">
+        <header className={loggedOut ? "home-compact-header public-home-header" : "home-compact-header dashboard-editorial-header"}>
           <div>
             <p className="eyebrow">{loggedOut ? "Examen de grado · Derecho" : "Inicio"}</p>
             <h1>{loggedOut ? "Prepara tu examen con práctica real" : "Resumen de estudio"}</h1>
@@ -371,7 +384,7 @@ export default function HomePage() {
               </>
             ) : (
               <>
-                <Link className="primary-button" href="/practice">Practicar ahora</Link>
+                <Link className="primary-button home-next-study-action" href="/practice">Practicar ahora</Link>
                 <Link className="secondary-button" href="/questions">Explorar banco</Link>
               </>
             )}
@@ -394,7 +407,7 @@ export default function HomePage() {
 
         {!isLoading && stats && history && (
           <>
-            <section className="history-kpi-grid home-kpi-grid">
+            <section className="history-kpi-grid home-kpi-grid dashboard-kpi-ledger dashboard-secondary-metrics" aria-label="Resumen de progreso">
               <article className="card kpi">
                 <p className="kpi-label">Promedio general</p>
                 <p className="kpi-value">{stats.summary.averageScore}%</p>
@@ -421,7 +434,7 @@ export default function HomePage() {
 
             <HomeQuestionFeed isPublic={false} />
 
-            <section className="dashboard-analytics-grid home-focus-grid">
+            <section className="dashboard-analytics-grid home-focus-grid dashboard-chapters">
               <article className="practice-card-large wide-panel">
                 <div className="section-heading-row">
                   <h2>Uso por día</h2>
