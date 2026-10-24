@@ -70,7 +70,7 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B5 checks:** `node --test scripts/ui/home-bank.test.mjs scripts/ui/practice-exam.test.mjs scripts/ui/history-auth.test.mjs scripts/ui/admin.test.mjs` passed (24/24); `npm run typecheck` passed (exit 0); `npx eslint src scripts` passed (exit 0); `git diff --check` passed (exit 0; Git emitted only CRLF normalization warnings).
 - **B5 runtime QA:** CUA browser inventory returned `apps: []`, `browsers: []`; no browser was installed or alternate UI used. Desktop 1440px and mobile rendering/theme behavior are therefore unverified; no authentication, protected data, or application behavior was exercised.
 - **B5 rollback boundary:** Revert B5-only edits in `src/app/globals.css` and the new/updated assertions in `scripts/ui/home-bank.test.mjs`, `scripts/ui/practice-exam.test.mjs`, `scripts/ui/history-auth.test.mjs`, and `scripts/ui/admin.test.mjs`; no route/component behavior changed. B1–B4 remain intact.
-- **B5 behavior commit:** pending.
+- **B5 behavior commit:** `6992e19ec44d214d702c9e17a68930b2d39f97f9` (`style(ui): unify book reading surfaces across routes`). This commit includes B5 styling, structural assertions, and task evidence above.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
