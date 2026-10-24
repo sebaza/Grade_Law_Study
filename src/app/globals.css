@@ -5247,3 +5247,15 @@ body:has(.app-top-nav) > .theme-toggle {
     border-top: 1px solid var(--border);
   }
 }
+
+/* Keep dashboard chapter markers clear of headings after card-padding overrides. */
+.home-main-dashboard .dashboard-chapters > article {
+  padding-top: 38px;
+}
+
+/* Let the page, not nested panels, own scrolling for the complete rankings. */
+.home-main-dashboard .home-focus-grid .tall-panel .ranking-list {
+  max-height: none;
+  overflow: visible;
+  padding-right: 0;
+}
