@@ -13,7 +13,7 @@ Carry the approved book-inspired visual direction from the public Home into the 
 ## Work unit and route
 Forecast: approximately 250–400 authored changed lines, excluding generated files. Delivery strategy: `ask-on-risk`; local-only scope.
 
-- [x] P1 — Restyle the shared Practice experience with a cohesive editorial/book-inspired hierarchy across Real and Demo, and add focused structural regression coverage in the same behavior commit. Route: delegated direct (single bounded writer); trigger: JSX, shared CSS, and regression tests are non-trivial files. Commit evidence: pending final identity recording.
+- [ ] P1 — Restyle the shared Practice experience with a cohesive editorial/book-inspired hierarchy across Real and Demo, and add focused structural regression coverage in the same behavior commit. Route: delegated direct (single bounded writer); trigger: JSX, shared CSS, and regression tests are non-trivial files. Implementation commit: `5965fae9f9a30bc17ddba2202858f4585515c3f4`; final visual verification pending because no browser backend is available.
 
 ## Acceptance criteria
 - The practice screen visually belongs with the book-inspired Home while retaining clear page, question, answer, and result hierarchy.
@@ -35,11 +35,15 @@ Forecast: approximately 250–400 authored changed lines, excluding generated fi
 - TDD RED: with only the new regression assertion added, `node --test scripts/ui/practice-exam.test.mjs` returned 2 passing, 1 failing because the shared chapter hierarchy was absent. After implementation, the first GREEN attempt exposed an over-broad test expectation (surface color applies to the active mode tab, not every mode button); the selector assertion was corrected without changing implementation. Final GREEN: `node --test scripts/ui/practice-exam.test.mjs` — 3/3 pass.
 - Verification: `npm run typecheck` — pass; `npx eslint src scripts` — pass; `git diff --check` — pass (Git emitted only expected LF-to-CRLF working-copy notices).
 - Browser: local dev server started. Playwright CLI could not launch because Chrome is not installed at the expected path; the CUA Edge browser provider was unavailable. No viewport/theme check was possible; no browser installation, authentication, credentials, or evaluation submission was attempted.
-- Authored diff: 240 changed lines across page, CSS, and structural test (209 CSS additions, 9 page additions/1 deletion, 13 test additions), below the advisory forecast range.
+- Independent browser recheck confirmed the environment has no available browser or app inventory. Viewport/theme/mode visuals remain pending; no workaround or installation was attempted.
+- Authored diff: 232 changed lines across page, CSS, and structural test (209 CSS additions, 9 page additions/1 deletion, 13 test additions), below the advisory forecast range.
 - Rollback boundary: revert the `book-study-shell` and chapter/presentation markup in `src/app/practice/page.tsx`, the scoped `.practice-shell.book-study-shell` rules in `src/app/globals.css`, the new P1 assertion in `scripts/ui/practice-exam.test.mjs`, and this P1 evidence. The prior Home refresh and earlier practice/exam behavior remain intact.
-- Commit identity: pending until the P1 work-unit commit is created.
+- Work-unit commit: `5965fae9f9a30bc17ddba2202858f4585515c3f4` (`style(practice): carry book-inspired hierarchy across modes`), covering the shared Practice UI, regression test, and task document. The exact identity is recorded in the follow-up closeout commit because a commit cannot embed its own hash in its tree.
 
 ## Relevant files
 - `src/app/practice/page.tsx` — shared Real/Demo practice route, question/answer flow, and results.
 - `src/app/globals.css` — practice layout, controls, and responsive styles.
 - `scripts/ui/practice-exam.test.mjs` — practice/exam structural regression suite.
+
+## Next step
+- When a browser backend is available, visually verify Demo and Real presentation across the listed widths/themes; then close P1 and update this task record and its Engram mirror.
