@@ -46,7 +46,7 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B1 checks:** `npm run typecheck` passed; `npx eslint src scripts` passed; `git diff --check` passed (Git emitted only CRLF normalization warnings for the touched test and CSS files).
 - **B1 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started, and no authentication or data actions were attempted. Responsive/theme/browser rendering remains unverified for B1.
 - **B1 rollback boundary:** Revert the B1 source and regression changes in `src/app/page.tsx`, `src/app/questions/page.tsx`, `src/app/globals.css`, and `scripts/ui/home-bank.test.mjs`; the added task record evidence can be reverted independently without affecting prior Home/Practice work.
-- **B1 commit identity:** To be recorded in the task-document closeout immediately after the behavior commit.
+- **B1 behavior commit:** `efe23011` (`style(ui): extend editorial hierarchy to dashboard and bank`). This commit includes the B1 implementation, regression assertions, and task evidence above.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
