@@ -78,6 +78,11 @@ test("Home and question bank make the next study action and primary filters easi
   assert.match(bank, /className="bank-secondary-filters"/);
 });
 
+test("signed-in dashboard chapter headings clear markers and rankings use page scrolling", () => {
+  assert.match(css, /\.home-main-dashboard \.dashboard-chapters > article\s*\{[^}]*padding-top:\s*38px;/);
+  assert.match(css, /\.home-main-dashboard \.home-focus-grid \.tall-panel \.ranking-list\s*\{[^}]*max-height:\s*none;[^}]*overflow:\s*visible;/);
+});
+
 test("editorial pages share a wider canvas and rule-led read-only sections", () => {
   assert.match(css, /--editorial-canvas:\s*1360px/);
   assert.match(css, /\.menu-with-top-nav > \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), calc\(100vw - 32px\)\)/);
