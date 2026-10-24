@@ -262,7 +262,7 @@ export default function HistoryPage() {
             <h2>Intentos y respuestas</h2>
             <div className="attempt-history-list">
               {history.attempts.length > 0 ? history.attempts.map((attempt) => (
-                <article className="attempt-history-row rich-attempt-row" id={`attempt-${attempt.id}`} key={attempt.id}>
+                <article className="attempt-history-row rich-attempt-row history-attempt-scan" id={`attempt-${attempt.id}`} key={attempt.id}>
                   <div>
                     {uniqueQuestions.find((latest) => latest.question.id === attempt.question.id)?.id === attempt.id && (
                       <span className="history-question-anchor" id={`question-${attempt.question.id}`} aria-hidden="true" />
@@ -285,7 +285,7 @@ export default function HistoryPage() {
                     {attempt.feedback?.improvementSuggestions && <small>Mejora sugerida: {attempt.feedback.improvementSuggestions}</small>}
                     <small>{formatDate(attempt.createdAt)} · {statusLabels[attempt.question.state?.status ?? attempt.postStatus] ?? attempt.postStatus}</small>
                   </div>
-                  <div className="attempt-actions-stack">
+                  <div className="attempt-actions-stack history-attempt-actions">
                     <span className={`score-pill ${scoreTone(attempt.score)}`}>{attempt.score}%</span>
                     <Link className="secondary-button" href={`/practice?source=real&mode=random&questionId=${attempt.question.id}`}>Reintentar</Link>
                     <button className="secondary-button" type="button" disabled={pendingQuestionId === attempt.question.id} onClick={() => returnToInitialPull(attempt.question.id)}>

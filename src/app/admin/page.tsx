@@ -133,6 +133,7 @@ export default function AdminDashboardPage() {
   const [selectedUserId, setSelectedUserId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [accessStatus, setAccessStatus] = useState<number | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -140,6 +141,7 @@ export default function AdminDashboardPage() {
     async function loadStats() {
       setIsLoading(true);
       setErrorMessage("");
+      setAccessStatus(null);
 
       const params = new URLSearchParams();
       if (selectedUserId) params.set("userId", selectedUserId);
@@ -147,23 +149,29 @@ export default function AdminDashboardPage() {
 
       if (response.status === 401 || response.status === 403) {
         const payload = await response.json().catch(() => null) as { error?: string } | null;
-        setErrorMessage(payload?.error ?? "Tenés que iniciar sesión como admin para ver el panel.");
+        setAccessStatus(response.status);
+        setErrorMessage(payload?.error ?? (response.status === 401
+          ? "Inicia sesión para consultar el panel de administración."
+          : "Tu cuenta no tiene permisos para consultar el panel de administración."));
         setIsLoading(false);
         return;
       }
 
       if (!response.ok) {
+        setAccessStatus(null);
         setErrorMessage("No se pudieron cargar las estadísticas globales.");
         setIsLoading(false);
         return;
       }
 
       setStats(await response.json() as AdminStatsResponse);
+      setAccessStatus(null);
       setIsLoading(false);
     }
 
     loadStats().catch((error: unknown) => {
       if (controller.signal.aborted) return;
+      setAccessStatus(null);
       setErrorMessage(error instanceof Error ? error.message : "Error inesperado al cargar estadísticas.");
       setIsLoading(false);
     });
@@ -200,9 +208,17 @@ export default function AdminDashboardPage() {
         <section className="practice-card-large empty-state" role="alert">
           <h2>{errorMessage}</h2>
           <p className="muted-copy">
-            Si esperabas acceso admin, revisá `ADMIN_EMAILS`. Sin esa variable, el MVP trata a cualquier usuario autenticado como admin.
+            {accessStatus === 401
+              ? "Inicia sesión con una cuenta autorizada para acceder al panel."
+              : accessStatus === 403
+                ? "Tu sesión está activa, pero esta cuenta no tiene permisos de administración. Puedes volver al inicio y continuar como estudiante."
+                : "No fue posible cargar las estadísticas. Comprueba tu conexión e inténtalo más tarde."}
           </p>
-          <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
+          {accessStatus === 401 ? (
+            <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
+          ) : accessStatus === 403 ? (
+            <Link className="secondary-button" href="/">Volver al inicio</Link>
+          ) : null}
         </section>
       )}
 
@@ -223,7 +239,7 @@ export default function AdminDashboardPage() {
             </select>
           </section>
 
-          <section className="history-kpi-grid admin-editorial-ledger">
+          <section className="history-kpi-grid admin-editorial-ledger admin-secondary-metrics" aria-label="Métricas de administración">
             <article className="card kpi">
               <p className="kpi-label">Usuarios</p>
               <p className="kpi-value">{stats.summary.totalUsers}</p>

@@ -465,8 +465,8 @@ export default function AdminQuestionsPage() {
             </button>
           </div>
 
-          <div className="admin-filters">
-            <label>
+          <div className="admin-filters admin-filter-groups">
+            <label className="admin-search-filter">
               Buscar
               <input
                 value={filters.q}
@@ -571,7 +571,8 @@ export default function AdminQuestionsPage() {
             </span>
           </div>
 
-          <div className="admin-form-grid">
+          <p className="admin-editor-group-label">Pregunta y clasificación</p>
+          <div className="admin-form-grid admin-editor-groups">
             <label className="wide">
               Enunciado
               <textarea
@@ -701,6 +702,10 @@ export default function AdminQuestionsPage() {
               />
             </label>
 
+          </div>
+
+          <div className="admin-form-grid admin-answer-guidance-group">
+            <p className="admin-editor-group-label">Pauta de evaluación</p>
             <label className="wide">
               Respuesta esperada
               <textarea

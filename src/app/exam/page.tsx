@@ -816,7 +816,7 @@ export default function ExamPage() {
 
       {exam && currentQuestion && !finalResult ? (
         <section className="exam-layout exam-active-chapters">
-          <aside className="exam-question-list card exam-chapter-panel exam-round-chapter">
+          <aside className="exam-question-list card exam-chapter-panel exam-round-chapter exam-context-navigation">
             <h2>Ronda</h2>
             {questionSections.map((section) => (
               <div className="exam-section-nav" key={section.sectionIndex}>
@@ -848,7 +848,7 @@ export default function ExamPage() {
             ))}
           </aside>
 
-          <section className="exam-panel card exam-chapter-panel exam-answer-chapter">
+          <section className="exam-panel card exam-chapter-panel exam-answer-chapter exam-question-primary">
             <div className="question-meta">
               <span>Bloque {(currentQuestion.sectionIndex ?? 0) + 1}</span>
               <span>

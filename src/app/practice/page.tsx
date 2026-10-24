@@ -632,7 +632,7 @@ export default function PracticePage() {
   return (
     <main className="practice-shell menu-with-top-nav book-study-shell">
       <AppTopNav />
-      <aside className="practice-sidebar">
+      <aside className="practice-sidebar practice-setup-controls">
         <Link className="back-link" href="/">← Volver al inicio</Link>
         <p className="practice-kicker">Cuaderno de práctica</p>
         <h1>Práctica por texto</h1>
@@ -713,7 +713,7 @@ export default function PracticePage() {
         </div>
       </aside>
 
-      <section className="practice-main">
+      <section className="practice-main practice-task-content">
         {isLoading && <LoadingCard label="Cargando preguntas..." />}
 
         {!isLoading && !currentQuestion && (

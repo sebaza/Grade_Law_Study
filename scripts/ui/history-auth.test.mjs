@@ -62,3 +62,15 @@ test("history and login use the shared canvas while retaining form focus", () =>
   assert.match(css, /\.auth-book-form\s*\{[^}]*background: var\(--surface\)/);
   assert.match(css, /\.book-auth-shell\s*\{[^}]*background: var\(--background\)/);
 });
+
+test("history and login clarify scan order and account intent", () => {
+  const history = read("history/page.tsx");
+  const login = read("auth/login/page.tsx");
+  const css = read("globals.css");
+  assert.match(history, /className="attempt-history-row rich-attempt-row history-attempt-scan"/);
+  assert.match(history, /attempt-actions-stack history-attempt-actions/);
+  assert.match(css, /\.history-attempt-scan \.history-attempt-actions \.score-pill\s*\{[^}]*justify-self: start/);
+  assert.match(login, /className="auth-signin-action"/);
+  assert.match(login, /className="secondary auth-signup-action"/);
+  assert.match(login, /className="auth-signup-hint"/);
+});

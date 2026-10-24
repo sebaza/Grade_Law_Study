@@ -384,7 +384,7 @@ export default function HomePage() {
               </>
             ) : (
               <>
-                <Link className="primary-button" href="/practice">Practicar ahora</Link>
+                <Link className="primary-button home-next-study-action" href="/practice">Practicar ahora</Link>
                 <Link className="secondary-button" href="/questions">Explorar banco</Link>
               </>
             )}
@@ -407,7 +407,7 @@ export default function HomePage() {
 
         {!isLoading && stats && history && (
           <>
-            <section className="history-kpi-grid home-kpi-grid dashboard-kpi-ledger">
+            <section className="history-kpi-grid home-kpi-grid dashboard-kpi-ledger dashboard-secondary-metrics" aria-label="Resumen de progreso">
               <article className="card kpi">
                 <p className="kpi-label">Promedio general</p>
                 <p className="kpi-value">{stats.summary.averageScore}%</p>

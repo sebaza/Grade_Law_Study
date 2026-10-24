@@ -44,7 +44,7 @@ test("exam setup, active session, and result use a book-inspired reading hierarc
   assert.match(page, /<header className="exam-hero book-exam-hero">/);
   assert.match(page, /className="exam-setup card exam-editorial-section exam-setup-chapter"/);
   assert.match(page, /<section className="exam-layout exam-active-chapters">/);
-  assert.match(page, /className="exam-panel card exam-chapter-panel exam-answer-chapter"/);
+  assert.match(page, /className="exam-panel card exam-chapter-panel exam-answer-chapter exam-question-primary"/);
   assert.match(page, /className="exam-result card exam-editorial-section exam-result-chapter"/);
   assert.match(css, /\.book-exam-hero h1\s*\{[^}]*font-family: Georgia/);
   assert.match(css, /\.exam-editorial-section::before\s*\{[^}]*counter\(exam-chapter, decimal-leading-zero\)/);
@@ -59,4 +59,16 @@ test("practice and exam separate reading surfaces from focused answer controls",
   assert.match(css, /\.practice-shell\.book-study-shell \.answer-panel\s*\{[^}]*border-radius: var\(--radius-panel\);[^}]*background: var\(--surface\)/);
   assert.match(css, /\.book-exam-shell \.exam-answer-chapter\s*\{[^}]*background: var\(--surface\)/);
   assert.match(css, /\.menu-with-top-nav > \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), calc\(100vw - 32px\)\)/);
+});
+
+test("practice and exam keep active study content ahead of setup/navigation context", () => {
+  const practice = read("practice/page.tsx");
+  const exam = read("exam/page.tsx");
+  const css = read("globals.css");
+  assert.match(practice, /className="practice-sidebar practice-setup-controls"/);
+  assert.match(practice, /className="practice-main practice-task-content"/);
+  assert.match(css, /\.practice-task-content \.question-panel h2\s*\{[^}]*font-size:/);
+  assert.match(exam, /className="exam-question-list card exam-chapter-panel exam-round-chapter exam-context-navigation"/);
+  assert.match(exam, /exam-answer-chapter exam-question-primary/);
+  assert.match(css, /\.exam-question-primary\s*\{[^}]*grid-column:/);
 });

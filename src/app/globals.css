@@ -5043,6 +5043,177 @@ body:has(.app-top-nav) > .theme-toggle {
   width: min(var(--editorial-canvas), calc(100vw - 32px));
 }
 
+/* Route task order: primary study work first, supporting controls second. */
+.home-main-dashboard .home-next-study-action {
+  min-width: 180px;
+  min-height: 48px;
+  justify-content: center;
+}
+
+.home-main-dashboard .dashboard-secondary-metrics {
+  margin-bottom: 4px;
+}
+
+.dashboard-secondary-metrics .kpi-value,
+.admin-secondary-metrics .kpi-value {
+  font-size: clamp(1.45rem, 2vw, 2rem);
+}
+
+.bank-filter-workspace {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+}
+
+.bank-primary-filters {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.bank-secondary-filters {
+  min-width: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.bank-secondary-filters summary {
+  width: fit-content;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.bank-secondary-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.bank-filter-workspace > button {
+  align-self: center;
+}
+
+.practice-shell.book-study-shell .practice-setup-controls {
+  background: color-mix(in srgb, var(--surface) 48%, var(--background));
+}
+
+.practice-shell.book-study-shell .practice-task-content {
+  gap: clamp(20px, 3vw, 30px);
+}
+
+.practice-shell.book-study-shell .practice-task-content .question-panel h2 {
+  font-size: clamp(1.65rem, 2.9vw, 2.35rem);
+  line-height: 1.38;
+}
+
+.exam-question-primary {
+  grid-column: 1;
+  border-top: 2px solid var(--accent) !important;
+}
+
+.book-exam-shell .exam-active-chapters {
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+}
+
+.exam-context-navigation {
+  grid-column: 2;
+  background: transparent !important;
+  position: relative;
+  top: auto;
+}
+
+.exam-context-navigation .exam-step {
+  padding: 8px;
+}
+
+.history-attempt-scan .history-attempt-actions {
+  align-content: start;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.history-attempt-scan .history-attempt-actions .score-pill {
+  justify-self: start;
+  margin-bottom: 6px;
+}
+
+.book-auth-shell .auth-signin-action {
+  font-weight: 800;
+}
+
+.book-auth-shell .auth-signup-action {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.auth-signup-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.admin-dashboard-shell .admin-secondary-metrics {
+  margin-bottom: 4px;
+}
+
+.admin-filter-groups .admin-search-filter {
+  grid-column: 1 / -1;
+}
+
+.admin-editor-group-label {
+  grid-column: 1 / -1;
+  margin: 8px 0 -4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-answer-guidance-group {
+  margin-top: 18px;
+}
+
+@media (max-width: 860px) {
+  .exam-question-primary {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .exam-context-navigation {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .book-exam-shell .exam-active-chapters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bank-secondary-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .bank-filter-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bank-primary-filters,
+  .bank-secondary-filter-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bank-filter-workspace > button {
+    justify-self: start;
+  }
+}
+
 @media (max-width: 860px) {
   .admin-shell {
     padding-inline: 16px;

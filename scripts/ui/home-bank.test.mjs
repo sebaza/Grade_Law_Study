@@ -68,6 +68,16 @@ test("bank navigation and tooltips stay inside the page content", () => {
   assert.match(css, /\.bank-question-card \.info-hint::after\s*\{[^}]*left: 18px;[^}]*right: 18px;/);
 });
 
+test("Home and question bank make the next study action and primary filters easier to find", () => {
+  const home = read("page.tsx");
+  const bank = read("questions/page.tsx");
+  assert.match(home, /className="primary-button home-next-study-action" href="\/practice"/);
+  assert.match(home, /dashboard-kpi-ledger dashboard-secondary-metrics/);
+  assert.match(bank, /className="bank-filter-bar bank-filter-workspace"/);
+  assert.match(bank, /className="bank-primary-filters"/);
+  assert.match(bank, /className="bank-secondary-filters"/);
+});
+
 test("editorial pages share a wider canvas and rule-led read-only sections", () => {
   assert.match(css, /--editorial-canvas:\s*1360px/);
   assert.match(css, /\.menu-with-top-nav > \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), calc\(100vw - 32px\)\)/);
