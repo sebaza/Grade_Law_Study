@@ -17,6 +17,21 @@ test("Home reserves drawer clearance through the actual navigation breakpoint", 
   assert.match(read("page.tsx"), /<h1>\{loggedOut \? "Prepara tu examen con práctica real" : "Resumen de estudio"\}<\/h1>/);
 });
 
+test("public Home presents its study features as ordered editorial chapters", () => {
+  const page = read("page.tsx");
+  const landing = page.slice(page.indexOf("function HomeLanding"), page.indexOf("export default function HomePage"));
+
+  assert.match(page, /className=\{loggedOut \? "home-compact-header public-home-header" : "home-compact-header"\}/);
+  assert.match(landing, /<ol className="landing-feature-grid">/);
+  assert.match(landing, /<li key=\{feature\.title\}>\s*<article className="landing-feature">/);
+  assert.match(css, /\.home-compact-header\.public-home-header h1\s*\{[^}]*font-family:/);
+  assert.match(css, /\.landing-feature-grid > li\s*\{[^}]*counter-increment:/);
+  assert.match(css, /\.landing-feature-grid > li::before\s*\{[^}]*counter\(landing-chapter, decimal-leading-zero\)/);
+  assert.match(css, /\.landing-feature-grid > li\s*\{[^}]*border-top:/);
+  assert.match(page, /<Link className="primary-button" href="\/auth\/login">Iniciar sesión<\/Link>/);
+  assert.match(page, /<Link className="secondary-button" href="\/questions">Explorar banco<\/Link>/);
+});
+
 test("bank filter dependencies, paging and navigation remain explicit", () => {
   const bank = read("questions/page.tsx");
   for (const marker of ['key === "area" ? { subject: "", subsubject: "" }', 'key === "subject" ? { subsubject: "" }', 'setPage(1)', 'limit: "20"', 'questionId=${question.id}', '/history#question-${question.id}']) {
