@@ -58,7 +58,7 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B3 checks:** `npm run typecheck` passed; `npx eslint src scripts` passed; `git diff --check` passed (Git emitted only CRLF normalization warnings for touched files).
 - **B3 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started; no login, history mutation, or auth action was attempted. Browser rendering across breakpoints/themes remains unverified.
 - **B3 rollback boundary:** Revert `src/app/history/page.tsx`, `src/app/auth/login/page.tsx`, B3-scoped history/auth additions in `src/app/globals.css`, and B3 assertions in `scripts/ui/history-auth.test.mjs`; the earlier Home, bank, Practice, and Exam work remains intact.
-- **B3 behavior commit:** To be recorded in the task-document closeout immediately after the behavior commit.
+- **B3 behavior commit:** `bb4fb44e` (`style(auth): add editorial hierarchy to history and login`). This commit includes the B3 implementation, regression assertions, and task evidence above.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
