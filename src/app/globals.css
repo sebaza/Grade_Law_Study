@@ -4522,6 +4522,187 @@ body:has(.app-top-nav) > .theme-toggle {
   margin-inline: auto;
 }
 
+/* Book-inspired reading hierarchy for saved history and account access. */
+.book-history-shell .history-editorial-hero {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 22px;
+}
+
+.book-history-shell .history-editorial-hero h1,
+.book-history-shell .history-chapter-panel h2,
+.book-history-shell .history-attempts-chapter > h2,
+.auth-book-card h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.book-history-shell .history-editorial-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.04;
+}
+
+.book-history-shell .history-kpi-ledger {
+  counter-reset: history-kpi;
+}
+
+.book-history-shell .history-chapter-grid {
+  counter-reset: history-chapter;
+}
+
+.book-history-shell .history-kpi-ledger > article {
+  position: relative;
+  border: 0;
+  border-top: 2px solid var(--accent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--surface-soft) 55%, var(--surface));
+  box-shadow: none;
+  padding-top: 38px;
+  counter-increment: history-kpi;
+}
+
+.book-history-shell .history-kpi-ledger > article::before {
+  position: absolute;
+  top: 13px;
+  left: 18px;
+  color: var(--accent);
+  content: counter(history-kpi, decimal-leading-zero);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.book-history-shell .history-kpi-ledger .kpi-value {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.book-history-shell .history-chapter-grid > article,
+.book-history-shell .history-attempts-chapter,
+.book-history-shell .history-access-chapter {
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--surface-soft));
+  box-shadow: none;
+}
+
+.book-history-shell .loading-card {
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--surface-soft));
+  box-shadow: none;
+}
+
+.book-history-shell .history-chapter-grid > article {
+  position: relative;
+  padding-top: 50px;
+  counter-increment: history-chapter;
+}
+
+.book-history-shell .history-chapter-grid > article::before {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  color: var(--accent);
+  content: "SECCIÓN " counter(history-chapter, decimal-leading-zero);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+}
+
+.book-history-shell .history-chapter-panel h2,
+.book-history-shell .history-attempts-chapter > h2 {
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.book-history-shell .history-attempts-chapter {
+  padding: 26px;
+}
+
+.book-history-shell .history-attempts-chapter > h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+
+.book-history-shell .history-attempts-chapter .attempt-history-row {
+  border-inline: 0;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--surface-soft) 58%, var(--surface));
+}
+
+.book-history-shell .history-access-chapter,
+.book-history-shell .loading-card {
+  padding: 24px;
+}
+
+.book-history-shell .history-access-chapter h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+
+.book-history-shell .empty-state-inline {
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--surface-soft) 74%, var(--surface));
+  padding: 20px;
+}
+
+.book-auth-shell {
+  background:
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 38%),
+    var(--background);
+}
+
+.auth-book-card {
+  border: 0;
+  border-top: 2px solid var(--accent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 96%, var(--surface-soft));
+  box-shadow: none;
+}
+
+.auth-book-card .auth-book-kicker {
+  margin: 24px 0 8px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.auth-book-card h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 4.8vw, 3.1rem);
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.auth-book-card .auth-card-intro {
+  max-width: 58ch;
+  line-height: 1.7;
+}
+
+.auth-book-form {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+}
+
+.auth-book-form label {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.auth-book-form input {
+  border-radius: 4px;
+  background: var(--surface);
+  text-transform: none;
+}
+
 /* Administration workspace refinement: preserve data and action semantics. */
 .admin-shell {
   padding: 32px max(24px, calc((100% - 1400px) / 2));

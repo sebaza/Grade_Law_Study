@@ -59,16 +59,17 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="auth-shell">
-      <section className="auth-card">
+    <main className="auth-shell book-auth-shell">
+      <section className="auth-card auth-book-card">
         <Link className="back-link" href="/">← Volver al inicio</Link>
+        <p className="auth-book-kicker">Acceso a tu progreso</p>
         <h1>Ingreso de estudiante</h1>
-        <p>
+        <p className="auth-card-intro">
           La práctica real necesita identificarte: así se guardan tus intentos,
           porcentajes, preguntas dominadas y preguntas para repaso.
         </p>
 
-        <form className="auth-form" onSubmit={submit} aria-busy={isLoading}>
+        <form className="auth-form auth-book-form" onSubmit={submit} aria-busy={isLoading}>
           <label>
             Correo
             <input type="email" name="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} required />

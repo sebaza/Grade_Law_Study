@@ -16,7 +16,7 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 
 - [x] B1 — Apply editorial structure to signed-in Home and the public question bank. Route: delegated direct; trigger: multiple non-trivial pages, shared styles, and structural regression tests.
 - [x] B2 — Apply the same book-inspired hierarchy to Exam setup, active session, and results without touching session behavior. Route: delegated direct; trigger: page/CSS/tests require analysis.
-- [ ] B3 — Apply the same book-inspired hierarchy to History states and Login/Signup. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
+- [x] B3 — Apply the same book-inspired hierarchy to History states and Login/Signup. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
 - [ ] B4 — Apply the same book-inspired hierarchy to protected Admin dashboard and question editor. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
 - Existing public Home work unit: `86fe784ac143c808ad8ba4a71544377d0d080cf2`; existing Practice work unit: `5965fae9f9a30bc17ddba2202858f4585515c3f4`. Practice browser verification is separately pending under `odd/tasks/practice-book-inspired.md`.
 
@@ -53,6 +53,12 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B2 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started; no credentials, exam session, answer submission, or evaluation were used. Browser rendering across breakpoints/themes remains unverified.
 - **B2 rollback boundary:** Revert only `src/app/exam/page.tsx`, the B2-scoped exam rules in `src/app/globals.css`, and the added Exam assertion in `scripts/ui/practice-exam.test.mjs`; this removes B2 without affecting the prior Home, bank, or Practice work.
 - **B2 behavior commit:** `432b0b85` (`style(exam): add book-inspired exam chapters`). This commit includes the B2 implementation, regression assertion, and task evidence above.
+- **B3 implementation:** Added a restrained editorial hero and chapter-numbered KPI/section hierarchy to History, including loading, login-required/error, empty, and populated states. Login/signup now uses a paper-like auth card, serif title, and labeled kicker. JSX changes are classes and presentation copy only; history fetching/actions, auth, redirects, validation, and form submissions are unchanged.
+- **B3 TDD:** Added focused assertions to `scripts/ui/history-auth.test.mjs` first. RED observed with `node --test scripts/ui/history-auth.test.mjs` (exit 1; 3/5 passed; both new route hierarchy assertions failed because the requested classes/styles were absent). After implementation and adjusting a CSS-selector assertion to match the route-scoped rules, the focused command passed (5/5).
+- **B3 checks:** `npm run typecheck` passed; `npx eslint src scripts` passed; `git diff --check` passed (Git emitted only CRLF normalization warnings for touched files).
+- **B3 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started; no login, history mutation, or auth action was attempted. Browser rendering across breakpoints/themes remains unverified.
+- **B3 rollback boundary:** Revert `src/app/history/page.tsx`, `src/app/auth/login/page.tsx`, B3-scoped history/auth additions in `src/app/globals.css`, and B3 assertions in `scripts/ui/history-auth.test.mjs`; the earlier Home, bank, Practice, and Exam work remains intact.
+- **B3 behavior commit:** To be recorded in the task-document closeout immediately after the behavior commit.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
@@ -67,4 +73,4 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - `scripts/ui/` — structural regression suites.
 
 ## Next step
-- Begin B3: apply the shared editorial hierarchy to History states and Login/Signup without changing auth or saved-history behavior.
+- Begin B4: apply the shared editorial hierarchy to the protected Admin dashboard and question editor while preserving permissions and edit behavior.

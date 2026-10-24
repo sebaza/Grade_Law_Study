@@ -176,10 +176,10 @@ export default function HistoryPage() {
   }
 
   return (
-    <main className="menu-page-shell history-student-shell">
+    <main className="menu-page-shell history-student-shell book-history-shell">
       <AppTopNav />
 
-      <header className="page-hero compact-hero">
+      <header className="page-hero compact-hero history-editorial-hero">
         <div>
           <p className="eyebrow">Historial</p>
           <h1>Historial de práctica</h1>
@@ -190,7 +190,7 @@ export default function HistoryPage() {
       {isLoading && <LoadingCard label="Cargando historial..." />}
 
       {!isLoading && errorMessage && (
-        <section className="practice-card-large empty-state" role="alert">
+        <section className="practice-card-large empty-state history-access-chapter" role="alert">
           <h2>{errorMessage}</h2>
           <p>Inicia sesión para consultar tus respuestas guardadas y continuar tu progreso.</p>
           <Link className="primary-button" href="/auth/login">Iniciar sesión</Link>
@@ -199,7 +199,7 @@ export default function HistoryPage() {
 
       {!isLoading && history && (
         <>
-          <section className="history-kpi-grid">
+          <section className="history-kpi-grid history-kpi-ledger">
             <article className="card kpi">
               <p className="kpi-label">Intentos registrados</p>
               <p className="kpi-value">{history.attempts.length}</p>
@@ -224,8 +224,8 @@ export default function HistoryPage() {
 
           {actionMessage && <p className="form-message" role="status">{actionMessage}</p>}
 
-          <section className="history-grid">
-            <article className="practice-card-large">
+          <section className="history-grid history-chapter-grid">
+            <article className="practice-card-large history-chapter-panel">
               <h2>Preguntas dominadas</h2>
               <div className="question-risk-list">
                 {masteredQuestions.length > 0 ? masteredQuestions.map((attempt) => (
@@ -240,7 +240,7 @@ export default function HistoryPage() {
               </div>
             </article>
 
-            <article className="practice-card-large">
+            <article className="practice-card-large history-chapter-panel">
               <h2>Preguntas practicadas</h2>
               <div className="question-risk-list">
                 {practicedQuestions.length > 0 ? practicedQuestions.slice(0, 12).map((attempt) => (
@@ -258,7 +258,7 @@ export default function HistoryPage() {
             </article>
           </section>
 
-          <section className="practice-card-large" id="historial">
+          <section className="practice-card-large history-attempts-chapter" id="historial">
             <h2>Intentos y respuestas</h2>
             <div className="attempt-history-list">
               {history.attempts.length > 0 ? history.attempts.map((attempt) => (
