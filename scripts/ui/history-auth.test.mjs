@@ -18,9 +18,9 @@ test("login supports autofill and validates signup before authentication", () =>
 });
 test("history and auth retain bounded responsive layouts", () => {
   const css = read("globals.css");
-  assert.match(css, /\.history-student-shell \.app-top-nav\s*\{\s*width: min\(1180px, 100%\)/);
+  assert.match(css, /\.history-student-shell \.app-top-nav\s*\{\s*width: min\(var\(--editorial-canvas\), 100%\)/);
   assert.match(css, /\.auth-form input\s*\{\s*min-height: 44px;/);
-  assert.match(css, /\.history-student-shell \.question-risk-row\s*\{\s*border-radius: var\(--radius-panel\)/);
+  assert.match(css, /\.history-student-shell \.question-risk-row\s*\{[^}]*width: min\(var\(--editorial-canvas\), 100%\)/);
 });
 
 test("history loading, access, empty, and populated views share an editorial hierarchy", () => {
@@ -51,4 +51,14 @@ test("login keeps its auth form while applying the book-inspired card hierarchy"
   assert.match(page, /<form className="auth-form auth-book-form" onSubmit=\{submit\} aria-busy=\{isLoading\}>/);
   assert.match(css, /\.auth-book-card h1\s*\{[^}]*font-family: Georgia/);
   assert.match(css, /\.auth-book-form\s*\{[^}]*border-top:/);
+});
+
+test("history and login use the shared canvas while retaining form focus", () => {
+  const css = read("globals.css");
+  assert.match(css, /\.history-student-shell \.app-top-nav\s*\{\s*width: min\(var\(--editorial-canvas\), 100%\)/);
+  assert.match(css, /\.book-page-open-section,[\s\S]*?\.book-history-shell \.history-chapter-grid > article[\s\S]*?\.book-history-shell \.question-risk-row[\s\S]*?\.admin-editorial-layout > \.admin-list-panel\s*\)\s*\{[^}]*border-radius: 0;[^}]*box-shadow: none;[^}]*background: transparent/);
+  assert.match(css, /\.dashboard-kpi-ledger \.kpi,\s*\.book-history-shell \.history-kpi-ledger > article\s*\{[^}]*border: 0;[^}]*border-right: 1px solid var\(--border\);[^}]*background: transparent/);
+  assert.match(css, /\.book-auth-shell \.auth-book-card\s*\{[^}]*max-width: min\(100%, 40rem\);[^}]*box-shadow: none/);
+  assert.match(css, /\.auth-book-form\s*\{[^}]*background: var\(--surface\)/);
+  assert.match(css, /\.book-auth-shell\s*\{[^}]*background: var\(--background\)/);
 });

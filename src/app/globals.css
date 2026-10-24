@@ -11,6 +11,8 @@
   --radius-panel: 6px;
   --radius-card: 10px;
   --elevation-card: 0 2px 8px color-mix(in srgb, var(--ink) 6%, transparent);
+  --editorial-canvas: 1360px;
+  --editorial-copy-measure: 72ch;
   --background: #f7f4f0;
   --surface: #ffffff;
   --surface-soft: #faf6f3;
@@ -2507,7 +2509,7 @@ summary {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 18px;
-  width: min(1180px, calc(100vw - 32px));
+  width: min(var(--editorial-canvas), calc(100vw - 32px));
   margin: 0 auto 28px;
   padding: 10px 12px;
   border: 1px solid color-mix(in srgb, var(--border) 82%, transparent);
@@ -2583,14 +2585,12 @@ summary {
 .menu-page-shell {
   min-height: 100vh;
   padding: 24px 32px 48px;
-  background:
-    radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34%),
-    var(--background);
+  background: var(--background);
 }
 
 .menu-with-top-nav > .app-top-nav {
   grid-column: 1 / -1;
-  width: min(1180px, calc(100vw - 32px));
+  width: min(var(--editorial-canvas), calc(100vw - 32px));
   margin-top: 18px;
 }
 
@@ -2599,7 +2599,7 @@ summary {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   align-items: end;
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin: 0 auto 24px;
 }
 
@@ -2636,7 +2636,7 @@ summary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin: 22px auto 0;
 }
 
@@ -2738,7 +2738,7 @@ summary {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 12px;
   align-items: end;
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin: 0 auto 16px;
   padding: 16px;
   border: 1px solid var(--border);
@@ -2777,7 +2777,7 @@ summary {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin: 0 auto 16px;
   color: var(--muted);
 }
@@ -2790,7 +2790,7 @@ summary {
 .question-bank-list {
   display: grid;
   gap: 14px;
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin: 0 auto;
 }
 
@@ -2816,6 +2816,10 @@ summary {
   font-size: clamp(1.15rem, 2vw, 1.55rem);
   line-height: 1.15;
   letter-spacing: -0.03em;
+}
+
+.bank-card-body > div:first-child {
+  max-width: var(--editorial-copy-measure);
 }
 
 .bank-card-body p,
@@ -2849,7 +2853,7 @@ summary {
 .answer-review-box p { margin: 0; }
 
 .admin-user-filter-card {
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin: 0 auto 20px;
 }
 
@@ -3719,7 +3723,7 @@ body:has(.app-top-nav) > .theme-toggle {
 
 /* Home and bank: bounded tracks, calm hierarchy, and intrinsic content wrapping. */
 .question-bank-shell .app-top-nav {
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
 }
 
 .bank-question-card {
@@ -3907,7 +3911,7 @@ body:has(.app-top-nav) > .theme-toggle {
 
 .practice-shell .app-top-nav,
 .exam-shell .app-top-nav {
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
 }
 
 .exam-clock-card {
@@ -4417,7 +4421,7 @@ body:has(.app-top-nav) > .theme-toggle {
 
 /* History and authentication: quiet surfaces, readable forms and bounded rows. */
 .history-student-shell .app-top-nav {
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
 }
 
 .history-student-shell :is(section, article, .question-risk-row > div, .attempt-history-row > div) {
@@ -4518,7 +4522,7 @@ body:has(.app-top-nav) > .theme-toggle {
 }
 
 .history-student-shell > .empty-state {
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin-inline: auto;
 }
 
@@ -4795,7 +4799,7 @@ body:has(.app-top-nav) > .theme-toggle {
 }
 
 .admin-dashboard-shell > .empty-state {
-  width: min(1180px, 100%);
+  width: min(var(--editorial-canvas), 100%);
   margin: 0 auto;
 }
 
@@ -4832,7 +4836,7 @@ body:has(.app-top-nav) > .theme-toggle {
 
 .admin-dashboard-shell > .app-top-nav {
   width: 100%;
-  max-width: 1180px;
+  max-width: var(--editorial-canvas);
 }
 
 .admin-editorial-hero {
@@ -4901,6 +4905,174 @@ body:has(.app-top-nav) > .theme-toggle {
     border-right: 0;
   }
   .admin-editorial-ledger .kpi:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+}
+
+/* Shared book-page composition: broad canvas, open reading sections, focused controls. */
+.admin-shell {
+  padding-inline: max(24px, calc((100% - var(--editorial-canvas)) / 2));
+}
+
+.admin-dashboard-shell,
+.book-auth-shell {
+  background: var(--background);
+}
+
+.dashboard-kpi-ledger,
+.book-history-shell .history-kpi-ledger {
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-kpi-ledger .kpi,
+.book-history-shell .history-kpi-ledger > article {
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dashboard-kpi-ledger .kpi:last-child,
+.book-history-shell .history-kpi-ledger > article:last-child {
+  border-right: 0;
+}
+
+.book-page-open-section,
+:is(
+  .landing-intro,
+  .dashboard-chapters > article,
+  .bank-chapter-card,
+  .practice-shell.book-study-shell .section-average-card:not(.complete),
+  .practice-shell.book-study-shell .question-panel,
+  .book-exam-shell .exam-result,
+  .book-exam-shell .exam-round-chapter,
+  .book-history-shell .history-chapter-grid > article,
+  .book-history-shell .history-attempts-chapter,
+  .book-history-shell .question-risk-row,
+  .book-history-shell .attempt-history-row,
+  .admin-dashboard-shell .history-grid > .practice-card-large,
+  .admin-editorial-layout > .admin-list-panel
+) {
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.landing-intro {
+  border-bottom: 1px solid var(--border);
+  padding-inline: 0;
+}
+
+.bank-chapter-card {
+  padding-inline: 56px 8px;
+}
+
+.bank-card-body > div:first-child,
+.practice-shell.book-study-shell .question-panel > p,
+.book-exam-shell .exam-answer-chapter > h2,
+.book-history-shell .history-question-link {
+  max-width: var(--editorial-copy-measure);
+}
+
+.practice-shell.book-study-shell .question-panel {
+  border-left: 0;
+  background: transparent;
+  padding-inline: 0;
+}
+
+.practice-shell.book-study-shell .answer-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  box-shadow: none;
+  padding: 20px;
+}
+
+.book-exam-shell .exam-answer-chapter {
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  box-shadow: none;
+}
+
+.book-history-shell .attempt-history-row,
+.admin-dashboard-shell .roomy-list .ranking-row,
+.home-main-dashboard .roomy-list .ranking-row {
+  border-inline: 0;
+  border-radius: 0;
+  border-top: 1px solid var(--border);
+  background: transparent;
+  box-shadow: none;
+}
+
+.book-auth-shell .auth-book-card {
+  max-width: min(100%, 40rem);
+  border-radius: var(--radius-panel);
+  box-shadow: none;
+}
+
+.auth-book-form {
+  background: var(--surface);
+}
+
+.admin-editorial-layout > .admin-editor {
+  border-top: 2px solid var(--accent);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  box-shadow: none;
+}
+
+.menu-with-top-nav > .app-top-nav,
+.page-hero,
+.dashboard-analytics-grid,
+.bank-filter-bar,
+.bank-summary-strip,
+.question-bank-list,
+.admin-user-filter-card,
+.history-student-shell .question-risk-row {
+  width: min(var(--editorial-canvas), 100%);
+}
+
+.menu-with-top-nav > .app-top-nav {
+  width: min(var(--editorial-canvas), calc(100vw - 32px));
+}
+
+@media (max-width: 860px) {
+  .admin-shell {
+    padding-inline: 16px;
+  }
+
+  .bank-chapter-card {
+    padding-inline: 48px 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-kpi-ledger .kpi:nth-child(2n),
+  .book-history-shell .history-kpi-ledger > article:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .dashboard-kpi-ledger .kpi:nth-child(n + 3),
+  .book-history-shell .history-kpi-ledger > article:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 540px) {
+  .dashboard-kpi-ledger .kpi,
+  .book-history-shell .history-kpi-ledger > article {
+    border-right: 0;
+  }
+
+  .dashboard-kpi-ledger .kpi:nth-child(n + 2),
+  .book-history-shell .history-kpi-ledger > article:nth-child(n + 2) {
     border-top: 1px solid var(--border);
   }
 }

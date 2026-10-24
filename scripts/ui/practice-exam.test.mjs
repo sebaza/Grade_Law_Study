@@ -19,7 +19,7 @@ test("study layouts constrain controls and wrap actions", () => {
   const css = read("globals.css");
   assert.match(css, /\.exam-actions\s*\{\s*display: flex;\s*flex-wrap: wrap;/);
   assert.match(css, /\.practice-main,\s*\.exam-shell :is\(section, aside, label\)\s*\{\s*min-width: 0;/);
-  assert.match(css, /\.practice-shell \.app-top-nav,\s*\.exam-shell \.app-top-nav\s*\{\s*width: min\(1180px, 100%\)/);
+  assert.match(css, /\.practice-shell \.app-top-nav,\s*\.exam-shell \.app-top-nav\s*\{\s*width: min\(var\(--editorial-canvas\), 100%\)/);
   assert.match(css, /\.exam-clock-card\s*\{\s*background: var\(--surface-soft\);\s*color: var\(--ink\)/);
 });
 
@@ -51,4 +51,12 @@ test("exam setup, active session, and result use a book-inspired reading hierarc
   assert.match(css, /\.exam-active-chapters > \.exam-chapter-panel::before\s*\{[^}]*counter\(exam-section, decimal-leading-zero\)/);
   assert.match(css, /\.exam-answer-chapter > h2\s*\{[^}]*font-family: Georgia/);
   assert.match(css, /\.book-exam-shell \.exam-result-grid div\s*\{[^}]*border-top:/);
+});
+
+test("practice and exam separate reading surfaces from focused answer controls", () => {
+  const css = read("globals.css");
+  assert.match(css, /\.book-page-open-section,[\s\S]*?\.practice-shell\.book-study-shell \.question-panel[\s\S]*?\.book-exam-shell \.exam-result[\s\S]*?\)\s*\{[^}]*border-radius: 0;[^}]*box-shadow: none;[^}]*background: transparent/);
+  assert.match(css, /\.practice-shell\.book-study-shell \.answer-panel\s*\{[^}]*border-radius: var\(--radius-panel\);[^}]*background: var\(--surface\)/);
+  assert.match(css, /\.book-exam-shell \.exam-answer-chapter\s*\{[^}]*background: var\(--surface\)/);
+  assert.match(css, /\.menu-with-top-nav > \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), calc\(100vw - 32px\)\)/);
 });

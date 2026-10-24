@@ -64,6 +64,13 @@ test("bank filter dependencies, paging and navigation remain explicit", () => {
 });
 
 test("bank navigation and tooltips stay inside the page content", () => {
-  assert.match(css, /\.question-bank-shell \.app-top-nav\s*\{[^}]*width: min\(1180px, 100%\)/);
+  assert.match(css, /\.question-bank-shell \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), 100%\)/);
   assert.match(css, /\.bank-question-card \.info-hint::after\s*\{[^}]*left: 18px;[^}]*right: 18px;/);
+});
+
+test("editorial pages share a wider canvas and rule-led read-only sections", () => {
+  assert.match(css, /--editorial-canvas:\s*1360px/);
+  assert.match(css, /\.menu-with-top-nav > \.app-top-nav\s*\{[^}]*width: min\(var\(--editorial-canvas\), calc\(100vw - 32px\)\)/);
+  assert.match(css, /\.book-page-open-section,[\s\S]*?\.dashboard-chapters > article[\s\S]*?\.bank-chapter-card[\s\S]*?\.admin-editorial-layout > \.admin-list-panel\s*\)\s*\{[^}]*border-radius: 0;[^}]*box-shadow: none;[^}]*background: transparent/);
+  assert.match(css, /\.dashboard-kpi-ledger,\s*\.book-history-shell \.history-kpi-ledger\s*\{[^}]*gap: 0;[^}]*border-top: 1px solid var\(--border\);[^}]*border-bottom: 1px solid var\(--border\)/);
 });

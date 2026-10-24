@@ -38,3 +38,8 @@ test('admin routes expose an editorial hierarchy with theme-aware chapter surfac
   assert.match(scoped, /\.admin-editorial-hero[^}]*font-family:\s*Georgia/);
   assert.match(scoped, /\.admin-editorial-layout > \.admin-editorial-chapter[^}]*border-top:\s*2px solid var\(--accent/);
 });
+
+test('admin analytics and lists read openly while the editor remains a focused surface', () => {
+  assert.match(css, /\.book-page-open-section,[\s\S]*?\.admin-dashboard-shell \.history-grid > \.practice-card-large[\s\S]*?\.admin-editorial-layout > \.admin-list-panel\s*\)\s*\{[^}]*border-radius: 0;[^}]*box-shadow: none;[^}]*background: transparent/);
+  assert.match(css, /\.admin-editorial-layout > \.admin-editor\s*\{[^}]*background: var\(--surface\)/);
+});
