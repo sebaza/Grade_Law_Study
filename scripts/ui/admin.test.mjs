@@ -26,3 +26,15 @@ test('admin layouts bound controls and use theme-aware editor panels', () => {
 test('admin top navigation remains within its padded container', () => {
   assert.match(css, /\.admin-dashboard-shell > \.app-top-nav\s*\{[^}]*width: 100%/s);
 });
+test('admin routes expose an editorial hierarchy with theme-aware chapter surfaces', () => {
+  assert.match(dashboard, /className="history-hero admin-editorial-hero"/);
+  assert.match(dashboard, /className="history-kpi-grid admin-editorial-ledger"/);
+  assert.match(dashboard, /className="history-grid admin-editorial-chapters"/);
+  assert.match(editor, /className="admin-hero admin-editorial-hero"/);
+  assert.match(editor, /className="admin-layout admin-editorial-layout"/);
+  assert.match(editor, /className="admin-list-panel card admin-editorial-chapter"/);
+  assert.match(editor, /className="admin-editor admin-editorial-chapter card"/);
+  const scoped = css.split('/* Administration workspace refinement')[1];
+  assert.match(scoped, /\.admin-editorial-hero[^}]*font-family:\s*Georgia/);
+  assert.match(scoped, /\.admin-editorial-layout > \.admin-editorial-chapter[^}]*border-top:\s*2px solid var\(--accent/);
+});

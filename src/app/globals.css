@@ -4834,3 +4834,73 @@ body:has(.app-top-nav) > .theme-toggle {
   width: 100%;
   max-width: 1180px;
 }
+
+.admin-editorial-hero {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 28px;
+}
+
+.admin-editorial-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.admin-editorial-hero .eyebrow {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-editorial-ledger {
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.admin-editorial-ledger .kpi {
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.admin-editorial-ledger .kpi:last-child {
+  border-right: 0;
+}
+
+.admin-editorial-chapters {
+  align-items: start;
+}
+
+.admin-editorial-chapters > .practice-card-large {
+  border-top: 2px solid var(--accent);
+  border-radius: 0 0 var(--radius-panel) var(--radius-panel);
+  box-shadow: none;
+}
+
+.admin-editorial-layout > .admin-editorial-chapter {
+  border-top: 2px solid var(--accent);
+  box-shadow: none;
+}
+
+.admin-editorial-chapter h2,
+.admin-editorial-chapters > .practice-card-large h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+@media (max-width: 760px) {
+  .admin-editorial-ledger .kpi:nth-child(2n) {
+    border-right: 0;
+  }
+  .admin-editorial-ledger .kpi:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+}

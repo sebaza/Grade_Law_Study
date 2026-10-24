@@ -17,7 +17,7 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - [x] B1 — Apply editorial structure to signed-in Home and the public question bank. Route: delegated direct; trigger: multiple non-trivial pages, shared styles, and structural regression tests.
 - [x] B2 — Apply the same book-inspired hierarchy to Exam setup, active session, and results without touching session behavior. Route: delegated direct; trigger: page/CSS/tests require analysis.
 - [x] B3 — Apply the same book-inspired hierarchy to History states and Login/Signup. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
-- [ ] B4 — Apply the same book-inspired hierarchy to protected Admin dashboard and question editor. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
+- [x] B4 — Apply the same book-inspired hierarchy to protected Admin dashboard and question editor. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
 - Existing public Home work unit: `86fe784ac143c808ad8ba4a71544377d0d080cf2`; existing Practice work unit: `5965fae9f9a30bc17ddba2202858f4585515c3f4`. Practice browser verification is separately pending under `odd/tasks/practice-book-inspired.md`.
 
 ## Acceptance criteria
@@ -59,6 +59,12 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B3 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started; no login, history mutation, or auth action was attempted. Browser rendering across breakpoints/themes remains unverified.
 - **B3 rollback boundary:** Revert `src/app/history/page.tsx`, `src/app/auth/login/page.tsx`, B3-scoped history/auth additions in `src/app/globals.css`, and B3 assertions in `scripts/ui/history-auth.test.mjs`; the earlier Home, bank, Practice, and Exam work remains intact.
 - **B3 behavior commit:** `bb4fb44e` (`style(auth): add editorial hierarchy to history and login`). This commit includes the B3 implementation, regression assertions, and task evidence above.
+- **B4 implementation:** Added a serif editorial hero, ruled KPI ledger, chapter-like analytics panels, and distinct editorial surfaces for the Admin question list/editor. Styling uses existing theme variables and preserves form controls, routes, permission checks, and data operations; no authentication or admin mutations were performed.
+- **B4 TDD:** Added structural assertions first in `scripts/ui/admin.test.mjs`. RED observed with `node --test scripts/ui/admin.test.mjs` (exit 1; 3/4 passed; new hierarchy assertion failed because the classes were absent). Initial GREEN attempt exposed an over-specific test CSS expectation; corrected it to assert the actual chapter accent rule. Final focused command passed (4/4).
+- **B4 checks:** `node --test scripts/ui/admin.test.mjs` passed (4/4); `npm run typecheck` passed; `npx eslint src scripts` passed; `git diff --check` passed (Git emitted CRLF normalization warnings for the touched test and CSS files).
+- **B4 runtime QA:** Browser surfaces unavailable: CUA reported no apps or browsers. No browser was installed or started; no credentials, protected session, form submission, or admin content mutation were used. Visual rendering across themes/breakpoints remains unverified.
+- **B4 rollback boundary:** Revert `src/app/admin/page.tsx`, `src/app/admin/questions/page.tsx`, the B4 editorial rules at the end of `src/app/globals.css`, and the B4 structural assertion in `scripts/ui/admin.test.mjs`; this removes B4 without changing B1–B3.
+- **B4 behavior commit:** pending.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
@@ -73,4 +79,4 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - `scripts/ui/` — structural regression suites.
 
 ## Next step
-- Begin B4: apply the shared editorial hierarchy to the protected Admin dashboard and question editor while preserving permissions and edit behavior.
+- All planned route work units B1–B4 are complete; browser verification remains unavailable for protected admin routes.

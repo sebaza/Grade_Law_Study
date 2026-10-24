@@ -179,7 +179,7 @@ export default function AdminDashboardPage() {
   return (
     <main className="history-shell admin-dashboard-shell menu-with-top-nav">
       <AppTopNav />
-      <header className="history-hero">
+      <header className="history-hero admin-editorial-hero">
         <div>
           <Link className="back-link" href="/">← Volver al inicio</Link>
           <p className="eyebrow">Panel admin · estadísticas globales</p>
@@ -223,7 +223,7 @@ export default function AdminDashboardPage() {
             </select>
           </section>
 
-          <section className="history-kpi-grid">
+          <section className="history-kpi-grid admin-editorial-ledger">
             <article className="card kpi">
               <p className="kpi-label">Usuarios</p>
               <p className="kpi-value">{stats.summary.totalUsers}</p>
@@ -246,7 +246,7 @@ export default function AdminDashboardPage() {
             </article>
           </section>
 
-          <section className="history-grid">
+          <section className="history-grid admin-editorial-chapters">
             <article className="practice-card-large">
               <h2>Evolución global</h2>
               {stats.scoreTimeline.length > 0 ? (
@@ -293,7 +293,7 @@ export default function AdminDashboardPage() {
             />
           </section>
 
-          <section className="history-grid">
+          <section className="history-grid admin-editorial-chapters">
             <article className="practice-card-large">
               <h2>Origen del banco</h2>
               <div className="ranking-list">
