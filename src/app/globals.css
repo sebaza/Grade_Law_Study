@@ -3958,6 +3958,215 @@ body:has(.app-top-nav) > .theme-toggle {
   }
 }
 
+/* Book-inspired hierarchy shared by real and demo practice. */
+.practice-shell.book-study-shell .practice-sidebar {
+  background: color-mix(in srgb, var(--surface) 94%, var(--surface-soft));
+  padding: 30px 26px;
+}
+
+.practice-shell.book-study-shell .practice-kicker,
+.practice-shell.book-study-shell .practice-section-kicker,
+.practice-shell.book-study-shell .practice-status-kicker,
+.practice-shell.book-study-shell .practice-chapter-label {
+  margin: 0;
+  color: var(--accent);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.practice-shell.book-study-shell .practice-kicker {
+  margin: -10px 0 8px;
+}
+
+.practice-shell.book-study-shell .practice-sidebar h1 {
+  max-width: 10ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 3vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.practice-shell.book-study-shell .practice-sidebar > p:not(.practice-kicker, .practice-section-kicker) {
+  max-width: 34ch;
+  line-height: 1.7;
+}
+
+.practice-shell.book-study-shell .mode-switch {
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface-soft);
+  padding: 4px;
+}
+
+.practice-shell.book-study-shell .mode-switch button {
+  border-color: transparent;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 12px;
+}
+
+.practice-shell.book-study-shell .mode-switch button.active {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--accent);
+  box-shadow: var(--elevation-card);
+}
+
+.practice-shell.book-study-shell .practice-section-kicker {
+  margin: 26px 0 -4px;
+}
+
+.practice-shell.book-study-shell .filter-stack {
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.practice-shell.book-study-shell .filter-stack select {
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  min-height: 44px;
+}
+
+.practice-shell.book-study-shell .practice-main {
+  gap: 22px;
+  padding: clamp(20px, 3.2vw, 42px);
+}
+
+.practice-shell.book-study-shell .practice-status {
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  padding: 4px 2px 14px;
+}
+
+.practice-shell.book-study-shell .practice-status > span:not(.practice-status-kicker) {
+  color: var(--ink);
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.practice-shell.book-study-shell .practice-progress {
+  height: 4px;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--border) 72%, var(--surface));
+}
+
+.practice-shell.book-study-shell .practice-card-large {
+  border-radius: var(--radius-card);
+  box-shadow: none;
+  padding: clamp(20px, 3vw, 34px);
+}
+
+.practice-shell.book-study-shell .section-average-card h2 {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.practice-shell.book-study-shell .question-panel {
+  border-left: 4px solid var(--accent);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--surface-soft) 72%, var(--surface)), var(--surface));
+}
+
+.practice-shell.book-study-shell .practice-chapter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+}
+
+.practice-shell.book-study-shell .practice-chapter-number {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.practice-shell.book-study-shell .question-panel h2 {
+  max-width: 48ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.48;
+  overflow-wrap: anywhere;
+}
+
+.practice-shell.book-study-shell .question-panel > p {
+  max-width: 70ch;
+  line-height: 1.65;
+}
+
+.practice-shell.book-study-shell .answer-panel-kicker {
+  margin: 0 0 14px;
+}
+
+.practice-shell.book-study-shell .answer-mode-tabs {
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+}
+
+.practice-shell.book-study-shell .answer-panel textarea,
+.practice-shell.book-study-shell .adaptive-follow-up textarea {
+  border-radius: var(--radius-control);
+  background: var(--surface-soft);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.practice-shell.book-study-shell .answer-panel textarea {
+  min-height: 240px;
+}
+
+.practice-shell.book-study-shell .adaptive-follow-up {
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-panel);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  line-height: 1.65;
+}
+
+.practice-shell.book-study-shell .adaptive-follow-up strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.practice-shell.book-study-shell .practice-actions:not(.compact) > button:first-child {
+  box-shadow: var(--elevation-card);
+  padding-inline: 20px;
+}
+
+.practice-shell.book-study-shell .evaluation-header h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-weight: 600;
+}
+
+.practice-shell.book-study-shell .rubric-box {
+  border-radius: var(--radius-panel);
+  background: color-mix(in srgb, var(--surface-soft) 84%, var(--surface));
+  line-height: 1.6;
+}
+
+.practice-shell.book-study-shell .evaluation-panel > p,
+.practice-shell.book-study-shell .evaluation-panel :is(.rubric-box p, .feedback-columns p, .feedback-columns li, details p) {
+  max-width: 72ch;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
 .exam-shell :is(.exam-clock-card, .exam-topic-order) {
   border-radius: var(--radius-card);
 }

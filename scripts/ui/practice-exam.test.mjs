@@ -22,3 +22,16 @@ test("study layouts constrain controls and wrap actions", () => {
   assert.match(css, /\.practice-shell \.app-top-nav,\s*\.exam-shell \.app-top-nav\s*\{\s*width: min\(1180px, 100%\)/);
   assert.match(css, /\.exam-clock-card\s*\{\s*background: var\(--surface-soft\);\s*color: var\(--ink\)/);
 });
+
+test("real and demo practice share an editorial chapter hierarchy", () => {
+  const page = read("practice/page.tsx");
+  const css = read("globals.css");
+
+  assert.match(page, /<main className="practice-shell menu-with-top-nav book-study-shell">/);
+  assert.match(page, /<p className="practice-section-kicker">Configura tu recorrido<\/p>/);
+  assert.match(page, /<span className="practice-chapter-label">Pregunta de estudio<\/span>/);
+  assert.match(css, /\.practice-shell\.book-study-shell \.practice-sidebar h1\s*\{[^}]*font-family: Georgia/);
+  assert.match(css, /\.practice-shell\.book-study-shell \.question-panel h2\s*\{[^}]*font-family: Georgia/);
+  assert.match(css, /\.practice-shell\.book-study-shell \.practice-card-large\s*\{[^}]*box-shadow: none/);
+  assert.match(css, /\.practice-shell\.book-study-shell \.mode-switch button\.active\s*\{[^}]*background: var\(--surface\)/);
+});

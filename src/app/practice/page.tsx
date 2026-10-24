@@ -630,10 +630,11 @@ export default function PracticePage() {
   }
 
   return (
-    <main className="practice-shell menu-with-top-nav">
+    <main className="practice-shell menu-with-top-nav book-study-shell">
       <AppTopNav />
       <aside className="practice-sidebar">
         <Link className="back-link" href="/">← Volver al inicio</Link>
+        <p className="practice-kicker">Cuaderno de práctica</p>
         <h1>Práctica por texto</h1>
         <p>
           La práctica real guarda tus sesiones, intentos y progreso.
@@ -654,6 +655,7 @@ export default function PracticePage() {
           </div>
         )}
 
+        <p className="practice-section-kicker">Configura tu recorrido</p>
         <div className="filter-stack">
           <label>
             Modo
@@ -725,6 +727,7 @@ export default function PracticePage() {
         {!isLoading && currentQuestion && (
           <>
             <div className="practice-status">
+              <span className="practice-status-kicker">Práctica en curso</span>
               <span>
                 {data?.mode === "real" ? "Sesión real" : "Modo demo"} · Pregunta {currentIndex + 1} de {data?.questions.length}
                 {data?.sessionId ? ` · sesión ${data.sessionId.slice(0, 8)}` : ""}
@@ -752,6 +755,10 @@ export default function PracticePage() {
             )}
 
             <article className="practice-card-large question-panel">
+              <div className="practice-chapter-heading">
+                <span className="practice-chapter-label">Pregunta de estudio</span>
+                <span className="practice-chapter-number" aria-hidden="true">{String(currentIndex + 1).padStart(2, "0")}</span>
+              </div>
               <div className="question-meta">
                 <span>{currentQuestion.areaName}</span>
                 <span>{currentQuestion.subjectName}</span>
@@ -767,6 +774,7 @@ export default function PracticePage() {
             </article>
 
             <article className="practice-card-large answer-panel">
+              <p className="practice-section-kicker answer-panel-kicker">Tu desarrollo</p>
               <div className="answer-mode-tabs" role="group" aria-label="Modo de respuesta">
                 <button
                   type="button"
