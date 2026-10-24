@@ -124,4 +124,4 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B7 checks:** `node --test scripts/ui/home-bank.test.mjs` passed (10/10); `npm run typecheck` passed (exit 0); `npx eslint src scripts` passed (exit 0); `git diff --check` passed (exit 0, only LF-to-CRLF normalization warnings).
 - **B7 runtime QA:** Not performed; the local preview URL was previously blocked by browser URL policy and alternate browser tooling is expressly out of scope. No authentication, data, or protected actions were used.
 - **B7 rollback boundary:** Revert only the final dashboard-scoped CSS rules in `src/app/globals.css`, the added assertion in `scripts/ui/home-bank.test.mjs`, and this B7 evidence/checkbox in `odd/tasks/book-inspired-all-routes.md`; prior B1–B6 work remains intact.
-- **B7 behavior commit:** pending commit; record the exact identity after committing.
+- **B7 behavior commit:** `31a1e371` (`fix(ui): clear dashboard chapter titles and scrolling`); includes the scoped CSS fix, regression assertions, and B7 task evidence.
