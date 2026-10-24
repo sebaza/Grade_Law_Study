@@ -15,7 +15,7 @@ Carry the approved book-inspired editorial visual direction across every user-fa
 Forecast: approximately 700–1100 authored changed lines across all work units, excluding generated files. Advisory target approximately 400 authored changed lines per unit, never a hard cap. Delivery strategy: `ask-on-risk`; no remote actions.
 
 - [x] B1 — Apply editorial structure to signed-in Home and the public question bank. Route: delegated direct; trigger: multiple non-trivial pages, shared styles, and structural regression tests.
-- [ ] B2 — Apply the same book-inspired hierarchy to Exam setup, active session, and results without touching session behavior. Route: delegated direct; trigger: page/CSS/tests require analysis.
+- [x] B2 — Apply the same book-inspired hierarchy to Exam setup, active session, and results without touching session behavior. Route: delegated direct; trigger: page/CSS/tests require analysis.
 - [ ] B3 — Apply the same book-inspired hierarchy to History states and Login/Signup. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
 - [ ] B4 — Apply the same book-inspired hierarchy to protected Admin dashboard and question editor. Route: delegated direct; trigger: two page owners, shared styles, regression tests.
 - Existing public Home work unit: `86fe784ac143c808ad8ba4a71544377d0d080cf2`; existing Practice work unit: `5965fae9f9a30bc17ddba2202858f4585515c3f4`. Practice browser verification is separately pending under `odd/tasks/practice-book-inspired.md`.
@@ -47,6 +47,12 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B1 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started, and no authentication or data actions were attempted. Responsive/theme/browser rendering remains unverified for B1.
 - **B1 rollback boundary:** Revert the B1 source and regression changes in `src/app/page.tsx`, `src/app/questions/page.tsx`, `src/app/globals.css`, and `scripts/ui/home-bank.test.mjs`; the added task record evidence can be reverted independently without affecting prior Home/Practice work.
 - **B1 behavior commit:** `efe23011` (`style(ui): extend editorial hierarchy to dashboard and bank`). This commit includes the B1 implementation, regression assertions, and task evidence above.
+- **B2 implementation:** Added editorial styling hooks for Exam setup, active question/ronda, and final review. Serif headings, chapter/section numbering, ruled surfaces, and theme-variable-backed surfaces now give setup, active session, and result a consistent reading hierarchy. Only JSX classes and CSS changed; authentication/session APIs, timer, evaluation, answer state, and submission logic were untouched.
+- **B2 TDD:** Added the structural assertion to `scripts/ui/practice-exam.test.mjs` first. RED observed with `node --test scripts/ui/practice-exam.test.mjs` (exit 1; 3/4 passed; the new assertion failed because the Exam hierarchy classes/selectors were absent). After implementation and correcting the assertion to target the page-scoped result CSS selector, the command passed (4/4).
+- **B2 checks:** `npm run typecheck` passed; `npx eslint src scripts` passed; `git diff --check` passed (Git emitted only CRLF normalization warnings for touched files).
+- **B2 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started; no credentials, exam session, answer submission, or evaluation were used. Browser rendering across breakpoints/themes remains unverified.
+- **B2 rollback boundary:** Revert only `src/app/exam/page.tsx`, the B2-scoped exam rules in `src/app/globals.css`, and the added Exam assertion in `scripts/ui/practice-exam.test.mjs`; this removes B2 without affecting the prior Home, bank, or Practice work.
+- **B2 behavior commit:** To be recorded in the task-document closeout immediately after the behavior commit.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
@@ -61,4 +67,4 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - `scripts/ui/` — structural regression suites.
 
 ## Next step
-- Begin B2: apply the shared editorial hierarchy to Exam setup, active session, and results without changing session behavior.
+- Begin B3: apply the shared editorial hierarchy to History states and Login/Signup without changing auth or saved-history behavior.

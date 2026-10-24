@@ -4290,6 +4290,131 @@ body:has(.app-top-nav) > .theme-toggle {
   border-radius: var(--radius-card);
 }
 
+/* Book-inspired hierarchy for exam setup, active questions, and final review. */
+.book-exam-shell .exam-hero {
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+}
+
+.book-exam-hero h1 {
+  max-width: 16ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5.6vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+  text-wrap: balance;
+}
+
+.book-exam-shell .exam-editorial-section {
+  position: relative;
+  border: 0;
+  border-top: 2px solid var(--accent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--surface-soft));
+  box-shadow: none;
+  counter-increment: exam-chapter;
+  padding-top: 58px;
+}
+
+.book-exam-shell .exam-editorial-section::before {
+  position: absolute;
+  top: 23px;
+  left: 28px;
+  color: var(--accent);
+  content: "CAPÍTULO " counter(exam-chapter, decimal-leading-zero);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.book-exam-shell .exam-setup h2,
+.book-exam-shell .exam-result h2,
+.book-exam-shell .exam-review-heading h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.book-exam-shell .exam-setup h2 {
+  font-size: clamp(1.65rem, 2.6vw, 2.2rem);
+}
+
+.book-exam-shell .exam-topic-order {
+  border-inline: 0;
+  border-radius: 0;
+  border-top-color: var(--border);
+  border-bottom-color: var(--border);
+  background: color-mix(in srgb, var(--surface-soft) 54%, var(--surface));
+}
+
+.book-exam-shell .exam-active-chapters {
+  counter-reset: exam-section;
+}
+
+.book-exam-shell .exam-active-chapters > .exam-chapter-panel {
+  position: relative;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--surface-soft));
+  box-shadow: none;
+  counter-increment: exam-section;
+  padding-top: 54px;
+}
+
+.book-exam-shell .exam-active-chapters > .exam-chapter-panel::before {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  color: var(--accent);
+  content: "SECCIÓN " counter(exam-section, decimal-leading-zero);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+}
+
+.book-exam-shell .exam-round-chapter h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.book-exam-shell .exam-answer-chapter > h2 {
+  max-width: 72ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.45;
+}
+
+.book-exam-shell .exam-result h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+}
+
+.book-exam-shell .exam-result-grid div {
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--surface-soft) 50%, var(--surface));
+}
+
+.book-exam-shell .exam-result-grid span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.book-exam-shell .exam-review-heading h3 {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+}
+
 /* History and authentication: quiet surfaces, readable forms and bounded rows. */
 .history-student-shell .app-top-nav {
   width: min(1180px, 100%);

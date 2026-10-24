@@ -35,3 +35,20 @@ test("real and demo practice share an editorial chapter hierarchy", () => {
   assert.match(css, /\.practice-shell\.book-study-shell \.practice-card-large\s*\{[^}]*box-shadow: none/);
   assert.match(css, /\.practice-shell\.book-study-shell \.mode-switch button\.active\s*\{[^}]*background: var\(--surface\)/);
 });
+
+test("exam setup, active session, and result use a book-inspired reading hierarchy", () => {
+  const page = read("exam/page.tsx");
+  const css = read("globals.css");
+
+  assert.match(page, /<main className="exam-shell menu-with-top-nav book-exam-shell">/);
+  assert.match(page, /<header className="exam-hero book-exam-hero">/);
+  assert.match(page, /className="exam-setup card exam-editorial-section exam-setup-chapter"/);
+  assert.match(page, /<section className="exam-layout exam-active-chapters">/);
+  assert.match(page, /className="exam-panel card exam-chapter-panel exam-answer-chapter"/);
+  assert.match(page, /className="exam-result card exam-editorial-section exam-result-chapter"/);
+  assert.match(css, /\.book-exam-hero h1\s*\{[^}]*font-family: Georgia/);
+  assert.match(css, /\.exam-editorial-section::before\s*\{[^}]*counter\(exam-chapter, decimal-leading-zero\)/);
+  assert.match(css, /\.exam-active-chapters > \.exam-chapter-panel::before\s*\{[^}]*counter\(exam-section, decimal-leading-zero\)/);
+  assert.match(css, /\.exam-answer-chapter > h2\s*\{[^}]*font-family: Georgia/);
+  assert.match(css, /\.book-exam-shell \.exam-result-grid div\s*\{[^}]*border-top:/);
+});
