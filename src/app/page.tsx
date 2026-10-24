@@ -371,7 +371,7 @@ export default function HomePage() {
       <AppSidebar />
 
       <section className="main home-main-dashboard">
-        <header className={loggedOut ? "home-compact-header public-home-header" : "home-compact-header"}>
+        <header className={loggedOut ? "home-compact-header public-home-header" : "home-compact-header dashboard-editorial-header"}>
           <div>
             <p className="eyebrow">{loggedOut ? "Examen de grado · Derecho" : "Inicio"}</p>
             <h1>{loggedOut ? "Prepara tu examen con práctica real" : "Resumen de estudio"}</h1>
@@ -407,7 +407,7 @@ export default function HomePage() {
 
         {!isLoading && stats && history && (
           <>
-            <section className="history-kpi-grid home-kpi-grid">
+            <section className="history-kpi-grid home-kpi-grid dashboard-kpi-ledger">
               <article className="card kpi">
                 <p className="kpi-label">Promedio general</p>
                 <p className="kpi-value">{stats.summary.averageScore}%</p>
@@ -434,7 +434,7 @@ export default function HomePage() {
 
             <HomeQuestionFeed isPublic={false} />
 
-            <section className="dashboard-analytics-grid home-focus-grid">
+            <section className="dashboard-analytics-grid home-focus-grid dashboard-chapters">
               <article className="practice-card-large wide-panel">
                 <div className="section-heading-row">
                   <h2>Uso por día</h2>

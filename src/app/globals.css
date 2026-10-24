@@ -2914,6 +2914,22 @@ summary {
   text-wrap: balance;
 }
 
+.home-compact-header.dashboard-editorial-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.dashboard-editorial-header h1 {
+  max-width: 18ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.35rem, 4.8vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
 .public-home-header .hero-action-stack {
   gap: 10px;
 }
@@ -2933,11 +2949,57 @@ summary {
   font-size: clamp(2rem, 3.8vw, 3rem);
 }
 
+.dashboard-kpi-ledger .kpi {
+  border-top: 2px solid var(--accent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--surface-soft) 58%, var(--surface));
+  box-shadow: none;
+}
+
+.dashboard-kpi-ledger .kpi-value {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
 .home-focus-grid {
   grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) minmax(280px, 0.85fr);
   gap: 16px;
   margin-top: 0;
   width: 100%;
+}
+
+.dashboard-chapters {
+  counter-reset: dashboard-chapter;
+}
+
+.dashboard-chapters > article {
+  position: relative;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--surface) 90%, var(--surface-soft));
+  box-shadow: none;
+  padding-top: 38px;
+  counter-increment: dashboard-chapter;
+}
+
+.dashboard-chapters > article::before {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  color: var(--accent);
+  content: counter(dashboard-chapter, decimal-leading-zero);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.dashboard-chapters h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .home-focus-grid .wide-panel {
@@ -3726,6 +3788,63 @@ body:has(.app-top-nav) > .theme-toggle {
 .question-bank-shell .page-hero {
   align-items: center;
   gap: 24px;
+}
+
+.question-bank-shell .bank-editorial-hero {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 22px;
+}
+
+.bank-editorial-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.bank-chapter-list {
+  counter-reset: bank-chapter;
+}
+
+.bank-chapter-card {
+  position: relative;
+  border-radius: 8px;
+  border-left: 0;
+  border-right: 0;
+  background: color-mix(in srgb, var(--surface) 94%, var(--surface-soft));
+  box-shadow: none;
+  padding-top: 44px;
+  counter-increment: bank-chapter;
+}
+
+.bank-chapter-card::before {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  color: var(--accent);
+  content: counter(bank-chapter, decimal-leading-zero);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.bank-chapter-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.bank-summary-strip {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.bank-summary-strip strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
 }
 
 .bank-card-body h2 {

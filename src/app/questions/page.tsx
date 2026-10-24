@@ -144,7 +144,7 @@ export default function QuestionsPage() {
     <main className="menu-page-shell question-bank-shell">
       <AppTopNav />
 
-      <header className="page-hero compact-hero">
+      <header className="page-hero compact-hero bank-editorial-hero">
         <div>
           <p className="eyebrow">Banco de preguntas</p>
           <h1>Banco de preguntas</h1>
@@ -217,9 +217,9 @@ export default function QuestionsPage() {
 
       {!isLoading && payload && (
         <>
-          <section className="question-bank-list">
+          <section className="question-bank-list bank-chapter-list">
             {payload.questions.length > 0 ? payload.questions.map((question) => (
-              <article className="bank-question-card" key={question.id}>
+              <article className="bank-question-card bank-chapter-card" key={question.id}>
                 <div className="question-meta bank-card-meta">
                   <span>{question.areaName}</span>
                   <span>{question.subjectName}</span>
