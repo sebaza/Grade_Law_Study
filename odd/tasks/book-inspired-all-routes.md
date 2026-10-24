@@ -64,7 +64,7 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B4 checks:** `node --test scripts/ui/admin.test.mjs` passed (4/4); `npm run typecheck` passed; `npx eslint src scripts` passed; `git diff --check` passed (Git emitted CRLF normalization warnings for the touched test and CSS files).
 - **B4 runtime QA:** Browser surfaces unavailable: CUA reported no apps or browsers. No browser was installed or started; no credentials, protected session, form submission, or admin content mutation were used. Visual rendering across themes/breakpoints remains unverified.
 - **B4 rollback boundary:** Revert `src/app/admin/page.tsx`, `src/app/admin/questions/page.tsx`, the B4 editorial rules at the end of `src/app/globals.css`, and the B4 structural assertion in `scripts/ui/admin.test.mjs`; this removes B4 without changing B1–B3.
-- **B4 behavior commit:** pending.
+- **B4 behavior commit:** `335d3637475cefc07210d62fdf883e1002703583` (`style(admin): add editorial hierarchy to protected routes`). This commit includes B4 implementation, regression assertion, and task evidence above.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
