@@ -52,7 +52,7 @@ Forecast: approximately 700–1100 authored changed lines across all work units,
 - **B2 checks:** `npm run typecheck` passed; `npx eslint src scripts` passed; `git diff --check` passed (Git emitted only CRLF normalization warnings for touched files).
 - **B2 runtime QA:** Browser check unavailable: CUA reported no apps or browsers. No browser was installed or started; no credentials, exam session, answer submission, or evaluation were used. Browser rendering across breakpoints/themes remains unverified.
 - **B2 rollback boundary:** Revert only `src/app/exam/page.tsx`, the B2-scoped exam rules in `src/app/globals.css`, and the added Exam assertion in `scripts/ui/practice-exam.test.mjs`; this removes B2 without affecting the prior Home, bank, or Practice work.
-- **B2 behavior commit:** To be recorded in the task-document closeout immediately after the behavior commit.
+- **B2 behavior commit:** `432b0b85` (`style(exam): add book-inspired exam chapters`). This commit includes the B2 implementation, regression assertion, and task evidence above.
 
 ## Relevant files
 - `src/app/page.tsx` — logged-out Home and authenticated dashboard.
